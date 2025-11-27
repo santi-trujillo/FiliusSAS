@@ -1,0 +1,463 @@
+/**
+ * Hero Component - Versión Completa
+ * Sección principal con elementos modernos y animaciones
+ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+/* Fondo animado con gradiente */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(circle,
+            rgba(59, 130, 246, 0.1) 0%,
+            rgba(59, 130, 246, 0.05) 30%,
+            transparent 70%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -30px) rotate(5deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(-5deg);
+    }
+}
+
+.hero-container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenido izquierdo */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Saludo pequeño */
+.hero-greeting {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Nombre principal */
+.hero-title {
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.2s forwards;
+}
+
+.hero-title-name {
+    display: block;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Rol/Profesión */
+.hero-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--text-secondary);
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.4s forwards;
+}
+
+.hero-subtitle-highlight {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Descripción */
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 600px;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.6s forwards;
+}
+
+/* Botones de acción */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.8s forwards;
+}
+
+.hero-cta-primary {
+    padding: 1rem 2.5rem;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+}
+
+.hero-cta-primary:hover::before {
+    left: 100%;
+}
+
+.hero-cta-secondary {
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.hero-cta-secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Lado derecho - Visual/Imagen */
+.hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInRight 0.8s ease 0.4s forwards;
+}
+
+/* Círculo decorativo con animación */
+.hero-circle {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.2),
+            rgba(139, 92, 246, 0.2));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px 20px rgba(59, 130, 246, 0);
+    }
+}
+
+/* Texto o imagen dentro del círculo */
+.hero-visual-content {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    border: 3px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Iniciales o imagen de perfil */
+.hero-initials {
+    background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Estadísticas/Badges flotantes */
+.hero-badges {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-badge {
+    position: absolute;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: floatBadge 3s ease-in-out infinite;
+}
+
+.hero-badge-1 {
+    top: 10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.hero-badge-2 {
+    top: 50%;
+    right: -15%;
+    animation-delay: 1s;
+}
+
+.hero-badge-3 {
+    bottom: 15%;
+    left: -5%;
+    animation-delay: 2s;
+}
+
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-badge-number {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-right: 0.25rem;
+}
+
+/* Indicador de scroll */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 1.5s forwards;
+    cursor: pointer;
+}
+
+.hero-scroll-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-scroll-line {
+    width: 2px;
+    height: 40px;
+    background: var(--accent-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: var(--accent-color);
+    animation: scrollDown 2s ease-in-out infinite;
+    filter: blur(2px);
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-description {
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-circle {
+        width: 400px;
+        height: 400px;
+    }
+
+    .hero-badges {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 5% 3rem;
+    }
+
+    .hero-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-visual-content {
+        font-size: 5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta-primary,
+    .hero-cta-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-visual-content {
+        font-size: 4rem;
+    }
+}

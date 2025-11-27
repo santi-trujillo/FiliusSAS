@@ -1,0 +1,68 @@
+/**
+ * Helper Utilities
+ * Funciones auxiliares reutilizables
+ */
+
+const Helpers = {
+  /**
+   * Debounce function para optimizar eventos
+   */
+  debounce(func, wait = 100) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  },
+
+  /**
+   * Throttle function para limitar ejecuciones
+   */
+  throttle(func, limit = 100) {
+    let inThrottle;
+    return function (...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  },
+
+  /**
+   * Detecta si un elemento está en el viewport
+   */
+  isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  },
+
+  /**
+   * Formatea fechas
+   */
+  formatDate(date, locale = "es-ES") {
+    return new Intl.DateTimeFormat(locale).format(new Date(date));
+  },
+
+  /**
+   * Genera un ID único
+   */
+  generateId() {
+    return `_${Math.random().toString(36).substr(2, 9)}`;
+  },
+};
+
+// Exportar si usas módulos ES6
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = Helpers;
+}

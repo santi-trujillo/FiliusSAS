@@ -1,0 +1,122 @@
+/**
+ * Custom Cursor Component
+ * Cursor personalizado con efectos de seguimiento
+ */
+
+/* Ocultar cursor predeterminado en desktop */
+@media (min-width: 768px) {
+    body {
+        cursor: none;
+    }
+
+    a,
+    button,
+    .clickable {
+        cursor: none;
+    }
+}
+
+/* Contenedor del cursor personalizado */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Círculo pequeño (seguidor principal) */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+/* Círculo grande (efecto de arrastre) */
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.4s ease, height 0.4s ease, border-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.5;
+}
+
+/* Estado hover sobre elementos interactivos */
+.cursor-dot.hover {
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-hover);
+}
+
+.cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+    border-color: var(--accent-hover);
+}
+
+/* Estado de click */
+.cursor-dot.click {
+    width: 4px;
+    height: 4px;
+    transition: width 0.1s ease, height 0.1s ease;
+}
+
+.cursor-outline.click {
+    width: 50px;
+    height: 50px;
+}
+
+/* Ocultar en dispositivos móviles */
+@media (max-width: 768px) {
+
+    .custom-cursor,
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+}
+
+/* Cursor especial sobre texto */
+.cursor-dot.text {
+    width: 2px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.cursor-outline.text {
+    opacity: 0;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.cursor-outline.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "filiussas",
+  "version": "1.0.0",
+  "description": "Filius - Software Development Portfolio",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "five-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "web",
+    "developer",
+    "frontend"
+  ],
+  "author": "Filius",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.4.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "five-server": "^0.4.4",
+    "prettier": "^3.3.2"
+  }
+}
