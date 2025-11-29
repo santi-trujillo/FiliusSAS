@@ -1,0 +1,123 @@
+/**
+ * Header Base Component
+ * Estilos base del header y navegación
+ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 5%;
+    background: transparent;
+    z-index: var(--z-index-header);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Container del nav */
+.nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+/* Imagen del logo */
+.logo-image {
+    height: 100px;
+    width: auto;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Logo oscuro (por defecto visible) */
+.logo-dark {
+    display: block;
+}
+
+/* Logo claro (oculto por defecto) */
+.logo-light {
+    display: none;
+}
+
+/* Cuando el header tiene scroll, puedes cambiar de logo si quieres */
+.header.scrolled .logo-dark {
+    display: block;
+}
+
+.header.scrolled .logo-light {
+    display: none;
+}
+
+/* Efecto hover */
+.logo:hover .logo-image {
+    transform: scale(1.05);
+}
+
+/* Responsive - logo más pequeño en móviles */
+@media (max-width: 768px) {
+    .logo {
+        left: 5%;
+        transform: none;
+        height: 35px;
+    }
+
+    .logo-image {
+        height: 80px;
+    }
+
+    .logo:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        left: 4%;
+        height: 30px;
+    }
+
+    .logo-image {
+        height: 70px;
+    }
+}
+
+/* Navegación centrada */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Sistema de tema claro/oscuro automático */
+@media (prefers-color-scheme: light) {
+    .logo-dark {
+        display: block;
+    }
+
+    .logo-light {
+        display: none;
+    }
+}

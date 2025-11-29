@@ -1,18 +1,7 @@
 /**
- * Header Component - Menú Centrado con Números
- * Diseño minimalista centrado al estilo tamalsen.dev
+ * Header Scroll State Component
+ * Estilos de scroll, menu mobile y animaciones
  */
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem 5%;
-    background: transparent;
-    z-index: var(--z-index-header);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 /* Header con scroll - fondo sólido */
 .header.scrolled {
@@ -22,179 +11,6 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     padding: 1rem 5%;
-}
-
-/* Container del nav */
-.nav {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    left: 5%;
-    cursor: pointer;
-    transition: all var(--transition-base);
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    height: 40px;
-}
-
-/* Imagen del logo */
-.logo-image {
-    height: 100px;
-    width: auto;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-/* Logo oscuro (por defecto visible) */
-.logo-dark {
-    display: block;
-}
-
-/* Logo claro (oculto por defecto) */
-.logo-light {
-    display: none;
-}
-
-/* Cuando el header tiene scroll, puedes cambiar de logo si quieres */
-.header.scrolled .logo-dark {
-    display: block;
-}
-
-.header.scrolled .logo-light {
-    display: none;
-}
-
-/* Efecto hover */
-.logo:hover .logo-image {
-    transform: scale(1.05);
-}
-
-/* Responsive - logo más pequeño en móviles */
-@media (max-width: 768px) {
-    .logo {
-        left: 5%;
-        transform: none;
-        height: 35px;
-    }
-
-    .logo-image {
-        height: 80px;
-    }
-
-    .logo:hover {
-        transform: scale(1.05);
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        left: 4%;
-        height: 30px;
-    }
-
-    .logo-image {
-        height: 70px;
-    }
-}
-
-/* Navegación centrada */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-}
-
-/* Enlaces con números */
-.nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color var(--transition-base);
-    position: relative;
-    padding: 0.5rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    letter-spacing: 0.5px;
-}
-
-/* Número del índice */
-.nav-number {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    opacity: 0.6;
-    font-weight: 400;
-    transition: all var(--transition-base);
-    font-family: 'Courier New', monospace;
-}
-
-/* Separador // */
-.nav-separator {
-    color: var(--text-secondary);
-    opacity: 0.4;
-    font-size: 0.9rem;
-    margin: 0 0.5rem;
-    font-weight: 300;
-}
-
-/* Hover en enlaces */
-.nav-link:hover {
-    color: var(--text-primary);
-}
-
-.nav-link:hover .nav-number {
-    opacity: 1;
-    color: var(--accent-color);
-}
-
-/* Línea inferior animada */
-.nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--accent-color);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-link:hover::before {
-    width: 80%;
-}
-
-/* Enlace activo */
-.nav-link.active {
-    color: var(--text-primary);
-}
-
-.nav-link.active .nav-number {
-    opacity: 1;
-    color: var(--accent-color);
-}
-
-.nav-link.active::before {
-    width: 80%;
-    background: var(--accent-color);
 }
 
 /* Botón hamburguesa */
@@ -376,24 +192,28 @@
     transition: width 0.1s ease;
 }
 
-/* Responsive */
-@media (max-width: 968px) {
-    .nav-links {
-        display: none;
+/* Animación de entrada del header */
+.header {
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
     .menu-toggle {
         display: flex;
         right: 5%;
-    }
-
-    .logo {
-        left: 5%;
-        transform: none;
-    }
-
-    .logo:hover {
-        transform: scale(1.05);
     }
 }
 
@@ -418,33 +238,5 @@
 
     .menu-toggle {
         right: 4%;
-    }
-}
-
-/* Animación de entrada del header */
-.header {
-    animation: slideDown 0.5s ease;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Sistema de tema claro/oscuro automático */
-@media (prefers-color-scheme: light) {
-    .logo-dark {
-        display: block;
-    }
-
-    .logo-light {
-        display: none;
     }
 }

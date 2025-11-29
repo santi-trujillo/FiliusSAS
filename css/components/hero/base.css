@@ -1,6 +1,6 @@
 /**
- * Hero Component - Versión Completa
- * Sección principal con elementos modernos y animaciones
+ * Hero Base Styles
+ * Estilos base del contenedor y layouts
  */
 
 .hero {
@@ -28,46 +28,6 @@
             transparent 70%);
     animation: float 20s ease-in-out infinite;
     pointer-events: none;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    33% {
-        transform: translate(30px, -30px) rotate(5deg);
-    }
-
-    66% {
-        transform: translate(-20px, 20px) rotate(-5deg);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .hero-container {
@@ -234,20 +194,6 @@
     box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
 }
 
-@keyframes pulse-glow {
-
-    0%,
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
-    }
-
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 40px 20px rgba(59, 130, 246, 0);
-    }
-}
-
 /* Texto o imagen dentro del círculo */
 .hero-visual-content {
     width: 80%;
@@ -313,18 +259,6 @@
     animation-delay: 2s;
 }
 
-@keyframes floatBadge {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
 .hero-badge-number {
     color: var(--accent-color);
     font-size: 1rem;
@@ -332,133 +266,7 @@
     font-weight: 700;
 }
 
-/* Animaciones de entrada */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-/* ============================================
-   TECH CAROUSEL - Carrusel de tecnologías
-   ============================================ */
-
-.tech-carousel {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(15px);
-    display: flex;
-    align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-    z-index: 999;
-
-    mask-image: linear-gradient(to right,
-            transparent 0%,
-            black 5%,
-            black 95%,
-            transparent 100%);
-    -webkit-mask-image: linear-gradient(to right,
-            transparent 0%,
-            black 5%,
-            black 95%,
-            transparent 100%);
-}
-
-.tech-carousel-track {
-    display: flex;
-    gap: 3rem;
-    animation: scrollCarousel 40s linear infinite;
-    will-change: transform;
-    padding: 0 2rem;
-}
-
-@keyframes scrollCarousel {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.tech-carousel:hover .tech-carousel-track {
-    animation-play-state: paused;
-}
-
-.tech-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    min-width: 85px;
-    opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    flex-shrink: 0;
-}
-
-.tech-item:hover {
-    opacity: 1;
-    transform: translateY(-5px);
-}
-
-.tech-item img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    filter: grayscale(50%) brightness(1.1);
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.tech-item:hover img {
-    filter: grayscale(0%) brightness(1.3);
-    transform: scale(1.1);
-}
-
-.tech-item span {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    white-space: nowrap;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
+/* Responsive */
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
@@ -490,27 +298,6 @@
     .hero-badges {
         display: none;
     }
-
-    .tech-carousel {
-        height: 85px;
-    }
-
-    .tech-carousel-track {
-        gap: 2.5rem;
-    }
-
-    .tech-item {
-        min-width: 75px;
-    }
-
-    .tech-item img {
-        width: 45px;
-        height: 45px;
-    }
-
-    .tech-item span {
-        font-size: 0.8rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -541,28 +328,6 @@
         width: 100%;
         text-align: center;
     }
-
-    .tech-carousel {
-        height: 75px;
-    }
-
-    .tech-carousel-track {
-        gap: 2rem;
-        padding: 0 1.5rem;
-    }
-
-    .tech-item {
-        min-width: 65px;
-    }
-
-    .tech-item img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .tech-item span {
-        font-size: 0.75rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -577,27 +342,5 @@
 
     .hero-visual-content {
         font-size: 4rem;
-    }
-
-    .tech-carousel {
-        height: 70px;
-    }
-
-    .tech-carousel-track {
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .tech-item {
-        min-width: 55px;
-    }
-
-    .tech-item img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .tech-item span {
-        font-size: 0.7rem;
     }
 }

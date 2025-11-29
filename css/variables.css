@@ -71,4 +71,16 @@
     --text-3xl: 2rem;
     --text-4xl: 2.5rem;
     --text-5xl: 3rem;
+
+    /* Aliases de fuentes para compatibilidad */
+    --font-family-base: var(--font-primary);
+    --font-size-base: 16px;
+    --font-size-large: 1.25rem;
+
+    /* Breakpoints */
+    --breakpoint-wide: 1400px;
+
+    /* Espaciados adicionales */
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 5rem;
 }
