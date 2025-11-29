@@ -6,13 +6,15 @@
 /* Ocultar cursor predeterminado en desktop */
 @media (min-width: 768px) {
     body {
-        cursor: none;
+        cursor: default;
+        /* 👈 CAMBIADO: cursor visible */
     }
 
     a,
     button,
     .clickable {
-        cursor: none;
+        cursor: pointer;
+        /* 👈 CAMBIADO: cursor pointer visible */
     }
 }
 
@@ -34,12 +36,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate3d(0, 0, 0);
-    transform-origin: 0 0;
+    transform: translate3d(-50%, -50%, 0);
     pointer-events: none;
     z-index: 10000;
     transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-    mix-blend-mode: difference;
+    mix-blend-mode: normal;
+    opacity: 0.7;
     will-change: transform;
 }
 
@@ -52,12 +54,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate3d(0, 0, 0);
-    transform-origin: 0 0;
+    transform: translate3d(-50%, -50%, 0);
     pointer-events: none;
     z-index: 9999;
     transition: width 0.3s ease, height 0.3s ease, border-color 0.2s ease, opacity 0.2s ease;
-    opacity: 0.5;
+    opacity: 0.3;
     will-change: transform;
 }
 

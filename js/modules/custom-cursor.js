@@ -1,5 +1,5 @@
 /**
- * Custom Cursor Module - Ultra Optimizado
+ * Custom Cursor Module - Ultra Optimizado y Centrado Perfecto
  * Cursor personalizado con aceleración GPU para 60 FPS
  */
 
@@ -73,9 +73,10 @@ const CustomCursor = (() => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    // Actualizar posición del punto inmediatamente con transform (GPU)
+    // Actualizar posición del punto inmediatamente (centrado con CSS)
     if (cursorDot) {
-      cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
     }
   };
 
@@ -89,7 +90,9 @@ const CustomCursor = (() => {
     outlineY += (mouseY - outlineY) * speed;
 
     if (cursorOutline) {
-      cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0)`;
+      // Usar left/top igual que el dot para mantener el centrado consistente
+      cursorOutline.style.left = `${outlineX}px`;
+      cursorOutline.style.top = `${outlineY}px`;
     }
 
     requestAnimationFrame(animateCursor);
