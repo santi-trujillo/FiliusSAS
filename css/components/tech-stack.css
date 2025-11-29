@@ -1,0 +1,161 @@
+.tech-carousel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(10, 10, 10, 0.6) 40%,
+            rgba(10, 10, 10, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Fade en los bordes laterales */
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 5%,
+            black 95%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 5%,
+            black 95%,
+            transparent 100%);
+}
+
+.tech-carousel-track {
+    display: flex;
+    gap: 3rem;
+    animation: scrollCarousel 40s linear infinite;
+    will-change: transform;
+    padding: 0 2rem;
+}
+
+/* Animación de scroll infinito */
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* -50% porque duplicamos los items */
+    }
+}
+
+/* Pausar al hacer hover */
+.tech-carousel:hover .tech-carousel-track {
+    animation-play-state: paused;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 80px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+    /* Importante para evitar compresión */
+}
+
+.tech-item:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.tech-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.tech-item:hover img {
+    filter: grayscale(0%) drop-shadow(0 5px 15px rgba(59, 130, 246, 0.5));
+}
+
+.tech-item span {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .tech-carousel {
+        height: 80px;
+    }
+
+    .tech-carousel-track {
+        gap: 2.5rem;
+        animation-duration: 35s;
+        /* Un poco más rápido */
+    }
+
+    .tech-item {
+        min-width: 70px;
+    }
+
+    .tech-item img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-carousel {
+        height: 70px;
+    }
+
+    .tech-carousel-track {
+        gap: 2rem;
+        animation-duration: 30s;
+    }
+
+    .tech-item {
+        min-width: 60px;
+    }
+
+    .tech-item img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .tech-item span {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-carousel {
+        height: 60px;
+    }
+
+    .tech-carousel-track {
+        gap: 1.5rem;
+        animation-duration: 25s;
+    }
+
+    .tech-item {
+        min-width: 50px;
+    }
+
+    .tech-item img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .tech-item span {
+        font-size: 0.65rem;
+    }
+}

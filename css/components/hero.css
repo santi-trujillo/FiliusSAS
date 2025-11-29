@@ -196,8 +196,8 @@
 
 /* Círculo decorativo con animación */
 .hero-circle {
-    width: 500px;
-    height: 500px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     background: linear-gradient(135deg,
             rgba(59, 130, 246, 0.2),
@@ -207,7 +207,9 @@
     align-items: center;
     justify-content: center;
     animation: pulse-glow 3s ease-in-out infinite;
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
 }
+
 
 @keyframes pulse-glow {
 
@@ -235,17 +237,17 @@
     font-size: 8rem;
     font-weight: 700;
     color: var(--accent-color);
-    border: 3px solid var(--border-color);
+    border: 2px solid var(--border-color);
     position: relative;
     overflow: hidden;
 }
 
+
 /* Iniciales o imagen de perfil */
 .hero-initials {
-    background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    height: 220px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Estadísticas/Badges flotantes */
@@ -259,34 +261,37 @@
 
 .hero-badge {
     position: absolute;
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-primary);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: floatBadge 3s ease-in-out infinite;
+    backdrop-filter: blur(10px);
 }
 
+
 .hero-badge-1 {
-    top: 10%;
-    left: -10%;
+    top: 5%;
+    left: -15%;
     animation-delay: 0s;
 }
 
 .hero-badge-2 {
     top: 50%;
-    right: -15%;
+    right: -20%;
     animation-delay: 1s;
 }
 
 .hero-badge-3 {
-    bottom: 15%;
-    left: -5%;
+    bottom: 10%;
+    left: -10%;
     animation-delay: 2s;
 }
+
 
 @keyframes floatBadge {
 
@@ -302,8 +307,9 @@
 
 .hero-badge-number {
     color: var(--accent-color);
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-right: 0.25rem;
+    font-weight: 700;
 }
 
 /* Indicador de scroll */
@@ -416,8 +422,12 @@
     }
 
     .hero-circle {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-initials {
+        height: 180px;
     }
 
     .hero-badges {
@@ -425,14 +435,19 @@
     }
 }
 
+
 @media (max-width: 768px) {
     .hero {
         padding: 6rem 5% 3rem;
     }
 
     .hero-circle {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-initials {
+        height: 150px;
     }
 
     .hero-visual-content {
@@ -451,10 +466,15 @@
     }
 }
 
+
 @media (max-width: 480px) {
     .hero-circle {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-initials {
+        height: 130px;
     }
 
     .hero-visual-content {

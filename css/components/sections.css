@@ -667,3 +667,86 @@
         justify-content: center;
     }
 }
+
+/* ============================================
+   WHY SECTION
+   ============================================ */
+
+.why-section {
+    padding: 8rem 5%;
+    background: var(--bg-secondary);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.why-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+}
+
+.why-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    opacity: 0.2;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.why-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.why-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Contact Info en CTA */
+.contact-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-info p {
+    color: white;
+    margin: 0.5rem 0;
+}
+
+/* Footer mejorado */
+.footer-location {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.footer-services h4,
+.footer-social h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}

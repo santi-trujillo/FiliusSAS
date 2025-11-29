@@ -1,6 +1,6 @@
 /**
- * Custom Cursor Component
- * Cursor personalizado con efectos de seguimiento
+ * Custom Cursor Component - Versión Optimizada
+ * Cursor personalizado ultra fluido con aceleración GPU
  */
 
 /* Ocultar cursor predeterminado en desktop */
@@ -32,11 +32,15 @@
     background-color: var(--accent-color);
     border-radius: 50%;
     position: fixed;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0, 0);
+    transform-origin: 0 0;
     pointer-events: none;
     z-index: 10000;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
     mix-blend-mode: difference;
+    will-change: transform;
 }
 
 /* Círculo grande (efecto de arrastre) */
@@ -46,11 +50,15 @@
     border: 2px solid var(--accent-color);
     border-radius: 50%;
     position: fixed;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0, 0);
+    transform-origin: 0 0;
     pointer-events: none;
     z-index: 9999;
-    transition: width 0.4s ease, height 0.4s ease, border-color 0.3s ease, opacity 0.3s ease;
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.2s ease, opacity 0.2s ease;
     opacity: 0.5;
+    will-change: transform;
 }
 
 /* Estado hover sobre elementos interactivos */
@@ -104,16 +112,16 @@
     opacity: 0;
 }
 
-/* Animación de pulso */
+/* Animación de pulso optimizada */
 @keyframes pulse {
 
     0%,
     100% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate3d(-50%, -50%, 0) scale(1);
     }
 
     50% {
-        transform: translate(-50%, -50%) scale(1.2);
+        transform: translate3d(-50%, -50%, 0) scale(1.2);
     }
 }
 

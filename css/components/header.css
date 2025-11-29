@@ -457,13 +457,3 @@
         display: none;
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    .logo-dark {
-        display: none;
-    }
-
-    .logo-light {
-        display: block;
-    }
-}

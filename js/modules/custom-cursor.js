@@ -1,6 +1,6 @@
 /**
- * Custom Cursor Module
- * Implementa un cursor personalizado con efectos suaves
+ * Custom Cursor Module - Ultra Optimizado
+ * Cursor personalizado con aceleración GPU para 60 FPS
  */
 
 const CustomCursor = (() => {
@@ -45,7 +45,7 @@ const CustomCursor = (() => {
 
     // Hover sobre elementos interactivos
     const interactiveElements = document.querySelectorAll(
-      "a, button, .clickable, input, textarea"
+      "a, button, .clickable, input, textarea, .btn, .nav-link, .hero-cta-primary, .hero-cta-secondary"
     );
     interactiveElements.forEach((el) => {
       el.addEventListener("mouseenter", handleMouseEnter);
@@ -73,10 +73,9 @@ const CustomCursor = (() => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    // Actualizar posición del punto inmediatamente
+    // Actualizar posición del punto inmediatamente con transform (GPU)
     if (cursorDot) {
-      cursorDot.style.left = mouseX + "px";
-      cursorDot.style.top = mouseY + "px";
+      cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     }
   };
 
@@ -85,13 +84,12 @@ const CustomCursor = (() => {
    */
   const animateCursor = () => {
     // Efecto de arrastre suave para el contorno
-    const speed = 0.15;
+    const speed = 0.4;
     outlineX += (mouseX - outlineX) * speed;
     outlineY += (mouseY - outlineY) * speed;
 
     if (cursorOutline) {
-      cursorOutline.style.left = outlineX + "px";
-      cursorOutline.style.top = outlineY + "px";
+      cursorOutline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0)`;
     }
 
     requestAnimationFrame(animateCursor);
@@ -104,6 +102,7 @@ const CustomCursor = (() => {
     if (cursorDot && cursorOutline) {
       cursorDot.classList.add("hover");
       cursorOutline.classList.add("hover");
+      isHovering = true;
     }
   };
 
@@ -111,6 +110,7 @@ const CustomCursor = (() => {
     if (cursorDot && cursorOutline) {
       cursorDot.classList.remove("hover");
       cursorOutline.classList.remove("hover");
+      isHovering = false;
     }
   };
 
