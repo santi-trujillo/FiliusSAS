@@ -4,9 +4,8 @@
  */
 
 .tech-carousel {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: static;
+    /* Cambiar de fixed a static en móviles */
     width: 100%;
     height: 100px;
     overflow: hidden;
@@ -16,7 +15,7 @@
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 50;
 
     mask-image: linear-gradient(to right,
             transparent 0%,
@@ -141,24 +140,39 @@
 
 @media (max-width: 480px) {
     .tech-carousel {
-        height: 70px;
+        height: 90px;
     }
 
     .tech-carousel-track {
-        gap: 1.5rem;
-        padding: 0 1rem;
+        gap: 2rem;
+        padding: 0 1.5rem;
     }
 
     .tech-item {
-        min-width: 55px;
+        min-width: 80px;
     }
 
     .tech-item img {
-        width: 35px;
-        height: 35px;
+        width: 50px;
+        height: 50px;
     }
 
     .tech-item span {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        font-weight: 700;
     }
+}
+
+.tech-item {
+    min-width: 55px;
+}
+
+.tech-item img {
+    width: 35px;
+    height: 35px;
+}
+
+.tech-item span {
+    font-size: 0.7rem;
+}
 }
