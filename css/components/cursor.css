@@ -89,16 +89,28 @@
 }
 
 /* Ocultar en dispositivos móviles */
-@media (max-width: 768px) {
+/* BASE: Móvil */
+.custom-cursor,
+.cursor-dot,
+.cursor-outline {
+    display: none;
+}
+
+body {
+    cursor: auto;
+}
+
+/* DESKTOP (768px+) */
+@media (min-width: 768px) {
 
     .custom-cursor,
     .cursor-dot,
     .cursor-outline {
-        display: none;
+        display: block;
     }
 
     body {
-        cursor: auto;
+        cursor: none;
     }
 }
 

@@ -80,9 +80,16 @@
     margin: 0.25rem 0;
 }
 
-@media (max-width: 768px) {
+/* BASE: Móvil */
+.footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* TABLET (768px+) */
+@media (min-width: 768px) {
     .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: auto 1fr auto;
+        gap: 3rem;
     }
 }

@@ -79,20 +79,41 @@
     background: var(--accent-color);
 }
 
-/* Responsive */
-@media (max-width: 968px) {
+/* ============================================================
+   RESPONSIVE - Mobile First Strategy
+   ============================================================ */
+
+/* BASE: Móvil (320px - 967px) */
+.menu-toggle {
+    display: flex;
+    /* Mostrar hamburguesa en móviles */
+}
+
+.nav-links {
+    display: none;
+}
+
+.logo {
+    left: 5%;
+    transform: none;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* DESKTOP (968px+) */
+@media (min-width: 968px) {
     .menu-toggle {
-        display: flex;
-        /* Mostrar hamburguesa en móviles */
+        display: none;
     }
 
     .nav-links {
-        display: none;
+        display: flex;
     }
 
     .logo {
         left: 5%;
-        transform: none;
     }
 
     .logo:hover {

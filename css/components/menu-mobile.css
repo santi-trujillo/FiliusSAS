@@ -156,12 +156,22 @@
 }
 
 /* Mostrar en móviles */
-@media (max-width: 768px) {
+/* BASE: Móvil */
+.menu-toggle {
+    display: flex;
+}
+
+.nav-links {
+    display: none;
+}
+
+/* DESKTOP (768px+) */
+@media (min-width: 768px) {
     .menu-toggle {
-        display: flex;
+        display: none;
     }
 
     .nav-links {
-        display: none;
+        display: flex;
     }
 }

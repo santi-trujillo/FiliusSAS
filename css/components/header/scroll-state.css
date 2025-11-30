@@ -209,34 +209,43 @@
     }
 }
 
-/* Responsive */
-@media (max-width: 968px) {
-    .menu-toggle {
-        display: flex;
-        right: 5%;
-    }
+/* ============================================================
+   RESPONSIVE - Mobile First Strategy
+   ============================================================ */
+
+/* BASE: Móvil (320px - 967px) */
+.menu-toggle {
+    display: flex;
+    right: 5%;
 }
 
-@media (max-width: 768px) {
-    .header {
-        padding: 1rem 5%;
-    }
-
-    .menu-toggle {
-        right: 5%;
-    }
+.mobile-menu {
+    max-width: 100%;
 }
 
-@media (max-width: 480px) {
+.mobile-nav-link {
+    font-size: 1.5rem;
+}
+
+.menu-toggle {
+    right: 4%;
+}
+
+/* DESKTOP (968px+) */
+@media (min-width: 968px) {
+    .menu-toggle {
+        display: none;
+    }
+
     .mobile-menu {
-        max-width: 100%;
+        max-width: 400px;
     }
 
     .mobile-nav-link {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
     .menu-toggle {
-        right: 4%;
+        right: 5%;
     }
 }
