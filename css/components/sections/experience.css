@@ -148,31 +148,54 @@
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - Mobile First Strategy
    ============================================ */
 
-@media (max-width: 768px) {
+/* BASE: Móvil (320px - 767px) */
+.timeline {
+    padding-left: 2rem;
+}
 
+.timeline-marker {
+    left: -2rem;
+    width: 12px;
+    height: 12px;
+}
+
+.timeline-content {
+    padding: 1.5rem;
+}
+
+.experience-header {
+    flex-direction: column;
+}
+
+.experience-role {
+    font-size: 1.2rem;
+}
+
+/* DESKTOP (1024px+) */
+@media (min-width: 768px) {
     .timeline {
-        padding-left: 2rem;
+        padding-left: 3rem;
     }
 
     .timeline-marker {
-        left: -2rem;
-        width: 12px;
-        height: 12px;
+        left: -3rem;
+        width: 16px;
+        height: 16px;
     }
 
     .timeline-content {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
     .experience-header {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .experience-role {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
-
 }

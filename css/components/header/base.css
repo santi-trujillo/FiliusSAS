@@ -67,8 +67,30 @@
     transform: scale(1.05);
 }
 
-/* Header más compacto en tablets */
-@media (max-width: 768px) {
+/* ============================================================
+   RESPONSIVE - Mobile First Strategy
+   ============================================================ */
+
+/* BASE: Móvil (320px - 767px) */
+.header {
+    padding: 0.5rem 2%;
+}
+
+.logo {
+    left: 3%;
+    height: 28px;
+}
+
+.logo-image {
+    height: 45px;
+}
+
+.nav-links {
+    gap: 0;
+}
+
+/* TABLET (768px - 1023px) */
+@media (min-width: 768px) {
     .header {
         padding: 0.75rem 3%;
     }
@@ -88,19 +110,19 @@
     }
 }
 
-/* Ajustes adicionales para móviles pequeños */
-@media (max-width: 480px) {
+/* DESKTOP (1024px+) */
+@media (min-width: 1024px) {
     .header {
-        padding: 0.5rem 2%;
+        padding: 1.5rem 5%;
     }
 
     .logo {
-        left: 3%;
-        height: 28px;
+        left: 5%;
+        height: 40px;
     }
 
     .logo-image {
-        height: 45px;
+        height: 100px;
     }
 }
 

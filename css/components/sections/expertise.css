@@ -1,5 +1,5 @@
 /* ============================================
-   EXPERTISE SECTION
+   EXPERTISE SECTION - Mobile First Strategy
    ============================================ */
 
 .expertise-section {
@@ -26,10 +26,27 @@
     color: var(--text-primary);
 }
 
+/* BASE: Móvil (320px - 767px) */
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* TABLET (768px - 1023px) */
+@media (min-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* DESKTOP (1024px+) */
+@media (min-width: 1024px) {
+    .expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
 }
 
 .expertise-card {

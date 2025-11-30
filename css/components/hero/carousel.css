@@ -90,31 +90,36 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .tech-carousel {
-        height: 85px;
-    }
+/* ============================================================
+   RESPONSIVE - Mobile First Strategy
+   ============================================================ */
 
-    .tech-carousel-track {
-        gap: 2.5rem;
-    }
-
-    .tech-item {
-        min-width: 75px;
-    }
-
-    .tech-item img {
-        width: 45px;
-        height: 45px;
-    }
-
-    .tech-item span {
-        font-size: 0.8rem;
-    }
+/* BASE: Móvil (320px - 767px) */
+.tech-carousel {
+    height: 90px;
 }
 
-@media (max-width: 768px) {
+.tech-carousel-track {
+    gap: 2rem;
+    padding: 0 1.5rem;
+}
+
+.tech-item {
+    min-width: 80px;
+}
+
+.tech-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.tech-item span {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* TABLET (768px - 1023px) */
+@media (min-width: 768px) {
     .tech-carousel {
         height: 75px;
     }
@@ -138,41 +143,26 @@
     }
 }
 
-@media (max-width: 480px) {
+/* DESKTOP (1024px+) */
+@media (min-width: 1024px) {
     .tech-carousel {
-        height: 90px;
+        height: 85px;
     }
 
     .tech-carousel-track {
-        gap: 2rem;
-        padding: 0 1.5rem;
+        gap: 2.5rem;
     }
 
     .tech-item {
-        min-width: 80px;
+        min-width: 75px;
     }
 
     .tech-item img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 
     .tech-item span {
         font-size: 0.8rem;
-        font-weight: 700;
     }
-}
-
-.tech-item {
-    min-width: 55px;
-}
-
-.tech-item img {
-    width: 35px;
-    height: 35px;
-}
-
-.tech-item span {
-    font-size: 0.7rem;
-}
 }

@@ -1,28 +1,101 @@
 /**
- * Responsive CSS
- * Media queries para diferentes tamaños de pantalla
+ * Responsive CSS - Mobile First Strategy
+ * Base: 320px (Móvil) → Mejoras progresivas hasta 1920px (Desktop)
  */
 
-/* Tablets y dispositivos medianos */
-@media (max-width: 1024px) {
-    :root {
-        --font-size-base: 15px;
+/* ============================================================
+   BASE: Móvil (320px - 479px)
+   Estilos base optimizados para dispositivos móviles
+   ============================================================ */
+
+:root {
+    --font-size-base: 14px;
+}
+
+.header {
+    padding: 0.5rem 2%;
+}
+
+.nav-links {
+    gap: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.hero {
+    padding: 7rem 5% 2rem;
+    min-height: auto;
+}
+
+.section {
+    padding: var(--spacing-lg) 4%;
+}
+
+.section-title {
+    margin-bottom: var(--spacing-lg);
+}
+
+.experience-item {
+    padding: var(--spacing-md);
+}
+
+.contact-buttons {
+    flex-direction: column;
+}
+
+.contact-button,
+.cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+.expertise-grid,
+.testimonials-grid {
+    grid-template-columns: 1fr;
+}
+
+.project-image {
+    height: 250px;
+}
+
+/* ============================================================
+   TABLET PEQUEÑA (480px - 767px)
+   Mejoras para tablets pequeñas y teléfonos grandes
+   ============================================================ */
+
+@media (min-width: 480px) {
+    .nav-links {
+        gap: var(--spacing-sm);
+    }
+
+    .hero {
+        padding: 8rem 5% 3rem;
+        min-height: auto;
     }
 
     .section {
-        padding: var(--spacing-2xl) 5%;
+        padding: var(--spacing-xl) 5%;
+    }
+
+    .project-image {
+        height: 280px;
     }
 
     .expertise-grid,
     .testimonials-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
 
-/* Tablets pequeñas */
-@media (max-width: 768px) {
-    .nav-links {
-        gap: var(--spacing-sm);
+/* ============================================================
+   TABLET (768px - 1023px)
+   Optimizaciones para tablets en formato portrait
+   ============================================================ */
+
+@media (min-width: 768px) {
+    :root {
+        --font-size-base: 15px;
     }
 
     .hero {
@@ -53,56 +126,26 @@
     }
 }
 
-/* Móviles */
-@media (max-width: 480px) {
+/* ============================================================
+   DESKTOP (1024px+)
+   Optimizaciones para pantallas grandes
+   ============================================================ */
+
+@media (min-width: 1024px) {
     :root {
-        --font-size-base: 14px;
-    }
-
-    .header {
-        padding: 0.5rem 2%;
-    }
-
-    .nav-links {
-        gap: 0.75rem;
-        font-size: 0.85rem;
-    }
-
-    .hero {
-        padding: 7rem 5% 2rem;
-        min-height: auto;
+        --font-size-base: 16px;
     }
 
     .section {
-        padding: var(--spacing-lg) 4%;
-    }
-
-    .section-title {
-        margin-bottom: var(--spacing-lg);
-    }
-
-    .experience-item {
-        padding: var(--spacing-md);
-    }
-
-    .contact-buttons {
-        flex-direction: column;
-    }
-
-    .contact-button,
-    .cta-button {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
+        padding: var(--spacing-2xl) 5%;
     }
 
     .expertise-grid,
     .testimonials-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .project-image {
-        height: 250px;
+        height: 350px;
     }
 }
