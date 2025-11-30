@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 1.5rem 5%;
+    padding: 0.5rem 2%;
     background: transparent;
     z-index: var(--z-index-header);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -16,14 +16,15 @@
 
 /* Container del nav */
 .nav {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     width: 100%;
-    gap: 2rem;
+    gap: 1rem;
+    overflow: visible;
 }
 
 .logo {
@@ -156,7 +157,7 @@
 /* IPAD PRO 11 (834px - 1023px) */
 @media (min-width: 834px) {
     .header {
-        padding: 1rem 5%;
+        padding: 1rem 3%;
     }
 
     .logo {
@@ -176,7 +177,7 @@
 /* DESKTOP (1024px+) */
 @media (min-width: 1024px) {
     .header {
-        padding: 1.5rem 5%;
+        padding: 1.5rem 3%;
     }
 
     .logo {
