@@ -79,6 +79,23 @@
     background: var(--accent-color);
 }
 
+/* Navegación links container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
 /* ============================================================
    RESPONSIVE - Mobile First Strategy
    ============================================================ */
@@ -94,12 +111,8 @@
 }
 
 .logo {
-    left: 5%;
+    left: auto;
     transform: none;
-}
-
-.logo:hover {
-    transform: scale(1.05);
 }
 
 /* DESKTOP (968px+) */
@@ -113,7 +126,7 @@
     }
 
     .logo {
-        left: 5%;
+        left: auto;
     }
 
     .logo:hover {
