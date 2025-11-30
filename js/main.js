@@ -9,6 +9,7 @@ import ScrollProgress from './modules/scroll-progress.js';
 import Animations from './modules/animations.js';
 import ScrollEffects from './modules/scroll-effects.js';
 import CustomCursor from './modules/custom-cursor.js';
+import TechCarousel from './modules/carousel.js';
 
 // Configuración global
 const App = {
