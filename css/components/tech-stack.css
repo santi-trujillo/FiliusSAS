@@ -9,60 +9,48 @@
 
 .tech-carousel-container {
     position: relative;
-    width: 100%;
-    max-width: 900px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin: 0 auto;
+    padding: 3rem 2rem;
     z-index: 10;
+    background: linear-gradient(to right,
+            rgba(10, 10, 10, 0.8),
+            rgba(10, 10, 10, 0.5) 50%,
+            rgba(10, 10, 10, 0.8));
+    backdrop-filter: blur(10px);
 }
 
 .tech-carousel {
     flex: 1;
     height: 100%;
     overflow: hidden;
-    border-radius: 12px;
-    background: linear-gradient(135deg,
-            rgba(15, 23, 42, 0.8) 0%,
-            rgba(30, 41, 59, 0.8) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 150, 255, 0.2);
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
     display: flex;
     align-items: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    box-shadow: none;
     position: relative;
+    max-width: 100%;
 }
 
-/* Fade en los bordes laterales */
+/* Fade en los bordes laterales - REMOVIDO */
 .tech-carousel::before,
 .tech-carousel::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 40px;
+    width: 0;
     z-index: 5;
     pointer-events: none;
-}
-
-.tech-carousel::before {
-    left: 0;
-    background: linear-gradient(to right,
-            rgba(15, 23, 42, 0.95) 0%,
-            transparent 100%);
-    border-radius: 12px 0 0 12px;
-}
-
-.tech-carousel::after {
-    right: 0;
-    background: linear-gradient(to left,
-            rgba(15, 23, 42, 0.95) 0%,
-            transparent 100%);
-    border-radius: 0 12px 12px 0;
+    display: none;
 }
 
 .tech-carousel-track {
@@ -250,14 +238,14 @@
 
 /* BASE: Móvil (320px - 479px) */
 .tech-carousel-container {
-    width: 95%;
-    max-width: calc(100% - 2rem);
-    height: auto;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 2rem 1.5rem;
     gap: 0.8rem;
 }
 
 .tech-carousel {
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 .tech-carousel-track {
@@ -297,9 +285,9 @@
 /* TABLET PEQUEÑO (480px - 599px) */
 @media (min-width: 480px) {
     .tech-carousel-container {
-        width: 90%;
-        max-width: calc(100% - 2rem);
-        height: auto;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 2.5rem 2rem;
         gap: 1rem;
     }
 
@@ -336,9 +324,9 @@
 /* TABLET MEDIO (600px - 767px) */
 @media (min-width: 600px) {
     .tech-carousel-container {
-        width: 88%;
-        max-width: 800px;
-        height: auto;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 2.5rem 2.5rem;
         gap: 1.2rem;
     }
 
@@ -380,14 +368,14 @@
 /* TABLET GRANDE (768px - 833px) */
 @media (min-width: 768px) {
     .tech-carousel-container {
-        width: 86%;
-        max-width: 850px;
-        height: auto;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 3rem 3rem;
         gap: 1.3rem;
     }
 
     .tech-carousel {
-        border-radius: 12px;
+        border-radius: 0;
     }
 
     .tech-carousel-track {
@@ -423,9 +411,9 @@
 /* IPAD PRO (834px - 1023px) */
 @media (min-width: 834px) {
     .tech-carousel-container {
-        width: 84%;
-        max-width: 880px;
-        height: auto;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 3rem 4rem;
         gap: 1.4rem;
     }
 
@@ -462,9 +450,9 @@
 /* DESKTOP (1024px+) */
 @media (min-width: 1024px) {
     .tech-carousel-container {
-        width: 82%;
-        max-width: 900px;
-        height: auto;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 3rem 5%;
         gap: 1.5rem;
     }
 
@@ -506,8 +494,9 @@
 /* DESKTOP GRANDE (1366px+) */
 @media (min-width: 1366px) {
     .tech-carousel-container {
-        width: 80%;
-        max-width: 950px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 3rem 6%;
         gap: 1.6rem;
     }
 

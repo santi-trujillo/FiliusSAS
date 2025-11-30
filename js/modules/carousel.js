@@ -12,22 +12,11 @@ class TechCarousel {
 
     if (!this.track || !this.items) return;
 
-    this.currentPosition = 0;
-    this.itemWidth = this.items[0]?.offsetWidth || 90;
-    this.totalItems = this.items.length;
-    this.visibleItems = this.calculateVisibleItems();
+    this.currentIndex = 0;
+    this.itemsToScroll = 1;
+    this.totalItems = this.items.length / 2; // Dividimos por 2 porque hay items duplicados
 
     this.init();
-  }
-
-  calculateVisibleItems() {
-    const container = this.track.parentElement;
-    const containerWidth = container?.offsetWidth || 900;
-    const gap = 16; // gap value from CSS
-
-    // Aproximado: cuántos items caben en el contenedor
-    const itemsPerView = Math.floor((containerWidth - 40) / (this.itemWidth + gap));
-    return Math.max(3, itemsPerView);
   }
 
   init() {
@@ -39,30 +28,44 @@ class TechCarousel {
       this.nextBtn.addEventListener('click', () => this.scrollNext());
     }
 
-    // Ajustar en resize
+    // Ajustar número de items a scrollear según pantalla
     window.addEventListener('resize', () => {
-      this.visibleItems = this.calculateVisibleItems();
+      this.updateItemsToScroll();
     });
+
+    this.updateItemsToScroll();
+  }
+
+  updateItemsToScroll() {
+    const width = window.innerWidth;
+    if (width < 480) {
+      this.itemsToScroll = 1;
+    } else if (width < 768) {
+      this.itemsToScroll = 2;
+    } else if (width < 1024) {
+      this.itemsToScroll = 2;
+    } else {
+      this.itemsToScroll = 3;
+    }
   }
 
   scrollNext() {
-    const maxScroll = (this.totalItems - this.visibleItems) * (this.itemWidth + 16);
+    this.currentIndex += this.itemsToScroll;
 
-    this.currentPosition += this.itemWidth + 16;
-
-    if (this.currentPosition >= maxScroll) {
-      this.currentPosition = 0;
+    // Loop infinito
+    if (this.currentIndex >= this.totalItems) {
+      this.currentIndex = 0;
     }
 
     this.updatePosition();
   }
 
   scrollPrev() {
-    this.currentPosition -= this.itemWidth + 16;
+    this.currentIndex -= this.itemsToScroll;
 
-    if (this.currentPosition < 0) {
-      const maxScroll = (this.totalItems - this.visibleItems) * (this.itemWidth + 16);
-      this.currentPosition = maxScroll;
+    // Loop infinito
+    if (this.currentIndex < 0) {
+      this.currentIndex = this.totalItems - this.itemsToScroll;
     }
 
     this.updatePosition();
@@ -70,7 +73,13 @@ class TechCarousel {
 
   updatePosition() {
     if (this.track) {
-      this.track.style.transform = `translateX(-${this.currentPosition}px)`;
+      const firstItem = this.items[0];
+      if (firstItem) {
+        const itemWidth = firstItem.offsetWidth;
+        const gap = 16; // valor del gap en CSS
+        const totalWidth = (itemWidth + gap) * this.currentIndex;
+        this.track.style.transform = `translateX(-${totalWidth}px)`;
+      }
     }
   }
 }
