@@ -4,24 +4,13 @@
  */
 
 /* ============================================================
-   SECCIÓN DEL CARRUSEL
-   ============================================================ */
-
-.tech-stack-section {
-    position: relative;
-    padding: 3rem 2rem;
-    background: linear-gradient(180deg,
-            rgba(10, 10, 10, 0) 0%,
-            rgba(10, 10, 10, 0.3) 100%);
-}
-
-/* ============================================================
    CONTENEDOR PRINCIPAL DEL CARRUSEL
    ============================================================ */
 
 .tech-carousel-container {
     position: relative;
     width: 100%;
+    max-width: 900px;
     height: auto;
     display: flex;
     align-items: center;

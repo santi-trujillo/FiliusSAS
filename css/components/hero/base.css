@@ -6,8 +6,9 @@
 .hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0 5%;
     position: relative;
     overflow: hidden;
@@ -39,6 +40,8 @@
     align-items: center;
     position: relative;
     z-index: 1;
+    flex: 1;
+    justify-content: center;
 }
 
 /* Contenido izquierdo */
@@ -578,4 +581,19 @@
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
     }
+}
+
+/* ============================================================
+   TECH STACK CONTAINER (dentro del hero)
+   ============================================================ */
+
+.tech-stack-container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
