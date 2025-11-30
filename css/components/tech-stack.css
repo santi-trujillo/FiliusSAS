@@ -4,17 +4,25 @@
  */
 
 /* ============================================================
+   SECCIÓN DEL CARRUSEL
+   ============================================================ */
+
+.tech-stack-section {
+    position: relative;
+    padding: 3rem 2rem;
+    background: linear-gradient(180deg,
+            rgba(10, 10, 10, 0) 0%,
+            rgba(10, 10, 10, 0.3) 100%);
+}
+
+/* ============================================================
    CONTENEDOR PRINCIPAL DEL CARRUSEL
    ============================================================ */
 
 .tech-carousel-container {
     position: relative;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    max-width: 900px;
-    height: 140px;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -254,7 +262,8 @@
 /* BASE: Móvil (320px - 479px) */
 .tech-carousel-container {
     width: 95%;
-    height: 110px;
+    max-width: calc(100% - 2rem);
+    height: auto;
     gap: 0.8rem;
 }
 
@@ -300,7 +309,8 @@
 @media (min-width: 480px) {
     .tech-carousel-container {
         width: 90%;
-        height: 120px;
+        max-width: calc(100% - 2rem);
+        height: auto;
         gap: 1rem;
     }
 
@@ -339,7 +349,7 @@
     .tech-carousel-container {
         width: 88%;
         max-width: 800px;
-        height: 130px;
+        height: auto;
         gap: 1.2rem;
     }
 
@@ -383,7 +393,7 @@
     .tech-carousel-container {
         width: 86%;
         max-width: 850px;
-        height: 135px;
+        height: auto;
         gap: 1.3rem;
     }
 
@@ -426,7 +436,7 @@
     .tech-carousel-container {
         width: 84%;
         max-width: 880px;
-        height: 140px;
+        height: auto;
         gap: 1.4rem;
     }
 
@@ -465,7 +475,7 @@
     .tech-carousel-container {
         width: 82%;
         max-width: 900px;
-        height: 140px;
+        height: auto;
         gap: 1.5rem;
     }
 
