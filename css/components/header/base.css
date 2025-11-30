@@ -67,16 +67,20 @@
     transform: scale(1.05);
 }
 
-/* Responsive - logo más pequeño en móviles */
+/* Header más compacto en tablets */
 @media (max-width: 768px) {
+    .header {
+        padding: 0.75rem 3%;
+    }
+
     .logo {
         left: 5%;
         transform: none;
-        height: 35px;
+        height: 32px;
     }
 
     .logo-image {
-        height: 80px;
+        height: 55px;
     }
 
     .logo:hover {
@@ -84,14 +88,19 @@
     }
 }
 
+/* Ajustes adicionales para móviles pequeños */
 @media (max-width: 480px) {
+    .header {
+        padding: 0.5rem 2%;
+    }
+
     .logo {
-        left: 4%;
-        height: 30px;
+        left: 3%;
+        height: 28px;
     }
 
     .logo-image {
-        height: 70px;
+        height: 45px;
     }
 }
 

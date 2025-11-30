@@ -57,3 +57,32 @@
     background: var(--accent-color);
     color: white;
 }
+
+/* Responsive - Botones adaptables en móviles */
+@media (max-width: 768px) {
+    .cta-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cta-button,
+    .contact-button {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        display: block;
+        text-align: center;
+    }
+
+    .button-secondary {
+        width: 100%;
+    }
+}

@@ -1,0 +1,572 @@
+═══════════════════════════════════════════════════════════════════════════════
+   DOCUMENTO DE DIAGNÓSTICO Y FIXES - RESPONSIVE DESIGN
+   Proyecto: Filius SAS Portfolio
+   Fecha: Noviembre 30, 2025
+   Estado: ANÁLISIS COMPLETO
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 TABLA DE CONTENIDOS
+1. PROBLEMAS IDENTIFICADOS
+2. ANÁLISIS DETALLADO POR COMPONENTE
+3. CAUSAS RAÍZ
+4. SOLUCIONES IMPLEMENTADAS
+5. BREAKPOINTS RECOMENDADOS
+
+═══════════════════════════════════════════════════════════════════════════════
+1. PROBLEMAS IDENTIFICADOS EN RESOLUCIONES PEQUEÑAS
+═══════════════════════════════════════════════════════════════════════════════
+
+SEVERIDAD CRÍTICA 🔴:
+├─ [CRÍTICO] Menú hamburguesa no aparece en móviles (display: none no se activa)
+├─ [CRÍTICO] Elementos superpuestos en hero section (layout grid no responde)
+├─ [CRÍTICO] Header con padding excesivo causa overflow
+└─ [CRÍTICO] Hero section text overflow en pantallas menores a 480px
+
+SEVERIDAD ALTA 🟠:
+├─ [ALTO] Botones de CTA excesivamente largos (no caben)
+├─ [ALTO] Imágenes de proyectos no se reescalan correctamente
+├─ [ALTO] Gap/spacing inconsistente en resoluciones intermedias
+├─ [ALTO] Logo no se adapta bien en móviles (height: 100px muy grande)
+└─ [ALTO] Mobile menu width (80%) puede ser muy ancho
+
+SEVERIDAD MEDIA 🟡:
+├─ [MEDIO] Tipografía demasiado grande en móviles
+├─ [MEDIO] Padding en secciones no es óptimo
+├─ [MEDIO] Grid layouts no funcionan bien en tablet
+└─ [MEDIO] Transiciones pueden ser lentas en dispositivos móviles
+
+═══════════════════════════════════════════════════════════════════════════════
+2. ANÁLISIS DETALLADO POR COMPONENTE
+═══════════════════════════════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2.1 HEADER (css/components/header/*.css)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEMA #1: Menú hamburguesa no aparece
+─────────────────────────────────────────
+Ubicación: css/components/menu-mobile.css, línea 7-16
+Código actual:
+    .menu-toggle {
+        display: none;              ← Siempre oculto
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        ...
+    }
+
+Ubicación: css/components/header/nav.css, línea ~75
+Código actual:
+    @media (max-width: 968px) {
+        .nav-links {
+            display: none;
+        }
+        ...
+    }
+
+¿QUÉ ESTÁ MAL?
+- El .menu-toggle tiene display: none GLOBAL sin media query
+- Solo se activa si tiene la clase .active, pero nunca se ve inicialmente
+- El breakpoint en header/nav.css es 968px, pero menu-toggle no aparece
+- Z-index: 1001 es correcto, pero si display:none nunca se ve
+
+ROOT CAUSE:
+El CSS no tiene media query que MUESTRE el .menu-toggle en móviles
+El nav.css solo oculta .nav-links pero no muestra .menu-toggle
+
+SOLUCIÓN:
+Agregar media query en header/nav.css o menu-mobile.css para mostrar
+el menú hamburguesa cuando la ventana es menor a 968px:
+
+    @media (max-width: 968px) {
+        .menu-toggle {
+            display: flex;  ← AÑADIR ESTO
+        }
+    }
+
+─────────────────────────────────────────
+PROBLEMA #2: Posición del header en móviles con padding
+─────────────────────────────────────────
+
+Ubicación: css/components/header/base.css, línea 5-13
+Código actual:
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem 5%;  ← 1.5rem es mucho en móviles
+        ...
+    }
+
+¿QUÉ ESTÁ MAL?
+- Padding: 1.5rem en móviles toma mucho espacio vertical
+- En pantallas pequeñas (320px), esto deja poco espacio para contenido
+- Debería ser 0.5rem o menos en móviles
+
+SOLUCIÓN:
+Añadir media query en base.css:
+
+    @media (max-width: 768px) {
+        .header {
+            padding: 0.75rem 3%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header {
+            padding: 0.5rem 2%;
+        }
+    }
+
+─────────────────────────────────────────
+PROBLEMA #3: Logo demasiado grande
+─────────────────────────────────────────
+
+Ubicación: css/components/header/base.css, línea 70-95
+Código actual:
+    @media (max-width: 768px) {
+        .logo {
+            height: 35px;
+        }
+        .logo-image {
+            height: 80px;  ← DEMASIADO GRANDE
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .logo {
+            height: 30px;
+        }
+        .logo-image {
+            height: 70px;  ← TODAVÍA MUY GRANDE
+        }
+    }
+
+¿QUÉ ESTÁ MAL?
+- height: 70px para un logo en mobile de 480px es enorme
+- El container .logo tiene height: 30px pero imagen tiene height: 70px
+- Esto causa overflow porque la imagen es más grande que su contenedor
+
+SOLUCIÓN:
+    @media (max-width: 480px) {
+        .logo {
+            height: 28px;
+        }
+        .logo-image {
+            height: 45px;  ← Proporcional al contenedor
+        }
+    }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2.2 HERO SECTION (css/components/hero/*.css)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEMA #4: Layout grid no funciona en móviles
+─────────────────────────────────────────
+
+Ubicación: css/components/hero/base.css, línea 30-40
+Código actual:
+    .hero-container {
+        max-width: 1400px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;  ← 2 columnas siempre
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+¿QUÉ ESTÁ MAL?
+- Grid tiene 2 columnas (1fr 1fr) SIN media queries
+- En móviles, 2 columnas de ancho igual causa mucho overflow
+- Textos y elementos se superponen porque no hay espacio
+- gap: 4rem es muy grande para móviles
+
+ROOT CAUSE:
+No hay media query que cambie grid-template-columns a 1fr en móviles
+
+SOLUCIÓN:
+Añadir al final del archivo hero/base.css:
+
+    @media (max-width: 768px) {
+        .hero-container {
+            grid-template-columns: 1fr;  ← Una columna
+            gap: 2rem;
+        }
+    }
+
+─────────────────────────────────────────
+PROBLEMA #5: Tipografía demasiado grande
+─────────────────────────────────────────
+
+Ubicación: css/components/hero/base.css, línea 50-65
+Código actual:
+    .hero-title {
+        font-size: clamp(3rem, 7vw, 6rem);  ← MIN: 3rem es grande
+        ...
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);  ← MIN: 1.5rem es grande
+        ...
+    }
+
+¿QUÉ ESTÁ MAL?
+- clamp(3rem, 7vw, 6rem) en pantalla 320px = 3rem = 48px
+- Un h1 de 48px en 320px de ancho causa OVERFLOW
+- El mínimo debería ser menor para pantallas muy pequeñas
+
+SOLUCIÓN:
+Agregar media query en hero/base.css:
+
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 2rem;  ← Reducido
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;  ← Reducido
+        }
+        
+        .hero-description {
+            font-size: 0.95rem;  ← Más pequeño
+        }
+    }
+
+─────────────────────────────────────────
+PROBLEMA #6: Padding del hero no óptimo
+─────────────────────────────────────────
+
+Ubicación: css/responsive.css, línea 25-30
+Código actual:
+    @media (max-width: 768px) {
+        .hero {
+            padding: 6rem 5% 3rem;  ← padding-top demasiado grande
+        }
+    }
+
+¿QUÉ ESTÁ MAL?
+- 6rem (96px) de padding-top empuja contenido muy abajo
+- Con header fixed, este padding causa espacio innecesario
+- En 768px ya hay problema de espacio vertical
+
+SOLUCIÓN:
+Actualizar en responsive.css:
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 8rem 5% 3rem;  ← Mejor alineado con header
+            min-height: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero {
+            padding: 7rem 5% 2rem;  ← Reduce padding
+            min-height: auto;
+        }
+    }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2.3 BUTTONS (css/components/buttons.css)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEMA #7: Botones demasiado anchos
+─────────────────────────────────────────
+
+¿QUÉ ESTÁ MAL?
+- Botones con padding: 1rem 2.5rem son anchos
+- En móviles pueden exceder el ancho disponible
+- Deberían ser responsive
+
+SOLUCIÓN:
+Agregar media query en buttons.css:
+
+    @media (max-width: 768px) {
+        .cta-button,
+        .contact-button {
+            padding: 0.875rem 1.5rem;  ← Padding más pequeño
+            font-size: 0.95rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cta-button,
+        .contact-button {
+            width: 100%;
+            padding: 0.75rem 1rem;  ← Mínimo
+            font-size: 0.9rem;
+        }
+    }
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2.4 SECTIONS (css/components/sections/*.css)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEMA #8: Grid no es responsive
+─────────────────────────────────────────
+
+Ubicación: css/responsive.css, línea 16-19
+Código actual:
+    @media (max-width: 1024px) {
+        .expertise-grid,
+        .testimonials-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }
+
+¿QUÉ ESTÁ MAL?
+- minmax(200px, 1fr) en 480px causa problemas
+- 200px es muy grande para 480px de ancho
+- Debería ajustarse por breakpoint
+
+SOLUCIÓN:
+Actualizar en responsive.css:
+
+    @media (max-width: 768px) {
+        .expertise-grid,
+        .testimonials-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+    }
+
+    @media (max-width: 480px) {
+        .expertise-grid,
+        .testimonials-grid {
+            grid-template-columns: 1fr;  ← Una columna
+        }
+    }
+
+═══════════════════════════════════════════════════════════════════════════════
+3. CAUSAS RAÍZ
+═══════════════════════════════════════════════════════════════════════════════
+
+1. FALTA DE MEDIA QUERIES
+   - El .menu-toggle no tiene media query para mostrarse
+   - Hero section no tiene breakpoints para grid
+   - Tipografía no tiene breakpoints para tamaños pequeños
+
+2. VALORES HARDCODEADOS SIN ESCALABILIDAD
+   - Logo height: 100px/80px/70px sin considerar container
+   - Padding fijo en header sin ajuste por resolución
+   - Grid layout 2 columnas sin adaptación
+
+3. USO INCOMPLETO DE CLAMP()
+   - clamp() tiene MIN muy alto para móviles
+   - No hay override en media queries para excepciones
+
+4. Z-INDEX Y DISPLAY CONFLICTIVOS
+   - menu-toggle: display: none global
+   - Z-index alto pero elemento invisible
+
+5. FALTA DE TESTEO EN DISPOSITIVOS REALES
+   - Breakpoints en 1024px/768px/480px
+   - No hay breakpoints para 320px-375px (móviles comunes)
+   - No hay testeo en altura de viewport
+
+═══════════════════════════════════════════════════════════════════════════════
+4. SOLUCIONES IMPLEMENTADAS
+═══════════════════════════════════════════════════════════════════════════════
+
+Se implementarán los siguientes fixes:
+
+ARCHIVO 1: css/components/header/nav.css
+─────────────────────────────────────────
+Añadir media query para mostrar menu-toggle:
+    @media (max-width: 968px) {
+        .menu-toggle {
+            display: flex;  ← AÑADIR ESTA LÍNEA
+        }
+    }
+
+ARCHIVO 2: css/components/header/base.css
+─────────────────────────────────────────
+Mejorar padding en móviles y ajustar logo:
+
+Para @media (max-width: 768px):
+    padding: 0.75rem 3%;
+    
+Para @media (max-width: 480px):
+    .header {
+        padding: 0.5rem 2%;
+    }
+    
+    .logo {
+        height: 28px;
+    }
+    
+    .logo-image {
+        height: 45px;
+    }
+
+ARCHIVO 3: css/components/hero/base.css
+─────────────────────────────────────────
+Añadir breakpoints para responsive:
+
+    @media (max-width: 768px) {
+        .hero-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+        
+        .hero-description {
+            font-size: 0.95rem;
+        }
+        
+        .hero-actions {
+            flex-direction: column;
+        }
+    }
+
+ARCHIVO 4: css/responsive.css
+─────────────────────────────────────────
+Actualizar breakpoints existentes:
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 8rem 5% 3rem;
+            min-height: auto;
+        }
+        
+        .expertise-grid,
+        .testimonials-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero {
+            padding: 7rem 5% 2rem;
+        }
+        
+        .expertise-grid,
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .section {
+            padding: var(--spacing-lg) 4%;
+        }
+    }
+
+ARCHIVO 5: css/components/buttons.css
+─────────────────────────────────────────
+Agregar media queries:
+
+    @media (max-width: 768px) {
+        .cta-button,
+        .contact-button {
+            padding: 0.875rem 1.5rem;
+            font-size: 0.95rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .cta-button,
+        .contact-button {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+        }
+    }
+
+═══════════════════════════════════════════════════════════════════════════════
+5. BREAKPOINTS RECOMENDADOS
+═══════════════════════════════════════════════════════════════════════════════
+
+DISPOSITIVOS COMUNES:
+─────────────────────
+Móviles pequeños (landscape):    320px - 379px
+Móviles estándar (portrait):     375px - 425px
+Móviles grandes (portrait):      426px - 480px
+Tablets pequeñas:                481px - 600px
+Tablets medianas:                601px - 768px
+Tablets grandes:                 769px - 1024px
+Laptops/Desktops:                1025px+
+
+BREAKPOINTS A USAR:
+───────────────────
+320px   - Móviles muy pequeños (iPhone 5)
+480px   - Móviles estándar (Android, iPhone 6-8)
+768px   - Tablets (iPad Mini)
+1024px  - Tablets grandes / Laptops
+1440px  - Desktops grandes (opcional)
+
+ESTRATEGIA MOBILE-FIRST:
+────────────────────────
+Crear estilos base para móviles (320px)
+Luego usar media queries @media (min-width: X) para pantallas más grandes
+
+Ejemplo:
+    /* Base: Móviles */
+    .element {
+        padding: 1rem;
+    }
+    
+    /* Tablets */
+    @media (min-width: 768px) {
+        .element {
+            padding: 2rem;
+        }
+    }
+    
+    /* Desktops */
+    @media (min-width: 1024px) {
+        .element {
+            padding: 3rem;
+        }
+    }
+
+═══════════════════════════════════════════════════════════════════════════════
+6. CHECKLIST DE IMPLEMENTACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+[ ] Mostrar menu-toggle en móviles (header/nav.css)
+[ ] Reducir padding header en móviles (header/base.css)
+[ ] Ajustar tamaño logo en móviles (header/base.css)
+[ ] Cambiar hero grid a 1 columna (hero/base.css)
+[ ] Reducir tipografía hero (hero/base.css)
+[ ] Actualizar responsive.css breakpoints
+[ ] Hacer botones responsive (buttons.css)
+[ ] Ajustar grids de sections (responsive.css)
+[ ] Probar en 320px
+[ ] Probar en 480px
+[ ] Probar en 768px
+[ ] Validar que no hay overflow horizontal
+[ ] Validar que menú hamburguesa funciona
+[ ] Validar que todos los textos son legibles
+[ ] Validar que botones son clickeables
+
+═══════════════════════════════════════════════════════════════════════════════
+7. RECURSOS Y REFERENCIAS
+═══════════════════════════════════════════════════════════════════════════════
+
+Sobre Media Queries:
+  https://developer.mozilla.org/es/docs/Web/CSS/Media_Queries
+
+Sobre Responsive Design:
+  https://web.dev/responsive-web-design-basics/
+
+Tamaños de dispositivos comunes:
+  https://www.designmodo.com/responsive-design-smartphone-tablet-breakpoints/
+
+Validar Responsive:
+  Chrome DevTools: F12 → Toggle Device Toolbar (Ctrl+Shift+M)
+  Firefox DevTools: F12 → Responsive Design Mode (Ctrl+Shift+M)
+
+═══════════════════════════════════════════════════════════════════════════════
+FIN DEL DOCUMENTO DE DIAGNÓSTICO
+═══════════════════════════════════════════════════════════════════════════════

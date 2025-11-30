@@ -26,7 +26,8 @@
     }
 
     .hero {
-        padding: 6rem 5% 3rem;
+        padding: 8rem 5% 3rem;
+        min-height: auto;
     }
 
     .section {
@@ -48,7 +49,7 @@
 
     .expertise-grid,
     .testimonials-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
 
@@ -59,7 +60,7 @@
     }
 
     .header {
-        padding: var(--spacing-sm) 5%;
+        padding: 0.5rem 2%;
     }
 
     .nav-links {
@@ -68,7 +69,12 @@
     }
 
     .hero {
-        padding: 5rem 5% 2rem;
+        padding: 7rem 5% 2rem;
+        min-height: auto;
+    }
+
+    .section {
+        padding: var(--spacing-lg) 4%;
     }
 
     .section-title {
@@ -87,5 +93,16 @@
     .cta-button {
         width: 100%;
         text-align: center;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .expertise-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 250px;
     }
 }

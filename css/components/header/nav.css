@@ -81,6 +81,11 @@
 
 /* Responsive */
 @media (max-width: 968px) {
+    .menu-toggle {
+        display: flex;
+        /* Mostrar hamburguesa en móviles */
+    }
+
     .nav-links {
         display: none;
     }
