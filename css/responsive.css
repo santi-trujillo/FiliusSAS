@@ -1,6 +1,6 @@
 /**
- * Responsive CSS - Mobile First Strategy
- * Base: 320px (Móvil) → Mejoras progresivas hasta 1920px (Desktop)
+ * Responsive CSS - Mobile First Strategy with iPad Optimization
+ * Base: 320px (Móvil) → 600px (Tablet pequeño) → 834px (iPad Pro) → 1024px (Desktop)
  */
 
 /* ============================================================
@@ -60,7 +60,7 @@
 }
 
 /* ============================================================
-   TABLET PEQUEÑA (480px - 767px)
+   TABLET PEQUEÑO (480px - 599px)
    Mejoras para tablets pequeñas y teléfonos grandes
    ============================================================ */
 
@@ -89,31 +89,26 @@
 }
 
 /* ============================================================
-   TABLET (768px - 1023px)
-   Optimizaciones para tablets en formato portrait
+   TABLET MEDIO (600px - 767px)
+   iPad Mini/Air portrait y tablets medianos
    ============================================================ */
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
     :root {
         --font-size-base: 15px;
     }
 
+    .header {
+        padding: 0.75rem 3%;
+    }
+
     .hero {
-        padding: 8rem 5% 3rem;
+        padding: 9rem 5% 3rem;
         min-height: auto;
     }
 
     .section {
         padding: var(--spacing-xl) 5%;
-    }
-
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .availability {
-        padding: var(--spacing-lg);
     }
 
     .project-image {
@@ -122,13 +117,106 @@
 
     .expertise-grid,
     .testimonials-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   TABLET GRANDE (768px - 833px)
+   iPad Mini/Air completo y tablets grandes
+   ============================================================ */
+
+@media (min-width: 768px) {
+    :root {
+        --font-size-base: 15px;
+    }
+
+    .header {
+        padding: 1rem 5%;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 9rem 5% 3rem;
+        min-height: auto;
+    }
+
+    .section {
+        padding: var(--spacing-xl) 5%;
+    }
+
+    .experience-header {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .availability {
+        padding: var(--spacing-lg);
+    }
+
+    .project-image {
+        height: 320px;
+    }
+
+    .expertise-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   IPAD PRO 11 (834px - 1023px)
+   iPad Pro 11 portrait y pantallas intermedias
+   ============================================================ */
+
+@media (min-width: 834px) {
+    :root {
+        --font-size-base: 16px;
+    }
+
+    .header {
+        padding: 1.2rem 5%;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 10rem 5% 4rem;
+        min-height: auto;
+    }
+
+    .section {
+        padding: var(--spacing-2xl) 5%;
+    }
+
+    .section-title {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .experience-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .project-image {
+        height: 340px;
+    }
+
+    .expertise-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* ============================================================
    DESKTOP (1024px+)
-   Optimizaciones para pantallas grandes
+   iPad Pro 12.9 y pantallas desktop
    ============================================================ */
 
 @media (min-width: 1024px) {
@@ -136,16 +224,34 @@
         --font-size-base: 16px;
     }
 
+    .header {
+        padding: 1.5rem 5%;
+    }
+
+    .nav-links {
+        gap: 2rem;
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 0 5%;
+        min-height: 100vh;
+    }
+
     .section {
         padding: var(--spacing-2xl) 5%;
+    }
+
+    .section-title {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .project-image {
+        height: 350px;
     }
 
     .expertise-grid,
     .testimonials-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .project-image {
-        height: 350px;
     }
 }

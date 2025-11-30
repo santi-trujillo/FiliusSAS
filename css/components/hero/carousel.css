@@ -91,10 +91,10 @@
 }
 
 /* ============================================================
-   RESPONSIVE - Mobile First Strategy
+   RESPONSIVE - Mobile First Strategy with iPad Optimization
    ============================================================ */
 
-/* BASE: Móvil (320px - 767px) */
+/* BASE: Móvil (320px - 479px) */
 .tech-carousel {
     height: 90px;
 }
@@ -118,19 +118,69 @@
     font-weight: 700;
 }
 
-/* TABLET (768px - 1023px) */
-@media (min-width: 768px) {
+/* TABLET PEQUEÑO (480px - 599px) */
+@media (min-width: 480px) {
     .tech-carousel {
-        height: 75px;
+        height: 85px;
     }
 
     .tech-carousel-track {
-        gap: 2rem;
-        padding: 0 1.5rem;
+        gap: 2.5rem;
+        padding: 0 2rem;
     }
 
     .tech-item {
-        min-width: 65px;
+        min-width: 75px;
+    }
+
+    .tech-item img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .tech-item span {
+        font-size: 0.8rem;
+    }
+}
+
+/* TABLET MEDIO (600px - 767px) */
+@media (min-width: 600px) {
+    .tech-carousel {
+        height: 80px;
+    }
+
+    .tech-carousel-track {
+        gap: 2.25rem;
+        padding: 0 1.75rem;
+    }
+
+    .tech-item {
+        min-width: 70px;
+    }
+
+    .tech-item img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tech-item span {
+        font-size: 0.78rem;
+    }
+}
+
+/* TABLET GRANDE / IPAD (768px - 833px) */
+@media (min-width: 768px) {
+    .tech-carousel {
+        height: 78px;
+    }
+
+    .tech-carousel-track {
+        gap: 2.25rem;
+        padding: 0 1.75rem;
+    }
+
+    .tech-item {
+        min-width: 68px;
     }
 
     .tech-item img {
@@ -140,6 +190,31 @@
 
     .tech-item span {
         font-size: 0.75rem;
+    }
+}
+
+/* IPAD PRO 11 (834px - 1023px) */
+@media (min-width: 834px) {
+    .tech-carousel {
+        height: 82px;
+    }
+
+    .tech-carousel-track {
+        gap: 2.5rem;
+        padding: 0 2rem;
+    }
+
+    .tech-item {
+        min-width: 72px;
+    }
+
+    .tech-item img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .tech-item span {
+        font-size: 0.8rem;
     }
 }
 

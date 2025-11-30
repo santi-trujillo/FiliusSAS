@@ -20,18 +20,59 @@
     width: 100%;
 }
 
-/* TABLET (768px - 1023px) */
+/* TABLET PEQUEÑO (480px - 599px) */
+@media (min-width: 480px) {
+
+    .cta-button,
+    .contact-button {
+        padding: 0.8rem 1.1rem;
+        font-size: 0.92rem;
+    }
+}
+
+/* TABLET MEDIO (600px - 767px) */
+@media (min-width: 600px) {
+
+    .cta-button,
+    .contact-button {
+        padding: 0.85rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* TABLET GRANDE / IPAD (768px - 833px) */
 @media (min-width: 768px) {
     .cta-button {
         display: inline-block;
         width: auto;
-        padding: 0.75rem 1.25rem;
+        padding: 0.85rem 1.25rem;
         font-size: 0.95rem;
     }
 
     .contact-button {
-        padding: 0.75rem 1.25rem;
+        width: auto;
+        padding: 0.85rem 1.25rem;
         font-size: 0.95rem;
+    }
+
+    .button-secondary {
+        width: auto;
+    }
+}
+
+/* IPAD PRO 11 (834px - 1023px) */
+@media (min-width: 834px) {
+    .cta-button {
+        display: inline-block;
+        width: auto;
+        padding: 0.9rem 1.4rem;
+        font-size: 0.98rem;
+    }
+
+    .contact-button {
+        width: auto;
+        padding: 0.9rem 1.4rem;
+        font-size: 0.98rem;
     }
 
     .button-secondary {
@@ -49,6 +90,7 @@
     }
 
     .contact-button {
+        width: auto;
         padding: var(--spacing-sm) var(--spacing-lg);
         font-size: 1rem;
     }

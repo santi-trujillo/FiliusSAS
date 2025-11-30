@@ -68,10 +68,10 @@
 }
 
 /* ============================================================
-   RESPONSIVE - Mobile First Strategy
+   RESPONSIVE - Mobile First Strategy with iPad Optimization
    ============================================================ */
 
-/* BASE: Móvil (320px - 767px) */
+/* BASE: Móvil (320px - 479px) */
 .header {
     padding: 0.5rem 2%;
 }
@@ -89,15 +89,30 @@
     gap: 0;
 }
 
-/* TABLET (768px - 1023px) */
-@media (min-width: 768px) {
+/* TABLET PEQUEÑO (480px - 599px) */
+@media (min-width: 480px) {
+    .header {
+        padding: 0.6rem 2.5%;
+    }
+
+    .logo {
+        left: 4%;
+        height: 30px;
+    }
+
+    .logo-image {
+        height: 50px;
+    }
+}
+
+/* TABLET MEDIO (600px - 767px) */
+@media (min-width: 600px) {
     .header {
         padding: 0.75rem 3%;
     }
 
     .logo {
-        left: 5%;
-        transform: none;
+        left: 4%;
         height: 32px;
     }
 
@@ -105,8 +120,52 @@
         height: 55px;
     }
 
+    .nav-links {
+        gap: 0.5rem;
+    }
+}
+
+/* TABLET GRANDE / IPAD (768px - 833px) */
+@media (min-width: 768px) {
+    .header {
+        padding: 0.9rem 4%;
+    }
+
+    .logo {
+        left: 4%;
+        height: 35px;
+    }
+
+    .logo-image {
+        height: 65px;
+    }
+
     .logo:hover {
         transform: scale(1.05);
+    }
+
+    .nav-links {
+        gap: 0.75rem;
+    }
+}
+
+/* IPAD PRO 11 (834px - 1023px) */
+@media (min-width: 834px) {
+    .header {
+        padding: 1rem 5%;
+    }
+
+    .logo {
+        left: 5%;
+        height: 38px;
+    }
+
+    .logo-image {
+        height: 75px;
+    }
+
+    .nav-links {
+        gap: 1rem;
     }
 }
 
@@ -123,6 +182,10 @@
 
     .logo-image {
         height: 100px;
+    }
+
+    .nav-links {
+        gap: 2rem;
     }
 }
 
