@@ -50,7 +50,7 @@ const setupEventListeners = () => {
 
   // Hover sobre elementos interactivos específicos
   const interactiveElements = document.querySelectorAll(
-    'a, button, .clickable, input, textarea, .btn, .nav-link, .hero-cta-primary, .hero-cta-secondary, .cta-btn',
+    'a, button, .clickable, input, textarea, .btn, .nav-link, .hero-cta-primary, .hero-cta-secondary, .cta-btn'
   );
   interactiveElements.forEach((el) => {
     el.addEventListener('mouseenter', handleMouseEnter);
@@ -65,21 +65,21 @@ const setupEventListeners = () => {
   document.addEventListener(
     'mouseenter',
     (e) => {
-      if (e.target.matches('p, h1, h2, h3, h4, h5, h6, li')) {
+      if (e.target.nodeType === 1 && e.target.matches('p, h1, h2, h3, h4, h5, h6, li')) {
         handleTextEnter();
       }
     },
-    true,
+    true
   );
 
   document.addEventListener(
     'mouseleave',
     (e) => {
-      if (e.target.matches('p, h1, h2, h3, h4, h5, h6, li')) {
+      if (e.target.nodeType === 1 && e.target.matches('p, h1, h2, h3, h4, h5, h6, li')) {
         handleTextLeave();
       }
     },
-    true,
+    true
   );
 };
 
