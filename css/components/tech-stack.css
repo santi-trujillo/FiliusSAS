@@ -19,10 +19,11 @@
     padding: 2.1rem 1.4rem;
     z-index: 10;
     background: linear-gradient(to right,
-            rgba(10, 10, 10, 0.8),
-            rgba(10, 10, 10, 0.5) 50%,
-            rgba(10, 10, 10, 0.8));
+            rgba(10, 10, 10, 0.4),
+            rgba(10, 10, 10, 0.25) 50%,
+            rgba(10, 10, 10, 0.4));
     backdrop-filter: blur(10px);
+    border-radius: 24px;
 }
 
 .tech-carousel {
