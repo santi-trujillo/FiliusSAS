@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 5%;
+    padding: 0;
     position: relative;
     overflow: hidden;
     background: var(--bg-primary);
@@ -42,6 +42,7 @@
     z-index: 1;
     flex: 1;
     justify-content: center;
+    padding: 0 5%;
 }
 
 /* Contenido izquierdo */
@@ -588,8 +589,8 @@
    ============================================================ */
 
 .tech-stack-container {
-    width: 100%;
-    max-width: 1400px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     padding: 2rem 0;
     display: flex;
     align-items: center;
