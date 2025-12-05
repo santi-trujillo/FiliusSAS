@@ -9,6 +9,7 @@
 ## 🎯 OBJETIVO
 
 Reorganizar el proyecto para seguir **EXACTAMENTE** la arquitectura documentada:
+
 - ✅ CUBE CSS
 - ✅ Vite 5.x
 - ✅ Estructura `src/`
@@ -20,11 +21,13 @@ Reorganizar el proyecto para seguir **EXACTAMENTE** la arquitectura documentada:
 ## ✅ COMPLETADO (Fases 0-7, 9)
 
 ### ✅ Fase 0: Backup y Preparación
+
 - [x] Creada rama `refactor/cube-css-vite`
 - [x] Commit de documentos de análisis
 - [x] Estado inicial guardado
 
 ### ✅ Fase 1: Estructura de Carpetas
+
 ```
 src/
 ├── assets/
@@ -52,11 +55,13 @@ public/ (archivos estáticos)
 ### ✅ Fase 2: CSS - CUBE CSS
 
 #### BASE LAYER ✅
+
 - [x] `reset.css` - Reset moderno
 - [x] `variables.css` - Design tokens completos
 - [x] `typography.css` - Tipografía base
 
 #### COMPOSITION LAYER ✅
+
 - [x] `container.css` - Contenedores responsive
 - [x] `grid.css` - Sistema de grillas
 - [x] `stack.css` - Espaciado vertical
@@ -64,6 +69,7 @@ public/ (archivos estáticos)
 - [x] `flex.css` - Flexbox utilities
 
 #### UTILITIES LAYER ✅
+
 - [x] `spacing.css` - Margin/padding utilities
 - [x] `typography.css` - Text utilities
 - [x] `colors.css` - Color utilities
@@ -71,31 +77,38 @@ public/ (archivos estáticos)
 - [x] `animations.css` - Animation utilities
 
 #### BLOCKS LAYER ⚠️ (temporal)
+
 - [x] Copiados componentes antiguos a `blocks/`
 - [ ] **PENDIENTE:** Refactorizar cada bloque a BEM + CUBE CSS
 
 ### ✅ Fase 3: HTML
+
 - [x] `index.html` movido a `src/`
 - [x] Actualizado `<link>` CSS a `/styles/main.css`
 - [x] Actualizados paths de imágenes a `/assets/`
 - [x] Actualizado script a `/scripts/main.js`
 
 ### ✅ Fase 4: Vite
+
 - [x] `vite.config.js` creado con aliases
 - [x] `package.json` actualizado (v2.0.0)
 - [x] Vite instalado y funcionando
 - [x] Dev server en `http://localhost:3000/` ✅
 
 ### ✅ Fase 5: JavaScript
+
 - [x] Módulos copiados a `src/scripts/components/`
 - [x] Utils copiados a `src/scripts/utils/`
 - [x] Imports actualizados en `main.js`
 
 ### ✅ Fase 6: Tests
+
 - [x] Tests movidos a `tests/unit/`
 - [x] `vitest.config.js` actualizado con aliases
 - [x] `tests/setup.js` creado con mocks globales
+
 ### Fase 8: Validación (50%)
+
 - [x] Vite dev server funcionando
 - [x] Build de producción exitoso
 - [ ] **PENDIENTE:** Comparación visual pixel-perfect
@@ -104,7 +117,9 @@ public/ (archivos estáticos)
 - [ ] **PENDIENTE:** Validación responsive en 8 breakpoints
 
 ### Refactorización de BLOCKS a CUBE CSS puro (30%)
+
 **Pendiente convertir componentes legacy:**
+
 - [ ] Button → `.btn`, `.btn--primary`, `.btn--lg`
 - [ ] Card → `.card`, `.card--elevated`
 - [ ] Header → refactorizar clases BEM
@@ -117,21 +132,25 @@ public/ (archivos estáticos)
 ## 🚫 ELIMINADO
 
 ### ~~Fase 7: CI/CD~~ ✅ COMPLETADA
+
 ### ~~Fase 9: Documentación~~ ✅ COMPLETADA
 
 ## 🚫 PENDIENTE (Fases 7-9)
 
 ### Fase 7: CI/CD
+
 - [ ] `.github/workflows/ci.yml`
 - [ ] `netlify.toml`
 - [ ] Scripts de deploy
 
 ### Fase 8: Validación
+
 - [ ] Comparación visual con original
 - [ ] Tests funcionales
 - [ ] Lighthouse audit
 
 ### Fase 9: Documentación
+
 - [ ] `README.md` actualizado
 - [ ] `ARCHITECTURE.md` creado
 - [ ] Guías de desarrollo
@@ -203,6 +222,7 @@ npm run format         # Prettier
 ## 💡 NOTAS TÉCNICAS
 
 ### Lo que funciona ✅
+
 - Vite dev server
 - Hot Module Replacement (HMR)
 - CSS imports con `@import`
@@ -210,11 +230,13 @@ npm run format         # Prettier
 - Aliases de rutas (`@styles`, `@scripts`, etc.)
 
 ### Advertencias ⚠️
+
 - Los BLOCKS aún son copia directa del CSS anterior
 - No se han aplicado clases CUBE CSS al HTML todavía
 - Archivos `_temp.css` deben eliminarse eventualmente
 
 ### Cambios breaking 🔴
+
 - Ya no funciona `npm start` (era five-server)
 - Usar `npm run dev` (Vite)
 - Estructura de rutas completamente diferente
