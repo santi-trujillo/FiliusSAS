@@ -30,13 +30,13 @@ const throttle = (func, limit = 16) => {
  */
 const createCursorElements = () => {
   // Crear punto del cursor
-  cursorDot = document.createElement('div');
-  cursorDot.className = 'cursor-dot';
+  cursorDot = document.createElement("div");
+  cursorDot.className = "cursor-dot";
   document.body.appendChild(cursorDot);
 
   // Crear contorno del cursor
-  cursorOutline = document.createElement('div');
-  cursorOutline.className = 'cursor-outline';
+  cursorOutline = document.createElement("div");
+  cursorOutline.className = "cursor-outline";
   document.body.appendChild(cursorOutline);
 };
 
@@ -46,26 +46,29 @@ const createCursorElements = () => {
 const setupEventListeners = () => {
   // Seguimiento del mouse con throttle para performance
   const throttledMouseMove = throttle(handleMouseMove, 16);
-  document.addEventListener('mousemove', throttledMouseMove);
+  document.addEventListener("mousemove", throttledMouseMove);
 
   // Hover sobre elementos interactivos específicos
   const interactiveElements = document.querySelectorAll(
-    'a, button, .clickable, input, textarea, .btn, .nav-link, .hero-cta-primary, .hero-cta-secondary, .cta-btn'
+    "a, button, .clickable, input, textarea, .btn, .nav-link"
   );
   interactiveElements.forEach((el) => {
-    el.addEventListener('mouseenter', handleMouseEnter);
-    el.addEventListener('mouseleave', handleMouseLeave);
+    el.addEventListener("mouseenter", handleMouseEnter);
+    el.addEventListener("mouseleave", handleMouseLeave);
   });
 
   // Click effects
-  document.addEventListener('mousedown', handleMouseDown);
-  document.addEventListener('mouseup', handleMouseUp);
+  document.addEventListener("mousedown", handleMouseDown);
+  document.addEventListener("mouseup", handleMouseUp);
 
   // Hover sobre texto usando event delegation
   document.addEventListener(
-    'mouseenter',
+    "mouseenter",
     (e) => {
-      if (e.target.nodeType === 1 && e.target.matches('p, h1, h2, h3, h4, h5, h6, li')) {
+      if (
+        e.target.nodeType === 1 &&
+        e.target.matches("p, h1, h2, h3, h4, h5, h6, li")
+      ) {
         handleTextEnter();
       }
     },
@@ -73,9 +76,12 @@ const setupEventListeners = () => {
   );
 
   document.addEventListener(
-    'mouseleave',
+    "mouseleave",
     (e) => {
-      if (e.target.nodeType === 1 && e.target.matches('p, h1, h2, h3, h4, h5, h6, li')) {
+      if (
+        e.target.nodeType === 1 &&
+        e.target.matches("p, h1, h2, h3, h4, h5, h6, li")
+      ) {
         handleTextLeave();
       }
     },
@@ -120,16 +126,16 @@ const animateCursor = () => {
  */
 const handleMouseEnter = () => {
   if (cursorDot && cursorOutline) {
-    cursorDot.classList.add('hover');
-    cursorOutline.classList.add('hover');
+    cursorDot.classList.add("hover");
+    cursorOutline.classList.add("hover");
     isHovering = true;
   }
 };
 
 const handleMouseLeave = () => {
   if (cursorDot && cursorOutline) {
-    cursorDot.classList.remove('hover');
-    cursorOutline.classList.remove('hover');
+    cursorDot.classList.remove("hover");
+    cursorOutline.classList.remove("hover");
     isHovering = false;
   }
 };
@@ -139,15 +145,15 @@ const handleMouseLeave = () => {
  */
 const handleMouseDown = () => {
   if (cursorDot && cursorOutline) {
-    cursorDot.classList.add('click');
-    cursorOutline.classList.add('click');
+    cursorDot.classList.add("click");
+    cursorOutline.classList.add("click");
   }
 };
 
 const handleMouseUp = () => {
   if (cursorDot && cursorOutline) {
-    cursorDot.classList.remove('click');
-    cursorOutline.classList.remove('click');
+    cursorDot.classList.remove("click");
+    cursorOutline.classList.remove("click");
   }
 };
 
@@ -156,15 +162,15 @@ const handleMouseUp = () => {
  */
 const handleTextEnter = () => {
   if (cursorDot && cursorOutline && !isHovering) {
-    cursorDot.classList.add('text');
-    cursorOutline.classList.add('text');
+    cursorDot.classList.add("text");
+    cursorOutline.classList.add("text");
   }
 };
 
 const handleTextLeave = () => {
   if (cursorDot && cursorOutline) {
-    cursorDot.classList.remove('text');
-    cursorOutline.classList.remove('text');
+    cursorDot.classList.remove("text");
+    cursorOutline.classList.remove("text");
   }
 };
 
