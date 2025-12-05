@@ -25,7 +25,6 @@ css/components/
 │
 └── (otros componentes sin cambios)
     ├── buttons.css
-    ├── cursor.css
     ├── footer.css
     ├── hover-effects.css
     ├── menu-mobile.css
@@ -51,9 +50,9 @@ Internamente, cada `index.css` consolidador importa sus sub-archivos:
 
 ```css
 /* header/index.css */
-@import './base.css';
-@import './nav.css';
-@import './scroll-state.css';
+@import "./base.css";
+@import "./nav.css";
+@import "./scroll-state.css";
 ```
 
 ## Beneficios
@@ -94,9 +93,9 @@ Internamente, cada `index.css` consolidador importa sus sub-archivos:
    - `responsive.css` → Responsive (si aplica)
 3. Crear `index.css`:
    ```css
-   @import './base.css';
-   @import './animations.css';
-   @import './responsive.css';
+   @import "./base.css";
+   @import "./animations.css";
+   @import "./responsive.css";
    ```
 4. Importar en HTML: `<link rel="stylesheet" href="css/components/mi-componente/index.css">`
 

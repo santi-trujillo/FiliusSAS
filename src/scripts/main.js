@@ -5,12 +5,12 @@
  * @version 2.0.0
  */
 
+import { renderApp, initComponents } from "../components/App.js";
 import Navigation from "./components/navigation.js";
 import MobileMenu from "./components/mobile-menu.js";
 import ScrollProgress from "./components/scroll-progress.js";
 import Animations from "./components/animations.js";
 import ScrollEffects from "./components/scroll-effects.js";
-import CustomCursor from "./components/custom-cursor.js";
 
 /**
  * Registro del Service Worker para PWA
@@ -32,11 +32,16 @@ const registerServiceWorker = () => {
 
 // Configuración global
 const App = {
-  version: "1.0.0",
+  version: "2.0.0",
   debug: false,
 
   init() {
-    this.log("Inicializando aplicación...");
+    this.log("Inicializando aplicación modular...");
+    // 1. Renderizar componentes HTML PRIMERO
+    renderApp();
+    initComponents();
+
+    // 2. Luego inicializar módulos JS
     this.setupGlobalListeners();
     this.handlePageLoad();
     this.initializeModules();
@@ -85,7 +90,6 @@ const App = {
     ScrollProgress.init();
     Animations.init();
     ScrollEffects.init();
-    CustomCursor.init();
     registerServiceWorker(); // PWA
   },
 

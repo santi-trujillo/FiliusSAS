@@ -11,24 +11,24 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
-    
+
     /* Visual */
     font-family: var(--font-primary);
     font-weight: var(--font-weight-semibold);
     border-radius: var(--radius-sm);
     border: 2px solid transparent;
     cursor: pointer;
-    
+
     /* Spacing */
     height: 48px;
     padding: 0 var(--space-6);
-    
+
     /* Typography */
     font-size: var(--text-base);
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-    
+
     /* Interaction */
     transition: all 0.3s var(--ease-in-out);
     user-select: none;
@@ -140,7 +140,9 @@
 }
 
 @keyframes btn-spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ===== RIPPLE EFFECT ===== */
@@ -195,12 +197,12 @@
     gap: 0;
 }
 
-.btn-group--attached > .btn:not(:first-child) {
+.btn-group--attached>.btn:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-.btn-group--attached > .btn:not(:last-child) {
+.btn-group--attached>.btn:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right-width: 1px;

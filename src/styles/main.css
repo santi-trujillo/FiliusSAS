@@ -42,7 +42,6 @@
 @import './blocks/sections/index.css';
 @import './blocks/tech-stack.css';
 @import './blocks/footer.css';
-@import './blocks/cursor.css';
 
 /* Efectos y comportamientos */
 @import './blocks/scroll-effects.css';

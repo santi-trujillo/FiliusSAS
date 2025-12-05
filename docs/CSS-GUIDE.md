@@ -51,7 +51,6 @@ src/styles/
     ├── sections/              # Específico del sitio
     ├── tech-stack.css         # Específico del sitio
     ├── footer.css             # Específico del sitio
-    ├── cursor.css             # Específico del sitio
     ├── scroll-effects.css     # Efectos globales
     ├── hover-effects.css      # Efectos globales
     └── menu-mobile.css        # Específico del sitio

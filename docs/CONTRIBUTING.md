@@ -50,7 +50,6 @@ FiliusSAS/
 │       ├── header.css
 │       ├── hero.css
 │       ├── buttons.css
-│       ├── cursor.css
 │       ├── footer.css
 │       └── ...otros componentes
 │
@@ -60,7 +59,6 @@ FiliusSAS/
     │   ├── navigation.js
     │   ├── animations.js
     │   ├── scroll-effects.js
-    │   ├── custom-cursor.js
     │   ├── mobile-menu.js
     │   └── scroll-progress.js
     └── utils/           # Utilidades

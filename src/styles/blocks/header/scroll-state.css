@@ -3,14 +3,13 @@
  * Estilos de scroll, menu mobile y animaciones
  */
 
-/* Header con scroll - fondo sólido */
+/* Header con scroll - fondo más transparente */
 .header.scrolled {
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(10, 10, 10, 0.15);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    padding: 1rem 5%;
 }
 
 /* Botón hamburguesa */

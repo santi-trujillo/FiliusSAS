@@ -61,9 +61,10 @@ Somos una consultora de tecnología que ayuda a las PYMES a:
   - ✅ **Exceptions**: Contextos específicos y overrides
 - **BEM** - Block Element Modifier para nomenclatura consistente
 - **Mobile-First** - Diseño progresivo con 8 breakpoints
-- **Component-Driven** - Componentes específicos para secciones únicas
+- **Component-Driven** - Componentes modulares con Template Literals + ES6 Modules
+- **Modular HTML** - Sistema de 8 componentes reutilizables (Header, Hero, Expertise, Projects, Experience, Contact, Testimonials, Footer)
 
-> **Arquitectura Real:** Este proyecto implementa CUBE CSS genuinamente con componentes `.btn`, `.card`, `.stack`, `.cluster` usados en el HTML. Combina componentes CUBE reutilizables (60%) con estilos específicos para secciones únicas (40%).
+> **Arquitectura Real:** Este proyecto implementa CUBE CSS genuinamente con componentes `.btn`, `.card`, `.stack`, `.cluster` usados en el HTML. Combina componentes CUBE reutilizables (60%) con estilos específicos para secciones únicas (40%). El HTML es 100% modular usando JavaScript ES6 Modules.
 
 ## 📋 Requisitos
 
@@ -114,7 +115,18 @@ npm run test:coverage # Coverage report
 ```
 FiliusSAS/
 ├── src/                          # Código fuente
-│   ├── index.html               # HTML principal (852 líneas)
+│   ├── index.html               # HTML modular (125 líneas - 85% reducción)
+│   ├── components/              # Sistema de componentes HTML (8 componentes)
+│   │   ├── App.js              # Orquestador principal
+│   │   ├── Header.js           # Header + Nav + Mobile Menu
+│   │   ├── Footer.js           # Footer completo
+│   │   └── sections/           # Secciones del sitio
+│   │       ├── Hero.js         # Hero + Tech Carousel
+│   │       ├── Expertise.js    # Servicios (3 tarjetas)
+│   │       ├── Projects.js     # Proyectos destacados
+│   │       ├── Experience.js   # Timeline profesional
+│   │       ├── Contact.js      # CTA de contacto
+│   │       └── Testimonials.js # Testimonios
 │   ├── styles/                  # CSS Modular (39 archivos)
 │   │   ├── base/               # Variables, reset, typography
 │   │   ├── composition/        # Layouts (container, grid, stack, cluster, flex)
@@ -130,7 +142,7 @@ FiliusSAS/
 │   │   │   └── ...             # Otros componentes
 │   │   └── main.css            # Entry point (52 líneas)
 │   ├── scripts/                # JavaScript ES6+ modules
-│   │   ├── components/         # 7 módulos (carousel, navigation, etc.)
+│   │   ├── components/         # 5 módulos (carousel, navigation, etc.)
 │   │   ├── utils/              # Helpers reutilizables
 │   │   └── main.js             # Entry point
 │   └── assets/                 # Recursos multimedia
@@ -219,7 +231,7 @@ UTILITIES Layer
 - `hero/` - Hero section único de Filius
 - `header/` - Header con navegación animada
 - `sections/` - Expertise, Experience, Projects, Testimonials
-- `footer.css`, `tech-stack.css`, `cursor.css`, etc.
+- `footer.css`, `tech-stack.css`, etc.
 
 > 📚 Ver [docs/CSS-GUIDE.md](docs/CSS-GUIDE.md) para ejemplos y convenciones completas
 > │ │ ├── custom-cursor.js
