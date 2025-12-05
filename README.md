@@ -54,10 +54,12 @@ Somos una consultora de tecnología que ayuda a las PYMES a:
 
 ### Metodologías
 
-- **CUBE CSS** - Composition, Utility, Block, Exception
-- **BEM** - Block Element Modifier (componentes)
-- **Mobile-First** - Diseño progresivo
-- **Atomic Design** - Jerarquía de componentes
+- **CUBE CSS Híbrido** - Composition, Utility, Block, Exception (60% del CSS)
+- **BEM** - Block Element Modifier para componentes reutilizables
+- **Mobile-First** - Diseño progresivo con 8 breakpoints
+- **Component-Driven** - Componentes específicos para diseño único (40% del CSS)
+
+> **Nota:** Este proyecto usa un enfoque híbrido profesional que combina CUBE CSS para el sistema de diseño base con componentes específicos optimizados para las necesidades únicas del sitio.
 
 ## 📋 Requisitos
 
@@ -105,86 +107,127 @@ npm run test:coverage # Coverage report
 
 ## 📁 Estructura del Proyecto
 
-````
+```
 FiliusSAS/
 ├── src/                          # Código fuente
-│   ├── index.html               # HTML principal
-│   ├── styles/                  # CSS (CUBE CSS)
-│   │   ├── base/               # Reset, variables, typography
-│   │   ├── composition/        # Layouts (container, grid, stack)
-│   │   ├── utilities/          # Clases utilitarias
-│   │   ├── blocks/             # Componentes BEM
-│   │   └── main.css            # Entry point
-│   ├── scripts/                # JavaScript modules
-│   │   ├── components/         # Componentes
-│   │   ├── utils/              # Utilidades
+│   ├── index.html               # HTML principal (852 líneas)
+│   ├── styles/                  # CSS Modular (39 archivos)
+│   │   ├── base/               # Variables, reset, typography
+│   │   ├── composition/        # Layouts (container, grid, stack, cluster, flex)
+│   │   ├── utilities/          # Spacing, typography, colors, display, animations
+│   │   ├── blocks/             # Componentes (híbrido CUBE CSS + específicos)
+│   │   │   ├── button.css      # ✅ CUBE CSS puro
+│   │   │   ├── card.css        # ✅ CUBE CSS puro
+│   │   │   ├── section.css     # ✅ CUBE CSS puro
+│   │   │   ├── nav.css         # ✅ CUBE CSS puro
+│   │   │   ├── hero/           # Específico del sitio
+│   │   │   ├── header/         # Específico del sitio
+│   │   │   ├── sections/       # Específico del sitio
+│   │   │   └── ...             # Otros componentes
+│   │   └── main.css            # Entry point (52 líneas)
+│   ├── scripts/                # JavaScript ES6+ modules
+│   │   ├── components/         # 7 módulos (carousel, navigation, etc.)
+│   │   ├── utils/              # Helpers reutilizables
 │   │   └── main.js             # Entry point
-│   └── assets/                 # Recursos
+│   └── assets/                 # Recursos multimedia
 │       ├── images/
 │       ├── fonts/
-│       └── icons/
-├── public/                      # Archivos estáticos
+│       └── videos/
+├── public/                      # Assets estáticos (build time)
 │   ├── robots.txt
-│   └── sitemap.xml
-├── tests/                       # Tests
+│   ├── sitemap.xml
+│   └── site.webmanifest
+├── tests/                       # Tests unitarios (61 tests)
 │   ├── unit/
+│   │   ├── helpers.test.js     # 11 tests
+│   │   ├── components.test.js  # 18 tests
+│   │   └── css-utilities.test.js # 32 tests
 │   └── setup.js
-├── .github/workflows/          # CI/CD
-├── vite.config.js              # Configuración Vite
-├── vitest.config.js            # Configuración tests
-├── netlify.toml                # Deploy config
-└── package.json                # Dependencias
+├── docs/                        # Documentación técnica
+│   ├── CONTRIBUTING.md
+│   ├── CSS-MODULARIZATION.md
+│   ├── CSS-GUIDE.md            # Guía completa de estilos
+│   └── setup-guide.md
+├── .github/workflows/          # CI/CD Pipeline
+│   └── ci.yml                  # Test → Build → Deploy
+├── vite.config.js              # Vite 5.x config
+├── vitest.config.js            # Testing config
+├── netlify.toml                # Deployment + headers
+├── ARCHITECTURE.md             # Documentación arquitectura
+├── PROYECTO-COMPLETADO.md      # Resumen del proyecto
+└── package.json                # v2.0.0
+```
 
 ## 📜 Scripts Disponibles
 
 ```bash
 # Desarrollo
-npm run dev          # Vite dev server (localhost:3000)
+npm run dev          # Vite dev server (localhost:3000) con HMR
 
 # Build
-npm run build        # Build de producción → dist/
+npm run build        # Build optimizado → dist/ (2-3s)
 npm run preview      # Preview del build local
 
 # Testing
-npm test            # Tests en watch mode
+npm test            # Vitest (61 tests pasando)
 npm run test:ui     # Vitest UI interactiva
-npm run test:coverage # Coverage report
+npm run test:coverage # Coverage report con v8
+```
 
-# Code Quality
-npm run lint        # ESLint check
-npm run format      # Prettier format
-````
+## 🎨 Arquitectura CSS
 
-## 🎨 Metodología CUBE CSS
+Este proyecto utiliza un **enfoque híbrido profesional**:
 
-│ └── components/ # Componentes individuales
-│ ├── header.css
-│ ├── hero.css
-│ ├── buttons.css
-│ ├── cursor.css
-│ ├── footer.css
-│ ├── menu-mobile.css
-│ ├── hover-effects.css
-│ ├── sections.css
-│ ├── tech-stack.css
-│ └── scroll-effects.css
-│
-├── js/ # JavaScript modular
-│ ├── main.js # Inicializador principal
-│ ├── modules/ # Módulos funcionales
-│ │ ├── navigation.js
-│ │ ├── animations.js
-│ │ ├── scroll-effects.js
-│ │ ├── custom-cursor.js
-│ │ ├── mobile-menu.js
-│ │ └── scroll-progress.js
-│ └── utils/
-│ ├── helpers.js
-│ └── helpers.test.js
-│
-└── docs/ # Documentación
-├── setup-guide.md
-└── CONTRIBUTING.md
+### CUBE CSS Base (60%)
+
+```
+BASE Layer
+├── variables.css       # Design tokens (197 variables)
+├── reset.css          # Modern CSS reset
+└── typography.css     # Sistema tipográfico
+
+COMPOSITION Layer
+├── container.css      # Contenedores responsivos
+├── grid.css           # Sistema de grillas
+├── stack.css          # Stack vertical
+├── cluster.css        # Agrupación horizontal
+└── flex.css           # Utilities flexbox
+
+UTILITIES Layer
+├── spacing.css        # 150+ utilities (margin, padding, gap)
+├── typography.css     # Text utilities
+├── colors.css         # Color utilities
+├── display.css        # Display, flex, grid
+└── animations.css     # Animaciones reutilizables
+```
+
+### Componentes (40%)
+
+**CUBE CSS Puros (Reutilizables):**
+
+- `button.css` - Sistema completo de botones (variantes, tamaños, estados)
+- `card.css` - Tarjetas con BEM (elevated, outlined, glass)
+- `section.css` - Secciones (compact, expanded, full-height)
+- `nav.css` - Navegación responsive con menú móvil
+
+**Específicos del Sitio:**
+
+- `hero/` - Hero section único de Filius
+- `header/` - Header con navegación animada
+- `sections/` - Expertise, Experience, Projects, Testimonials
+- `footer.css`, `tech-stack.css`, `cursor.css`, etc.
+
+> 📚 Ver [docs/CSS-GUIDE.md](docs/CSS-GUIDE.md) para ejemplos y convenciones completas
+> │ │ ├── custom-cursor.js
+> │ │ ├── mobile-menu.js
+> │ │ └── scroll-progress.js
+> │ └── utils/
+> │ ├── helpers.js
+> │ └── helpers.test.js
+> │
+> └── docs/ # Documentación
+> ├── setup-guide.md
+> └── CONTRIBUTING.md
 
 ````
 
