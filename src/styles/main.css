@@ -27,6 +27,7 @@
 @import './utilities/colors.css';
 @import './utilities/display.css';
 @import './utilities/animations.css';
+@import './utilities/accessibility.css';
 
 /* ===== BLOCKS LAYER ===== */
 /* Componentes CUBE CSS puros */
