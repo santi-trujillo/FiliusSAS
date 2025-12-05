@@ -73,43 +73,10 @@
     }
 }
 
-.expertise-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 2.5rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.expertise-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-color), transparent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-}
-
-.expertise-card:hover::before {
-    transform: scaleX(1);
-}
-
-.expertise-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
-}
-
+/* Estilos específicos de expertise que no están en .card */
 .expertise-icon {
     width: 64px;
     height: 64px;
-    margin-bottom: 1.5rem;
     color: var(--accent-color);
     display: flex;
     align-items: center;
@@ -119,7 +86,7 @@
     transition: all 0.3s ease;
 }
 
-.expertise-card:hover .expertise-icon {
+.card:hover .expertise-icon {
     transform: scale(1.1) rotateY(180deg);
     background: rgba(59, 130, 246, 0.2);
 }
@@ -134,14 +101,9 @@
 .expertise-description {
     color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 1.5rem;
 }
 
-.expertise-tags {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-}
+/* Tags ya no necesitan margin-bottom porque stack lo maneja */
 
 .tag {
     padding: 0.4rem 1rem;

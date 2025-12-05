@@ -71,44 +71,22 @@
     }
 }
 
-.testimonial-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(59, 130, 246, 0.5);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
+/* Estilos específicos de testimonials que no están en .card */
 .testimonial-quote-icon {
     font-size: 5rem;
     color: var(--accent-color);
     opacity: 0.2;
     line-height: 1;
     font-family: Georgia, serif;
-    margin-bottom: 1rem;
 }
 
 .testimonial-text {
     color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 2rem;
-    flex-grow: 1;
     font-size: 1.05rem;
 }
 
 .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
 }
@@ -133,7 +111,6 @@
 .author-name {
     color: var(--text-primary);
     font-weight: 600;
-    margin-bottom: 0.25rem;
 }
 
 .author-role {

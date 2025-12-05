@@ -4,8 +4,8 @@
 [![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](./package.json)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
 [![CUBE CSS](https://img.shields.io/badge/CSS-CUBE-blue)](https://cube.fyi/)
-[![Tests](https://img.shields.io/badge/tests-11%2F11%20passing-success)](./tests)
-[![Build](https://img.shields.io/badge/build-2.51s-success)](./package.json)
+[![Tests](https://img.shields.io/badge/tests-75%2F75%20passing-success)](./tests)
+[![Build](https://img.shields.io/badge/build-3.66s-success)](./package.json)
 
 Portfolio moderno y de alto rendimiento de **Filius Tec** - Consultora de tecnología integral especializada en desarrollo web, soporte técnico e infraestructura TI para PYMES en Colombia.
 
@@ -54,12 +54,16 @@ Somos una consultora de tecnología que ayuda a las PYMES a:
 
 ### Metodologías
 
-- **CUBE CSS Híbrido** - Composition, Utility, Block, Exception (60% del CSS)
-- **BEM** - Block Element Modifier para componentes reutilizables
+- **CUBE CSS** - Composition, Utility, Block, Exception (metodología completa implementada)
+  - ✅ **Composition**: `.container`, `.stack`, `.cluster`, `.grid`
+  - ✅ **Utilities**: Spacing, typography, colors, display
+  - ✅ **Blocks**: `.btn`, `.card`, `.section`, `.nav` (componentes reutilizables)
+  - ✅ **Exceptions**: Contextos específicos y overrides
+- **BEM** - Block Element Modifier para nomenclatura consistente
 - **Mobile-First** - Diseño progresivo con 8 breakpoints
-- **Component-Driven** - Componentes específicos para diseño único (40% del CSS)
+- **Component-Driven** - Componentes específicos para secciones únicas
 
-> **Nota:** Este proyecto usa un enfoque híbrido profesional que combina CUBE CSS para el sistema de diseño base con componentes específicos optimizados para las necesidades únicas del sitio.
+> **Arquitectura Real:** Este proyecto implementa CUBE CSS genuinamente con componentes `.btn`, `.card`, `.stack`, `.cluster` usados en el HTML. Combina componentes CUBE reutilizables (60%) con estilos específicos para secciones únicas (40%).
 
 ## 📋 Requisitos
 

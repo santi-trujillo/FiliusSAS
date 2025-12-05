@@ -4,6 +4,127 @@
 
 import { describe, it, expect, beforeEach } from "vitest";
 
+describe("CUBE CSS Components Tests", () => {
+  describe("Button Component (.btn)", () => {
+    beforeEach(() => {
+      document.body.innerHTML = '<button class="btn">Test Button</button>';
+    });
+
+    it("debería tener clase base btn", () => {
+      const button = document.querySelector(".btn");
+      expect(button.classList.contains("btn")).toBe(true);
+    });
+
+    it("debería poder aplicar variante btn--primary", () => {
+      const button = document.querySelector(".btn");
+      button.classList.add("btn--primary");
+      expect(button.classList.contains("btn--primary")).toBe(true);
+    });
+
+    it("debería poder aplicar tamaño btn--lg", () => {
+      const button = document.querySelector(".btn");
+      button.classList.add("btn--lg");
+      expect(button.classList.contains("btn--lg")).toBe(true);
+    });
+
+    it("debería poder combinar variante y tamaño", () => {
+      const button = document.querySelector(".btn");
+      button.classList.add("btn--primary", "btn--lg");
+      expect(button.classList.contains("btn--primary")).toBe(true);
+      expect(button.classList.contains("btn--lg")).toBe(true);
+    });
+  });
+
+  describe("Card Component (.card)", () => {
+    beforeEach(() => {
+      document.body.innerHTML = `
+        <div class="card">
+          <div class="card__body">Content</div>
+        </div>
+      `;
+    });
+
+    it("debería tener clase base card", () => {
+      const card = document.querySelector(".card");
+      expect(card.classList.contains("card")).toBe(true);
+    });
+
+    it("debería tener sección card__body", () => {
+      const cardBody = document.querySelector(".card__body");
+      expect(cardBody).toBeTruthy();
+      expect(cardBody.classList.contains("card__body")).toBe(true);
+    });
+
+    it("debería poder aplicar variante card--elevated", () => {
+      const card = document.querySelector(".card");
+      card.classList.add("card--elevated");
+      expect(card.classList.contains("card--elevated")).toBe(true);
+    });
+
+    it("debería poder aplicar variante card--hover", () => {
+      const card = document.querySelector(".card");
+      card.classList.add("card--hover");
+      expect(card.classList.contains("card--hover")).toBe(true);
+    });
+  });
+
+  describe("Stack Composition (.stack)", () => {
+    beforeEach(() => {
+      document.body.innerHTML = `
+        <div class="stack">
+          <div>Item 1</div>
+          <div>Item 2</div>
+          <div>Item 3</div>
+        </div>
+      `;
+    });
+
+    it("debería tener clase stack", () => {
+      const stack = document.querySelector(".stack");
+      expect(stack.classList.contains("stack")).toBe(true);
+    });
+
+    it("debería contener múltiples hijos", () => {
+      const stack = document.querySelector(".stack");
+      expect(stack.children.length).toBe(3);
+    });
+
+    it("debería poder aplicar variante stack--lg", () => {
+      const stack = document.querySelector(".stack");
+      stack.classList.add("stack--lg");
+      expect(stack.classList.contains("stack--lg")).toBe(true);
+    });
+  });
+
+  describe("Cluster Composition (.cluster)", () => {
+    beforeEach(() => {
+      document.body.innerHTML = `
+        <div class="cluster">
+          <span>Item 1</span>
+          <span>Item 2</span>
+          <span>Item 3</span>
+        </div>
+      `;
+    });
+
+    it("debería tener clase cluster", () => {
+      const cluster = document.querySelector(".cluster");
+      expect(cluster.classList.contains("cluster")).toBe(true);
+    });
+
+    it("debería contener múltiples hijos", () => {
+      const cluster = document.querySelector(".cluster");
+      expect(cluster.children.length).toBe(3);
+    });
+
+    it("debería poder aplicar variante cluster--center", () => {
+      const cluster = document.querySelector(".cluster");
+      cluster.classList.add("cluster--center");
+      expect(cluster.classList.contains("cluster--center")).toBe(true);
+    });
+  });
+});
+
 describe("CSS Utilities Tests", () => {
   describe("Spacing Utilities", () => {
     beforeEach(() => {
