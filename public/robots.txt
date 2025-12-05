@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Permitir todos los crawlers en todas las páginas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.filius.com.co/sitemap.xml
+
+# Crawl-delay para bots más agresivos
+User-agent: Baiduspider
+Crawl-delay: 5
+
+User-agent: Yandex
+Crawl-delay: 2
