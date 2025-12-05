@@ -1,0 +1,145 @@
+/* ============================================
+   CUBE CSS - BLOCK
+   Card Component
+   Tarjetas siguiendo metodología BEM
+   ============================================ */
+
+/* ===== BASE CARD ===== */
+.card {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+
+    /* Visual */
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+
+    /* Interaction */
+    transition: all 0.3s var(--ease-in-out);
+}
+
+/* ===== CARD SECTIONS ===== */
+
+.card__header {
+    padding: var(--space-6);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card__body {
+    padding: var(--space-6);
+    flex: 1;
+}
+
+.card__footer {
+    padding: var(--space-6);
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===== VARIANTS ===== */
+
+/* Elevated */
+.card--elevated {
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.card--elevated:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Interactive */
+.card--interactive {
+    cursor: pointer;
+}
+
+.card--interactive:hover {
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+}
+
+/* Outlined */
+.card--outlined {
+    background: transparent;
+    border-width: 2px;
+}
+
+/* Glass effect */
+.card--glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+/* ===== SIZES ===== */
+
+.card--sm {
+    padding: var(--space-4);
+}
+
+.card--sm .card__header,
+.card--sm .card__body,
+.card--sm .card__footer {
+    padding: var(--space-4);
+}
+
+.card--lg {
+    padding: var(--space-8);
+}
+
+.card--lg .card__header,
+.card--lg .card__body,
+.card--lg .card__footer {
+    padding: var(--space-8);
+}
+
+/* ===== STATES ===== */
+
+.card--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.card--loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.card--loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== HORIZONTAL LAYOUT ===== */
+
+.card--horizontal {
+    flex-direction: row;
+}
+
+.card--horizontal .card__header {
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .card--horizontal {
+        flex-direction: column;
+    }
+
+    .card--horizontal .card__header {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}

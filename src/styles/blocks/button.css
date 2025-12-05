@@ -1,0 +1,216 @@
+/* ============================================
+   CUBE CSS - BLOCK
+   Button Component
+   Botones siguiendo metodología BEM
+   ============================================ */
+
+/* ===== BASE BUTTON ===== */
+.btn {
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    
+    /* Visual */
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    cursor: pointer;
+    
+    /* Spacing */
+    height: 48px;
+    padding: 0 var(--space-6);
+    
+    /* Typography */
+    font-size: var(--text-base);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    
+    /* Interaction */
+    transition: all 0.3s var(--ease-in-out);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ===== VARIANTS (Modificadores de estilo) ===== */
+
+/* Primary */
+.btn--primary {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.btn--primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary */
+.btn--secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.btn--secondary:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Ghost */
+.btn--ghost {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: transparent;
+}
+
+.btn--ghost:hover {
+    background: var(--bg-tertiary);
+}
+
+/* ===== SIZES ===== */
+
+.btn--sm {
+    height: 40px;
+    padding: 0 var(--space-4);
+    font-size: var(--text-sm);
+}
+
+.btn--lg {
+    height: 56px;
+    padding: 0 var(--space-8);
+    font-size: var(--text-lg);
+}
+
+.btn--xl {
+    height: 64px;
+    padding: 0 var(--space-12);
+    font-size: var(--text-xl);
+}
+
+/* Full width */
+.btn--full {
+    width: 100%;
+}
+
+/* ===== STATES ===== */
+
+.btn:disabled,
+.btn--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn--loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn--loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    border-right-color: transparent;
+    animation: btn-spin 0.6s linear infinite;
+}
+
+@keyframes btn-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== RIPPLE EFFECT ===== */
+
+.btn--ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn--ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn--ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== ICON BUTTONS ===== */
+
+.btn--icon {
+    width: 48px;
+    padding: 0;
+    justify-content: center;
+}
+
+.btn--icon.btn--sm {
+    width: 40px;
+}
+
+.btn--icon.btn--lg {
+    width: 56px;
+}
+
+/* ===== GROUP ===== */
+
+.btn-group {
+    display: inline-flex;
+    gap: var(--space-2);
+}
+
+.btn-group--attached {
+    gap: 0;
+}
+
+.btn-group--attached > .btn:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-group--attached > .btn:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 1px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .btn--full-mobile {
+        width: 100%;
+        display: flex;
+    }
+}

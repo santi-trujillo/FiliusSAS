@@ -1,0 +1,225 @@
+/* ============================================
+   CUBE CSS - BLOCK
+   Navigation Component
+   Navegación principal del sitio
+   ============================================ */
+
+/* ===== BASE NAVIGATION ===== */
+.nav {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+/* ===== NAV LIST ===== */
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== NAV ITEMS ===== */
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    /* Typography */
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+    text-decoration: none;
+
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+
+    /* Visual */
+    border-radius: var(--radius-sm);
+
+    /* Interaction */
+    transition: all 0.3s var(--ease-in-out);
+    cursor: pointer;
+}
+
+.nav__link:hover {
+    color: var(--accent-color);
+    background: var(--bg-tertiary);
+}
+
+.nav__link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ===== ACTIVE STATE ===== */
+
+.nav__link--active {
+    color: var(--accent-color);
+    position: relative;
+}
+
+.nav__link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: var(--space-3);
+    right: var(--space-3);
+    height: 2px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* ===== VARIANTS ===== */
+
+/* Vertical */
+.nav--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav--vertical .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    width: 100%;
+}
+
+.nav--vertical .nav__link {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+}
+
+/* Pills */
+.nav--pills .nav__link {
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
+}
+
+.nav--pills .nav__link--active {
+    background: var(--accent-color);
+    color: white;
+}
+
+.nav--pills .nav__link--active::after {
+    display: none;
+}
+
+/* Tabs */
+.nav--tabs {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav--tabs .nav__link {
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    padding-bottom: var(--space-3);
+}
+
+.nav--tabs .nav__link--active {
+    border-bottom-color: var(--accent-color);
+}
+
+.nav--tabs .nav__link--active::after {
+    display: none;
+}
+
+/* ===== MOBILE MENU ===== */
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.nav__toggle-line {
+    width: 100%;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s var(--ease-in-out);
+}
+
+/* Toggle active state */
+.nav__toggle--active .nav__toggle-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav__toggle--active .nav__toggle-line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__toggle--active .nav__toggle-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .nav__toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav__list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-primary);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+        padding: var(--space-20) var(--space-6);
+        box-shadow: var(--shadow-xl);
+        transition: right 0.3s var(--ease-in-out);
+        z-index: 1000;
+    }
+
+    .nav__list--open {
+        right: 0;
+    }
+
+    .nav__link {
+        width: 100%;
+        padding: var(--space-3) var(--space-4);
+    }
+
+    /* Backdrop */
+    .nav__backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s var(--ease-in-out);
+        z-index: 999;
+    }
+
+    .nav__backdrop--visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
