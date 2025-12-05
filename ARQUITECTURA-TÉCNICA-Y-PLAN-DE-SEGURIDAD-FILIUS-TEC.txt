@@ -1,0 +1,1303 @@
+# 🏗️ ARQUITECTURA TÉCNICA Y PLAN DE SEGURIDAD - FILIUS TEC
+
+**Proyecto:** Filius Tec - Sitio web corporativo  
+**Fecha:** 04 de diciembre de 2025  
+**Stack:** Vanilla JavaScript + HTML5 + CSS3 Modular  
+**Metodología:** Progressive Enhancement + Mobile First  
+
+***
+
+## 1. FILOSOFÍA ARQUITECTÓNICA
+
+### Principios base
+1. **Vanilla First:** Código puro sin dependencias innecesarias[1]
+2. **Modular Always:** Todo CSS, JS y HTML componentizado[2]
+3. **Progressive Enhancement:** Funciona sin JS, mejor con JS
+4. **Performance Native:** Optimización integrada desde el diseño
+5. **Escalabilidad Shopify-ready:** Preparado para integración futura
+
+***
+
+## 2. STACK TÉCNICO COMPLETO
+
+### Core Technologies
+
+```yaml
+# Frontend
+HTML: HTML5 semántico
+CSS: CSS3 nativo + Custom Properties (CSS Variables)
+JavaScript: ES6+ modules (import/export)
+Metodología CSS: CUBE CSS (Composition, Utility, Block, Exception)
+
+# Build Tools
+Bundler: Vite 5.x
+Package Manager: npm
+Task Runner: npm scripts
+
+# Version Control
+Git: GitHub
+Branching: GitHub Flow (main + feature branches)
+
+# Deployment
+Hosting: Netlify (primary) / GitHub Pages (backup)
+CI/CD: GitHub Actions → Netlify Deploy
+Domain: netlify.app (temporal) → filiustec.com (futuro)
+
+# Testing
+Unit Tests: Vitest
+Linting: ESLint + Prettier
+Hooks: Husky + lint-staged
+
+# Monitoring
+Analytics: Plausible Analytics (privacy-first)
+Errors: Sentry (free tier)
+Performance: Google Search Console + PageSpeed Insights
+Uptime: UptimeRobot (free tier)
+
+# Security
+SSL: Netlify auto-SSL (Let's Encrypt)
+Headers: netlify.toml configuration
+Spam: Honeypot + tiempo de llenado de formulario
+```
+
+***
+
+## 3. ESTRUCTURA DE CARPETAS
+
+### Arquitectura modular completa
+
+```
+filius-tec/
+│
+├── public/                          # Assets estáticos (copiados tal cual)
+│   ├── favicon.ico
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── manifest.json                # PWA manifest (futuro)
+│
+├── src/                             # Código fuente
+│   │
+│   ├── assets/                      # Assets procesados
+│   │   ├── images/                  # Imágenes optimizadas
+│   │   │   ├── hero/
+│   │   │   ├── logos/              # Logos de tecnologías
+│   │   │   ├── cases/              # Imágenes de casos de éxito
+│   │   │   └── og-image.jpg        # Open Graph
+│   │   │
+│   │   ├── fonts/                   # Fuentes self-hosted (si aplica)
+│   │   │   ├── inter/
+│   │   │   └── montserrat/
+│   │   │
+│   │   └── icons/                   # Iconos SVG
+│   │       ├── social/
+│   │       └── ui/
+│   │
+│   ├── styles/                      # CSS modular (CUBE CSS)
+│   │   │
+│   │   ├── base/                    # Capa base
+│   │   │   ├── reset.css           # CSS reset/normalize
+│   │   │   ├── variables.css       # Design tokens
+│   │   │   ├── typography.css      # Tipografía base
+│   │   │   └── global.css          # Estilos globales
+│   │   │
+│   │   ├── composition/             # Layouts y estructuras
+│   │   │   ├── grid.css            # Sistema de grid
+│   │   │   ├── container.css       # Contenedores
+│   │   │   ├── stack.css           # Vertical spacing
+│   │   │   ├── cluster.css         # Horizontal grouping
+│   │   │   └── sidebar.css         # Sidebar layouts (futuro)
+│   │   │
+│   │   ├── utilities/               # Clases de utilidad
+│   │   │   ├── spacing.css         # Margins, paddings
+│   │   │   ├── colors.css          # Color utilities
+│   │   │   ├── typography.css      # Text utilities
+│   │   │   ├── display.css         # Display/visibility
+│   │   │   └── animations.css      # Animation utilities
+│   │   │
+│   │   ├── blocks/                  # Componentes (BEM naming dentro)
+│   │   │   ├── header.css
+│   │   │   ├── hero.css
+│   │   │   ├── button.css
+│   │   │   ├── card.css
+│   │   │   ├── tag.css
+│   │   │   ├── input.css
+│   │   │   ├── testimonial.css
+│   │   │   ├── tech-carousel.css
+│   │   │   ├── footer.css
+│   │   │   └── menu-mobile.css
+│   │   │
+│   │   ├── exceptions/              # Overrides específicos
+│   │   │   └── dark-mode.css       # Modo claro (exception del dark)
+│   │   │
+│   │   └── main.css                 # Importa todos los anteriores
+│   │
+│   ├── scripts/                     # JavaScript modular
+│   │   │
+│   │   ├── components/              # Componentes JS
+│   │   │   ├── Menu.js             # Menú hamburguesa
+│   │   │   ├── ScrollProgress.js   # Barra de progreso
+│   │   │   ├── TechCarousel.js     # Carrusel de tecnologías
+│   │   │   ├── ContactForm.js      # Validación de formulario
+│   │   │   ├── ThemeSwitcher.js    # Dark/light mode
+│   │   │   └── BackToTop.js        # Botón volver arriba
+│   │   │
+│   │   ├── animations/              # Sistema de animaciones
+│   │   │   ├── scrollObserver.js   # Intersection Observer
+│   │   │   ├── smoothScroll.js     # Smooth scroll a anclas
+│   │   │   └── customCursor.js     # Cursor personalizado (desktop)
+│   │   │
+│   │   ├── utils/                   # Utilidades
+│   │   │   ├── debounce.js         # Debounce helper
+│   │   │   ├── throttle.js         # Throttle helper
+│   │   │   ├── detectDevice.js     # Mobile/desktop detection
+│   │   │   └── lazyLoad.js         # Lazy loading images
+│   │   │
+│   │   ├── config/                  # Configuraciones
+│   │   │   └── constants.js        # Constantes globales
+│   │   │
+│   │   └── main.js                  # Entry point, importa todo
+│   │
+│   ├── components/                  # HTML components (templates)
+│   │   ├── header.html
+│   │   ├── hero.html
+│   │   ├── services.html
+│   │   ├── cases.html
+│   │   ├── experience.html
+│   │   ├── testimonials.html
+│   │   ├── contact.html
+│   │   └── footer.html
+│   │
+│   └── index.html                   # HTML principal
+│
+├── tests/                           # Tests
+│   ├── unit/                        # Tests unitarios
+│   │   ├── utils.test.js
+│   │   └── components.test.js
+│   │
+│   ├── integration/                 # Tests de integración
+│   │   └── form.test.js
+│   │
+│   └── e2e/                         # Tests end-to-end (Playwright)
+│       └── navigation.spec.js
+│
+├── .github/                         # GitHub Actions
+│   └── workflows/
+│       ├── ci.yml                   # Continuous Integration
+│       └── deploy.yml               # Deploy a Netlify
+│
+├── config/                          # Configuraciones
+│   ├── vite.config.js              # Vite config
+│   ├── eslint.config.js            # ESLint config
+│   └── prettier.config.js          # Prettier config
+│
+├── docs/                            # Documentación
+│   ├── COMPONENTS.md               # Guía de componentes
+│   ├── SETUP.md                    # Setup de desarrollo
+│   └── DEPLOYMENT.md               # Guía de deploy
+│
+├── .env.example                     # Variables de entorno ejemplo
+├── .env                             # Variables de entorno (gitignored)
+├── .gitignore                       # Git ignore
+├── .prettierignore                  # Prettier ignore
+├── netlify.toml                     # Configuración Netlify
+├── package.json                     # Dependencias
+├── package-lock.json
+├── README.md                        # Readme principal
+└── LICENSE                          # Licencia MIT
+```
+
+***
+
+## 4. METODOLOGÍA CSS: CUBE CSS
+
+### ¿Por qué CUBE CSS?
+
+CUBE CSS combina lo mejor de BEM (naming claro) con la potencia del cascade de CSS. Es más escalable que BEM puro y más mantenible que Atomic CSS para proyectos grandes.[3]
+
+### Estructura de capas
+
+```css
+/* ============================================
+   CUBE CSS LAYERS
+   ============================================ */
+
+/* 1. COMPOSITION - Layouts macro */
+.container { /* contenedor principal */ }
+.grid { /* sistema de grid */ }
+.stack { /* espaciado vertical automático */ }
+.cluster { /* agrupación horizontal */ }
+
+/* 2. UTILITY - Clases de utilidad de un solo propósito */
+.mt-4 { margin-top: var(--space-4); }
+.text-center { text-align: center; }
+.sr-only { /* screen reader only */ }
+
+/* 3. BLOCK - Componentes (BEM naming dentro) */
+.btn { /* base button */ }
+.btn--primary { /* modificador */ }
+.btn__icon { /* elemento */ }
+
+.card { /* base card */ }
+.card--highlight { /* modificador */ }
+.card__header { /* elemento */ }
+
+/* 4. EXCEPTION - Overrides contextuales */
+[data-theme="light"] .btn--primary { /* dark mode override */ }
+.hero .btn { /* exception específica del hero */ }
+```
+
+### Ejemplo práctico: Button component
+
+```css
+/* ===== blocks/button.css ===== */
+
+/* Base block */
+.btn {
+  /* Composición (layout interno) */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  
+  /* Presentación */
+  font-family: var(--font-primary);
+  font-weight: 600;
+  border-radius: var(--radius-button);
+  transition: all 0.3s var(--ease-in-out);
+  
+  /* Tamaño por defecto */
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: 16px;
+}
+
+/* Modificadores de variante (--) */
+.btn--primary {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+}
+
+.btn--secondary {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Modificadores de tamaño (--) */
+.btn--sm {
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: 14px;
+}
+
+.btn--lg {
+  height: 56px;
+  padding: 0 var(--space-8);
+  font-size: 18px;
+}
+
+/* Elementos internos (__) */
+.btn__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Estados */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+```
+
+### Uso en HTML
+
+```html
+<!-- Composición + Utility + Block -->
+<div class="stack cluster mt-8">
+  <button class="btn btn--primary btn--lg">
+    <span class="btn__icon">→</span>
+    Solicitar Consultoría
+  </button>
+  
+  <button class="btn btn--secondary">
+    Ver Servicios
+  </button>
+</div>
+```
+
+***
+
+## 5. JAVASCRIPT MODULAR (ES6+)
+
+### Arquitectura de componentes
+
+```javascript
+// ===== scripts/components/Menu.js =====
+
+export class Menu {
+  constructor() {
+    this.menuButton = document.querySelector('[data-menu-toggle]');
+    this.menuOverlay = document.querySelector('[data-menu-overlay]');
+    this.menuPanel = document.querySelector('[data-menu-panel]');
+    this.menuLinks = document.querySelectorAll('[data-menu-link]');
+    
+    this.isOpen = false;
+    
+    this.init();
+  }
+  
+  init() {
+    this.bindEvents();
+  }
+  
+  bindEvents() {
+    this.menuButton?.addEventListener('click', () => this.toggle());
+    this.menuOverlay?.addEventListener('click', () => this.close());
+    
+    this.menuLinks.forEach(link => {
+      link.addEventListener('click', () => this.close());
+    });
+    
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) this.close();
+    });
+  }
+  
+  toggle() {
+    this.isOpen ? this.close() : this.open();
+  }
+  
+  open() {
+    this.isOpen = true;
+    this.menuPanel?.classList.add('is-open');
+    this.menuOverlay?.classList.add('is-visible');
+    document.body.style.overflow = 'hidden';
+    
+    // Accessibility
+    this.menuButton?.setAttribute('aria-expanded', 'true');
+  }
+  
+  close() {
+    this.isOpen = false;
+    this.menuPanel?.classList.remove('is-open');
+    this.menuOverlay?.classList.remove('is-visible');
+    document.body.style.overflow = '';
+    
+    this.menuButton?.setAttribute('aria-expanded', 'false');
+  }
+}
+```
+
+```javascript
+// ===== scripts/main.js (entry point) =====
+
+// Componentes
+import { Menu } from './components/Menu.js';
+import { ScrollProgress } from './components/ScrollProgress.js';
+import { TechCarousel } from './components/TechCarousel.js';
+import { ContactForm } from './components/ContactForm.js';
+import { ThemeSwitcher } from './components/ThemeSwitcher.js';
+import { BackToTop } from './components/BackToTop.js';
+
+// Animaciones
+import { initScrollObserver } from './animations/scrollObserver.js';
+import { initSmoothScroll } from './animations/smoothScroll.js';
+import { initCustomCursor } from './animations/customCursor.js';
+
+// Utils
+import { detectDevice } from './utils/detectDevice.js';
+import { lazyLoadImages } from './utils/lazyLoad.js';
+
+// Inicialización cuando el DOM está listo
+document.addEventListener('DOMContentLoaded', () => {
+  // Detectar dispositivo
+  const device = detectDevice();
+  
+  // Inicializar componentes
+  new Menu();
+  new ScrollProgress();
+  new TechCarousel();
+  new ContactForm();
+  new ThemeSwitcher();
+  new BackToTop();
+  
+  // Inicializar animaciones
+  initScrollObserver();
+  initSmoothScroll();
+  
+  // Cursor personalizado solo en desktop
+  if (device.isDesktop) {
+    initCustomCursor();
+  }
+  
+  // Lazy loading de imágenes
+  lazyLoadImages();
+  
+  console.log('🚀 Filius Tec initialized');
+});
+```
+
+***
+
+## 6. FORMULARIO DE CONTACTO (API PROPIA)
+
+### Frontend (HTML + JS)
+
+```html
+<!-- src/components/contact.html -->
+
+<section id="contacto" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Contáctanos</h2>
+    
+    <div class="contact-ctas stack">
+      <a href="mailto:filius.tec@gmail.com?subject=Solicitud%20de%20Consultor%C3%ADa&body=Hola%20Filius%20Tec%2C%0A%0AMe%20gustar%C3%ADa%20agendar%20una%20consultor%C3%ADa%20de%2030%20minutos.%0A%0ANombre%3A%20%0AEmpresa%3A%20%0ATel%C3%A9fono%3A%20%0AServicio%20de%20inter%C3%A9s%3A%20" 
+         class="btn btn--primary btn--lg">
+        <span class="btn__icon">📧</span>
+        Agendar Consultoría
+      </a>
+      
+      <a href="https://wa.me/573195604302?text=Hola%20Filius%20Tec%2C%20me%20gustar%C3%ADa%20agendar%20una%20consultor%C3%ADa%20de%2030%20minutos%20para%20cotizar%20un%20proyecto." 
+         class="btn btn--accent btn--lg"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="btn__icon">💬</span>
+        WhatsApp
+      </a>
+    </div>
+    
+    <!-- Honeypot para spam protection -->
+    <form class="contact-form" data-contact-form style="display:none;">
+      <input type="text" 
+             name="honeypot" 
+             style="position: absolute; left: -9999px;" 
+             tabindex="-1" 
+             autocomplete="off">
+      
+      <input type="hidden" name="timestamp" data-timestamp>
+      
+      <!-- Campos reales si decides agregar formulario después -->
+    </form>
+  </div>
+</section>
+```
+
+```javascript
+// ===== scripts/components/ContactForm.js =====
+
+export class ContactForm {
+  constructor() {
+    this.form = document.querySelector('[data-contact-form]');
+    this.timestampField = document.querySelector('[data-timestamp]');
+    
+    if (this.form) {
+      this.initTimestamp();
+      this.bindEvents();
+    }
+  }
+  
+  initTimestamp() {
+    // Guardar timestamp de carga para detectar bots
+    if (this.timestampField) {
+      this.timestampField.value = Date.now();
+    }
+  }
+  
+  bindEvents() {
+    this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+  }
+  
+  async handleSubmit(e) {
+    e.preventDefault();
+    
+    // Validar honeypot
+    const honeypot = this.form.querySelector('[name="honeypot"]').value;
+    if (honeypot) {
+      console.warn('Spam detectado');
+      return;
+    }
+    
+    // Validar tiempo mínimo (bots llenan muy rápido)
+    const loadTime = parseInt(this.timestampField.value);
+    const submitTime = Date.now();
+    const timeDiff = (submitTime - loadTime) / 1000; // segundos
+    
+    if (timeDiff < 3) {
+      console.warn('Formulario llenado demasiado rápido');
+      return;
+    }
+    
+    // Aquí iría la llamada a tu API si implementas backend
+    // Por ahora solo mailto: y WhatsApp
+  }
+}
+```
+
+***
+
+## 7. BUILD Y DEPLOYMENT
+
+### Vite Configuration
+
+```javascript
+// ===== config/vite.config.js =====
+
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
+export default defineConfig({
+  root: 'src',
+  publicDir: '../public',
+  
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
+    
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'src/index.html'),
+      },
+      
+      output: {
+        assetFileNames: 'assets/[name].[hash][extname]',
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
+      },
+    },
+    
+    // Minificación
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remover console.log en producción
+      },
+    },
+    
+    // Optimización de imágenes
+    assetsInlineLimit: 4096, // 4kb - inline pequeños assets
+  },
+  
+  // Optimización de CSS
+  css: {
+    devSourcemap: true,
+  },
+  
+  // Server de desarrollo
+  server: {
+    port: 3000,
+    open: true,
+    cors: true,
+  },
+  
+  // Preview de producción
+  preview: {
+    port: 4173,
+  },
+});
+```
+
+### Package.json scripts
+
+```json
+{
+  "name": "filius-tec",
+  "version": "1.0.0",
+  "description": "Sitio web corporativo Filius Tec",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --ext .js --fix",
+    "format": "prettier --write \"src/**/*.{js,css,html}\"",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "optimize-images": "node scripts/optimize-images.js",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "sharp": "^0.33.0"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "prettier --write"],
+    "*.css": ["prettier --write"],
+    "*.html": ["prettier --write"]
+  }
+}
+```
+
+### Netlify Configuration
+
+```toml
+# ===== netlify.toml =====
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirects y rewrites
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de seguridad [web:48][web:51]
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Seguridad básica
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Content Security Policy
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://plausible.io;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https:;
+      connect-src 'self' https://plausible.io https://o4507902341021696.ingest.us.sentry.io;
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self' mailto: https://wa.me;
+    """
+    
+    # Permissions Policy
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+
+# Cache control para assets con hash
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache control para imágenes
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# No cache para HTML
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+```
+
+***
+
+## 8. CI/CD CON GITHUB ACTIONS
+
+### Workflow de CI (tests y linting)
+
+```yaml
+# ===== .github/workflows/ci.yml =====
+
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run linter
+      run: npm run lint
+    
+    - name: Run tests
+      run: npm run test:coverage
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        files: ./coverage/coverage-final.json
+        flags: unittests
+        name: codecov-umbrella
+    
+    - name: Build project
+      run: npm run build
+    
+    - name: Test build output
+      run: |
+        test -d dist
+        test -f dist/index.html
+```
+
+### Workflow de Deploy a Netlify
+
+```yaml
+# ===== .github/workflows/deploy.yml =====
+
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build
+      run: npm run build
+      env:
+        NODE_ENV: production
+    
+    - name: Deploy to Netlify
+      uses: netlify/actions/cli@master
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      with:
+        args: deploy --prod --dir=dist
+    
+    - name: Notify deployment
+      run: echo "✅ Deployed to production!"
+```
+
+***
+
+## 9. SEGURIDAD Y PROTECCIÓN
+
+### Variables de entorno
+
+```bash
+# ===== .env.example =====
+
+# Analytics
+VITE_PLAUSIBLE_DOMAIN=filiustec.com
+
+# Error tracking
+VITE_SENTRY_DSN=https://your-dsn@sentry.io/project-id
+
+# API (futuro)
+VITE_API_URL=https://api.filiustec.com
+
+# Netlify (solo en CI/CD)
+NETLIFY_AUTH_TOKEN=your-token
+NETLIFY_SITE_ID=your-site-id
+```
+
+```javascript
+// ===== .gitignore =====
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build
+dist/
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+
+# Temporary
+*.tmp
+```
+
+### Protección contra spam (sin backend)
+
+```javascript
+// ===== scripts/utils/spamProtection.js =====
+
+export class SpamProtection {
+  static validateHoneypot(value) {
+    return value === ''; // Honeypot debe estar vacío
+  }
+  
+  static validateTimestamp(timestamp) {
+    const now = Date.now();
+    const diff = (now - timestamp) / 1000; // segundos
+    
+    // Mínimo 3 segundos, máximo 1 hora
+    return diff >= 3 && diff <= 3600;
+  }
+  
+  static validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+  
+  static sanitizeInput(input) {
+    return input
+      .trim()
+      .replace(/[<>]/g, '') // Remover < y >
+      .slice(0, 500); // Limitar longitud
+  }
+}
+```
+
+***
+
+## 10. MONITOREO Y ANALÍTICA
+
+### Plausible Analytics (privacy-first)
+
+```html
+<!-- En index.html, antes de </head> -->
+
+<script defer 
+        data-domain="filiustec.com" 
+        src="https://plausible.io/js/script.js">
+</script>
+
+<!-- Eventos personalizados -->
+<script>
+  // Track CTA clicks
+  document.querySelectorAll('[data-track-cta]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      plausible('CTA Click', { 
+        props: { location: btn.dataset.trackCta } 
+      });
+    });
+  });
+</script>
+```
+
+### Sentry (error tracking)
+
+```javascript
+// ===== scripts/config/sentry.js =====
+
+import * as Sentry from "@sentry/browser";
+
+export function initSentry() {
+  if (import.meta.env.PROD) {
+    Sentry.init({
+      dsn: import.meta.env.VITE_SENTRY_DSN,
+      environment: import.meta.env.MODE,
+      integrations: [
+        new Sentry.BrowserTracing(),
+        new Sentry.Replay(),
+      ],
+      
+      // Performance Monitoring
+      tracesSampleRate: 0.1, // 10% de transacciones
+      
+      // Session Replay
+      replaysSessionSampleRate: 0.1,
+      replaysOnErrorSampleRate: 1.0,
+      
+      // Filtrar errores no útiles
+      beforeSend(event, hint) {
+        // Ignorar errores de extensiones del navegador
+        if (event.exception?.values?.[0]?.value?.includes('extension')) {
+          return null;
+        }
+        return event;
+      },
+    });
+  }
+}
+```
+
+### Google Search Console Setup
+
+```html
+<!-- Verificación de Search Console -->
+<meta name="google-site-verification" content="your-verification-code">
+```
+
+```xml
+<!-- public/sitemap.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://filiustec.com</loc>
+    <lastmod>2025-12-04</lastmod>
+    hangefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+***
+
+## 11. TESTING STRATEGY
+
+### Tests unitarios (Vitest)
+
+```javascript
+// ===== tests/unit/utils.test.js =====
+
+import { describe, it, expect } from 'vitest';
+import { SpamProtection } from '../../src/scripts/utils/spamProtection.js';
+
+describe('SpamProtection', () => {
+  describe('validateEmail', () => {
+    it('should validate correct email', () => {
+      expect(SpamProtection.validateEmail('test@example.com')).toBe(true);
+    });
+    
+    it('should reject invalid email', () => {
+      expect(SpamProtection.validateEmail('invalid-email')).toBe(false);
+    });
+  });
+  
+  describe('validateTimestamp', () => {
+    it('should accept valid timestamp', () => {
+      const timestamp = Date.now() - 5000; // 5 segundos atrás
+      expect(SpamProtection.validateTimestamp(timestamp)).toBe(true);
+    });
+    
+    it('should reject too fast submission', () => {
+      const timestamp = Date.now() - 1000; // 1 segundo atrás
+      expect(SpamProtection.validateTimestamp(timestamp)).toBe(false);
+    });
+  });
+  
+  describe('sanitizeInput', () => {
+    it('should remove HTML tags', () => {
+      const input = '<script>alert("xss")</script>';
+      expect(SpamProtection.sanitizeInput(input)).toBe('scriptalert("xss")/script');
+    });
+    
+    it('should trim whitespace', () => {
+      expect(SpamProtection.sanitizeInput('  test  ')).toBe('test');
+    });
+  });
+});
+```
+
+### Tests E2E (Playwright)
+
+```javascript
+// ===== tests/e2e/navigation.spec.js =====
+
+import { test, expect } from '@playwright/test';
+
+test.describe('Navigation', () => {
+  test('should navigate to all sections', async ({ page }) => {
+    await page.goto('http://localhost:4173');
+    
+    // Click en "Servicios"
+    await page.click('a[href="#servicios"]');
+    await expect(page.locator('#servicios')).toBeInViewport();
+    
+    // Click en "Contacto"
+    await page.click('a[href="#contacto"]');
+    await expect(page.locator('#contacto')).toBeInViewport();
+  });
+  
+  test('should open mobile menu', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('http://localhost:4173');
+    
+    // Abrir menú
+    await page.click('[data-menu-toggle]');
+    await expect(page.locator('[data-menu-panel]')).toBeVisible();
+    
+    // Cerrar con overlay
+    await page.click('[data-menu-overlay]');
+    await expect(page.locator('[data-menu-panel]')).not.toBeVisible();
+  });
+});
+```
+
+***
+
+## 12. ESCALABILIDAD PARA SHOPIFY
+
+### Preparación de estructura
+
+```
+src/
+├── shopify/                         # Preparado para futuro e-commerce
+│   ├── theme/                       # Liquid templates
+│   │   ├── layout/
+│   │   ├── sections/
+│   │   └── snippets/
+│   │
+│   ├── assets/                      # Assets de Shopify
+│   │   ├── shared-styles.css       # CSS compartido con sitio
+│   │   └── shared-scripts.js       # JS compartido
+│   │
+│   └── config/
+│       └── settings_schema.json    # Configuración del tema
+```
+
+### CSS compartido (Design System)
+
+```css
+/* ===== Preparado para reutilizar en Shopify ===== */
+
+/* Este mismo design system se puede importar en Shopify */
+/* Los tokens (variables) funcionan idéntico en Liquid themes */
+
+:root {
+  --color-primary: #3b82f6; /* Mismo en Shopify */
+  --spacing-md: 24px;        /* Mismo en Shopify */
+  /* ... resto de tokens ... */
+}
+
+/* Los componentes (botones, cards, etc.) se copian tal cual */
+```
+
+***
+
+## 13. DOCUMENTACIÓN
+
+### README.md principal
+
+```markdown
+# 🚀 Filius Tec - Sitio Web Corporativo
+
+Sitio web modular en vanilla JavaScript construido con Vite.
+
+## 🛠️ Stack Técnico
+
+- HTML5 + CSS3 + JavaScript ES6+
+- Vite 5.x
+- CUBE CSS methodology
+- Netlify (hosting)
+
+## 📦 Setup de Desarrollo
+
+### Prerequisitos
+
+- Node.js 20.x o superior
+- npm 10.x o superior
+
+### Instalación
+
+\`\`\`bash
+# Clonar repositorio
+git clone https://github.com/filius-tec/filius-website.git
+cd filius-website
+
+# Instalar dependencias
+npm install
+
+# Copiar variables de entorno
+cp .env.example .env
+
+# Iniciar servidor de desarrollo
+npm run dev
+\`\`\`
+
+El sitio estará disponible en http://localhost:3000
+
+## 🧪 Testing
+
+\`\`\`bash
+# Tests unitarios
+npm run test
+
+# Tests con UI
+npm run test:ui
+
+# Coverage
+npm run test:coverage
+
+# E2E tests
+npm run test:e2e
+\`\`\`
+
+## 🏗️ Build y Deploy
+
+\`\`\`bash
+# Build de producción
+npm run build
+
+# Preview del build
+npm run preview
+
+# Deploy a Netlify (automático con push a main)
+git push origin main
+\`\`\`
+
+## 📁 Estructura del Proyecto
+
+Ver [docs/SETUP.md](docs/SETUP.md) para documentación detallada.
+
+## 🎨 Design System
+
+Ver [docs/COMPONENTS.md](docs/COMPONENTS.md) para guía de componentes.
+
+## 📄 Licencia
+
+MIT © 2025 Filius Tec
+```
+
+***
+
+## 14. CHECKLIST COMPLETO DE IMPLEMENTACIÓN
+
+### Setup inicial
+- [ ] Inicializar proyecto con npm
+- [ ] Instalar Vite y dependencias
+- [ ] Configurar estructura de carpetas
+- [ ] Configurar Git + GitHub
+- [ ] Crear .gitignore y .env.example
+- [ ] Configurar ESLint + Prettier
+- [ ] Configurar Husky + lint-staged
+
+### Design System
+- [ ] Crear variables.css con todos los tokens
+- [ ] Implementar reset.css
+- [ ] Crear todos los archivos de composition/
+- [ ] Crear utilities/
+- [ ] Crear blocks/ (componentes)
+- [ ] Configurar modo claro/oscuro
+
+### Componentes HTML
+- [ ] Header con navegación
+- [ ] Hero con partículas
+- [ ] Sección Servicios (3 cards)
+- [ ] Sección Casos de Éxito (3 iniciales)
+- [ ] Sección Experiencia
+- [ ] Sección Testimonios
+- [ ] Sección Contacto (mailto + WhatsApp)
+- [ ] Footer completo
+
+### JavaScript
+- [ ] Componente Menu (hamburguesa)
+- [ ] Componente ScrollProgress
+- [ ] Componente TechCarousel
+- [ ] Componente ThemeSwitcher
+- [ ] Componente BackToTop
+- [ ] Sistema de scroll animations
+- [ ] Smooth scroll
+- [ ] Custom cursor (desktop)
+- [ ] Lazy loading imágenes
+
+### Optimización
+- [ ] Optimizar todas las imágenes (WebP)
+- [ ] Configurar lazy loading
+- [ ] Implementar preload de fuentes
+- [ ] Minificar CSS y JS
+- [ ] Configurar cache headers
+
+### SEO
+- [ ] Meta tags completos
+- [ ] Schema markup (Organization, WebSite, Service)
+- [ ] Open Graph tags
+- [ ] Sitemap.xml
+- [ ] Robots.txt
+- [ ] Canonical URLs
+
+### Seguridad
+- [ ] Configurar CSP en netlify.toml
+- [ ] Headers de seguridad (X-Frame-Options, etc.)
+- [ ] Protección spam (honeypot + timestamp)
+- [ ] Sanitización de inputs
+- [ ] Variables de entorno configuradas
+
+### Testing
+- [ ] Tests unitarios para utils
+- [ ] Tests para componentes críticos
+- [ ] Tests E2E para navegación
+- [ ] Tests de accesibilidad (axe)
+- [ ] Validar Lighthouse (>90 en todo)
+
+### Deployment
+- [ ] Configurar Netlify
+- [ ] Configurar GitHub Actions
+- [ ] Setup de dominios (temporal .netlify.app)
+- [ ] SSL automático activado
+- [ ] Deploy a producción
+
+### Monitoreo
+- [ ] Integrar Plausible Analytics
+- [ ] Configurar Sentry
+- [ ] Setup Google Search Console
+- [ ] Configurar UptimeRobot
+
+### Documentación
+- [ ] README.md completo
+- [ ] docs/SETUP.md
+- [ ] docs/COMPONENTS.md
+- [ ] docs/DEPLOYMENT.md
+- [ ] Comentarios en código crítico
+
+***
+
+**Aprobación:**  
+- [ ] Santiago Trujillo (Product Owner)  
+- Fecha: ___ / ___ / 2025
+
+***

@@ -1,0 +1,1402 @@
+# 🎨 DESIGN SYSTEM FILIUS TEC
+## Sistema de Diseño Atómico - Versión 1.0
+
+**Proyecto:** Filius Tec  
+**Fecha:** 04 de diciembre de 2025  
+**Metodología:** Atomic Design + Design Tokens  
+**Inspiración:** tamalsen.dev + estética moderna minimalista  
+
+***
+
+## 1. FILOSOFÍA DE DISEÑO
+
+### Personalidad de marca
+- **Profesional:** Tipografía limpia, espaciados generosos, jerarquía clara
+- **Elegante:** Paleta sofisticada, animaciones sutiles, detalles refinados
+- **Minimalista:** Sin elementos innecesarios, foco en contenido esencial
+- **Cercano:** Lenguaje visual humano, interacciones suaves, accesible
+
+### Principios de diseño
+1. **Mobile First siempre**
+2. **Menos es más:** cada elemento debe tener un propósito
+3. **Contraste inteligente:** guiar la atención sin saturar
+4. **Consistencia absoluta:** mismo comportamiento = misma apariencia
+5. **Accesibilidad integrada:** no es opcional, es base
+
+***
+
+## 2. DESIGN TOKENS - PALETA DE COLORES
+
+### Sistema de colores Dark Theme (principal)
+
+```css
+:root {
+  /* ============================================
+     COLORES BASE - OSCURO (Dark Theme)
+     ============================================ */
+  
+  /* Fondos base */
+  --bg-primary: #0a0a0a;           /* Negro profundo - fondo principal */
+  --bg-secondary: #141414;         /* Negro suave - secciones alternas */
+  --bg-tertiary: #1a1a1a;          /* Gris muy oscuro - cards */
+  --bg-elevated: #202020;          /* Gris oscuro elevado - modales */
+  
+  /* Fondos con textura (overlay sutil) */
+  --bg-texture: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iYSIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj48cGF0aCBkPSJNMCAwaDQwdjQwSDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgZmlsbD0iIzExMSIgZmlsbC1vcGFjaXR5PSIuMDIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4=');
+  
+  /* Colores primarios - Azul tecnológico */
+  --color-primary: #3b82f6;        /* Azul vibrante - CTAs principales */
+  --color-primary-light: #60a5fa;  /* Azul claro - hover */
+  --color-primary-dark: #2563eb;   /* Azul oscuro - active */
+  --color-primary-glow: rgba(59, 130, 246, 0.3); /* Glow effect */
+  
+  /* Colores secundarios - Verde azulado (teal) */
+  --color-secondary: #14b8a6;      /* Teal - acentos secundarios */
+  --color-secondary-light: #2dd4bf; /* Teal claro */
+  --color-secondary-dark: #0d9488;  /* Teal oscuro */
+  
+  /* Colores de acento - Naranja vibrante */
+  --color-accent: #f97316;         /* Naranja - punto focal */
+  --color-accent-light: #fb923c;   /* Naranja claro */
+  --color-accent-dark: #ea580c;    /* Naranja oscuro */
+  
+  /* Colores joya - Acentos especiales */
+  --color-jewel-purple: #a855f7;   /* Púrpura joya */
+  --color-jewel-emerald: #10b981;  /* Esmeralda */
+  --color-jewel-amber: #f59e0b;    /* Ámbar */
+  
+  /* Metálicos - Detalles premium */
+  --metallic-silver: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 50%, #c0c0c0 100%);
+  --metallic-gold: linear-gradient(135deg, #d4af37 0%, #f4e5b8 50%, #d4af37 100%);
+  
+  /* Grises - Escala completa */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Textos */
+  --text-primary: #ffffff;         /* Blanco puro - títulos */
+  --text-secondary: #e5e7eb;       /* Gris muy claro - subtítulos */
+  --text-tertiary: #9ca3af;        /* Gris medio - body */
+  --text-quaternary: #6b7280;      /* Gris oscuro - captions */
+  --text-muted: #4b5563;           /* Gris muy oscuro - disabled */
+  
+  /* Estados semánticos */
+  --color-success: #10b981;        /* Verde - éxito */
+  --color-error: #ef4444;          /* Rojo - error */
+  --color-warning: #f59e0b;        /* Amarillo - advertencia */
+  --color-info: #3b82f6;           /* Azul - información */
+  
+  /* Bordes y líneas */
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-hover: rgba(255, 255, 255, 0.16);
+  --border-color-focus: var(--color-primary);
+  
+  /* Overlays */
+  --overlay-dark: rgba(0, 0, 0, 0.7);
+  --overlay-light: rgba(255, 255, 255, 0.05);
+}
+```
+
+### Sistema de colores Light Theme (secundario)
+
+```css
+[data-theme="light"] {
+  /* ============================================
+     COLORES BASE - CLARO (Light Theme)
+     ============================================ */
+  
+  /* Fondos base */
+  --bg-primary: #ffffff;           /* Blanco puro */
+  --bg-secondary: #f9fafb;         /* Gris muy claro */
+  --bg-tertiary: #f3f4f6;          /* Gris claro */
+  --bg-elevated: #ffffff;          /* Blanco elevado */
+  
+  /* Primarios (ajustados para contraste en claro) */
+  --color-primary: #2563eb;        /* Azul más oscuro */
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  
+  /* Secundarios */
+  --color-secondary: #0d9488;
+  --color-secondary-light: #14b8a6;
+  --color-secondary-dark: #0f766e;
+  
+  /* Acento */
+  --color-accent: #ea580c;
+  --color-accent-light: #f97316;
+  --color-accent-dark: #c2410c;
+  
+  /* Textos invertidos */
+  --text-primary: #111827;
+  --text-secondary: #1f2937;
+  --text-tertiary: #4b5563;
+  --text-quaternary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  /* Bordes */
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-color-hover: rgba(0, 0, 0, 0.16);
+  
+  /* Overlays */
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --overlay-light: rgba(0, 0, 0, 0.03);
+}
+```
+
+### Gradientes predefinidos
+
+```css
+:root {
+  /* Gradientes de fondo */
+  --gradient-hero: linear-gradient(
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 50%,
+    var(--bg-primary) 100%
+  );
+  
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+  
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-secondary-light) 100%
+  );
+  
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-light) 100%
+  );
+  
+  /* Gradiente metálico plata */
+  --gradient-silver: linear-gradient(
+    135deg,
+    #c0c0c0 0%,
+    #e8e8e8 25%,
+    #c0c0c0 50%,
+    #e8e8e8 75%,
+    #c0c0c0 100%
+  );
+  
+  /* Gradiente de overlay */
+  --gradient-overlay: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(10, 10, 10, 0.8) 100%
+  );
+}
+```
+
+***
+
+## 3. TIPOGRAFÍA
+
+### Familias tipográficas
+
+```css
+:root {
+  /* ============================================
+     TIPOGRAFÍA
+     ============================================ */
+  
+  /* Fuente principal: Inter (body) */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 
+                  'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  
+  /* Fuente display: Montserrat (títulos) */
+  --font-display: 'Montserrat', 'San Francisco', 'Product Sans', 
+                  -apple-system, sans-serif;
+  
+  /* Fuente mono (código, si aplica) */
+  --font-mono: 'Fira Code', 'SF Mono', 'Consolas', monospace;
+}
+
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+```
+
+### Escala tipográfica responsive
+
+```css
+:root {
+  /* ============================================
+     TAMAÑOS DE TEXTO - MOBILE FIRST
+     ============================================ */
+  
+  /* H1 - Hero principal */
+  --font-size-h1: clamp(36px, 8vw, 64px);
+  --line-height-h1: 1.1;
+  --font-weight-h1: 800;
+  --letter-spacing-h1: -0.02em;
+  
+  /* H2 - Títulos de sección */
+  --font-size-h2: clamp(24px, 5vw, 40px);
+  --line-height-h2: 1.2;
+  --font-weight-h2: 700;
+  --letter-spacing-h2: -0.01em;
+  
+  /* H3 - Subtítulos importantes */
+  --font-size-h3: clamp(20px, 3vw, 28px);
+  --line-height-h3: 1.3;
+  --font-weight-h3: 600;
+  --letter-spacing-h3: -0.005em;
+  
+  /* H4 - Subtítulos secundarios */
+  --font-size-h4: clamp(18px, 2.5vw, 22px);
+  --line-height-h4: 1.4;
+  --font-weight-h4: 600;
+  --letter-spacing-h4: 0;
+  
+  /* H5 - Tertiary headings */
+  --font-size-h5: clamp(16px, 2vw, 18px);
+  --line-height-h5: 1.5;
+  --font-weight-h5: 500;
+  
+  /* Body - Texto general */
+  --font-size-body: clamp(16px, 1.5vw, 18px);
+  --line-height-body: 1.6;
+  --font-weight-body: 400;
+  
+  /* Body large - Intro, destacados */
+  --font-size-body-lg: clamp(17px, 2vw, 20px);
+  --line-height-body-lg: 1.7;
+  
+  /* Body small - Captions, notas */
+  --font-size-body-sm: clamp(14px, 1.2vw, 15px);
+  --line-height-body-sm: 1.5;
+  
+  /* Tiny - Tags, labels */
+  --font-size-tiny: clamp(12px, 1vw, 13px);
+  --line-height-tiny: 1.4;
+  --font-weight-tiny: 500;
+}
+```
+
+### Aplicación de tipografía
+
+```css
+/* Headings */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-weight: var(--font-weight-h1);
+  letter-spacing: var(--letter-spacing-h1);
+  color: var(--text-primary);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-h2);
+  letter-spacing: var(--letter-spacing-h2);
+  color: var(--text-primary);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: var(--font-weight-h3);
+  letter-spacing: var(--letter-spacing-h3);
+  color: var(--text-primary);
+}
+
+h4, .h4 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-h4);
+  color: var(--text-secondary);
+}
+
+/* Body */
+p, .body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+  color: var(--text-tertiary);
+}
+
+.body-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body-lg);
+  color: var(--text-secondary);
+}
+
+.body-sm {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body-sm);
+  color: var(--text-quaternary);
+}
+
+.caption {
+  font-size: var(--font-size-tiny);
+  line-height: var(--line-height-tiny);
+  font-weight: var(--font-weight-tiny);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+```
+
+***
+
+## 4. ESPACIADOS Y DIMENSIONES
+
+### Sistema de espaciado (base 4px)
+
+```css
+:root {
+  /* ============================================
+     ESPACIADOS (base 4px)
+     ============================================ */
+  
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28: 112px;
+  --space-32: 128px;
+  
+  /* Espaciados semánticos */
+  --spacing-xs: var(--space-2);    /* 8px */
+  --spacing-sm: var(--space-4);    /* 16px */
+  --spacing-md: var(--space-6);    /* 24px */
+  --spacing-lg: var(--space-8);    /* 32px */
+  --spacing-xl: var(--space-12);   /* 48px */
+  --spacing-2xl: var(--space-16);  /* 64px */
+  --spacing-3xl: var(--space-20);  /* 80px */
+  
+  /* Espaciados de secciones */
+  --section-spacing-mobile: var(--space-20);   /* 80px */
+  --section-spacing-tablet: 100px;
+  --section-spacing-desktop: 120px;
+}
+```
+
+### Border radius
+
+```css
+:root {
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+  
+  --radius-none: 0;
+  --radius-sm: 4px;      /* Inputs, tags pequeños */
+  --radius-md: 8px;      /* Botones estándar */
+  --radius-lg: 12px;     /* Cards */
+  --radius-xl: 16px;     /* Cards grandes */
+  --radius-2xl: 24px;    /* Modales */
+  --radius-full: 9999px; /* Circular */
+  
+  /* Radius semánticos */
+  --radius-button: var(--radius-md);
+  --radius-input: var(--radius-sm);
+  --radius-card: var(--radius-lg);
+  --radius-tag: var(--radius-full);
+}
+```
+
+### Sombras (sutiles pero perceptibles)
+
+```css
+:root {
+  /* ============================================
+     SOMBRAS
+     ============================================ */
+  
+  /* Sombras de elevación */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.20);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.24);
+  
+  /* Sombras glow (efectos luminosos) */
+  --shadow-glow-primary: 0 0 20px var(--color-primary-glow);
+  --shadow-glow-secondary: 0 0 20px rgba(20, 184, 166, 0.3);
+  --shadow-glow-accent: 0 0 20px rgba(249, 115, 22, 0.3);
+  
+  /* Sombra de focus */
+  --shadow-focus: 0 0 0 3px var(--color-primary-glow);
+  
+  /* Sombras de hover en cards */
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.2),
+                       0 0 20px var(--color-primary-glow);
+}
+```
+
+***
+
+## 5. ÁTOMOS - COMPONENTES BÁSICOS
+
+### Botones
+
+```css
+/* ============================================
+   BOTONES - ÁTOMOS
+   ============================================ */
+
+.btn {
+  /* Base común */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  
+  /* Tamaño por defecto (medium) */
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: 16px;
+  border-radius: var(--radius-button);
+}
+
+/* Ripple effect */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ===== Variantes de color ===== */
+
+/* Primario */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-md), var(--shadow-glow-primary);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  background: var(--color-primary-dark);
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secundario (outline) */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(59, 130, 246, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Terciario (ghost) */
+.btn-tertiary {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.btn-tertiary:hover {
+  color: var(--color-primary);
+  background: var(--overlay-light);
+}
+
+.btn-tertiary:active {
+  transform: scale(0.98);
+}
+
+/* Acento */
+.btn-accent {
+  background: var(--gradient-accent);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-accent:hover {
+  background: var(--color-accent-light);
+  box-shadow: var(--shadow-md), var(--shadow-glow-accent);
+  transform: translateY(-2px);
+}
+
+/* ===== Tamaños ===== */
+
+.btn-sm {
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: 14px;
+}
+
+.btn-md {
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: 16px;
+}
+
+.btn-lg {
+  height: 56px;
+  padding: 0 var(--space-8);
+  font-size: 18px;
+}
+
+/* ===== Estados ===== */
+
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ===== Variante full-width (mobile) ===== */
+
+.btn-block {
+  width: 100%;
+  display: flex;
+}
+```
+
+### Inputs
+
+```css
+/* ============================================
+   INPUTS - ÁTOMOS
+   ============================================ */
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--space-4);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  border-radius: var(--radius-input) var(--radius-input) 0 0;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:hover {
+  border-bottom-color: var(--border-color-hover);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.input:focus {
+  border-bottom-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px var(--color-primary-glow);
+}
+
+.input.error {
+  border-bottom-color: var(--color-error);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Textarea */
+.textarea {
+  min-height: 120px;
+  padding: var(--space-4);
+  resize: vertical;
+}
+
+/* Input group con label */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.input-label {
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.input-error {
+  font-size: var(--font-size-tiny);
+  color: var(--color-error);
+  margin-top: var(--space-1);
+}
+```
+
+### Iconos
+
+```css
+/* ============================================
+   ICONOS - ÁTOMOS
+   ============================================ */
+
+/* Librería recomendada: Lucide Icons o Heroicons */
+/* https://lucide.dev/ o https://heroicons.com/ */
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: all 0.3s ease;
+}
+
+/* Tamaños */
+.icon-xs { width: 16px; height: 16px; }
+.icon-sm { width: 20px; height: 20px; }
+.icon-md { width: 24px; height: 24px; }
+.icon-lg { width: 32px; height: 32px; }
+.icon-xl { width: 40px; height: 40px; }
+
+/* Colores */
+.icon-primary { color: var(--color-primary); }
+.icon-secondary { color: var(--text-secondary); }
+.icon-muted { color: var(--text-muted); }
+```
+
+***
+
+## 6. MOLÉCULAS - COMPONENTES COMPUESTOS
+
+### Cards
+
+```css
+/* ============================================
+   CARDS - MOLÉCULAS
+   ============================================ */
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: var(--space-6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Variantes de card */
+.card-highlight {
+  border-color: var(--color-primary);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.card-elevated {
+  box-shadow: var(--shadow-lg);
+}
+```
+
+### Tags/Pills
+
+```css
+/* ============================================
+   TAGS/PILLS - MOLÉCULAS
+   ============================================ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 6px 12px;
+  font-size: var(--font-size-tiny);
+  font-weight: 500;
+  border-radius: var(--radius-tag);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* Variantes de color */
+.tag-primary {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--color-primary);
+}
+
+.tag-secondary {
+  background: rgba(20, 184, 166, 0.15);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  color: var(--color-secondary);
+}
+
+.tag-accent {
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  color: var(--color-accent);
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Con icono */
+.tag .icon {
+  width: 14px;
+  height: 14px;
+}
+```
+
+### Testimonios
+
+```css
+/* ============================================
+   TESTIMONIOS - MOLÉCULAS
+   ============================================ */
+
+.testimonio {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: var(--space-6);
+  position: relative;
+}
+
+/* Comillas decorativas */
+.testimonio::before {
+  content: """;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 80px;
+  font-family: Georgia, serif;
+  color: var(--color-primary);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.testimonio-texto {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body-lg);
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonio-autor {
+  font-size: var(--font-size-body-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.testimonio-cargo {
+  font-size: var(--font-size-tiny);
+  color: var(--text-quaternary);
+}
+```
+
+***
+
+## 7. ORGANISMOS - SECCIONES COMPLETAS
+
+### Hero Section
+
+```css
+/* ============================================
+   HERO - ORGANISMO
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  background: var(--gradient-hero);
+  background-image: var(--bg-texture);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: var(--space-20) var(--space-5);
+}
+
+/* Partículas decorativas */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero::before {
+  width: 400px;
+  height: 400px;
+  background: var(--color-primary);
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.hero::after {
+  width: 500px;
+  height: 500px;
+  background: var(--color-secondary);
+  bottom: -250px;
+  left: -150px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+/* Badges con animación pulse */
+.hero-badge {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-body-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+}
+```
+
+### Carrusel de Tecnologías
+
+```css
+/* ============================================
+   CARRUSEL TECNOLOGÍAS - ORGANISMO
+   ============================================ */
+
+.tech-carousel {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  
+  /* Fade en los bordes */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.tech-carousel-track {
+  display: flex;
+  gap: var(--space-10);
+  animation: scroll-horizontal 40s linear infinite;
+  will-change: transform;
+}
+
+.tech-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 100px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.tech-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.7);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-item:hover img {
+  filter: grayscale(0%) brightness(1.2);
+  transform: scale(1.2);
+}
+
+.tech-item span {
+  font-size: var(--font-size-tiny);
+  font-weight: 500;
+  color: var(--text-quaternary);
+  transition: color 0.3s ease;
+}
+
+.tech-item:hover span {
+  color: var(--text-primary);
+}
+
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+```
+
+### Footer
+
+```css
+/* ============================================
+   FOOTER - ORGANISMO
+   ============================================ */
+
+.footer {
+  background: #000000;
+  border-top: 1px solid var(--border-color);
+  padding: var(--space-16) var(--space-5) var(--space-10);
+  text-align: center;
+}
+
+.footer-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: var(--space-8) 0;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer-nav a {
+  font-size: var(--font-size-body-sm);
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--color-primary);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon:hover {
+  background: var(--color-primary);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.footer-legal {
+  font-size: var(--font-size-tiny);
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+```
+
+***
+
+## 8. ANIMACIONES Y TRANSICIONES
+
+### Transiciones base
+
+```css
+:root {
+  /* ============================================
+     TRANSICIONES Y EASING
+     ============================================ */
+  
+  --transition-fast: 0.15s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.5s;
+  
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+```
+
+### Animaciones de scroll
+
+```css
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+
+/* Fade in desde abajo */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--ease-out),
+              transform 0.6s var(--ease-out);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade in desde izquierda */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s var(--ease-out),
+              transform 0.6s var(--ease-out);
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in desde derecha */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s var(--ease-out),
+              transform 0.6s var(--ease-out);
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale in */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s var(--ease-out),
+              transform 0.6s var(--ease-out);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+```
+
+### Loading states
+
+```css
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+/* Spinner circular */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Skeleton screen */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+```
+
+***
+
+## 9. ACCESIBILIDAD
+
+### Focus states
+
+```css
+/* ============================================
+   FOCUS STATES - ACCESIBILIDAD
+   ============================================ */
+
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-glow);
+  border-radius: var(--radius-sm);
+}
+
+/* Para navegación por teclado */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-4);
+  z-index: 9999;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+```
+
+### Reduced motion
+
+```css
+/* ============================================
+   RESPETO A PREFERENCIAS DE ACCESIBILIDAD
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+```
+
+***
+
+## 10. UTILIDADES
+
+### Clases de espaciado
+
+```css
+/* ============================================
+   UTILIDADES DE ESPACIADO
+   ============================================ */
+
+/* Margins */
+.m-0 { margin: 0; }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-4 { margin: var(--space-4); }
+.m-6 { margin: var(--space-6); }
+.m-8 { margin: var(--space-8); }
+
+.mt-0 { margin-top: 0; }
+.mt-4 { margin-top: var(--space-4); }
+.mt-8 { margin-top: var(--space-8); }
+
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+/* Paddings */
+.p-0 { padding: 0; }
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+/* Gap */
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+```
+
+### Display y layout
+
+```css
+/* ============================================
+   UTILIDADES DE LAYOUT
+   ============================================ */
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+.hidden { display: none; }
+.visible { display: block; }
+```
+
+***
+
+## 11. CHECKLIST DE IMPLEMENTACIÓN
+
+### Setup inicial
+- [ ] Importar fuentes (Inter + Montserrat)
+- [ ] Crear archivo `variables.css` con todos los tokens
+- [ ] Crear archivo `reset.css` con normalize
+- [ ] Configurar modo dark/light con `data-theme`
+
+### Átomos
+- [ ] Componentes de botón (.btn-primary, .btn-secondary, etc.)
+- [ ] Componentes de input (.input, .textarea)
+- [ ] Sistema de iconos configurado
+
+### Moléculas
+- [ ] Componentes de card
+- [ ] Componentes de tag/pill
+- [ ] Componentes de testimonio
+
+### Organismos
+- [ ] Hero section con partículas
+- [ ] Carrusel de tecnologías
+- [ ] Footer con dividers
+
+### Animaciones
+- [ ] Scroll animations (fade-in-up, etc.)
+- [ ] Hover effects en botones y cards
+- [ ] Loading states (spinner, skeleton)
+
+### Accesibilidad
+- [ ] Focus states configurados
+- [ ] Prefers-reduced-motion respetado
+- [ ] Skip-to-content implementado
+- [ ] Contraste AA verificado
+
+### Testing
+- [ ] Probar todos los componentes en mobile/tablet/desktop
+- [ ] Verificar modo claro/oscuro
+- [ ] Probar navegación por teclado
+- [ ] Validar con Lighthouse
+
+***
+
+**Aprobación:**  
+- [ ] Santiago Trujillo (Product Owner)  
+- Fecha: ___ / ___ / 2025
+
+***

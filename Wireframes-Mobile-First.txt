@@ -1,0 +1,1528 @@
+# 📐 WIREFRAMES MOBILE FIRST - FILIUS TEC
+
+**Proyecto:** Sitio web corporativo Filius Tec  
+**Fecha:** 04 de diciembre de 2025  
+**Metodología:** Mobile First Design + Progressive Enhancement  
+**Herramienta:** Especificaciones para implementación directa en código  
+
+***
+
+## 1. SISTEMA DE BREAKPOINTS
+
+### Breakpoints estándar (8 puntos de ruptura)
+
+```css
+/* Mobile First - Base */
+--mobile-xs: 320px;   /* iPhone SE, Galaxy Fold */
+--mobile-sm: 375px;   /* iPhone 12/13/14, Galaxy S20 */
+--mobile-md: 425px;   /* iPhone Plus, Pixel */
+
+/* Tablet */
+--tablet-sm: 768px;   /* iPad Mini, tablets pequeñas */
+--tablet-md: 1024px;  /* iPad, tablets estándar */
+
+/* Desktop */
+--desktop-sm: 1280px; /* Laptops pequeños */
+--desktop-md: 1440px; /* Laptops estándar, monitores HD */
+--desktop-lg: 1920px; /* Monitores Full HD y superiores */
+```
+
+### Orden de prioridad de dispositivos
+1. **Mobile (320-425px)** - Prioridad máxima
+2. **Tablet (768-1024px)** - Prioridad alta
+3. **Desktop/Laptop (1280-1920px+)** - Prioridad media
+4. **Multi-monitor (>1920px)** - Prioridad baja (contenido centrado)
+
+***
+
+## 2. SISTEMA DE GRID Y ESPACIADOS
+
+### Grid base por breakpoint
+
+```css
+/* Mobile (320-425px) */
+--grid-columns-mobile: 4;
+--grid-gap-mobile: 16px;
+--container-padding-mobile: 20px;
+
+/* Tablet (768-1024px) */
+--grid-columns-tablet: 8;
+--grid-gap-tablet: 24px;
+--container-padding-tablet: 40px;
+
+/* Desktop (1280px+) */
+--grid-columns-desktop: 12;
+--grid-gap-desktop: 32px;
+--container-padding-desktop: 60px;
+--max-width-desktop: 1400px;
+```
+
+### Espaciados verticales entre secciones
+
+```css
+/* Separación visual clara entre secciones */
+--section-spacing-mobile: 80px;   /* Mobile */
+--section-spacing-tablet: 100px;  /* Tablet */
+--section-spacing-desktop: 120px; /* Desktop */
+
+/* Espaciado interno de secciones */
+--section-padding-mobile: 40px 20px;
+--section-padding-tablet: 60px 40px;
+--section-padding-desktop: 80px 60px;
+```
+
+### Sistema de espaciado interno (4px base)
+
+```css
+--space-xs: 4px;
+--space-sm: 8px;
+--space-md: 16px;
+--space-lg: 24px;
+--space-xl: 32px;
+--space-2xl: 48px;
+--space-3xl: 64px;
+```
+
+***
+
+## 3. TIPOGRAFÍA RESPONSIVE
+
+### Escala tipográfica por breakpoint
+
+```css
+/* H1 - Hero principal */
+--h1-mobile: 36px;
+--h1-tablet: 48px;
+--h1-desktop: 64px;
+--h1-line-height: 1.1;
+--h1-weight: 700;
+
+/* H2 - Secciones principales + Subtítulo hero */
+--h2-mobile: 24px;
+--h2-tablet: 32px;
+--h2-desktop: 40px;
+--h2-line-height: 1.2;
+--h2-weight: 600;
+
+/* H3 - Títulos de servicios/casos */
+--h3-mobile: 20px;
+--h3-tablet: 24px;
+--h3-desktop: 28px;
+--h3-line-height: 1.3;
+--h3-weight: 600;
+
+/* H4 - Subtítulos internos */
+--h4-mobile: 18px;
+--h4-tablet: 20px;
+--h4-desktop: 22px;
+--h4-line-height: 1.4;
+--h4-weight: 500;
+
+/* Body - Texto general */
+--body-mobile: 16px;
+--body-tablet: 17px;
+--body-desktop: 18px;
+--body-line-height: 1.6;
+--body-weight: 400;
+
+/* Small - Tags, captions */
+--small-mobile: 14px;
+--small-tablet: 14px;
+--small-desktop: 15px;
+--small-line-height: 1.5;
+--small-weight: 500;
+```
+
+**Objetivo:** Textos legibles y elegantes, accesibles para personas con baja visión mientras mantienen jerarquía visual clara.
+
+***
+
+## 4. HEADER Y NAVEGACIÓN MOBILE
+
+### Header Mobile (320-767px)
+
+```
+┌─────────────────────────────────────────┐
+│ [Logo Filius]              [☰ Menu]     │  ← 60px altura
+└─────────────────────────────────────────┘
+   ↑                                   ↑
+   20px padding                   20px padding
+```
+
+**Especificaciones:**
+```css
+.header-mobile {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 36px;
+}
+
+.hamburger-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+```
+
+### Menú Hamburguesa Lateral
+
+```
+Overlay (70% opacidad)    │  Menú (80% viewport)
+                          │  
+[Contenido difuminado]    │  [X Cerrar]
+                          │  
+                          │  ┌─────────────────┐
+                          │  │ Inicio          │
+                          │  │ Servicios       │
+                          │  │ Nuestro Trabajo │
+                          │  │ Experiencia     │
+                          │  │ Contacto        │
+                          │  │                 │
+                          │  │ [@social icons] │
+                          │  └─────────────────┘
+```
+
+**Especificaciones:**
+```css
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1100;
+  animation: fadeIn 0.3s ease;
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #0a0a0a;
+  z-index: 1200;
+  padding: 24px;
+  animation: slideInRight 0.3s ease;
+}
+
+.menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+}
+
+.menu-links {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+  color: var(--color-primary);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+```
+
+***
+
+## 5. WIREFRAME MOBILE - HERO SECTION
+
+### Layout Mobile (320-425px)
+
+```
+┌───────────────────────────────────────┐
+│         [Header fijo 60px]            │
+└───────────────────────────────────────┘
+┌───────────────────────────────────────┐
+│                                       │
+│            [H1] Filius Tec            │ ← 36px
+│                                       │
+│   [H2] Desarrollo, Soporte y         │ ← 24px
+│         Estrategia Digital            │
+│                                       │
+│   [p] Somos una consultora de        │ ← 16px
+│   tecnología integral que ayuda...    │
+│                                       │
+│   ┌─────────────────────────────┐    │
+│   │  Solicitar Consultoría  →   │    │ ← 48px altura
+│   └─────────────────────────────┘    │
+│                                       │
+│   ┌─────────────────────────────┐    │
+│   │     Ver Servicios      →    │    │ ← 48px altura
+│   └─────────────────────────────┘    │
+│                                       │
+└───────────────────────────────────────┘
+          [16px gap entre botones]
+
+┌───────────────────────────────────────┐
+│  🔄 [Carrusel de Tecnologías]        │ ← 70px altura
+│  HTML CSS JS React Node WordPress... │
+└───────────────────────────────────────┘
+```
+
+**Especificaciones:**
+```css
+.hero-mobile {
+  min-height: calc(100vh - 60px); /* -header height */
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #a0a0a0;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: #888888;
+  max-width: 100%;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.btn-primary,
+.btn-secondary {
+  width: 100%;
+  height: 48px; /* Tap target mínimo 44px */
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:active {
+  background: var(--color-primary-dark);
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.btn-secondary:active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: scale(0.98);
+}
+```
+
+### Carrusel de Tecnologías Mobile
+
+```css
+.tech-carousel-mobile {
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  
+  /* Fade en los bordes */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.tech-carousel-track {
+  display: flex;
+  gap: 32px;
+  animation: scroll-horizontal 40s linear infinite;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.tech-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.tech-item span {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  white-space: nowrap;
+}
+```
+
+***
+
+## 6. WIREFRAME MOBILE - SERVICIOS
+
+### Layout Mobile
+
+```
+┌───────────────────────────────────────┐
+│                                       │
+│      [H2] Nuestros Servicios         │ ← 24px
+│                                       │
+└───────────────────────────────────────┘
+
+┌───────────────────────────────────────┐
+│  [Icon] 🌐                           │
+│                                       │
+│  [H3] Desarrollo Web & E-commerce    │ ← 20px
+│                                       │
+│  [p] Creamos tiendas virtuales       │ ← 16px
+│  escalables, páginas corporativas... │
+│                                       │
+│  [E-commerce] [Web Corp] [SEO]       │ ← Pills
+│  [WordPress]                          │
+│                                       │
+└───────────────────────────────────────┘
+         ↓ 32px gap
+┌───────────────────────────────────────┐
+│  [Icon] 🛠️                           │
+│                                       │
+│  [H3] Soporte Técnico e              │
+│       Infraestructura TI              │
+│                                       │
+│  [p] Mantenimiento de hardware...    │
+│                                       │
+│  [Help Desk] [Redes] [Hardware]      │
+│  [Mantenimiento]                      │
+│                                       │
+└───────────────────────────────────────┘
+         ↓ 32px gap
+┌───────────────────────────────────────┐
+│  [Icon] 📊                           │
+│                                       │
+│  [H3] Consultoría & Gestión          │
+│       de Proyectos                    │
+│                                       │
+│  [p] Transformación digital...       │
+│                                       │
+│  [Scrum] [Transform] [Estrategia]    │
+│  [PM]                                 │
+│                                       │
+└───────────────────────────────────────┘
+```
+
+**Especificaciones:**
+```css
+.servicios-section {
+  padding: 80px 20px;
+  background: var(--bg-secondary); /* Fondo diferenciado */
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.servicios-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.servicio-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: all 0.3s ease;
+}
+
+.servicio-card:active {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+}
+
+.servicio-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.servicio-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.servicio-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #888888;
+}
+
+.servicio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-pill {
+  padding: 6px 12px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+```
+
+***
+
+## 7. WIREFRAME MOBILE - CASOS DE ÉXITO
+
+### Layout Mobile (colapsado por defecto)
+
+```
+┌───────────────────────────────────────┐
+│                                       │
+│      [H2] Casos de Éxito             │
+│                                       │
+└───────────────────────────────────────┘
+
+┌───────────────────────────────────────┐
+│  ┌─────────────────────────────────┐ │
+│  │     [Imagen del proyecto]       │ │ ← 16:9 ratio
+│  └─────────────────────────────────┘ │
+│                                       │
+│  [H3] Cliente: Empresa XYZ           │
+│  [p] Industria: E-commerce           │
+│                                       │
+│  [▼ Ver detalles]                    │ ← Botón expandir
+│                                       │
+└───────────────────────────────────────┘
+         ↓ 24px gap
+┌───────────────────────────────────────┐
+│  [Imagen]                             │
+│  [H3] Cliente: Empresa ABC           │
+│  [p] Industria: Servicios            │
+│  [▼ Ver detalles]                    │
+└───────────────────────────────────────┘
+```
+
+### Layout Mobile (expandido)
+
+```
+┌───────────────────────────────────────┐
+│  [Imagen]                             │
+│                                       │
+│  [H3] Cliente: Empresa XYZ           │
+│  [p] Industria: E-commerce           │
+│                                       │
+│  [▲ Ocultar detalles]                │
+│                                       │
+│  ┌─────────────────────────────────┐ │
+│  │ [H4] Problema                   │ │
+│  │ [p] El cliente no tenía...      │ │
+│  └─────────────────────────────────┘ │
+│                                       │
+│  ┌─────────────────────────────────┐ │
+│  │ [H4] Solución                   │ │
+│  │ [p] Desarrollamos un sitio...   │ │
+│  └─────────────────────────────────┘ │
+│                                       │
+│  ┌─────────────────────────────────┐ │
+│  │ [H4] Resultados                 │ │
+│  │ [p] Aumento del 150% en...      │ │
+│  └─────────────────────────────────┘ │
+│                                       │
+└───────────────────────────────────────┘
+```
+
+**Especificaciones:**
+```css
+.casos-section {
+  padding: 80px 20px;
+  background: var(--bg-primary);
+}
+
+.casos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.caso-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.caso-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.caso-content {
+  padding: 20px;
+}
+
+.caso-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.caso-industria {
+  font-size: 14px;
+  color: #888888;
+  margin-bottom: 16px;
+}
+
+.caso-toggle {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.caso-details {
+  margin-top: 16px;
+  display: none; /* Oculto por defecto */
+  animation: expandDetails 0.3s ease;
+}
+
+.caso-details.expanded {
+  display: block;
+}
+
+.detalle-block {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--color-primary);
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.detalle-block h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-primary);
+}
+
+.detalle-block p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #a0a0a0;
+}
+
+@keyframes expandDetails {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+```
+
+***
+
+## 8. WIREFRAME MOBILE - EXPERIENCIA
+
+### Layout Mobile (mantener diseño actual)
+
+```
+┌───────────────────────────────────────┐
+│                                       │
+│   [H2] Nuestra Experiencia           │
+│                                       │
+│   [p] Texto sobre Filius Tec,       │
+│   historia, valores, equipo...        │
+│                                       │
+│   • Empatía con clientes             │
+│   • Personalización en cada proyecto │
+│   • Garantía extendida               │
+│   • Metodologías ágiles              │
+│                                       │
+└───────────────────────────────────────┘
+```
+
+**Especificaciones:**
+```css
+.experiencia-section {
+  padding: 80px 20px;
+  background: var(--bg-secondary);
+}
+
+.experiencia-content {
+  max-width: 100%;
+}
+
+.experiencia-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.experiencia-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: #a0a0a0;
+}
+
+.experiencia-list {
+  list-style: none;
+  padding: 0;
+}
+
+.experiencia-list li {
+  padding-left: 24px;
+  margin-bottom: 12px;
+  position: relative;
+  font-size: 16px;
+  color: #888888;
+}
+
+.experiencia-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+```
+
+***
+
+## 9. WIREFRAME MOBILE - TESTIMONIOS
+
+### Layout Mobile (línea de tiempo vertical)
+
+```
+┌───────────────────────────────────────┐
+│                                       │
+│  [H2] Lo que dicen nuestros clientes │
+│                                       │
+└───────────────────────────────────────┘
+
+┌───────────────────────────────────────┐
+│  │                                    │
+│  ●─ [H3] Nombre Cliente              │
+│  │   [p] Empresa / Cargo              │
+│  │                                    │
+│  │   [p] "Testimonio completo..."     │
+│  │                                    │
+│  │   [⭐⭐⭐⭐⭐]                       │
+│  │                                    │
+└───────────────────────────────────────┘
+│
+│  ┌─────────────────────────────────┐
+│  ●─ [H3] Nombre Cliente            │
+│  │   [p] Empresa / Cargo            │
+│  │                                  │
+│  │   [p] "Testimonio..."            │
+│  │                                  │
+│  │   [⭐⭐⭐⭐⭐]                     │
+│  │                                  │
+└───────────────────────────────────────┘
+```
+
+**Especificaciones:**
+```css
+.testimonios-section {
+  padding: 80px 20px;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* Línea de tiempo vertical */
+.testimonios-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.testimonios-timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.testimonio-item {
+  position: relative;
+  margin-bottom: 48px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.testimonio-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  border: 3px solid var(--bg-primary);
+  z-index: 1;
+}
+
+.testimonio-header {
+  margin-bottom: 16px;
+}
+
+.testimonio-nombre {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.testimonio-empresa {
+  font-size: 14px;
+  color: #888888;
+}
+
+.testimonio-texto {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a0a0a0;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.testimonio-rating {
+  color: #fbbf24;
+  font-size: 18px;
+}
+```
+
+***
+
+## 10. WIREFRAME MOBILE - CONTACTO
+
+### Layout Mobile
+
+```
+┌───────────────────────────────────────┐
+│                                       │
+│      [H2] Contáctanos                │
+│                                       │
+│  [p] ¿Listo para transformar tu      │
+│  negocio digitalmente?                │
+│                                       │
+│  [p] Agenda una consultoría gratuita │
+│  de 30 minutos...                     │
+│                                       │
+│  ┌─────────────────────────────────┐ │
+│  │ 📧 Agendar Consultoría          │ │ ← 52px altura
+│  └─────────────────────────────────┘ │
+│           ↓ 16px gap                  │
+│  ┌─────────────────────────────────┐ │
+│  │ 💬 WhatsApp                     │ │ ← 52px altura
+│  └─────────────────────────────────┘ │
+│                                       │
+│  ───────────────────────────────────  │
+│                                       │
+│  📧 filius.tec@gmail.com             │
+│  📱 +57 319 560 4302                 │
+│  📍 Virtual nacional | Ibagué        │
+│                                       │
+│  [Instagram] [Facebook] [WhatsApp]   │
+│                                       │
+└───────────────────────────────────────┘
+```
+
+**Especificaciones:**
+```css
+.contacto-section {
+  padding: 80px 20px;
+  background: var(--bg-secondary);
+  text-align: center;
+}
+
+.contacto-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a0a0a0;
+  margin-bottom: 32px;
+  max-width: 100%;
+}
+
+.contacto-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.btn-contacto {
+  width: 100%;
+  height: 52px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-email {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-email:active {
+  background: var(--color-primary-dark);
+  transform: scale(0.98);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.btn-whatsapp:active {
+  background: #1da851;
+  transform: scale(0.98);
+}
+
+.contacto-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contacto-info-item {
+  font-size: 15px;
+  color: #a0a0a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contacto-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon:active {
+  background: var(--color-primary);
+  transform: scale(1.1);
+}
+```
+
+***
+
+## 11. WIREFRAME MOBILE - FOOTER
+
+### Layout Mobile
+
+```
+┌───────────────────────────────────────┐
+│                                       │
+│      [Logo Filius]                   │
+│                                       │
+│  ─────────────────────                │
+│                                       │
+│  Navegación                           │
+│  • Inicio                             │
+│  • Servicios                          │
+│  • Nuestro Trabajo                    │
+│  • Experiencia                        │
+│  • Contacto                           │
+│  • Testimonios                        │
+│                                       │
+│  ─────────────────────                │
+│                                       │
+│  [Instagram] [Facebook] [WhatsApp]   │
+│                                       │
+│  ─────────────────────                │
+│                                       │
+│  © 2025 Filius. Todos los derechos   │
+│  reservados.                          │
+│                                       │
+│  Hecho con ❤️ en Colombia            │
+│                                       │
+└───────────────────────────────────────┘
+```
+
+**Especificaciones:**
+```css
+.footer {
+  padding: 60px 20px 40px;
+  background: #000000;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 32px;
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 32px 0;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.footer-nav li {
+  margin-bottom: 16px;
+}
+
+.footer-nav a {
+  font-size: 15px;
+  color: #a0a0a0;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:active {
+  color: var(--color-primary);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.footer-legal {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+}
+```
+
+***
+
+## 12. ELEMENTOS INTERACTIVOS MOBILE
+
+### Barra de progreso de scroll
+
+```css
+.scroll-progress {
+  position: fixed;
+  top: 60px; /* Debajo del header */
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  z-index: 999;
+  transition: width 0.1s ease;
+}
+```
+
+### Botón "Volver arriba"
+
+```css
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 500;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:active {
+  transform: scale(0.9);
+}
+
+/* Aparece cuando el usuario ha scrolleado >300px */
+```
+
+### Estados de botones (animaciones sutiles)
+
+```css
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ripple effect al tocar (opcional) */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Cambio de color elegante */
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+}
+
+.btn-primary:active {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 100%
+  );
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+```
+
+***
+
+## 13. OPTIMIZACIÓN DE IMÁGENES MOBILE
+
+### Estrategia de carga
+
+```html
+<!-- Responsive images -->
+<img 
+  src="image-mobile.webp" 
+  srcset="
+    image-mobile-320.webp 320w,
+    image-mobile-375.webp 375w,
+    image-mobile-425.webp 425w,
+    image-tablet-768.webp 768w,
+    image-desktop-1440.webp 1440w
+  "
+  sizes="
+    (max-width: 425px) 100vw,
+    (max-width: 768px) 90vw,
+    1200px
+  "
+  alt="Descripción"
+  loading="lazy"
+  width="375"
+  height="250"
+>
+```
+
+### Especificaciones por breakpoint
+
+```css
+/* Hero visual - oculto en mobile */
+.hero-visual {
+  display: none; /* Mobile */
+}
+
+@media (min-width: 768px) {
+  .hero-visual {
+    display: block;
+  }
+}
+
+/* Imágenes de casos */
+.caso-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+/* Optimización de peso */
+/* Mobile: max 100KB por imagen */
+/* Tablet: max 200KB */
+/* Desktop: max 300KB */
+```
+
+***
+
+## 14. ANIMACIONES MOBILE (mismas que desktop)
+
+### Scroll animations
+
+```css
+/* Elementos con animación al entrar en viewport */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Performance: solo animar transform y opacity */
+```
+
+### Cursor personalizado (desactivado en móvil)
+
+```css
+/* Desktop only */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor {
+    display: block;
+    /* ... resto del código del cursor */
+  }
+}
+
+/* Mobile: cursor nativo */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+```
+
+***
+
+## 15. ADAPTACIÓN A TABLET (768-1024px)
+
+### Cambios principales desde mobile
+
+```css
+@media (min-width: 768px) {
+  /* Hero */
+  .hero-mobile {
+    padding: 120px 40px 60px;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+  }
+  
+  .hero-subtitle {
+    font-size: 32px;
+  }
+  
+  .hero-cta-group {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: auto;
+    min-width: 200px;
+  }
+  
+  /* Servicios: 2 columnas */
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  /* Casos: 2 columnas */
+  .casos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  /* Testimonios: mantener vertical */
+  /* (4 items apilados) */
+}
+```
+
+***
+
+## 16. ADAPTACIÓN A DESKTOP (1280px+)
+
+### Cambios principales desde tablet
+
+```css
+@media (min-width: 1280px) {
+  /* Hero: layout 2 columnas */
+  .hero-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    text-align: left;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 60px;
+  }
+  
+  .hero-content {
+    order: 1;
+  }
+  
+  .hero-visual {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: 64px;
+  }
+  
+  .hero-subtitle {
+    font-size: 40px;
+  }
+  
+  /* Navegación: menú horizontal */
+  .header-desktop {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+  }
+  
+  .nav-desktop {
+    display: flex;
+    gap: 32px;
+  }
+  
+  /* Servicios: 3 columnas */
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  /* Casos: 3 columnas */
+  .casos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  /* Testimonios: 2 columnas */
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+```
+
+***
+
+## 17. CHECKLIST DE IMPLEMENTACIÓN MOBILE FIRST
+
+### Setup inicial
+- [ ] Variables CSS definidas (colores, espaciados, tipografía)
+- [ ] Breakpoints configurados
+- [ ] Grid system implementado
+- [ ] Reset CSS aplicado
+
+### Mobile (320-425px)
+- [ ] Header fijo con logo + hamburguesa
+- [ ] Menú lateral funcionando
+- [ ] Hero apilado verticalmente
+- [ ] Carrusel de tecnologías visible
+- [ ] Servicios: 1 columna, cards apiladas
+- [ ] Casos: 1 columna, colapsables
+- [ ] Experiencia: texto simple
+- [ ] Testimonios: línea de tiempo vertical
+- [ ] Contacto: botones full-width
+- [ ] Footer: todo apilado
+- [ ] Barra de progreso visible
+- [ ] Botón "volver arriba" funcionando
+- [ ] Animaciones scroll activas
+- [ ] Cursor personalizado desactivado
+- [ ] Todas las interacciones táctiles funcionando
+- [ ] Tap targets mínimo 44x44px
+
+### Tablet (768-1024px)
+- [ ] Hero más espaciado
+- [ ] CTAs side-by-side
+- [ ] Servicios: 2 columnas
+- [ ] Casos: 2 columnas
+- [ ] Testimonios: sigue vertical
+- [ ] Padding aumentado
+
+### Desktop (1280px+)
+- [ ] Hero: 2 columnas (texto + visual)
+- [ ] Visual derecho visible con badges
+- [ ] Menú horizontal
+- [ ] Servicios: 3 columnas
+- [ ] Casos: 3 columnas
+- [ ] Testimonios: 2 columnas
+- [ ] Cursor personalizado activo
+- [ ] Hover effects funcionando
+
+### Performance
+- [ ] Imágenes optimizadas por breakpoint
+- [ ] Lazy loading implementado
+- [ ] Core Web Vitals en verde
+- [ ] Animaciones a 60fps
+- [ ] Sin errores en consola
+
+***
+
+**Aprobación:**  
+- [ ] Santiago Trujillo (Product Owner)  
+- Fecha: ___ / ___ / 2025
+
+***

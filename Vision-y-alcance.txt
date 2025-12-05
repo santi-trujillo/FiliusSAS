@@ -1,0 +1,266 @@
+📄 DOCUMENTO DE VISIÓN Y ALCANCE - FILIUS TEC
+Proyecto: Sitio web corporativo Filius Tec
+Fecha: 03 de diciembre de 2025
+Responsable: Santiago Trujillo (Front-end, Técnico Sistemas, PM)
+Equipo: Santiago Trujillo + Matias Trujillo (Front-end)
+
+1. CONTEXTO DEL NEGOCIO
+Sobre Filius Tec
+Sector: Tecnología - Desarrollo Web y Servicios IT
+
+Tipo de empresa: PYME
+
+Ubicaciones: Ibagué (principal), Bogotá (operaciones)
+
+Equipo actual: 2 personas (Santiago y Matias)
+
+Servicios que ofrecemos
+Páginas web y e-commerce
+
+Aplicaciones web
+
+Mantenimiento preventivo y correctivo de equipos (PCs y laptops)
+
+Asesorías tecnológicas
+
+Desarrollo de marca
+
+Diseño publicitario
+
+Project management
+
+Servicios front-end y técnicos informáticos en general
+
+Diferenciadores clave
+Empatía profunda con las empresas: personalización real en cada trabajo
+
+Garantía extendida: 6 meses de garantía
+
+Mantenimiento continuo: 2 mantenimientos o actualizaciones por año durante 2 años
+
+Equipo cercano y técnico: mezcla entre profesionalismo y trato humano
+
+Competencia
+Mercado altamente competitivo con miles de agencias en cada ciudad
+
+Diferenciación por calidad de servicio, garantías y personalización
+
+2. OBJETIVOS DEL SITIO WEB
+Objetivo principal
+Establecer presencia digital profesional que refleje la calidad, empatía y capacidad técnica de Filius Tec, facilitando que PYMES y emprendimientos encuentren y contraten nuestros servicios.
+
+Objetivos específicos (por prioridad)
+Conversión: Conseguir al menos 1 contratación de proyecto al mes
+
+Reputación: Posicionar a Filius Tec como referente confiable en desarrollo web y servicios IT
+
+Experiencia: Mostrar portafolio y casos de éxito para generar confianza
+
+Posicionamiento: Ganar visibilidad en Ibagué, Bogotá y expandir nacionalmente
+
+Problema a resolver
+No existe sitio web previo. Se parte desde cero.
+
+3. PÚBLICO OBJETIVO
+Cliente ideal
+Tipo: PYMES pequeñas y medianas, emprendimientos, empresas en etapa inicial
+
+Necesidades: Crear, mejorar o avanzar tecnológicamente; satisfacer necesidades digitales
+
+Sector: Diversos (comercio, servicios profesionales, industria)
+
+Ubicación: Principalmente Ibagué y Bogotá, con apertura a nivel nacional
+
+Comportamiento y motivaciones
+Buscan:
+
+Soluciones tecnológicas accesibles y de calidad
+
+Soporte continuo y garantías claras
+
+Proveedores confiables y cercanos
+
+Objeciones principales:
+
+Costos: ¿Cuánto cuesta realmente?
+
+Tiempos: ¿Cuánto tarda?
+
+Confianza: ¿Cumplirán lo prometido?
+
+4. MÉTRICAS DE ÉXITO
+KPIs principales
+Conversión directa: Mínimo 1 contratación de proyecto al mes
+
+Contactos calificados: Número de formularios completados, clics a WhatsApp, llamadas
+
+Tráfico: Visitas mensuales (a definir baseline tras 3 meses)
+
+Engagement: Tiempo en página, páginas por sesión
+
+Seguimiento
+Revisión semanal interna
+
+Dashboard en Google Analytics 4 con eventos clave configurados
+
+5. ALCANCE FUNCIONAL
+Secciones del sitio (Must Have)
+Inicio (Hero + resumen de valor)
+
+Servicios (listado completo con detalle)
+
+Nuestro Trabajo (portafolio/casos de éxito)
+
+Experiencia (sobre nosotros, equipo, proceso)
+
+Contacto (formulario, WhatsApp, datos)
+
+Lo que dicen Nuestros Clientes (testimonios)
+
+Footer (enlaces, redes, legal)
+
+Funcionalidades clave (Must Have)
+Carrusel de Tecnologías
+
+20 logos/iconos de tecnologías (WordPress, PHP, MySQL, React, Node.js, Git, etc.)
+
+Animación de desplazamiento automático e infinito
+
+Navegación Responsiva
+
+Barra de navegación fija con links a secciones
+
+Menú hamburguesa para móvil
+
+Efectos de Scroll y Animaciones
+
+Animaciones al hacer scroll (fade-in, slide-in)
+
+Barra de progreso de scroll
+
+Navegación suave (smooth scroll)
+
+Cursor Personalizado
+
+Cursor custom con efectos hover
+
+Formularios de Contacto
+
+Enlaces directos a email y WhatsApp
+
+Formulario web con validación
+
+Funcionalidades futuras (Won't Have en v1)
+Blog o sección de noticias
+
+Área privada de clientes
+
+Integración con CRM
+
+Chat en vivo
+
+6. CONTENIDO Y BRANDING
+Estado actual
+Identidad de marca: Parcialmente definida (algunas cosas sí, otras no)
+
+Contenidos: Textos, fotos y casos listos
+
+Assets: Logo y algunos elementos visuales disponibles
+
+Tono de comunicación
+Perfil: Mezcla entre formal, técnico y cercano
+
+Lenguaje profesional pero accesible
+
+Explicaciones claras que entienda cualquier perfil (técnico y no técnico)
+
+Trato humano y empático
+
+7. RESTRICCIONES Y CONDICIONANTES
+Tecnología (definida)
+Frontend: HTML5, CSS3 modularizado, JavaScript ES6 vanilla
+
+Enfoque: Mobile-first con 7 breakpoints
+
+Testing: Vitest
+
+Build: Vite Dev Server
+
+Diseño: CSS custom con variables + Flexbox/Grid
+
+Plazos
+Por definir: deadline flexible según capacidad del equipo
+
+Revisiones: Semanales para mantener velocidad
+
+Presupuesto
+Proyecto interno (inversión en tiempo del equipo)
+
+Requisitos legales
+No hay requisitos especiales (estándar: política de privacidad y cookies si aplica)
+
+8. STAKEHOLDERS Y APROBACIONES
+Equipo de proyecto
+Product Owner / Decisor final: Santiago Trujillo
+
+Desarrollo: Santiago Trujillo (lead) + Matias Trujillo
+
+Proceso de aprobación
+Revisiones semanales entre Santiago y Matias
+
+Decisiones de diseño y contenido las toma Santiago
+
+Deploy a producción requiere OK de Santiago
+
+9. CRITERIOS DE ACEPTACIÓN DEL PROYECTO
+El proyecto se considera exitoso cuando cumple:
+
+✅ Funcionalidad:
+
+Todas las secciones listadas están implementadas y funcionales
+
+Carrusel de tecnologías funcionando correctamente
+
+Navegación y menú mobile operativos
+
+Formularios y enlaces de contacto funcionando
+
+✅ Calidad técnica:
+
+Sitio 100% responsivo en los 7 breakpoints definidos
+
+Performance: Core Web Vitals en verde (LCP <2.5s, CLS <0.1, FID <100ms)
+
+Sin errores críticos en consola
+
+Tests pasando
+
+✅ Diseño:
+
+Coherencia visual total (Design System aplicado)
+
+Accesibilidad básica (contraste AA, navegación por teclado, labels)
+
+✅ SEO:
+
+Estructura H1/H2/H3 correcta
+
+Metadatos completos
+
+Sitemap y robots.txt configurados
+
+✅ Conversión:
+
+Al menos 1 proyecto contratado en los primeros 3 meses post-lanzamiento
+
+10. RIESGOS Y MITIGACIONES
+Riesgo	Probabilidad	Impacto	Mitigación
+Falta de tiempo del equipo	Media	Alto	Sprints cortos, priorización MoSCoW clara
+Contenido no final a tiempo	Baja	Medio	Contenido ya está listo según declarado
+Cambios de alcance durante desarrollo	Media	Medio	Backlog claro y compromiso de no cambiar Must Haves sin replanning
+Performance en dispositivos viejos	Baja	Medio	Testing temprano en varios devices, optimización de assets
+Aprobación:
+
+ Santiago Trujillo (Product Owner / PM)
+
+Fecha de aprobación: ___ / ___ / 2025

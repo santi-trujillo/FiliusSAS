@@ -1,0 +1,478 @@
+# 📋 DOCUMENTO DE REQUISITOS - FILIUS TEC
+## Backlog de Historias de Usuario
+
+**Proyecto:** Sitio web corporativo Filius Tec  
+**Fecha:** 03 de diciembre de 2025  
+**Metodología:** Historias de Usuario + MoSCoW + Criterios de Aceptación  
+
+***
+
+## ÉPICA 1: HERO SECTION
+
+### US-001: Hero principal con propuesta de valor
+**Como** visitante nuevo  
+**Quiero** ver inmediatamente qué hace Filius Tec y cómo me ayuda  
+**Para** decidir en menos de 5 segundos si el sitio es relevante para mí
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] H1 visible: "Filius Tec"
+- [ ] Subtítulo: "Desarrollo, Soporte y Estrategia Digital"
+- [ ] Descripción: "Somos una consultora de tecnología integral que ayuda a las PYMES a digitalizarse con soluciones web modernas y garantiza su operatividad continua mediante soporte técnico especializado."
+- [ ] 2 CTAs claramente visibles:
+  - Botón primario: "Solicitar Consultoría" (link a #contacto)
+  - Botón secundario: "Ver Servicios" (link a #servicios)
+- [ ] Responsive: texto legible en móvil, tablet y desktop
+- [ ] Animación de entrada (fade-in + slide-up)
+
+***
+
+### US-002: Visual derecho con logo y badges
+**Como** visitante  
+**Quiero** ver elementos visuales que refuercen credibilidad  
+**Para** generar confianza en Filius Tec
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] Círculo decorativo con logo "C" de Filius centrado
+- [ ] Badges flotantes (solo desktop y tablet):
+  - "50+ Proyectos"
+  - "100% Satisfacción"
+  - "2 Ciudades"
+- [ ] Badges ocultos en móvil
+- [ ] Animación de pulse-glow en el círculo
+- [ ] Animación de float en los badges
+
+***
+
+### US-003: Carrusel de tecnologías
+**Como** visitante técnico o cliente  
+**Quiero** ver las tecnologías que domina Filius Tec  
+**Para** validar que tienen las capacidades que necesito
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] 15 tecnologías mostradas con logo + nombre:
+  - HTML5
+  - CSS3
+  - JavaScript
+  - TypeScript
+  - React.js
+  - Node.js
+  - Git
+  - GitHub
+  - Shopify
+  - WordPress
+  - WooCommerce
+  - Scrum
+  - Netlify
+  - Vercel
+- [ ] Scroll infinito automático (40 segundos por ciclo completo)
+- [ ] Pausa de animación al hacer hover
+- [ ] Logos de 50px en desktop, 40px en tablet, 35px en mobile
+- [ ] Texto legible debajo de cada logo
+- [ ] Fade en los bordes laterales del carrusel
+- [ ] Posición fija en la parte inferior (o final del hero)
+- [ ] 100% responsive en todos los breakpoints
+
+***
+
+## ÉPICA 2: SERVICIOS
+
+### US-004: Sección de servicios con cards
+**Como** potencial cliente  
+**Quiero** ver los servicios de Filius Tec organizados y claros  
+**Para** identificar rápidamente si ofrecen lo que necesito
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] Título de sección: "Nuestros Servicios" (H2)
+- [ ] 3 servicios principales en cards:
+
+**Servicio 1:**
+- Título: "Desarrollo Web & E-commerce"
+- Descripción: "Creamos tiendas virtuales escalables, páginas corporativas y plataformas web modernas con optimización SEO. Desde landing pages hasta sistemas complejos."
+- Tecnologías/tags: E-commerce, Web Corporativa, SEO, WordPress
+- Ícono representativo
+
+**Servicio 2:**
+- Título: "Soporte Técnico e Infraestructura TI"
+- Descripción: "Mantenimiento de hardware, configuración de redes, help desk empresarial y gestión de infraestructura. Garantizamos la operatividad continua de tu empresa."
+- Tecnologías/tags: Help Desk, Redes, Hardware, Mantenimiento
+- Ícono representativo
+
+**Servicio 3:**
+- Título: "Consultoría & Gestión de Proyectos"
+- Descripción: "Transformación digital, liderazgo ágil con metodología Scrum, estrategias de marca digital y gestión profesional de proyectos tecnológicos."
+- Tecnologías/tags: Scrum Master, Transformación Digital, Estrategia, PM
+- Ícono representativo
+
+- [ ] Layout: Grid responsive (1 columna mobile, 2 tablet, 3 desktop)
+- [ ] Hover effect en cada card
+- [ ] Diseño coherente con Design System Filius
+
+***
+
+## ÉPICA 3: NUESTRO TRABAJO (PORTAFOLIO)
+
+### US-005: Grid de casos de éxito
+**Como** potencial cliente  
+**Quiero** ver ejemplos reales de proyectos de Filius Tec  
+**Para** validar su experiencia y calidad
+
+**Prioridad:** MUST  
+**Sprint:** 2  
+
+**Criterios de aceptación:**
+- [ ] Título de sección: "Nuestro Trabajo" (H2)
+- [ ] Grid de 3 casos de éxito (inicialmente)
+- [ ] Por cada caso mostrar:
+  - Nombre del cliente
+  - Industria
+  - Problema (descripción breve)
+  - Solución implementada
+  - Resultados obtenidos
+  - Imagen/captura del proyecto
+- [ ] Cards con hover effect
+- [ ] Layout responsive: 1 columna mobile, 2 tablet, 3 desktop
+- [ ] Botón "Ver más proyectos" (opcional para futuro)
+
+***
+
+## ÉPICA 4: EXPERIENCIA (SOBRE NOSOTROS)
+
+### US-006: Sección "Experiencia"
+**Como** visitante  
+**Quiero** conocer quién está detrás de Filius Tec  
+**Para** generar confianza antes de contactar
+
+**Prioridad:** MUST  
+**Sprint:** 2  
+
+**Criterios de aceptación:**
+- [ ] Mantener diseño actual exactamente igual
+- [ ] Mantener contenido/información actual
+- [ ] Responsive en todos los breakpoints
+- [ ] Animaciones de entrada al hacer scroll
+
+***
+
+## ÉPICA 5: TESTIMONIOS
+
+### US-007: Sección de testimonios de clientes
+**Como** potencial cliente  
+**Quiero** leer opiniones de otros clientes  
+**Para** reducir el riesgo percibido al contratar
+
+**Prioridad:** SHOULD  
+**Sprint:** 2  
+
+**Criterios de aceptación:**
+- [ ] Mantener diseño actual exactamente igual
+- [ ] Estructura lista para recibir testimonios (contenido a definir después)
+- [ ] Campos por testimonio:
+  - Nombre del cliente
+  - Empresa
+  - Cargo
+  - Texto del testimonio
+  - Foto (opcional)
+  - Rating/estrellas (opcional)
+- [ ] Responsive en todos los breakpoints
+
+***
+
+## ÉPICA 6: CONTACTO
+
+### US-008: Sección de contacto con CTAs directos
+**Como** visitante interesado  
+**Quiero** contactar fácilmente con Filius Tec  
+**Para** solicitar información o cotización
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] Mantener diseño actual
+- [ ] 2 CTAs principales:
+  - **Botón "Agendar Consultoría":** abre cliente de email del usuario con:
+    - Para: filius.tec@gmail.com
+    - Asunto: "Solicitud de Consultoría - [Nombre empresa]"
+    - Cuerpo: plantilla básica para agendar cita virtual de 30 min
+  - **Botón "WhatsApp":** abre WhatsApp con:
+    - Número: +57 319 560 4302
+    - Mensaje predefinido: "Hola Filius Tec, me gustaría agendar una consultoría de 30 minutos para cotizar un proyecto."
+
+- [ ] Información de contacto visible:
+  - Email: filius.tec@gmail.com
+  - WhatsApp: +57 319 560 4302
+  - Redes: @filius.tec (Instagram, Facebook)
+
+- [ ] Responsive: botones full-width en móvil
+
+***
+
+## ÉPICA 7: FOOTER
+
+### US-009: Footer con links y redes sociales
+**Como** visitante  
+**Quiero** acceder a información complementaria y redes sociales  
+**Para** explorar más sobre Filius Tec
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] Mantener diseño actual
+- [ ] Links de navegación:
+  - Inicio
+  - Servicios
+  - Nuestro Trabajo
+  - Experiencia
+  - Contacto
+  - Testimonios
+
+- [ ] Iconos de redes sociales con links:
+  - Instagram: @filius.tec
+  - Facebook: @filius.tec
+  - WhatsApp: +57 319 560 4302
+
+- [ ] Texto legal:
+  - "© 2025 Filius. Todos los derechos reservados."
+  - "Hecho con ❤️ en Colombia"
+
+- [ ] Responsive: stack vertical en móvil
+
+***
+
+## ÉPICA 8: NAVEGACIÓN
+
+### US-010: Menú de navegación desktop
+**Como** visitante en desktop  
+**Quiero** navegar fácilmente entre secciones  
+**Para** encontrar la información que busco
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] Barra de navegación fija en la parte superior
+- [ ] Links del menú:
+  - Inicio (#home)
+  - Servicios (#servicios)
+  - Nuestro Trabajo (#trabajo)
+  - Experiencia (#experiencia)
+  - Contacto (#contacto)
+
+- [ ] Logo Filius a la izquierda
+- [ ] Smooth scroll al hacer clic en links internos
+- [ ] Indicador visual de sección activa
+- [ ] Fondo con blur o sólido al hacer scroll
+
+***
+
+### US-011: Menú mobile hamburguesa
+**Como** visitante en móvil  
+**Quiero** acceder al menú de navegación de forma clara  
+**Para** navegar entre secciones sin ocupar toda la pantalla
+
+**Prioridad:** MUST  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] Ícono hamburguesa (☰) en la parte superior derecha
+- [ ] Al hacer clic: menú lateral desliza desde la derecha
+- [ ] Overlay oscuro sobre el contenido
+- [ ] Mismos links que menú desktop
+- [ ] Botón de cerrar (X) visible
+- [ ] Animación suave de entrada/salida
+- [ ] Cierra al hacer clic en un link o en el overlay
+
+***
+
+## ÉPICA 9: EFECTOS Y ANIMACIONES
+
+### US-012: Sistema de animaciones y efectos
+**Como** visitante  
+**Quiero** experimentar un sitio moderno y fluido  
+**Para** disfrutar la navegación y percibir profesionalismo
+
+**Prioridad:** SHOULD  
+**Sprint:** 1  
+
+**Criterios de aceptación:**
+- [ ] Scroll effects: elementos con fade-in y slide-in al entrar en viewport
+- [ ] Barra de progreso de scroll en la parte superior
+- [ ] Cursor personalizado con efectos hover
+- [ ] Navegación suave (smooth scroll)
+- [ ] Animaciones no afectan performance (>60fps)
+- [ ] Opción de desactivar animaciones según prefers-reduced-motion
+
+***
+
+## ÉPICA 10: REQUISITOS NO FUNCIONALES
+
+### US-013: Performance y optimización
+**Como** visitante  
+**Quiero** que el sitio cargue rápido  
+**Para** no abandonar por lentitud
+
+**Prioridad:** MUST  
+**Sprint:** 1-2  
+
+**Criterios de aceptación:**
+- [ ] Core Web Vitals en verde:
+  - LCP (Largest Contentful Paint) < 2.5s
+  - CLS (Cumulative Layout Shift) < 0.1
+  - FID/INP (First Input Delay / Interaction to Next Paint) < 100ms
+- [ ] Imágenes optimizadas (WebP, lazy loading)
+- [ ] CSS y JS minificados
+- [ ] Fuentes optimizadas (preload, font-display: swap)
+- [ ] Lighthouse score > 90 en todas las categorías
+
+***
+
+### US-014: SEO técnico
+**Como** dueño del sitio  
+**Quiero** que Google indexe y posicione bien el sitio  
+**Para** conseguir tráfico orgánico
+
+**Prioridad:** MUST  
+**Sprint:** 2  
+
+**Criterios de aceptación:**
+- [ ] Palabras clave objetivo: "desarrollo web", "páginas web PYMES", "Filius Tec"
+- [ ] Por cada página/sección:
+  - Meta title único y descriptivo (<60 chars)
+  - Meta description (<160 chars)
+  - H1 único con palabra clave principal
+  - Estructura H2/H3 lógica
+  - URLs limpias y semánticas
+- [ ] Sitemap.xml generado
+- [ ] robots.txt configurado
+- [ ] Open Graph tags para redes sociales
+- [ ] Schema.org markup básico (Organization, WebSite)
+
+***
+
+### US-015: Accesibilidad básica
+**Como** usuario con discapacidad  
+**Quiero** poder navegar el sitio con tecnologías asistivas  
+**Para** acceder a la información sin barreras
+
+**Prioridad:** SHOULD  
+**Sprint:** 2  
+
+**Criterios de aceptación:**
+- [ ] Contraste de color mínimo AA (4.5:1 para texto normal)
+- [ ] Todos los elementos interactivos navegables por teclado
+- [ ] Focus visible en elementos interactivos
+- [ ] Alt text en todas las imágenes significativas
+- [ ] Labels en todos los campos de formulario
+- [ ] HTML semántico correcto (header, nav, main, section, footer)
+- [ ] Skip links para navegación rápida (opcional)
+
+***
+
+### US-016: Seguridad básica
+**Como** dueño del sitio  
+**Quiero** proteger el sitio de ataques básicos  
+**Para** mantener la integridad y reputación
+
+**Prioridad:** SHOULD  
+**Sprint:** 2  
+
+**Criterios de aceptación:**
+- [ ] HTTPS configurado (certificado SSL)
+- [ ] Headers de seguridad básicos:
+  - X-Content-Type-Options: nosniff
+  - X-Frame-Options: DENY
+  - Content-Security-Policy básica
+- [ ] Protección contra spam en formularios:
+  - Honeypot field (campo oculto)
+  - O validación simple de tiempo de llenado
+  - O reCAPTCHA v3 (si necesario)
+- [ ] No exponer información sensible en código fuente
+
+***
+
+## PRIORIZACIÓN MOSCOW
+
+### MUST HAVE (Mínimo viable)
+- US-001: Hero principal ✅
+- US-002: Visual con logo y badges ✅
+- US-003: Carrusel de tecnologías ✅
+- US-004: Sección de servicios ✅
+- US-008: Contacto con CTAs ✅
+- US-009: Footer ✅
+- US-010: Menú desktop ✅
+- US-011: Menú mobile ✅
+- US-013: Performance ✅
+- US-014: SEO técnico ✅
+
+### SHOULD HAVE (Importante pero no bloqueante)
+- US-005: Casos de éxito
+- US-006: Experiencia
+- US-007: Testimonios
+- US-012: Animaciones
+- US-015: Accesibilidad
+- US-016: Seguridad
+
+### COULD HAVE (Deseable)
+- Versión en inglés
+- Blog/recursos
+- Newsletter
+
+### WON'T HAVE (Fuera de alcance v1)
+- Área de clientes
+- Chat en vivo
+- Integración CRM
+- Pasarela de pago
+
+***
+
+## ESTIMACIÓN INICIAL (Story Points - Fibonacci)
+
+| Épica | Historias | Story Points | Sprint |
+|-------|-----------|--------------|--------|
+| Hero | US-001, US-002, US-003 | 8 | Sprint 1 |
+| Servicios | US-004 | 5 | Sprint 1 |
+| Navegación | US-010, US-011 | 5 | Sprint 1 |
+| Footer | US-009 | 3 | Sprint 1 |
+| Contacto | US-008 | 3 | Sprint 1 |
+| Animaciones | US-012 | 5 | Sprint 1 |
+| **Total Sprint 1** | | **29** | |
+| Portafolio | US-005 | 5 | Sprint 2 |
+| Experiencia | US-006 | 2 | Sprint 2 |
+| Testimonios | US-007 | 3 | Sprint 2 |
+| Performance | US-013 | 5 | Sprint 2 |
+| SEO | US-014 | 5 | Sprint 2 |
+| Accesibilidad | US-015 | 3 | Sprint 2 |
+| Seguridad | US-016 | 3 | Sprint 2 |
+| **Total Sprint 2** | | **26** | |
+| **TOTAL PROYECTO** | | **55** | |
+
+***
+
+## DEPENDENCIAS
+
+```
+US-001 (Hero) → US-003 (Carrusel)
+US-010 (Menú desktop) ← US-011 (Menú mobile)
+US-004 (Servicios) → US-005 (Casos de éxito)
+US-013 (Performance) depende de → todas las US anteriores
+US-014 (SEO) depende de → estructura completa
+```
+
+***
+
+**Aprobación:**  
+- [ ] Santiago Trujillo (Product Owner)  
+- Fecha: ___ / ___ / 2025
