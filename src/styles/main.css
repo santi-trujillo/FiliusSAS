@@ -48,9 +48,5 @@
 @import './blocks/hover-effects.css';
 @import './blocks/menu-mobile.css';
 
-/* Temporales - pendientes de refactorizar */
-@import './blocks/_layout-temp.css';
-@import './blocks/_responsive-temp.css';
-
 /* ===== EXCEPTIONS LAYER ===== */
 /* Contextos específicos y overrides */

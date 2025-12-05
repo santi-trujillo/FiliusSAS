@@ -4,6 +4,8 @@
 [![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](./package.json)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
 [![CUBE CSS](https://img.shields.io/badge/CSS-CUBE-blue)](https://cube.fyi/)
+[![Tests](https://img.shields.io/badge/tests-11%2F11%20passing-success)](./tests)
+[![Build](https://img.shields.io/badge/build-2.51s-success)](./package.json)
 
 Portfolio moderno y de alto rendimiento de **Filius Tec** - Consultora de tecnología integral especializada en desarrollo web, soporte técnico e infraestructura TI para PYMES en Colombia.
 
