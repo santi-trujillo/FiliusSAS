@@ -1,0 +1,143 @@
+/**
+ * Custom Cursor Component - Versión Optimizada
+ * Cursor personalizado ultra fluido con aceleración GPU
+ */
+
+/* Ocultar cursor predeterminado en desktop */
+@media (min-width: 768px) {
+    body {
+        cursor: default;
+        /* 👈 CAMBIADO: cursor visible */
+    }
+
+    a,
+    button,
+    .clickable {
+        cursor: pointer;
+        /* 👈 CAMBIADO: cursor pointer visible */
+    }
+}
+
+/* Contenedor del cursor personalizado */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Círculo pequeño (seguidor principal) */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(-50%, -50%, 0);
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    mix-blend-mode: normal;
+    opacity: 0.7;
+    will-change: transform;
+}
+
+/* Círculo grande (efecto de arrastre) */
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(-50%, -50%, 0);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.3;
+    will-change: transform;
+}
+
+/* Estado hover sobre elementos interactivos */
+.cursor-dot.hover {
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-hover);
+}
+
+.cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+    border-color: var(--accent-hover);
+}
+
+/* Estado de click */
+.cursor-dot.click {
+    width: 4px;
+    height: 4px;
+    transition: width 0.1s ease, height 0.1s ease;
+}
+
+.cursor-outline.click {
+    width: 50px;
+    height: 50px;
+}
+
+/* Ocultar en dispositivos móviles */
+/* BASE: Móvil */
+.custom-cursor,
+.cursor-dot,
+.cursor-outline {
+    display: none;
+}
+
+body {
+    cursor: auto;
+}
+
+/* DESKTOP (768px+) */
+@media (min-width: 768px) {
+
+    .custom-cursor,
+    .cursor-dot,
+    .cursor-outline {
+        display: block;
+    }
+
+    body {
+        cursor: none;
+    }
+}
+
+/* Cursor especial sobre texto */
+.cursor-dot.text {
+    width: 2px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.cursor-outline.text {
+    opacity: 0;
+}
+
+/* Animación de pulso optimizada */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(-50%, -50%, 0) scale(1.2);
+    }
+}
+
+.cursor-outline.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}

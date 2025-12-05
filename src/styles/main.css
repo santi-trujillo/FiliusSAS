@@ -29,13 +29,19 @@
 @import './utilities/animations.css';
 
 /* ===== BLOCKS LAYER ===== */
-/* Se importarán después de la migración de componentes */
-/* @import './blocks/button.css'; */
-/* @import './blocks/card.css'; */
-/* @import './blocks/header.css'; */
-/* @import './blocks/hero.css'; */
-/* @import './blocks/section.css'; */
-/* @import './blocks/footer.css'; */
+/* Temporales - copiados del sistema anterior */
+@import './blocks/_layout-temp.css';
+@import './blocks/header/index.css';
+@import './blocks/hero/index.css';
+@import './blocks/sections/index.css';
+@import './blocks/tech-stack.css';
+@import './blocks/buttons.css';
+@import './blocks/scroll-effects.css';
+@import './blocks/footer.css';
+@import './blocks/cursor.css';
+@import './blocks/menu-mobile.css';
+@import './blocks/hover-effects.css';
+@import './blocks/_responsive-temp.css';
 
 /* ===== EXCEPTIONS LAYER ===== */
 /* Contextos específicos y overrides */

@@ -1,0 +1,529 @@
+/**
+ * Tech Stack Carousel Component
+ * Carrusel mejorado con flechas, navegación y efectos visuales
+ */
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL DEL CARRUSEL
+   ============================================================ */
+
+.tech-carousel-container {
+    position: relative;
+    width: 35vw;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2.1rem 1.4rem;
+    z-index: 10;
+    background: linear-gradient(to right,
+            rgba(10, 10, 10, 0.2),
+            rgba(10, 10, 10, 0.1) 50%,
+            rgba(10, 10, 10, 0.2));
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+}
+
+.tech-carousel {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    position: relative;
+    max-width: 100%;
+}
+
+/* Fade en los bordes laterales - REMOVIDO */
+.tech-carousel::before,
+.tech-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    z-index: 5;
+    pointer-events: none;
+    display: none;
+}
+
+.tech-carousel-track {
+    display: flex;
+    gap: 1.4rem;
+    padding: 1.05rem 1.4rem;
+    width: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* ============================================================
+   ITEMS DEL CARRUSEL
+   ============================================================ */
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.525rem;
+    min-width: 63px;
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.tech-item-inner {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8.4px;
+    background: linear-gradient(135deg,
+            rgba(100, 150, 255, 0.1) 0%,
+            rgba(59, 130, 246, 0.05) 100%);
+    border: 1px solid rgba(100, 150, 255, 0.15);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de iluminación */
+.tech-item-inner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 100%);
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.tech-item:hover .tech-item-inner {
+    background: linear-gradient(135deg,
+            rgba(100, 150, 255, 0.25) 0%,
+            rgba(59, 130, 246, 0.15) 100%);
+    border-color: rgba(100, 150, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3),
+        inset 0 0 10px rgba(59, 130, 246, 0.1);
+    transform: translateY(-8px) scale(1.05);
+}
+
+.tech-item:hover .tech-item-inner::before {
+    opacity: 1;
+    animation: shine 0.6s ease;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(-45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(-45deg);
+    }
+}
+
+.tech-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.9);
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.tech-item:hover img {
+    filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 10px rgba(59, 130, 246, 0.6));
+}
+
+.tech-item span {
+    font-size: 0.56rem;
+    color: var(--text-secondary);
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.4s ease;
+}
+
+.tech-item:hover span {
+    color: rgba(100, 150, 255, 0.9);
+}
+
+/* ============================================================
+   FLECHAS DE NAVEGACIÓN
+   ============================================================ */
+
+.carousel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30.8px;
+    height: 30.8px;
+    border-radius: 7px;
+    background: linear-gradient(135deg,
+            rgba(100, 150, 255, 0.15) 0%,
+            rgba(59, 130, 246, 0.1) 100%);
+    border: 1.5px solid rgba(100, 150, 255, 0.3);
+    color: rgba(100, 150, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.carousel-arrow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.carousel-arrow:hover {
+    background: linear-gradient(135deg,
+            rgba(100, 150, 255, 0.3) 0%,
+            rgba(59, 130, 246, 0.2) 100%);
+    border-color: rgba(100, 150, 255, 0.6);
+    color: rgba(100, 150, 255, 1);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2),
+        inset 0 0 8px rgba(59, 130, 246, 0.1);
+    transform: scale(1.05);
+}
+
+.carousel-arrow:hover::before {
+    transform: translateX(100%);
+}
+
+.carousel-arrow:active {
+    transform: scale(0.95);
+}
+
+.carousel-arrow svg {
+    width: 14px;
+    height: 14px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   RESPONSIVE - Mobile First Strategy
+   ============================================================ */
+
+/* BASE: Móvil (320px - 479px) */
+.tech-carousel-container {
+    width: 35vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.1rem 1.4rem;
+    gap: 0.56rem;
+}
+
+.tech-carousel {
+    border-radius: 0;
+}
+
+.tech-carousel-track {
+    gap: 0.84rem;
+    padding: 0.7rem 1.05rem;
+}
+
+.tech-item {
+    min-width: 49px;
+    gap: 0.35rem;
+}
+
+.tech-item-inner {
+    width: 35px;
+    height: 35px;
+}
+
+.tech-item img {
+    width: 22.4px;
+    height: 22.4px;
+}
+
+.tech-item span {
+    font-size: 0.49rem;
+}
+
+.carousel-arrow {
+    width: 25.2px;
+    height: 25.2px;
+}
+
+.carousel-arrow svg {
+    width: 11.2px;
+    height: 11.2px;
+}
+
+/* TABLET PEQUEÑO (480px - 599px) */
+@media (min-width: 480px) {
+    .tech-carousel-container {
+        width: 40vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1.75rem 1.4rem;
+        gap: 0.7rem;
+    }
+
+    .tech-carousel-track {
+        gap: 1.05rem;
+        padding: 0.84rem 1.26rem;
+    }
+
+    .tech-item {
+        min-width: 52.5px;
+        gap: 0.42rem;
+    }
+
+    .tech-item-inner {
+        width: 37.8px;
+        height: 37.8px;
+    }
+
+    .tech-item img {
+        width: 25.2px;
+        height: 25.2px;
+    }
+
+    .tech-item span {
+        font-size: 0.504rem;
+    }
+
+    .carousel-arrow {
+        width: 26.6px;
+        height: 26.6px;
+    }
+}
+
+/* TABLET MEDIO (600px - 767px) */
+@media (min-width: 600px) {
+    .tech-carousel-container {
+        width: 45vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1.75rem 1.75rem;
+        gap: 0.84rem;
+    }
+
+    .tech-carousel-track {
+        gap: 1.26rem;
+        padding: 0.91rem 1.4rem;
+    }
+
+    .tech-item {
+        min-width: 56px;
+        gap: 0.455rem;
+    }
+
+    .tech-item-inner {
+        width: 39.2px;
+        height: 39.2px;
+    }
+
+    .tech-item img {
+        width: 26.6px;
+        height: 26.6px;
+    }
+
+    .tech-item span {
+        font-size: 0.525rem;
+    }
+
+    .carousel-arrow {
+        width: 28px;
+        height: 28px;
+    }
+
+    .carousel-arrow svg {
+        width: 12.6px;
+        height: 12.6px;
+    }
+}
+
+/* TABLET GRANDE (768px - 833px) */
+@media (min-width: 768px) {
+    .tech-carousel-container {
+        width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2.1rem 2.1rem;
+        gap: 0.91rem;
+    }
+
+    .tech-carousel {
+        border-radius: 0;
+    }
+
+    .tech-carousel-track {
+        gap: 1.4rem;
+        padding: 1.05rem 1.54rem;
+    }
+
+    .tech-item {
+        min-width: 59.5px;
+        gap: 0.49rem;
+    }
+
+    .tech-item-inner {
+        width: 40.6px;
+        height: 40.6px;
+    }
+
+    .tech-item img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .tech-item span {
+        font-size: 0.539rem;
+    }
+
+    .carousel-arrow {
+        width: 29.4px;
+        height: 29.4px;
+    }
+}
+
+/* IPAD PRO (834px - 1023px) */
+@media (min-width: 834px) {
+    .tech-carousel-container {
+        width: 55vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2.1rem 2.8rem;
+        gap: 0.98rem;
+    }
+
+    .tech-carousel-track {
+        gap: 1.54rem;
+        padding: 1.12rem 1.68rem;
+    }
+
+    .tech-item {
+        min-width: 61.6px;
+        gap: 0.525rem;
+    }
+
+    .tech-item-inner {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tech-item img {
+        width: 29.4px;
+        height: 29.4px;
+    }
+
+    .tech-item span {
+        font-size: 0.546rem;
+    }
+
+    .carousel-arrow {
+        width: 30.8px;
+        height: 30.8px;
+    }
+}
+
+/* DESKTOP (1024px+) */
+@media (min-width: 1024px) {
+    .tech-carousel-container {
+        width: 58vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2.1rem 3.5%;
+        gap: 1.05rem;
+    }
+
+    .tech-carousel-track {
+        gap: 1.4rem;
+        padding: 1.05rem 1.4rem;
+    }
+
+    .tech-item {
+        min-width: 63px;
+        gap: 0.525rem;
+    }
+
+    .tech-item-inner {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tech-item img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .tech-item span {
+        font-size: 0.56rem;
+    }
+
+    .carousel-arrow {
+        width: 30.8px;
+        height: 30.8px;
+    }
+
+    .carousel-arrow svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* DESKTOP GRANDE (1366px+) */
+@media (min-width: 1366px) {
+    .tech-carousel-container {
+        width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2.1rem 4.2%;
+        gap: 1.12rem;
+    }
+
+    .tech-carousel-track {
+        gap: 1.54rem;
+        padding: 1.12rem 1.54rem;
+    }
+
+    .tech-item {
+        min-width: 66.5px;
+    }
+
+    .tech-item-inner {
+        width: 44.8px;
+        height: 44.8px;
+    }
+
+    .tech-item img {
+        width: 30.8px;
+        height: 30.8px;
+    }
+}

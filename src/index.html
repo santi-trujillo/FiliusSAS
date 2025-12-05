@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Filius - Desarrollo Web, Soporte Técnico y Consultoría Digital para PYMES en Bogotá e Ibagué, Colombia. E-commerce, infraestructura TI y transformación digital.">
+    <meta name="keywords"
+        content="desarrollo web Colombia, desarrollo web Bogotá, soporte técnico empresarial, e-commerce Colombia, infraestructura TI, consultoría digital, PYMES Colombia, transformación digital Ibagué, tienda virtual Colombia, WordPress Colombia, Scrum Master">
+    <meta name="author" content="Filius">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+
+    <!-- Geo Tags para Local SEO -->
+    <meta name="geo.region" content="CO-DC">
+    <meta name="geo.placename" content="Bogotá">
+    <meta name="geo.position" content="4.7110;-74.0721">
+    <meta name="ICBM" content="4.7110, -74.0721">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.filius.com.co/">
+    <meta property="og:site_name" content="Filius">
+    <meta property="og:title" content="Filius - Desarrollo, Soporte y Estrategia Digital para PYMES">
+    <meta property="og:description"
+        content="Soluciones tecnológicas integrales: Desarrollo Web, E-commerce, Soporte TI y Consultoría Digital en Colombia. Atendemos Bogotá, Ibagué y todo el país.">
+    <meta property="og:image" content="https://www.filius.com.co/assets/images/logo/FiliusN.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.filius.com.co/">
+    <meta name="twitter:title" content="Filius - Tecnología para PYMES en Colombia">
+    <meta name="twitter:description"
+        content="Desarrollo Web, Soporte Técnico y Consultoría Digital en Bogotá e Ibagué. Tu aliado estratégico en transformación digital.">
+    <meta name="twitter:image" content="https://www.filius.com.co/assets/images/logo/FiliusN.png">
+    <meta name="twitter:site" content="@filius_tec">
+    <meta name="twitter:creator" content="@filius_tec">
+
+    <!-- Canonical URL (evita contenido duplicado) -->
+    <link rel="canonical" href="https://www.filius.com.co/">
+
+    <!-- Title optimizado para SEO -->
+    <title>Filius | Desarrollo Web, Soporte TI y Consultoría Digital en Bogotá e Ibagué, Colombia</title>
+
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/FiliusIconN.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/FiliusIconN.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/FiliusIconN.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/FiliusIconN.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS - CUBE CSS Methodology -->
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Filius",
+        "alternateName": "Filius Tec",
+        "url": "https://www.filius.com.co",
+        "logo": "https://www.filius.com.co/assets/images/logo/FiliusN.png",
+        "description": "Consultora de tecnología integral especializada en desarrollo web, soporte técnico y consultoría digital para PYMES en Colombia",
+        "email": "filius.tec@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bogotá",
+            "addressRegion": "DC",
+            "addressCountry": "CO"
+        },
+        "areaServed": [
+            {
+            "@type": "City",
+            "name": "Bogotá"
+            },
+            {
+            "@type": "City",
+            "name": "Ibagué"
+            }
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/company/filius-tec",
+            "https://www.instagram.com/filius.tec"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "email": "filius.tec@gmail.com",
+            "availableLanguage": "Spanish"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Santiago Trujillo"
+        }
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- Header con Menú Centrado -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Logo con imagen -->
+            <a href="#home" class="nav-logo">
+                <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark">
+            </a>
+
+            <!-- Navegación Centrada con Números -->
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <span class="nav-number">01</span>
+                        <span class="nav-separator">/</span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#expertise" class="nav-link">
+                        <span class="nav-number">02</span>
+                        <span class="nav-separator">/</span>
+                        <span>Servicios</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#work" class="nav-link">
+                        <span class="nav-number">03</span>
+                        <span class="nav-separator">/</span>
+                        <span>Nuestro Trabajo</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">
+                        <span class="nav-number">04</span>
+                        <span class="nav-separator">/</span>
+                        <span>Experiencia</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <span class="nav-number">05</span>
+                        <span class="nav-separator">/</span>
+                        <span>Contacto</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Botón Hamburguesa (móvil) -->
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+            </button>
+        </nav>
+
+        <!-- Barra de progreso de scroll -->
+        <div class="scroll-progress"></div>
+    </header>
+
+    <!-- Overlay del menú -->
+    <div class="menu-overlay"></div>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li>
+                <a href="#home" class="mobile-nav-link">
+                    <span class="mobile-nav-number">01</span>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#expertise" class="mobile-nav-link">
+                    <span class="mobile-nav-number">02</span>
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a href="#work" class="mobile-nav-link">
+                    <span class="mobile-nav-number">03</span>
+                    <span>Nuestro Trabajo</span>
+                </a>
+            </li>
+            <li>
+                <a href="#experience" class="mobile-nav-link">
+                    <span class="mobile-nav-number">04</span>
+                    <span>Experiencia</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="mobile-nav-link">
+                    <span class="mobile-nav-number">05</span>
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Hero Section Completo -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <!-- Contenido Izquierdo -->
+            <div class="hero-content">
+                <span class="hero-greeting">👋 Bienvenido a</span>
+
+                <h1 class="hero-title">
+                    <span class="hero-title-name">Filius Tec</span>
+                </h1>
+
+                <h2 class="hero-subtitle">
+                    <span class="hero-subtitle-highlight">Desarrollo, Soporte</span>
+                    y Estrategia Digital
+                </h2>
+
+                <p class="hero-description">
+                    Somos una consultora de tecnología integral que ayuda a las PYMES
+                    a digitalizarse con soluciones web modernas y garantiza su operatividad
+                    continua mediante soporte técnico especializado.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="hero-cta-primary ripple">
+                        Solicitar Consultoría
+                    </a>
+
+                    <a href="#expertise" class="hero-cta-secondary">
+                        Ver Servicios
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Derecho -->
+            <div class="hero-visual">
+                <div class="hero-circle">
+                    <div class="hero-visual-content">
+                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials">
+                    </div>
+
+                    <!-- Badges flotantes -->
+                    <div class="hero-badges">
+                        <div class="hero-badge hero-badge-1">
+                            <span class="hero-badge-number">50+</span>
+                            <span>Proyectos</span>
+                        </div>
+                        <div class="hero-badge hero-badge-2">
+                            <span class="hero-badge-number">100%</span>
+                            <span>Satisfacción</span>
+                        </div>
+                        <div class="hero-badge hero-badge-3">
+                            <span class="hero-badge-number">2</span>
+                            <span>Ciudades</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack Carousel Section - Fuera del hero-container -->
+        <div class="tech-stack-container">
+            <!-- Tech Stack Carousel Mejorado -->
+            <div class="tech-carousel-container">
+                <div class="tech-carousel">
+                    <div class="tech-carousel-track" id="carouselTrack">
+                        <!-- Primera vuelta -->
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+                                    alt="WordPress">
+                            </div>
+                            <span>WordPress</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain.svg"
+                                    alt="WooCommerce">
+                            </div>
+                            <span>WooCommerce</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript">
+                            </div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                    alt="HTML5">
+                            </div>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                    alt="CSS3">
+                            </div>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                                    alt="PHP">
+                            </div>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                    alt="MySQL">
+                            </div>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                    alt="React">
+                            </div>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                    alt="Node.js">
+                            </div>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git">
+                            </div>
+                            <span>Git</span>
+                        </div>
+
+                        <!-- DUPLICADO para efecto infinito (IMPORTANTE) -->
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+                                    alt="WordPress">
+                            </div>
+                            <span>WordPress</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain.svg"
+                                    alt="WooCommerce">
+                            </div>
+                            <span>WooCommerce</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript">
+                            </div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                    alt="HTML5">
+                            </div>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                    alt="CSS3">
+                            </div>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                                    alt="PHP">
+                            </div>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                    alt="MySQL">
+                            </div>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                    alt="React">
+                            </div>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                    alt="Node.js">
+                            </div>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-item-inner">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git">
+                            </div>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section expertise-section" id="expertise">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line">Nuestros</span>
+                <span class="title-emphasis">Servicios</span>
+            </h2>
+
+            <div class="expertise-grid">
+                <!-- Servicio 1: Desarrollo Web -->
+                <article class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Desarrollo Web & E-commerce</h3>
+                    <p class="expertise-description">
+                        Creamos tiendas virtuales escalables, páginas corporativas y plataformas web
+                        modernas con optimización SEO. Desde landing pages hasta sistemas complejos.
+                    </p>
+                    <div class="expertise-tags">
+                        <span class="tag">E-commerce</span>
+                        <span class="tag">Web Corporativa</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">WordPress</span>
+                    </div>
+                </article>
+
+                <!-- Servicio 2: Soporte Técnico -->
+                <article class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Soporte Técnico e Infraestructura TI</h3>
+                    <p class="expertise-description">
+                        Mantenimiento de hardware, configuración de redes, help desk empresarial
+                        y gestión de infraestructura. Garantizamos la operatividad continua de tu empresa.
+                    </p>
+                    <div class="expertise-tags">
+                        <span class="tag">Help Desk</span>
+                        <span class="tag">Redes</span>
+                        <span class="tag">Hardware</span>
+                        <span class="tag">Mantenimiento</span>
+                    </div>
+                </article>
+
+                <!-- Servicio 3: Consultoría -->
+                <article class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Consultoría & Gestión de Proyectos</h3>
+                    <p class="expertise-description">
+                        Transformación digital, liderazgo ágil con metodología Scrum, estrategias
+                        de marca digital y gestión profesional de proyectos tecnológicos.
+                    </p>
+                    <div class="expertise-tags">
+                        <span class="tag">Scrum Master</span>
+                        <span class="tag">Transformación Digital</span>
+                        <span class="tag">Estrategia</span>
+                        <span class="tag">PM</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="section work-section" id="work">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line">Nuestros</span>
+                <span class="title-emphasis">Proyectos</span>
+            </h2>
+
+            <p class="work-intro">
+                Hemos colaborado en <strong>50+ proyectos</strong> con empresas PYMES en Colombia,
+                ayudándolas a digitalizar sus operaciones y optimizar su infraestructura tecnológica.
+            </p>
+
+            <!-- Featured Project -->
+            <div class="featured-wrapper">
+                <h3 class="featured-label">Proyecto Destacado</h3>
+
+                <article class="featured-project">
+                    <div class="project-media">
+                        <div class="project-placeholder">
+                            <h4>Sistema E-commerce Completo</h4>
+                        </div>
+                    </div>
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-name">Plataforma E-commerce Escalable</h3>
+                            <span class="project-category">Retail & E-commerce</span>
+                        </div>
+
+                        <p class="project-description">
+                            Desarrollo completo de tienda virtual con integración de pagos, sistema de inventario,
+                            gestión de pedidos y optimización SEO. Incluye panel administrativo completo,
+                            integración con redes sociales y analytics avanzados para toma de decisiones.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">WooCommerce</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="#contact" class="project-link">
+                                Solicitar Proyecto Similar
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience-section" id="experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line">Nuestra</span>
+                <span class="title-emphasis">Experiencia</span>
+            </h2>
+
+            <div class="timeline">
+                <!-- Experience Item 1 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3 class="experience-role">Desarrollador Full Stack & Soporte TI</h3>
+                                <p class="experience-company">@ Tomker</p>
+                            </div>
+                            <span class="experience-period">2023 - Presente</span>
+                        </div>
+                        <p class="experience-description">
+                            Desarrollo de soluciones web personalizadas, implementación de tiendas virtuales
+                            y soporte técnico integral para PYMES. Liderazgo en proyectos de transformación digital
+                            con metodologías ágiles.
+                        </p>
+                        <div class="experience-skills">
+                            <span class="skill-badge">WordPress</span>
+                            <span class="skill-badge">E-commerce</span>
+                            <span class="skill-badge">Scrum</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Experience Item 2 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3 class="experience-role">Especialista en Soporte Técnico</h3>
+                                <p class="experience-company">@ Enel Colombia</p>
+                            </div>
+                            <span class="experience-period">2021 - 2023</span>
+                        </div>
+                        <p class="experience-description">
+                            Gestión de infraestructura TI, soporte técnico nivel 2 y 3, administración de redes
+                            corporativas y mantenimiento de hardware. Implementación de protocolos de seguridad
+                            y optimización de sistemas.
+                        </p>
+                        <div class="experience-skills">
+                            <span class="skill-badge">Infraestructura TI</span>
+                            <span class="skill-badge">Redes</span>
+                            <span class="skill-badge">Help Desk</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Experience Item 3 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3 class="experience-role">Desarrollador Web</h3>
+                                <p class="experience-company">@ Ciento3</p>
+                            </div>
+                            <span class="experience-period">2020 - 2021</span>
+                        </div>
+                        <p class="experience-description">
+                            Desarrollo de sitios web corporativos, landing pages de alta conversión y
+                            optimización SEO. Implementación de diseño responsive y mejores prácticas
+                            de desarrollo frontend.
+                        </p>
+                        <div class="experience-skills">
+                            <span class="skill-badge">HTML/CSS</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">SEO</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Experience Item 4 -->
+                <article class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3 class="experience-role">Técnico de Sistemas</h3>
+                                <p class="experience-company">@ Favian Segura</p>
+                            </div>
+                            <span class="experience-period">2019 - 2020</span>
+                        </div>
+                        <p class="experience-description">
+                            Soporte técnico on-site, mantenimiento preventivo y correctivo de equipos,
+                            instalación de redes y configuración de sistemas operativos.
+                        </p>
+                        <div class="experience-skills">
+                            <span class="skill-badge">Hardware</span>
+                            <span class="skill-badge">Windows Server</span>
+                            <span class="skill-badge">Mantenimiento</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="section contact-cta-section" id="contact">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="cta-content">
+                    <h2 class="cta-title">¿Listo para transformar tu negocio?</h2>
+                    <p class="cta-description">
+                        Agenda una consultoría gratuita de 30 minutos.<br>
+                        Analizamos tus necesidades y te proponemos la mejor solución.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="mailto:filius.tec@gmail.com?subject=Consultoría%20Filius%20Tec&body=Hola%20Filius,%20estoy%20interesado%20en%20sus%20servicios"
+                            class="cta-btn cta-btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            filius.tec@gmail.com
+                        </a>
+                        <a href="https://wa.me/573123456789?text=Hola%20Filius,%20me%20gustaría%20solicitar%20una%20consultoría"
+                            class="cta-btn cta-btn-secondary" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="contact-info">
+                        <p><strong>📍 Ubicación:</strong> Bogotá e Ibagué, Colombia</p>
+                        <p><strong>🌐 Cobertura:</strong> Todo el territorio nacional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line">Lo que dicen</span>
+                <span class="title-emphasis">Nuestros Clientes</span>
+            </h2>
+
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <p class="testimonial-text">
+                        Filius transformó completamente nuestra presencia digital. El equipo es profesional,
+                        responsivo y entrega resultados de alta calidad. Altamente recomendados.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>JM</span>
+                        </div>
+                        <div class="author-info">
+                            <p class="author-name">Juan Martínez</p>
+                            <p class="author-role">Gerente General | Empresa Retail</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <p class="testimonial-text">
+                        El soporte técnico de Filius es excepcional. Responden rápido y solucionan
+                        cualquier problema de manera eficiente. Nuestros sistemas nunca han estado mejor.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>MR</span>
+                        </div>
+                        <div class="author-info">
+                            <p class="author-name">María Rodríguez</p>
+                            <p class="author-role">Directora TI | Compañía Servicios</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <p class="testimonial-text">
+                        Trabajar con Filius fue una excelente decisión. Su enfoque en entender nuestras
+                        necesidades y proponer soluciones reales nos ayudó a crecer digitalmente.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>CP</span>
+                        </div>
+                        <div class="author-info">
+                            <p class="author-name">Carlos Pérez</p>
+                            <p class="author-role">Fundador | Startup Tech</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" style="height: 50px;">
+                    </div>
+                    <p class="footer-tagline">
+                        Desarrollo, Soporte y Estrategia Digital para PYMES.<br>
+                        Tecnología que hace crecer tu negocio.
+                    </p>
+                    <p class="footer-location">
+                        📍 Bogotá e Ibagué, Colombia<br>
+                        📧 filius.tec@gmail.com
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <a href="#home" class="footer-link">Inicio</a>
+                    <a href="#expertise" class="footer-link">Servicios</a>
+                    <a href="#contact" class="footer-link">Contacto</a>
+                </div>
+
+                <div class="footer-services">
+                    <h4>Servicios</h4>
+                    <a href="#expertise" class="footer-link">Desarrollo Web</a>
+                    <a href="#expertise" class="footer-link">Soporte TI</a>
+                    <a href="#expertise" class="footer-link">Consultoría</a>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/filius-tec" class="social-link" aria-label="LinkedIn"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/filius.tec" class="social-link" aria-label="Instagram"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/santi-trujillo" class="social-link" aria-label="GitHub"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Filius. Todos los derechos reservados.</p>
+                <p>Hecho con ❤️ en Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files (ES6 Modules) -->
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+
+</html>

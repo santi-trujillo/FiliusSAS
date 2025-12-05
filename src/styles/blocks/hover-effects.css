@@ -1,0 +1,200 @@
+/**
+ * Hover Effects Component
+ * Efectos adicionales de hover y microinteracciones
+ */
+
+/* Efecto de elevación en tarjetas */
+.card-hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Efecto de brillo en botones */
+.button-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.button-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.5s ease;
+}
+
+.button-shine:hover::before {
+    left: 100%;
+}
+
+/* Efecto de ondulación */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Efecto de subrayado animado */
+.underline-animation {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.underline-animation:hover::after {
+    width: 100%;
+}
+
+/* Efecto de escala suave */
+.scale-hover {
+    transition: transform 0.3s ease;
+}
+
+.scale-hover:hover {
+    transform: scale(1.05);
+}
+
+/* Efecto de inclinación */
+.tilt-hover {
+    transition: transform 0.3s ease;
+}
+
+.tilt-hover:hover {
+    transform: perspective(1000px) rotateY(5deg) rotateX(2deg);
+}
+
+/* Efecto de desenfoque al hover */
+.blur-hover {
+    transition: filter 0.3s ease;
+}
+
+.blur-hover:hover {
+    filter: blur(2px);
+}
+
+/* Efecto de color gradient animado */
+.gradient-hover {
+    background-size: 200% 200%;
+    transition: background-position 0.5s ease;
+}
+
+.gradient-hover:hover {
+    background-position: 100% 0;
+}
+
+/* Efecto de marco animado */
+.frame-hover {
+    position: relative;
+}
+
+.frame-hover::before,
+.frame-hover::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: all 0.3s ease;
+}
+
+.frame-hover::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+}
+
+.frame-hover::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+}
+
+.frame-hover:hover::before,
+.frame-hover:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+/* Texto con efecto de gradiente */
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Efecto de partículas al hover (decorativo) */
+.particle-effect {
+    position: relative;
+}
+
+.particle-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.particle-effect:hover::before {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0.3;
+}
