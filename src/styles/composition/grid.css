@@ -1,0 +1,118 @@
+/* ============================================
+   CUBE CSS - COMPOSITION LAYER
+   Grid
+   Sistema de grillas responsive
+   ============================================ */
+
+.grid {
+    display: grid;
+    gap: var(--gap-md);
+}
+
+/* Auto-fit (responsive automático) */
+.grid--auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid--auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Columnas fijas */
+.grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--6-cols {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid--12-cols {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* Layouts específicos */
+.grid--sidebar-left {
+    grid-template-columns: 300px 1fr;
+}
+
+.grid--sidebar-right {
+    grid-template-columns: 1fr 300px;
+}
+
+.grid--two-thirds {
+    grid-template-columns: 2fr 1fr;
+}
+
+/* Gap variations */
+.grid--gap-xs {
+    gap: var(--gap-xs);
+}
+
+.grid--gap-sm {
+    gap: var(--gap-sm);
+}
+
+.grid--gap-md {
+    gap: var(--gap-md);
+}
+
+.grid--gap-lg {
+    gap: var(--gap-lg);
+}
+
+.grid--gap-xl {
+    gap: var(--gap-xl);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+
+    .grid--4-cols,
+    .grid--6-cols,
+    .grid--12-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--sidebar-left,
+    .grid--sidebar-right,
+    .grid--two-thirds {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid--2-cols,
+    .grid--3-cols,
+    .grid--4-cols,
+    .grid--6-cols,
+    .grid--12-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Grid item utilities */
+.grid-item--span-2 {
+    grid-column: span 2;
+}
+
+.grid-item--span-3 {
+    grid-column: span 3;
+}
+
+.grid-item--span-4 {
+    grid-column: span 4;
+}
+
+.grid-item--span-full {
+    grid-column: 1 / -1;
+}

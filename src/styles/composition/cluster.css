@@ -1,0 +1,78 @@
+/* ============================================
+   CUBE CSS - COMPOSITION LAYER
+   Cluster
+   Agrupación horizontal con wrapping
+   ============================================ */
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cluster-gap, var(--space-4));
+}
+
+/* Gap sizes */
+.cluster--xs {
+    --cluster-gap: var(--space-1);
+}
+
+.cluster--sm {
+    --cluster-gap: var(--space-2);
+}
+
+.cluster--md {
+    --cluster-gap: var(--space-4);
+}
+
+.cluster--lg {
+    --cluster-gap: var(--space-8);
+}
+
+.cluster--xl {
+    --cluster-gap: var(--space-16);
+}
+
+/* Alineación horizontal */
+.cluster--start {
+    justify-content: flex-start;
+}
+
+.cluster--center {
+    justify-content: center;
+}
+
+.cluster--end {
+    justify-content: flex-end;
+}
+
+.cluster--between {
+    justify-content: space-between;
+}
+
+.cluster--around {
+    justify-content: space-around;
+}
+
+.cluster--evenly {
+    justify-content: space-evenly;
+}
+
+/* Alineación vertical */
+.cluster--align-start {
+    align-items: flex-start;
+}
+
+.cluster--align-center {
+    align-items: center;
+}
+
+.cluster--align-end {
+    align-items: flex-end;
+}
+
+.cluster--align-baseline {
+    align-items: baseline;
+}
+
+.cluster--align-stretch {
+    align-items: stretch;
+}

@@ -1,0 +1,68 @@
+/* ============================================
+   CUBE CSS - COMPOSITION LAYER
+   Stack
+   Espaciado vertical automático entre elementos
+   ============================================ */
+
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.stack>*+* {
+    margin-top: var(--stack-space, var(--space-4));
+}
+
+/* Tamaños de espaciado */
+.stack--xs {
+    --stack-space: var(--space-1);
+}
+
+.stack--sm {
+    --stack-space: var(--space-2);
+}
+
+.stack--md {
+    --stack-space: var(--space-4);
+}
+
+.stack--lg {
+    --stack-space: var(--space-8);
+}
+
+.stack--xl {
+    --stack-space: var(--space-16);
+}
+
+.stack--2xl {
+    --stack-space: var(--space-24);
+}
+
+/* Alineación */
+.stack--center {
+    align-items: center;
+}
+
+.stack--start {
+    align-items: flex-start;
+}
+
+.stack--end {
+    align-items: flex-end;
+}
+
+.stack--stretch {
+    align-items: stretch;
+}
+
+/* Variante horizontal (cuando el espacio está disponible) */
+@media (min-width: 768px) {
+    .stack--horizontal-md {
+        flex-direction: row;
+    }
+
+    .stack--horizontal-md>*+* {
+        margin-top: 0;
+        margin-left: var(--stack-space, var(--space-4));
+    }
+}

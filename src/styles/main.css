@@ -1,0 +1,41 @@
+/* ============================================
+   CUBE CSS - MAIN STYLESHEET
+   Filius Tec - Portfolio Corporativo
+   
+   Metodología: CUBE CSS
+   - Composition: Layouts reutilizables
+   - Utility: Clases de utilidad atómicas
+   - Block: Componentes
+   - Exception: Contextuales
+   ============================================ */
+
+/* ===== BASE LAYER ===== */
+@import './base/reset.css';
+@import './base/variables.css';
+@import './base/typography.css';
+
+/* ===== COMPOSITION LAYER ===== */
+@import './composition/container.css';
+@import './composition/grid.css';
+@import './composition/stack.css';
+@import './composition/cluster.css';
+@import './composition/flex.css';
+
+/* ===== UTILITIES LAYER ===== */
+@import './utilities/spacing.css';
+@import './utilities/typography.css';
+@import './utilities/colors.css';
+@import './utilities/display.css';
+@import './utilities/animations.css';
+
+/* ===== BLOCKS LAYER ===== */
+/* Se importarán después de la migración de componentes */
+/* @import './blocks/button.css'; */
+/* @import './blocks/card.css'; */
+/* @import './blocks/header.css'; */
+/* @import './blocks/hero.css'; */
+/* @import './blocks/section.css'; */
+/* @import './blocks/footer.css'; */
+
+/* ===== EXCEPTIONS LAYER ===== */
+/* Contextos específicos y overrides */
