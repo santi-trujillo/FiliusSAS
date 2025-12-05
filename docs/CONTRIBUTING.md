@@ -151,10 +151,10 @@ perf:    Mejora de performance
 
 ## 🔧 Herramientas de Desarrollo
 
+- **Vite**: Build tool y dev server (reemplazó five-server)
 - **Vitest**: Testing framework
 - **ESLint**: Linting de JavaScript
 - **Prettier**: Formateo de código
-- **Five-server**: Servidor de desarrollo local
 
 ## 📚 Recursos Útiles
 

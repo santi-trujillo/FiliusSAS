@@ -142,7 +142,7 @@ FiliusSAS/
 │   │   │   └── ...             # Otros componentes
 │   │   └── main.css            # Entry point (52 líneas)
 │   ├── scripts/                # JavaScript ES6+ modules
-│   │   ├── components/         # 5 módulos (carousel, navigation, etc.)
+│   │   ├── components/         # 6 módulos (carousel, navigation, mobile-menu, etc.)
 │   │   ├── utils/              # Helpers reutilizables
 │   │   └── main.js             # Entry point
 │   └── assets/                 # Recursos multimedia
@@ -153,16 +153,17 @@ FiliusSAS/
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   └── site.webmanifest
-├── tests/                       # Tests unitarios (61 tests)
+├── tests/                       # Tests unitarios (75 tests)
 │   ├── unit/
 │   │   ├── helpers.test.js     # 11 tests
 │   │   ├── components.test.js  # 18 tests
-│   │   └── css-utilities.test.js # 32 tests
+│   │   └── css-utilities.test.js # 46 tests
 │   └── setup.js
 ├── docs/                        # Documentación técnica
 │   ├── CONTRIBUTING.md
 │   ├── CSS-MODULARIZATION.md
 │   ├── CSS-GUIDE.md            # Guía completa de estilos
+│   ├── COMPONENTS-SYSTEM.md    # Sistema de componentes HTML
 │   └── setup-guide.md
 ├── .github/workflows/          # CI/CD Pipeline
 │   └── ci.yml                  # Test → Build → Deploy
@@ -185,7 +186,7 @@ npm run build        # Build optimizado → dist/ (2-3s)
 npm run preview      # Preview del build local
 
 # Testing
-npm test            # Vitest (61 tests pasando)
+npm test            # Vitest (75 tests pasando)
 npm run test:ui     # Vitest UI interactiva
 npm run test:coverage # Coverage report con v8
 ```

@@ -145,7 +145,6 @@ FiliusSAS/
 - ✅ **sections/** - Expertise, Experience, Projects, Testimonials
 - ✅ **tech-stack.css** - Stack tecnológico
 - ✅ **footer.css** - Footer
-- ✅ **cursor.css** - Cursor personalizado
 - ✅ **scroll-effects.css** - Efectos de scroll
 - ✅ **hover-effects.css** - Efectos hover
 - ✅ **menu-mobile.css** - Menú móvil
@@ -163,7 +162,7 @@ npm run build           # Build de producción (2.51s)
 npm run preview         # Preview del build
 
 # Testing
-npm test               # Ejecutar tests (11/11 pasando)
+npm test               # Ejecutar tests (75/75 pasando)
 npm run test:ui        # UI interactiva
 npm run test:coverage  # Cobertura de código
 
