@@ -1,12 +1,6 @@
-// js/utils/helpers.test.js
+// tests/unit/helpers.test.js
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import {
-  debounce,
-  throttle,
-  isInViewport,
-  formatDate,
-  generateId,
-} from './helpers';
+import { debounce, throttle, isInViewport, formatDate, generateId } from '@scripts/utils/helpers';
 
 describe('Helpers', () => {
   describe('generateId', () => {
