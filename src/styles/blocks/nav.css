@@ -1,18 +1,10 @@
-/* ============================================
-   CUBE CSS - BLOCK
-   Navigation Component
-   Navegación principal del sitio
-   ============================================ */
 
-/* ===== BASE NAVIGATION ===== */
 .nav {
-    /* Layout */
     display: flex;
     align-items: center;
     gap: var(--space-8);
 }
 
-/* ===== NAV LIST ===== */
 
 .nav__list {
     display: flex;
@@ -23,30 +15,25 @@
     padding: 0;
 }
 
-/* ===== NAV ITEMS ===== */
 
 .nav__item {
     position: relative;
 }
 
 .nav__link {
-    /* Typography */
     font-family: var(--font-primary);
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     color: var(--text-primary);
     text-decoration: none;
 
-    /* Layout */
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-3);
 
-    /* Visual */
     border-radius: var(--radius-sm);
 
-    /* Interaction */
     transition: all 0.3s var(--ease-in-out);
     cursor: pointer;
 }
@@ -61,7 +48,6 @@
     outline-offset: 2px;
 }
 
-/* ===== ACTIVE STATE ===== */
 
 .nav__link--active {
     color: var(--accent-color);
@@ -79,9 +65,7 @@
     border-radius: 2px;
 }
 
-/* ===== VARIANTS ===== */
 
-/* Vertical */
 .nav--vertical {
     flex-direction: column;
     align-items: flex-start;
@@ -99,7 +83,6 @@
     padding: var(--space-3) var(--space-4);
 }
 
-/* Pills */
 .nav--pills .nav__link {
     border-radius: var(--radius-full);
     padding: var(--space-2) var(--space-4);
@@ -114,7 +97,6 @@
     display: none;
 }
 
-/* Tabs */
 .nav--tabs {
     border-bottom: 1px solid var(--border-color);
 }
@@ -133,7 +115,6 @@
     display: none;
 }
 
-/* ===== MOBILE MENU ===== */
 
 .nav__toggle {
     display: none;
@@ -156,7 +137,6 @@
     transition: all 0.3s var(--ease-in-out);
 }
 
-/* Toggle active state */
 .nav__toggle--active .nav__toggle-line:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -169,7 +149,6 @@
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
     .nav__toggle {
@@ -204,7 +183,6 @@
         padding: var(--space-3) var(--space-4);
     }
 
-    /* Backdrop */
     .nav__backdrop {
         position: fixed;
         top: 0;

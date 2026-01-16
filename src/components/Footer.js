@@ -65,7 +65,7 @@ export const Footer = () => `
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Filius. Todos los derechos reservados.</p>
+                <p>&copy; ${new Date().getFullYear()} Filius. Todos los derechos reservados.</p>
                 <p>Hecho con ❤️ en Colombia</p>
             </div>
         </div>

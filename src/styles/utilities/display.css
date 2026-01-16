@@ -1,10 +1,4 @@
-/* ============================================
-   CUBE CSS - UTILITIES LAYER
-   Display
-   Display y visibility utilities
-   ============================================ */
 
-/* ===== DISPLAY ===== */
 .block {
     display: block;
 }
@@ -37,7 +31,6 @@
     display: none;
 }
 
-/* ===== VISIBILITY ===== */
 .visible {
     visibility: visible;
 }
@@ -46,7 +39,6 @@
     visibility: hidden;
 }
 
-/* ===== OVERFLOW ===== */
 .overflow-auto {
     overflow: auto;
 }
@@ -95,7 +87,6 @@
     overflow-y: scroll;
 }
 
-/* ===== POSITION ===== */
 .static {
     position: static;
 }
@@ -116,7 +107,6 @@
     position: sticky;
 }
 
-/* ===== OPACITY ===== */
 .opacity-0 {
     opacity: 0;
 }
@@ -137,7 +127,6 @@
     opacity: 1;
 }
 
-/* ===== Z-INDEX ===== */
 .z-0 {
     z-index: 0;
 }
@@ -166,7 +155,6 @@
     z-index: auto;
 }
 
-/* ===== SCREEN READER ONLY ===== */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -190,7 +178,6 @@
     white-space: normal;
 }
 
-/* ===== POINTER EVENTS ===== */
 .pointer-events-none {
     pointer-events: none;
 }
@@ -199,7 +186,6 @@
     pointer-events: auto;
 }
 
-/* ===== CURSOR ===== */
 .cursor-auto {
     cursor: auto;
 }

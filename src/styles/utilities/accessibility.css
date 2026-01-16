@@ -1,10 +1,4 @@
-/* ============================================
-   CUBE CSS - UTILITIES LAYER
-   Accessibility
-   Utilidades para mejorar accesibilidad
-   ============================================ */
 
-/* Skip to content link (solo visible con tabulación) */
 .skip-to-content {
     position: absolute;
     top: -100px;
@@ -25,7 +19,6 @@
     outline-offset: 2px;
 }
 
-/* Screen reader only content */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -38,7 +31,6 @@
     border-width: 0;
 }
 
-/* Focus visible styles mejorados */
 *:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;

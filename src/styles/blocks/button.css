@@ -1,35 +1,24 @@
-/* ============================================
-   CUBE CSS - BLOCK
-   Button Component
-   Botones siguiendo metodología BEM
-   ============================================ */
 
-/* ===== BASE BUTTON ===== */
 .btn {
-    /* Layout */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
 
-    /* Visual */
     font-family: var(--font-primary);
     font-weight: var(--font-weight-semibold);
     border-radius: var(--radius-sm);
     border: 2px solid transparent;
     cursor: pointer;
 
-    /* Spacing */
     height: 48px;
     padding: 0 var(--space-6);
 
-    /* Typography */
     font-size: var(--text-base);
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
 
-    /* Interaction */
     transition: all 0.3s var(--ease-in-out);
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -40,9 +29,7 @@
     outline-offset: 2px;
 }
 
-/* ===== VARIANTS (Modificadores de estilo) ===== */
 
-/* Primary */
 .btn--primary {
     background: var(--accent-color);
     color: white;
@@ -60,7 +47,6 @@
     transform: translateY(0);
 }
 
-/* Secondary */
 .btn--secondary {
     background: transparent;
     color: var(--text-primary);
@@ -73,7 +59,6 @@
     color: var(--accent-color);
 }
 
-/* Ghost */
 .btn--ghost {
     background: transparent;
     color: var(--text-primary);
@@ -84,7 +69,6 @@
     background: var(--bg-tertiary);
 }
 
-/* ===== SIZES ===== */
 
 .btn--sm {
     height: 40px;
@@ -104,12 +88,10 @@
     font-size: var(--text-xl);
 }
 
-/* Full width */
 .btn--full {
     width: 100%;
 }
 
-/* ===== STATES ===== */
 
 .btn:disabled,
 .btn--disabled {
@@ -145,7 +127,6 @@
     }
 }
 
-/* ===== RIPPLE EFFECT ===== */
 
 .btn--ripple {
     position: relative;
@@ -170,7 +151,6 @@
     height: 300px;
 }
 
-/* ===== ICON BUTTONS ===== */
 
 .btn--icon {
     width: 48px;
@@ -186,7 +166,6 @@
     width: 56px;
 }
 
-/* ===== GROUP ===== */
 
 .btn-group {
     display: inline-flex;
@@ -208,7 +187,6 @@
     border-right-width: 1px;
 }
 
-/* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
     .btn--full-mobile {

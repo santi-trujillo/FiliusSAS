@@ -1,14 +1,8 @@
-/* ============================================
-   CUBE CSS - COMPOSITION LAYER
-   Flex
-   Sistema de flexbox utilitario
-   ============================================ */
 
 .flex {
     display: flex;
 }
 
-/* Direction */
 .flex--row {
     flex-direction: row;
 }
@@ -25,7 +19,6 @@
     flex-direction: column-reverse;
 }
 
-/* Wrap */
 .flex--wrap {
     flex-wrap: wrap;
 }
@@ -34,7 +27,6 @@
     flex-wrap: nowrap;
 }
 
-/* Justify content */
 .flex--justify-start {
     justify-content: flex-start;
 }
@@ -59,7 +51,6 @@
     justify-content: space-evenly;
 }
 
-/* Align items */
 .flex--align-start {
     align-items: flex-start;
 }
@@ -80,7 +71,6 @@
     align-items: stretch;
 }
 
-/* Gap */
 .flex--gap-xs {
     gap: var(--space-1);
 }
@@ -101,7 +91,6 @@
     gap: var(--space-16);
 }
 
-/* Flex item utilities */
 .flex-1 {
     flex: 1;
 }

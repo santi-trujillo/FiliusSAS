@@ -24,7 +24,7 @@ export const ContactSection = () => `
                             </svg>
                             filius.tec@gmail.com
                         </a>
-                        <a href="https://wa.me/573123456789?text=Hola%20Filius,%20me%20gustaría%20solicitar%20una%20consultoría"
+                        <a href="https://wa.me/573208453967?text=Hola%20Filius,%20me%20gustaría%20solicitar%20una%20consultoría"
                             class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path

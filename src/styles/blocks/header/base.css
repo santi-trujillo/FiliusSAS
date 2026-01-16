@@ -1,7 +1,3 @@
-/**
- * Header Base Component
- * Estilos base del header y navegación
- */
 
 .header {
     position: fixed;
@@ -15,7 +11,6 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Container del nav */
 .nav {
     max-width: 100%;
     margin: 0;
@@ -28,7 +23,6 @@
     overflow: visible;
 }
 
-/* Logo (tanto .logo como .nav-logo) */
 .logo,
 .nav-logo {
     position: relative;
@@ -43,7 +37,6 @@
     margin-right: auto;
 }
 
-/* Imagen del logo */
 .logo-image {
     height: 70px;
     width: auto;
@@ -51,7 +44,6 @@
     display: block;
 }
 
-/* Tablet pequeña */
 @media (min-width: 768px) {
     .header {
         padding: 1rem 2%;
@@ -67,27 +59,23 @@
     }
 }
 
-/* Tablet grande - tu referencia */
 @media (min-width: 834px) {
     .logo-image {
         height: 100px;
     }
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
     .logo-image {
         height: 110px;
     }
 }
 
-/* Efecto hover */
 .logo:hover .logo-image,
 .nav-logo:hover .logo-image {
     transform: scale(1.05);
 }
 
-/* Navegación centrada */
 .nav-links {
     display: flex;
     align-items: center;

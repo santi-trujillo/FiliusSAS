@@ -1,6 +1,3 @@
-/* ============================================
-   EXPERIENCE SECTION
-   ============================================ */
 
 .experience-section {
     padding: 8rem 5%;
@@ -147,11 +144,7 @@
     background: rgba(59, 130, 246, 0.05);
 }
 
-/* ============================================
-   RESPONSIVE - Mobile First Strategy
-   ============================================ */
 
-/* BASE: Móvil (320px - 767px) */
 .timeline {
     padding-left: 2rem;
 }
@@ -174,7 +167,6 @@
     font-size: 1.2rem;
 }
 
-/* DESKTOP (1024px+) */
 @media (min-width: 768px) {
     .timeline {
         padding-left: 3rem;

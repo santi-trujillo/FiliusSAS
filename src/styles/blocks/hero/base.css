@@ -1,7 +1,3 @@
-/**
- * Hero Base Styles
- * Estilos base del contenedor y layouts
- */
 
 .hero {
     min-height: 100vh;
@@ -15,7 +11,6 @@
     background: var(--bg-primary);
 }
 
-/* Fondo animado con gradiente */
 .hero::before {
     content: '';
     position: absolute;
@@ -45,12 +40,9 @@
     padding: 2rem 5%;
 }
 
-/* Contenido izquierdo - stack maneja el spacing vertical */
 .hero-content {
-    /* Stack se encarga del layout */
 }
 
-/* Nombre principal */
 .hero-title {
     font-size: clamp(3rem, 7vw, 6rem);
     font-weight: 700;
@@ -68,7 +60,6 @@
     background-clip: text;
 }
 
-/* Rol/Profesión */
 .hero-subtitle {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     color: var(--text-secondary);
@@ -84,7 +75,6 @@
     font-weight: 600;
 }
 
-/* Descripción */
 .hero-description {
     font-size: 1.1rem;
     color: var(--text-secondary);
@@ -94,13 +84,11 @@
     animation: fadeInUp 0.6s ease 0.6s forwards;
 }
 
-/* Botones de acción - cluster maneja spacing */
 .hero-actions {
     opacity: 0;
     animation: fadeInUp 0.6s ease 0.8s forwards;
 }
 
-/* Lado derecho - Visual/Imagen */
 .hero-visual {
     position: relative;
     display: flex;
@@ -110,14 +98,12 @@
     animation: fadeInRight 0.8s ease 0.4s forwards;
 }
 
-/* Ocultar esfera visual en móviles */
 @media (max-width: 767px) {
     .hero-visual {
         display: none;
     }
 }
 
-/* Círculo decorativo con animación */
 .hero-circle {
     width: 380px;
     height: 380px;
@@ -133,7 +119,6 @@
     box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
 }
 
-/* Texto o imagen dentro del círculo */
 .hero-visual-content {
     width: 80%;
     height: 80%;
@@ -150,7 +135,6 @@
     overflow: hidden;
 }
 
-/* Iniciales o imagen de perfil */
 .hero-initials {
     height: 220px;
     width: auto;
@@ -158,7 +142,6 @@
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* Estadísticas/Badges flotantes */
 .hero-badges {
     position: absolute;
     width: 100%;
@@ -206,11 +189,7 @@
     font-weight: 700;
 }
 
-/* ============================================================
-   RESPONSIVE - Mobile First Strategy with iPad Optimization
-   ============================================================ */
 
-/* BASE: Móvil (320px - 479px) */
 .hero-container {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -283,7 +262,6 @@
     left: -10%;
 }
 
-/* TABLET PEQUEÑO (480px - 599px) */
 @media (min-width: 480px) {
     .hero {
         padding: 8rem 5% 3rem;
@@ -319,7 +297,6 @@
     }
 }
 
-/* TABLET MEDIO (600px - 767px) */
 @media (min-width: 600px) {
     .hero {
         padding: 9rem 5% 3rem;
@@ -360,7 +337,6 @@
     }
 }
 
-/* TABLET GRANDE (768px - 833px) */
 @media (min-width: 768px) {
     .hero {
         padding: 80px 5% 4rem;
@@ -400,7 +376,6 @@
     }
 }
 
-/* IPAD PRO 11 (834px - 1023px) */
 @media (min-width: 834px) {
     .hero-container {
         grid-template-columns: 1fr 1fr;
@@ -453,12 +428,10 @@
     }
 }
 
-/* DESKTOP (1024px+) */
 @media (min-width: 1024px) {
     .hero {
         min-height: 100vh;
         padding: 80px 5% 0 5%;
-        /* Mantener espacio para header fijo */
     }
 
     .hero-container {
@@ -507,9 +480,6 @@
     }
 }
 
-/* ============================================================
-   TECH STACK CONTAINER (dentro del hero)
-   ============================================================ */
 
 .tech-stack-container {
     width: 100vw;

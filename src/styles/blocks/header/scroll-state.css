@@ -1,9 +1,4 @@
-/**
- * Header Scroll State Component
- * Estilos de scroll, menu mobile y animaciones
- */
 
-/* Header con scroll - fondo más transparente */
 .header.scrolled {
     background: rgba(10, 10, 10, 0.15);
     backdrop-filter: blur(25px);
@@ -12,7 +7,6 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Botón hamburguesa */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -53,7 +47,6 @@
     bottom: 8px;
 }
 
-/* Animación a X cuando está activo */
 .menu-toggle.active .menu-toggle-line:nth-child(1) {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
@@ -69,7 +62,6 @@
     transform: translateY(50%) rotate(-45deg);
 }
 
-/* Menú móvil */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -93,7 +85,6 @@
     right: 0;
 }
 
-/* Overlay del menú móvil */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -113,7 +104,6 @@
     visibility: visible;
 }
 
-/* Enlaces del menú móvil */
 .mobile-nav-links {
     list-style: none;
     display: flex;
@@ -143,7 +133,6 @@
     font-family: 'Courier New', monospace;
 }
 
-/* Animación de entrada escalonada */
 .mobile-menu.active .mobile-nav-link {
     animation: slideInRight 0.4s ease forwards;
 }
@@ -180,7 +169,6 @@
     transform: translateX(10px);
 }
 
-/* Progress bar de scroll */
 .scroll-progress {
     position: absolute;
     bottom: 0;
@@ -191,7 +179,6 @@
     transition: width 0.1s ease;
 }
 
-/* Animación de entrada del header */
 .header {
     animation: slideDown 0.5s ease;
 }
@@ -208,11 +195,7 @@
     }
 }
 
-/* ============================================================
-   RESPONSIVE - Mobile First Strategy
-   ============================================================ */
 
-/* BASE: Móvil (320px - 967px) */
 .menu-toggle {
     display: flex;
     right: 5%;
@@ -230,7 +213,6 @@
     right: 4%;
 }
 
-/* DESKTOP (968px+) */
 @media (min-width: 968px) {
     .menu-toggle {
         display: none;

@@ -1,21 +1,12 @@
-/* ============================================
-   CUBE CSS - BLOCK
-   Section Component
-   Secciones principales del sitio
-   ============================================ */
 
-/* ===== BASE SECTION ===== */
 .section {
-    /* Spacing */
     padding-top: var(--space-20);
     padding-bottom: var(--space-20);
     
-    /* Layout */
     position: relative;
     overflow: hidden;
 }
 
-/* ===== SECTION HEADER ===== */
 
 .section__header {
     text-align: center;
@@ -36,51 +27,42 @@
     margin: 0 auto;
 }
 
-/* ===== SECTION CONTENT ===== */
 
 .section__content {
     position: relative;
     z-index: 1;
 }
 
-/* ===== VARIANTS ===== */
 
-/* Alternate background */
 .section--alt {
     background: var(--bg-secondary);
 }
 
-/* Dark section */
 .section--dark {
     background: var(--bg-primary);
     color: var(--text-primary);
 }
 
-/* With gradient */
 .section--gradient {
     background: var(--gradient-primary);
 }
 
-/* Compact spacing */
 .section--compact {
     padding-top: var(--space-12);
     padding-bottom: var(--space-12);
 }
 
-/* Expanded spacing */
 .section--expanded {
     padding-top: var(--space-24);
     padding-bottom: var(--space-24);
 }
 
-/* Full height */
 .section--full {
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
-/* ===== DECORATIVE ELEMENTS ===== */
 
 .section__decoration {
     position: absolute;
@@ -108,7 +90,6 @@
     right: 0;
 }
 
-/* ===== RESPONSIVE ===== */
 
 @media (max-width: 1024px) {
     .section {

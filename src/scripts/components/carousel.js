@@ -1,35 +1,29 @@
-/**
- * Carousel Module
- * Maneja la navegación del carrusel de tecnologías
- */
-
 class TechCarousel {
   constructor() {
-    this.track = document.getElementById('carouselTrack');
-    this.prevBtn = document.getElementById('carouselPrev');
-    this.nextBtn = document.getElementById('carouselNext');
-    this.items = this.track?.querySelectorAll('.tech-item');
+    this.track = document.getElementById("carouselTrack");
+    this.prevBtn = document.getElementById("carouselPrev");
+    this.nextBtn = document.getElementById("carouselNext");
+    this.items = this.track?.querySelectorAll(".tech-item");
 
     if (!this.track || !this.items) return;
 
     this.currentIndex = 0;
     this.itemsToScroll = 1;
-    this.totalItems = this.items.length / 2; // Dividimos por 2 porque hay items duplicados
+    this.totalItems = this.items.length / 2;
 
     this.init();
   }
 
   init() {
     if (this.prevBtn) {
-      this.prevBtn.addEventListener('click', () => this.scrollPrev());
+      this.prevBtn.addEventListener("click", () => this.scrollPrev());
     }
 
     if (this.nextBtn) {
-      this.nextBtn.addEventListener('click', () => this.scrollNext());
+      this.nextBtn.addEventListener("click", () => this.scrollNext());
     }
 
-    // Ajustar número de items a scrollear según pantalla
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       this.updateItemsToScroll();
     });
 
@@ -52,7 +46,6 @@ class TechCarousel {
   scrollNext() {
     this.currentIndex += this.itemsToScroll;
 
-    // Loop infinito
     if (this.currentIndex >= this.totalItems) {
       this.currentIndex = 0;
     }
@@ -63,7 +56,6 @@ class TechCarousel {
   scrollPrev() {
     this.currentIndex -= this.itemsToScroll;
 
-    // Loop infinito
     if (this.currentIndex < 0) {
       this.currentIndex = this.totalItems - this.itemsToScroll;
     }
@@ -76,7 +68,7 @@ class TechCarousel {
       const firstItem = this.items[0];
       if (firstItem) {
         const itemWidth = firstItem.offsetWidth;
-        const gap = 16; // valor del gap en CSS
+        const gap = 16;
         const totalWidth = (itemWidth + gap) * this.currentIndex;
         this.track.style.transform = `translateX(-${totalWidth}px)`;
       }
@@ -84,13 +76,8 @@ class TechCarousel {
   }
 }
 
-// Inicializar cuando el DOM esté listo
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new TechCarousel();
-  });
-} else {
+const init = () => {
   new TechCarousel();
-}
+};
 
-export default TechCarousel;
+export default { init };

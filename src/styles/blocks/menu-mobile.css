@@ -1,9 +1,4 @@
-/**
- * Mobile Menu Component
- * Menú hamburguesa animado para móviles
- */
 
-/* Botón hamburguesa */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -28,7 +23,6 @@
     transform-origin: center;
 }
 
-/* Animación de transformación a X */
 .menu-toggle.active .menu-toggle-line:nth-child(1) {
     transform: rotate(45deg) translateY(10px);
 }
@@ -42,7 +36,6 @@
     transform: rotate(-45deg) translateY(-10px);
 }
 
-/* Menú móvil */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -66,7 +59,6 @@
     right: 0;
 }
 
-/* Overlay del menú */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -86,7 +78,6 @@
     visibility: visible;
 }
 
-/* Enlaces del menú móvil */
 .mobile-nav-links {
     list-style: none;
     display: flex;
@@ -106,7 +97,6 @@
     transform: translateX(50px);
 }
 
-/* Animación de entrada escalonada */
 .mobile-menu.active .mobile-nav-link {
     animation: slideInRight 0.4s ease forwards;
 }
@@ -155,8 +145,6 @@
     width: 80%;
 }
 
-/* Mostrar en móviles */
-/* BASE: Móvil */
 .menu-toggle {
     display: flex;
 }
@@ -165,7 +153,6 @@
     display: none;
 }
 
-/* DESKTOP (768px+) */
 @media (min-width: 768px) {
     .menu-toggle {
         display: none;

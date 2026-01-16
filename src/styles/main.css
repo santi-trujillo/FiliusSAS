@@ -1,27 +1,13 @@
-/* ============================================
-   CUBE CSS - MAIN STYLESHEET
-   Filius Tec - Portfolio Corporativo
-   
-   Metodología: CUBE CSS
-   - Composition: Layouts reutilizables
-   - Utility: Clases de utilidad atómicas
-   - Block: Componentes
-   - Exception: Contextuales
-   ============================================ */
-
-/* ===== BASE LAYER ===== */
 @import './base/reset.css';
 @import './base/variables.css';
 @import './base/typography.css';
 
-/* ===== COMPOSITION LAYER ===== */
 @import './composition/container.css';
 @import './composition/grid.css';
 @import './composition/stack.css';
 @import './composition/cluster.css';
 @import './composition/flex.css';
 
-/* ===== UTILITIES LAYER ===== */
 @import './utilities/spacing.css';
 @import './utilities/typography.css';
 @import './utilities/colors.css';
@@ -29,24 +15,18 @@
 @import './utilities/animations.css';
 @import './utilities/accessibility.css';
 
-/* ===== BLOCKS LAYER ===== */
-/* Componentes CUBE CSS puros */
 @import './blocks/button.css';
 @import './blocks/card.css';
 @import './blocks/section.css';
 @import './blocks/nav.css';
 
-/* Componentes específicos del sitio */
 @import './blocks/header/index.css';
 @import './blocks/hero/index.css';
 @import './blocks/sections/index.css';
 @import './blocks/tech-stack.css';
 @import './blocks/footer.css';
 
-/* Efectos y comportamientos */
 @import './blocks/scroll-effects.css';
 @import './blocks/hover-effects.css';
 @import './blocks/menu-mobile.css';
 
-/* ===== EXCEPTIONS LAYER ===== */
-/* Contextos específicos y overrides */

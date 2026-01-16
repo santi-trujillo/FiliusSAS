@@ -1,6 +1,3 @@
-/* ============================================
-   EXPERTISE SECTION - Mobile First Strategy
-   ============================================ */
 
 .expertise-section {
     padding: 8rem 5%;
@@ -26,14 +23,12 @@
     color: var(--text-primary);
 }
 
-/* BASE: Móvil (320px - 479px) */
 .expertise-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-/* TABLET PEQUEÑO (480px - 599px) */
 @media (min-width: 480px) {
     .expertise-grid {
         grid-template-columns: 1fr;
@@ -41,7 +36,6 @@
     }
 }
 
-/* TABLET MEDIO (600px - 767px) */
 @media (min-width: 600px) {
     .expertise-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -49,7 +43,6 @@
     }
 }
 
-/* TABLET GRANDE / IPAD (768px - 833px) */
 @media (min-width: 768px) {
     .expertise-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -57,7 +50,6 @@
     }
 }
 
-/* IPAD PRO 11 (834px - 1023px) */
 @media (min-width: 834px) {
     .expertise-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -65,7 +57,6 @@
     }
 }
 
-/* DESKTOP (1024px+) */
 @media (min-width: 1024px) {
     .expertise-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -73,7 +64,6 @@
     }
 }
 
-/* Estilos específicos de expertise que no están en .card */
 .expertise-icon {
     width: 64px;
     height: 64px;
@@ -103,7 +93,6 @@
     line-height: 1.8;
 }
 
-/* Tags ya no necesitan margin-bottom porque stack lo maneja */
 
 .tag {
     padding: 0.4rem 1rem;

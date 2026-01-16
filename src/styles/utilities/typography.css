@@ -1,10 +1,4 @@
-/* ============================================
-   CUBE CSS - UTILITIES LAYER
-   Typography
-   Text utilities
-   ============================================ */
 
-/* ===== TEXT ALIGNMENT ===== */
 .text-left {
     text-align: left;
 }
@@ -21,7 +15,6 @@
     text-align: justify;
 }
 
-/* ===== TEXT TRANSFORM ===== */
 .text-uppercase {
     text-transform: uppercase;
 }
@@ -38,7 +31,6 @@
     text-transform: none;
 }
 
-/* ===== FONT WEIGHT ===== */
 .font-light {
     font-weight: var(--font-weight-light);
 }
@@ -63,7 +55,6 @@
     font-weight: var(--font-weight-extrabold);
 }
 
-/* ===== FONT SIZE ===== */
 .text-xs {
     font-size: var(--text-xs);
 }
@@ -104,7 +95,6 @@
     font-size: var(--text-6xl);
 }
 
-/* ===== LINE HEIGHT ===== */
 .leading-tight {
     line-height: var(--leading-tight);
 }
@@ -121,7 +111,6 @@
     line-height: var(--leading-loose);
 }
 
-/* ===== TEXT DECORATION ===== */
 .underline {
     text-decoration: underline;
 }
@@ -134,7 +123,6 @@
     text-decoration: none;
 }
 
-/* ===== FONT STYLE ===== */
 .italic {
     font-style: italic;
 }
@@ -143,7 +131,6 @@
     font-style: normal;
 }
 
-/* ===== WHITE SPACE ===== */
 .whitespace-normal {
     white-space: normal;
 }
@@ -164,7 +151,6 @@
     white-space: pre-wrap;
 }
 
-/* ===== TEXT OVERFLOW ===== */
 .truncate {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -179,7 +165,6 @@
     text-overflow: clip;
 }
 
-/* ===== WORD BREAK ===== */
 .break-normal {
     word-break: normal;
     overflow-wrap: normal;

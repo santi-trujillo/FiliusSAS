@@ -1,9 +1,4 @@
-/**
- * Hover Effects Component
- * Efectos adicionales de hover y microinteracciones
- */
 
-/* Efecto de elevación en tarjetas */
 .card-hover-lift {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -13,7 +8,6 @@
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
 }
 
-/* Efecto de brillo en botones */
 .button-shine {
     position: relative;
     overflow: hidden;
@@ -37,7 +31,6 @@
     left: 100%;
 }
 
-/* Efecto de ondulación */
 .ripple {
     position: relative;
     overflow: hidden;
@@ -61,7 +54,6 @@
     height: 300px;
 }
 
-/* Efecto de subrayado animado */
 .underline-animation {
     position: relative;
     display: inline-block;
@@ -82,7 +74,6 @@
     width: 100%;
 }
 
-/* Efecto de escala suave */
 .scale-hover {
     transition: transform 0.3s ease;
 }
@@ -91,7 +82,6 @@
     transform: scale(1.05);
 }
 
-/* Efecto de inclinación */
 .tilt-hover {
     transition: transform 0.3s ease;
 }
@@ -100,7 +90,6 @@
     transform: perspective(1000px) rotateY(5deg) rotateX(2deg);
 }
 
-/* Efecto de desenfoque al hover */
 .blur-hover {
     transition: filter 0.3s ease;
 }
@@ -109,7 +98,6 @@
     filter: blur(2px);
 }
 
-/* Efecto de color gradient animado */
 .gradient-hover {
     background-size: 200% 200%;
     transition: background-position 0.5s ease;
@@ -119,7 +107,6 @@
     background-position: 100% 0;
 }
 
-/* Efecto de marco animado */
 .frame-hover {
     position: relative;
 }
@@ -153,7 +140,6 @@
     height: 100%;
 }
 
-/* Texto con efecto de gradiente */
 .gradient-text {
     background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
     -webkit-background-clip: text;
@@ -175,7 +161,6 @@
     }
 }
 
-/* Efecto de partículas al hover (decorativo) */
 .particle-effect {
     position: relative;
 }

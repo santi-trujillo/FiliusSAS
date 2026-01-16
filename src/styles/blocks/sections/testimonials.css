@@ -1,13 +1,9 @@
-/* ============================================
-   TESTIMONIALS SECTION - Mobile First Strategy
-   ============================================ */
 
 .testimonials-section {
     padding: 8rem 5%;
     background: var(--bg-primary);
 }
 
-/* BASE: Móvil (320px - 767px) */
 .testimonials-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -18,7 +14,6 @@
     padding: 2.5rem 1.5rem;
 }
 
-/* TABLET (768px - 1023px) */
 @media (min-width: 768px) {
     .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -30,7 +25,6 @@
     }
 }
 
-/* DESKTOP (1024px+) */
 @media (min-width: 1024px) {
     .testimonials-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -38,7 +32,6 @@
     }
 }
 
-/* Estilos específicos de testimonials que no están en .card */
 .testimonial-quote-icon {
     font-size: 5rem;
     color: var(--accent-color);
@@ -85,9 +78,6 @@
     font-size: 0.9rem;
 }
 
-/* ============================================
-   CONTACT CTA SECTION
-   ============================================ */
 
 .contact-cta-section {
     padding: 8rem 5%;
@@ -154,7 +144,6 @@
     margin: 0.5rem 0;
 }
 
-/* Estilos específicos para botones del CTA */
 .contact-cta-section .btn--primary {
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     color: white;
@@ -184,7 +173,6 @@
     color: white;
 }
 
-/* Estilos específicos para botones del CTA */
 .contact-cta-section .btn--primary {
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     color: white;

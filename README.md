@@ -1,11 +1,11 @@
 # Filius Tec - Portfolio Corporativo
 
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](./package.json)
+[![Version](https://img.shields.io/badge/version-2.1.0-green.svg)](./package.json)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
-[![CUBE CSS](https://img.shields.io/badge/CSS-CUBE-blue)](https://cube.fyi/)
-[![Tests](https://img.shields.io/badge/tests-75%2F75%20passing-success)](./tests)
-[![Build](https://img.shields.io/badge/build-3.66s-success)](./package.json)
+[![CUBE CSS](https://img.shields.io/badge/CSS-CUBE%20Hybrid-blue)](https://cube.fyi/)
+[![Tests](https://img.shields.io/badge/tests-71%2F71%20passing-success)](./tests)
+[![Build](https://img.shields.io/badge/build-passing-success)](./package.json)
 
 Portfolio moderno y de alto rendimiento de **Filius Tec** - Consultora de tecnología integral especializada en desarrollo web, soporte técnico e infraestructura TI para PYMES en Colombia.
 
@@ -54,17 +54,18 @@ Somos una consultora de tecnología que ayuda a las PYMES a:
 
 ### Metodologías
 
-- **CUBE CSS** - Composition, Utility, Block, Exception (metodología completa implementada)
+- **CUBE CSS Híbrido** - Composition, Utility, Block, Exception (60% componentes reutilizables + 40% específicos del sitio)
   - ✅ **Composition**: `.container`, `.stack`, `.cluster`, `.grid`
   - ✅ **Utilities**: Spacing, typography, colors, display
-  - ✅ **Blocks**: `.btn`, `.card`, `.section`, `.nav` (componentes reutilizables)
+  - ✅ **Blocks Reutilizables**: `.btn`, `.card`, `.section`, `.nav` (componentes CUBE CSS puros)
+  - ✅ **Blocks Específicos**: Hero, Header, Footer, Sections (diseñados para este sitio)
   - ✅ **Exceptions**: Contextos específicos y overrides
 - **BEM** - Block Element Modifier para nomenclatura consistente
 - **Mobile-First** - Diseño progresivo con 8 breakpoints
 - **Component-Driven** - Componentes modulares con Template Literals + ES6 Modules
 - **Modular HTML** - Sistema de 8 componentes reutilizables (Header, Hero, Expertise, Projects, Experience, Contact, Testimonials, Footer)
 
-> **Arquitectura Real:** Este proyecto implementa CUBE CSS genuinamente con componentes `.btn`, `.card`, `.stack`, `.cluster` usados en el HTML. Combina componentes CUBE reutilizables (60%) con estilos específicos para secciones únicas (40%). El HTML es 100% modular usando JavaScript ES6 Modules.
+> **Arquitectura Real:** Este proyecto implementa un **enfoque híbrido profesional** combinando componentes CUBE CSS reutilizables (`.btn`, `.card`, `.stack`, `.cluster`) con estilos específicos optimizados para las secciones únicas del sitio. El HTML es 100% modular usando JavaScript ES6 Modules.
 
 ## 📋 Requisitos
 
@@ -186,16 +187,21 @@ npm run build        # Build optimizado → dist/ (2-3s)
 npm run preview      # Preview del build local
 
 # Testing
-npm test            # Vitest (75 tests pasando)
-npm run test:ui     # Vitest UI interactiva
+
+npm test              # Tests (en configuración)
+npm run test:ui       # Vitest UI interactiva
 npm run test:coverage # Coverage report con v8
+
+**Estado Actual:** Sistema de testing en proceso de configuración. Tests unitarios disponibles para helpers, componentes y utilidades CSS.
 ```
 
 ## 🎨 Arquitectura CSS
 
 Este proyecto utiliza un **enfoque híbrido profesional**:
 
-### CUBE CSS Base (60%)
+### CUBE CSS Base (Componentes Reutilizables - 40%)
+
+**Componentes puros que pueden reutilizarse en cualquier proyecto:**
 
 ```
 BASE Layer

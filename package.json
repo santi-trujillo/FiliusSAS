@@ -1,6 +1,6 @@
 {
   "name": "filiussas",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "description": "Filius - Software Development Portfolio",
   "main": "src/scripts/main.js",

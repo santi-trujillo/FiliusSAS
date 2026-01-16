@@ -1,11 +1,4 @@
-/**
- * Tech Stack Carousel Component
- * Carrusel mejorado con flechas, navegación y efectos visuales
- */
 
-/* ============================================================
-   CONTENEDOR PRINCIPAL DEL CARRUSEL
-   ============================================================ */
 
 .tech-carousel-container {
     position: relative;
@@ -41,7 +34,6 @@
     max-width: 100%;
 }
 
-/* Fade en los bordes laterales - REMOVIDO */
 .tech-carousel::before,
 .tech-carousel::after {
     content: '';
@@ -63,9 +55,6 @@
     will-change: transform;
 }
 
-/* ============================================================
-   ITEMS DEL CARRUSEL
-   ============================================================ */
 
 .tech-item {
     display: flex;
@@ -96,7 +85,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Efecto de iluminación */
 .tech-item-inner::before {
     content: '';
     position: absolute;
@@ -166,9 +154,6 @@
     color: rgba(100, 150, 255, 0.9);
 }
 
-/* ============================================================
-   FLECHAS DE NAVEGACIÓN
-   ============================================================ */
 
 .carousel-arrow {
     display: flex;
@@ -233,11 +218,7 @@
     z-index: 1;
 }
 
-/* ============================================================
-   RESPONSIVE - Mobile First Strategy
-   ============================================================ */
 
-/* BASE: Móvil (320px - 479px) */
 .tech-carousel-container {
     width: 85vw;
     margin-left: auto;
@@ -284,7 +265,6 @@
     height: 11.2px;
 }
 
-/* TABLET PEQUEÑO (480px - 599px) */
 @media (min-width: 480px) {
     .tech-carousel-container {
         width: 75vw;
@@ -324,7 +304,6 @@
     }
 }
 
-/* TABLET MEDIO (600px - 767px) */
 @media (min-width: 600px) {
     .tech-carousel-container {
         width: 70vw;
@@ -369,7 +348,6 @@
     }
 }
 
-/* TABLET GRANDE (768px - 833px) */
 @media (min-width: 768px) {
     .tech-carousel-container {
         width: 65vw;
@@ -413,7 +391,6 @@
     }
 }
 
-/* IPAD PRO (834px - 1023px) */
 @media (min-width: 834px) {
     .tech-carousel-container {
         width: 55vw;
@@ -453,7 +430,6 @@
     }
 }
 
-/* DESKTOP (1024px+) */
 @media (min-width: 1024px) {
     .tech-carousel-container {
         width: 58vw;
@@ -498,7 +474,6 @@
     }
 }
 
-/* DESKTOP GRANDE (1366px+) */
 @media (min-width: 1366px) {
     .tech-carousel-container {
         width: 60vw;

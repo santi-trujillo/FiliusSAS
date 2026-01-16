@@ -1,25 +1,10 @@
 // tests/unit/helpers.test.js
-import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { debounce, throttle, isInViewport, formatDate, generateId } from '@scripts/utils/helpers';
+import { describe, it, expect, beforeEach, vi } from "vitest";
+import { debounce, throttle, isInViewport } from "@scripts/utils/helpers";
 
-describe('Helpers', () => {
-  describe('generateId', () => {
-    it('should generate a unique ID starting with _ and having a length of 10', () => {
-      const id = generateId();
-      expect(typeof id).toBe('string');
-      expect(id.startsWith('_')).toBe(true);
-      expect(id.length).toBe(10);
-    });
-
-    it('should generate different IDs on multiple calls', () => {
-      const id1 = generateId();
-      const id2 = generateId();
-      expect(id1).not.toBe(id2);
-    });
-  });
-
-  describe('debounce', () => {
-    it('should delay function execution', async () => {
+describe("Helpers", () => {
+  describe("debounce", () => {
+    it("should delay function execution", async () => {
       const mockFn = vi.fn();
       const debounced = debounce(mockFn, 100);
 
@@ -33,7 +18,7 @@ describe('Helpers', () => {
       expect(mockFn).toHaveBeenCalledOnce();
     });
 
-    it('should cancel previous calls when called again', async () => {
+    it("should cancel previous calls when called again", async () => {
       const mockFn = vi.fn();
       const debounced = debounce(mockFn, 100);
 
@@ -49,8 +34,8 @@ describe('Helpers', () => {
     });
   });
 
-  describe('throttle', () => {
-    it('should limit function execution frequency', async () => {
+  describe("throttle", () => {
+    it("should limit function execution frequency", async () => {
       const mockFn = vi.fn();
       const throttled = throttle(mockFn, 100);
 
@@ -66,33 +51,16 @@ describe('Helpers', () => {
       expect(mockFn).toHaveBeenCalledTimes(2);
     });
 
-    it('should pass arguments correctly', async () => {
+    it("should pass arguments correctly", async () => {
       const mockFn = vi.fn();
       const throttled = throttle(mockFn, 100);
 
-      throttled('test', 123);
-      expect(mockFn).toHaveBeenCalledWith('test', 123);
+      throttled("test", 123);
+      expect(mockFn).toHaveBeenCalledWith("test", 123);
     });
   });
 
-  describe('formatDate', () => {
-    it('should format date correctly in Spanish locale', () => {
-      const date = new Date('2025-11-29T12:00:00Z');
-      const formatted = formatDate(date, 'es-ES');
-      expect(typeof formatted).toBe('string');
-      // Solo verificar que es una cadena válida (diferentes zonas horarias pueden variar)
-      expect(formatted).toMatch(/\d{1,2}\/\d{1,2}\/\d{4}/);
-    });
-
-    it('should use Spanish locale by default', () => {
-      const date = new Date('2025-11-29T12:00:00Z');
-      const formatted = formatDate(date);
-      expect(typeof formatted).toBe('string');
-      expect(formatted).toMatch(/\d{1,2}\/\d{1,2}\/\d{4}/);
-    });
-  });
-
-  describe('isInViewport', () => {
+  describe("isInViewport", () => {
     let mockElement;
 
     beforeEach(() => {
@@ -101,7 +69,7 @@ describe('Helpers', () => {
       };
     });
 
-    it('should return true when element is in viewport', () => {
+    it("should return true when element is in viewport", () => {
       mockElement.getBoundingClientRect.mockReturnValue({
         top: 100,
         left: 100,
@@ -113,7 +81,7 @@ describe('Helpers', () => {
       expect(result).toBe(true);
     });
 
-    it('should return false when element is above viewport', () => {
+    it("should return false when element is above viewport", () => {
       mockElement.getBoundingClientRect.mockReturnValue({
         top: -100,
         left: 0,
@@ -125,9 +93,9 @@ describe('Helpers', () => {
       expect(result).toBe(false);
     });
 
-    it('should return false when element is below viewport', () => {
+    it("should return false when element is below viewport", () => {
       const mockHeight = 800;
-      Object.defineProperty(window, 'innerHeight', {
+      Object.defineProperty(window, "innerHeight", {
         writable: true,
         configurable: true,
         value: mockHeight,

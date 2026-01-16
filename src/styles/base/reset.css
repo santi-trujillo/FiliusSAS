@@ -1,9 +1,4 @@
-/* ============================================
-   CUBE CSS - BASE LAYER
-   Reset & Normalization
-   ============================================ */
 
-/* Modern CSS Reset */
 *,
 *::before,
 *::after {
@@ -28,7 +23,6 @@ body {
     min-height: 100vh;
 }
 
-/* Media elements */
 img,
 picture,
 video,
@@ -39,7 +33,6 @@ svg {
     display: block;
 }
 
-/* Form elements */
 input,
 button,
 textarea,
@@ -53,19 +46,16 @@ button {
     background: none;
 }
 
-/* List elements */
 ul,
 ol {
     list-style: none;
 }
 
-/* Link elements */
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* Remove animations for people who prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
 
     *,

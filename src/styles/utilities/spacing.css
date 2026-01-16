@@ -1,12 +1,5 @@
-/* ============================================
-   CUBE CSS - UTILITIES LAYER
-   Spacing
-   Margin y padding utilities
-   ============================================ */
 
-/* ===== MARGIN ===== */
 
-/* All sides */
 .m-0 {
     margin: 0;
 }
@@ -43,7 +36,6 @@
     margin: var(--space-16);
 }
 
-/* Top */
 .mt-0 {
     margin-top: 0;
 }
@@ -88,7 +80,6 @@
     margin-top: var(--space-24);
 }
 
-/* Bottom */
 .mb-0 {
     margin-bottom: 0;
 }
@@ -133,7 +124,6 @@
     margin-bottom: var(--space-24);
 }
 
-/* Left */
 .ml-0 {
     margin-left: 0;
 }
@@ -166,7 +156,6 @@
     margin-left: auto;
 }
 
-/* Right */
 .mr-0 {
     margin-right: 0;
 }
@@ -199,7 +188,6 @@
     margin-right: auto;
 }
 
-/* Horizontal */
 .mx-0 {
     margin-left: 0;
     margin-right: 0;
@@ -225,7 +213,6 @@
     margin-right: var(--space-8);
 }
 
-/* Vertical */
 .my-0 {
     margin-top: 0;
     margin-bottom: 0;
@@ -256,9 +243,7 @@
     margin-bottom: var(--space-16);
 }
 
-/* ===== PADDING ===== */
 
-/* All sides */
 .p-0 {
     padding: 0;
 }
@@ -295,7 +280,6 @@
     padding: var(--space-16);
 }
 
-/* Top */
 .pt-0 {
     padding-top: 0;
 }
@@ -340,7 +324,6 @@
     padding-top: var(--space-24);
 }
 
-/* Bottom */
 .pb-0 {
     padding-bottom: 0;
 }
@@ -385,7 +368,6 @@
     padding-bottom: var(--space-24);
 }
 
-/* Left */
 .pl-0 {
     padding-left: 0;
 }
@@ -414,7 +396,6 @@
     padding-left: var(--space-8);
 }
 
-/* Right */
 .pr-0 {
     padding-right: 0;
 }
@@ -443,7 +424,6 @@
     padding-right: var(--space-8);
 }
 
-/* Horizontal */
 .px-0 {
     padding-left: 0;
     padding-right: 0;
@@ -474,7 +454,6 @@
     padding-right: var(--space-12);
 }
 
-/* Vertical */
 .py-0 {
     padding-top: 0;
     padding-bottom: 0;

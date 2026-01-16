@@ -1,10 +1,4 @@
-/* ============================================
-   CUBE CSS - UTILITIES LAYER
-   Animations
-   Utility animations
-   ============================================ */
 
-/* ===== ANIMATION KEYFRAMES ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -121,7 +115,6 @@
     }
 }
 
-/* ===== ANIMATION UTILITIES ===== */
 .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
 }
@@ -162,7 +155,6 @@
     animation: bounce 1s infinite;
 }
 
-/* ===== TRANSITION UTILITIES ===== */
 .transition-none {
     transition: none;
 }
@@ -183,7 +175,6 @@
     transition: transform 0.3s ease;
 }
 
-/* ===== ANIMATION DELAYS ===== */
 .delay-100 {
     animation-delay: 100ms;
 }
@@ -208,7 +199,6 @@
     animation-delay: 1000ms;
 }
 
-/* ===== ANIMATION DURATION ===== */
 .duration-100 {
     animation-duration: 100ms;
 }
