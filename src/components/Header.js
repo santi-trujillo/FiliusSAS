@@ -3,6 +3,8 @@
  * Componente del header con navegación
  */
 
+import { LanguageSwitcherTemplate } from "./LanguageSwitcher.js";
+
 export const Header = () => `
     <!-- Skip to main content (Accessibility) -->
     <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
@@ -12,7 +14,7 @@ export const Header = () => `
         <nav class="nav">
             <!-- Logo con imagen -->
             <a href="#home" class="nav-logo">
-                <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark">
+                <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark" loading="eager" decoding="async">
             </a>
 
             <!-- Navegación Centrada con Números -->
@@ -57,6 +59,9 @@ export const Header = () => `
                     </a>
                 </li>
             </ul>
+
+            <!-- Language Switcher -->
+            ${LanguageSwitcherTemplate()}
 
             <!-- Botón Hamburguesa (móvil) -->
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">

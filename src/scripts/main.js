@@ -5,12 +5,17 @@
  * @version 2.0.0
  */
 
+import "../styles/main.css";
 import { renderApp, initComponents } from "../components/App.js";
 import Navigation from "./components/navigation.js";
 import MobileMenu from "./components/mobile-menu.js";
 import ScrollProgress from "./components/scroll-progress.js";
 import Animations from "./components/animations.js";
 import ScrollEffects from "./components/scroll-effects.js";
+import Carousel from "./components/carousel.js";
+import { i18n } from "../i18n/i18n.js";
+import { ContentManager } from "./utils/content-manager.js";
+import { LanguageSwitcher } from "../components/LanguageSwitcher.js";
 
 /**
  * Registro del Service Worker para PWA
@@ -21,10 +26,14 @@ const registerServiceWorker = () => {
       navigator.serviceWorker
         .register("/sw.js")
         .then((registration) => {
-          console.log("[PWA] Service Worker registrado:", registration.scope);
+          if (import.meta.env.DEV) {
+            console.log("[PWA] Service Worker registrado:", registration.scope);
+          }
         })
         .catch((error) => {
-          console.error("[PWA] Error al registrar Service Worker:", error);
+          if (import.meta.env.DEV) {
+            console.error("[PWA] Error al registrar Service Worker:", error);
+          }
         });
     });
   }
@@ -85,16 +94,40 @@ const App = {
    * Inicializa todos los módulos de la aplicación
    */
   initializeModules() {
+    // Inicializar sistema i18n PRIMERO
+    new ContentManager();
+    new LanguageSwitcher();
+
+    // Inicializar eventos de cambio de idioma
+    this.initLanguageSwitcher();
+
+    // Módulos existentes
     Navigation.init();
     MobileMenu.init();
     ScrollProgress.init();
     Animations.init();
     ScrollEffects.init();
+    Carousel.init();
     registerServiceWorker(); // PWA
   },
 
+  /**
+   * Inicializa los event listeners del language switcher
+   */
+  initLanguageSwitcher() {
+    document.addEventListener("click", (e) => {
+      if (e.target.closest(".lang-btn")) {
+        const btn = e.target.closest(".lang-btn");
+        const lang = btn.dataset.lang;
+        if (lang) {
+          i18n.setLanguage(lang);
+        }
+      }
+    });
+  },
+
   log(...args) {
-    if (this.debug) {
+    if (this.debug || import.meta.env.DEV) {
       console.log("[App]", ...args);
     }
   },

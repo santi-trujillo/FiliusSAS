@@ -84,13 +84,11 @@ class TechCarousel {
   }
 }
 
-// Inicializar cuando el DOM esté listo
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new TechCarousel();
-  });
-} else {
+/**
+ * Inicializa el carousel
+ */
+const init = () => {
   new TechCarousel();
-}
+};
 
-export default TechCarousel;
+export default { init };

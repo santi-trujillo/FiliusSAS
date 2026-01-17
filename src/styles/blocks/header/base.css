@@ -24,8 +24,9 @@
     align-items: center;
     position: relative;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     overflow: visible;
+    padding: 0 0.5rem;
 }
 
 /* Logo (tanto .logo como .nav-logo) */
@@ -54,7 +55,11 @@
 /* Tablet pequeña */
 @media (min-width: 768px) {
     .header {
-        padding: 1rem 2%;
+        padding: 1rem 3%;
+    }
+
+    .nav {
+        padding: 0 1rem;
     }
 
     .logo,
@@ -68,7 +73,16 @@
 }
 
 /* Tablet grande - tu referencia */
-@media (min-width: 834px) {
+@media (min-width: 834px) and (max-width: 1023px) {
+    .header {
+        padding: 1rem 4%;
+    }
+
+    .nav {
+        gap: 0.75rem;
+        padding: 0 0.75rem;
+    }
+
     .logo-image {
         height: 100px;
     }
@@ -76,6 +90,15 @@
 
 /* Desktop */
 @media (min-width: 1024px) {
+    .header {
+        padding: 1rem 4%;
+    }
+
+    .nav {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
     .logo-image {
         height: 110px;
     }

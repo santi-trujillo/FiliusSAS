@@ -17,16 +17,18 @@ export const TestimonialsSection = () => `
                     <div class="card__body stack stack--md">
                         <div class="testimonial-quote-icon">"</div>
                         <p class="testimonial-text">
-                            Filius transformó completamente nuestra presencia digital. El equipo es profesional,
-                            responsivo y entrega resultados de alta calidad. Altamente recomendados.
+                            Necesitaba digitalizar décadas de archivos físicos de mi trabajo legal sin gastar 
+                            una fortuna. Filius no solo creó un sistema de organización en la nube perfecto 
+                            para mis necesidades, sino que me capacitó para manejarlo. Hoy ahorro tiempo y 
+                            dinero, y tengo todo mi archivo al alcance de un clic.
                         </p>
                         <div class="testimonial-author cluster cluster--sm cluster--align-center">
                             <div class="author-avatar">
-                                <span>JM</span>
+                                <span>EP</span>
                             </div>
                             <div class="author-info stack stack--xs">
-                                <p class="author-name">Juan Martínez</p>
-                                <p class="author-role">Gerente General | Empresa Retail</p>
+                                <p class="author-name">Elcira Prado</p>
+                                <p class="author-role">Abogada Independiente</p>
                             </div>
                         </div>
                     </div>
@@ -36,16 +38,17 @@ export const TestimonialsSection = () => `
                     <div class="card__body stack stack--md">
                         <div class="testimonial-quote-icon">"</div>
                         <p class="testimonial-text">
-                            El soporte técnico de Filius es excepcional. Responden rápido y solucionan
-                            cualquier problema de manera eficiente. Nuestros sistemas nunca han estado mejor.
+                            Como diseñador 3D necesito que mis equipos funcionen al máximo rendimiento. 
+                            Filius me brinda mantenimiento preventivo, instalación de software especializado 
+                            y excelente asesoría para actualizar hardware. Es mi soporte técnico de confianza.
                         </p>
                         <div class="testimonial-author cluster cluster--sm cluster--align-center">
                             <div class="author-avatar">
-                                <span>MR</span>
+                                <span>GR</span>
                             </div>
                             <div class="author-info stack stack--xs">
-                                <p class="author-name">María Rodríguez</p>
-                                <p class="author-role">Directora TI | Compañía Servicios</p>
+                                <p class="author-name">Gabriel Reyes</p>
+                                <p class="author-role">Diseñador 3D Independiente</p>
                             </div>
                         </div>
                     </div>
@@ -55,16 +58,17 @@ export const TestimonialsSection = () => `
                     <div class="card__body stack stack--md">
                         <div class="testimonial-quote-icon">"</div>
                         <p class="testimonial-text">
-                            Trabajar con Filius fue una excelente decisión. Su enfoque en entender nuestras
-                            necesidades y proponer soluciones reales nos ayudó a crecer digitalmente.
+                            Nuestra página web anterior no nos representaba. Filius tomó toda nuestra 
+                            información y creó VivaSolar desde cero: moderna, profesional y exactamente 
+                            lo que necesitábamos. El resultado superó nuestras expectativas.
                         </p>
                         <div class="testimonial-author cluster cluster--sm cluster--align-center">
                             <div class="author-avatar">
-                                <span>CP</span>
+                                <span>FS</span>
                             </div>
                             <div class="author-info stack stack--xs">
-                                <p class="author-name">Carlos Pérez</p>
-                                <p class="author-role">Fundador | Startup Tech</p>
+                                <p class="author-name">Favian Segura</p>
+                                <p class="author-role">Ingeniero Civil | VivaSolar</p>
                             </div>
                         </div>
                     </div>

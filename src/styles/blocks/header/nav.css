@@ -56,6 +56,31 @@
     }
 }
 
+/* Ocultar números en tablets medianas para ahorrar espacio */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .nav-number,
+    .nav-separator {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.625rem;
+        gap: 0;
+    }
+}
+
+/* Mostrar números solo en desktop grande */
+@media (min-width: 1200px) {
+    .nav-number {
+        display: inline;
+    }
+
+    .nav-separator {
+        display: inline;
+    }
+}
+
 /* Hover en enlaces */
 .nav-link:hover {
     color: var(--text-primary);

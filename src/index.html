@@ -65,7 +65,15 @@
     <!-- Preconnect para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    </noscript>
+
+    <!-- Preload assets críticos -->
+    <link rel="preload" href="/styles/main.css" as="style">
+    <link rel="preload" href="/assets/images/logos/FiliusB.png" as="image" type="image/png">
 
     <!-- CSS - CUBE CSS Methodology -->
     <link rel="stylesheet" href="/styles/main.css">
@@ -114,10 +122,14 @@
         }
     </script>
 
+    <!-- DNS Prefetch para recursos externos -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
 </head>
 
 <body>
     <!-- El contenido HTML se renderizará dinámicamente desde los componentes JS -->
+    <div id="app"></div>
 
     <!-- JavaScript Files (ES6 Modules) -->
     <script type="module" src="/scripts/main.js"></script>

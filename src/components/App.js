@@ -11,7 +11,7 @@ import { ExperienceSection } from "./sections/Experience.js";
 import { ContactSection } from "./sections/Contact.js";
 import { TestimonialsSection } from "./sections/Testimonials.js";
 import { Footer } from "./Footer.js";
-
+import { LanguageSwitcherTemplate } from "./LanguageSwitcher.js";
 /**
  * Renderiza la aplicación completa
  */
@@ -28,10 +28,22 @@ export const renderApp = () => {
       ${TestimonialsSection()}
     </main>
     ${Footer()}
+    
+    <!-- Language Switcher Flotante (móvil) -->
+    <div class="language-switcher-mobile">
+      ${LanguageSwitcherTemplate()}
+    </div>
   `;
 
-  // Inyectar en el body
-  document.body.innerHTML = appHTML;
+  // Inyectar el HTML en el contenedor sin afectar scripts
+  const appContainer = document.getElementById("app");
+  if (appContainer) {
+    appContainer.innerHTML = appHTML;
+  } else {
+    if (import.meta.env.DEV) {
+      console.error("[App] Contenedor #app no encontrado");
+    }
+  }
 };
 
 /**
@@ -40,5 +52,7 @@ export const renderApp = () => {
 export const initComponents = () => {
   // Aquí se pueden inicializar componentes que requieran JS
   // Por ahora solo marcamos que se cargaron
-  console.log("[Components] ✅ Componentes HTML cargados");
+  if (import.meta.env.DEV) {
+    console.log("[Components] ✅ Componentes HTML cargados");
+  }
 };

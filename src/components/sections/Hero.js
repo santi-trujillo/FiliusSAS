@@ -30,8 +30,8 @@ export const HeroSection = () => `
                         Solicitar Consultoría
                     </a>
 
-                    <a href="#expertise" class="btn btn--secondary btn--lg">
-                        Ver Servicios
+                    <a href="https://wa.me/qr/VX7LGBCRWMU7G1" class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
+                        Contactar
                     </a>
                 </div>
             </div>
@@ -40,7 +40,7 @@ export const HeroSection = () => `
             <div class="hero-visual">
                 <div class="hero-circle">
                     <div class="hero-visual-content">
-                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials">
+                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials" loading="lazy" decoding="async">
                     </div>
 
                     <!-- Badges flotantes -->
@@ -86,70 +86,70 @@ const TechStackItems = () => `
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
-                alt="WordPress" loading="lazy">
+                alt="WordPress" loading="lazy" decoding="async">
         </div>
         <span>WordPress</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain.svg"
-                alt="WooCommerce" loading="lazy">
+                alt="WooCommerce" loading="lazy" decoding="async">
         </div>
         <span>WooCommerce</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                alt="JavaScript" loading="lazy">
+                alt="JavaScript" loading="lazy" decoding="async">
         </div>
         <span>JavaScript</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                alt="HTML5" loading="lazy">
+                alt="HTML5" loading="lazy" decoding="async">
         </div>
         <span>HTML5</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                alt="CSS3" loading="lazy">
+                alt="CSS3" loading="lazy" decoding="async">
         </div>
         <span>CSS3</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-                alt="PHP" loading="lazy">
+                alt="PHP" loading="lazy" decoding="async">
         </div>
         <span>PHP</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                alt="MySQL" loading="lazy">
+                alt="MySQL" loading="lazy" decoding="async">
         </div>
         <span>MySQL</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                alt="React" loading="lazy">
+                alt="React" loading="lazy" decoding="async">
         </div>
         <span>React</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                alt="Node.js" loading="lazy">
+                alt="Node.js" loading="lazy" decoding="async">
         </div>
         <span>Node.js</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                alt="Git" loading="lazy">
+                alt="Git" loading="lazy" decoding="async">
         </div>
         <span>Git</span>
     </div>

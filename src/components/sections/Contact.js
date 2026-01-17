@@ -15,8 +15,8 @@ export const ContactSection = () => `
                         Analizamos tus necesidades y te proponemos la mejor solución.
                     </p>
                     <div class="cta-buttons cluster cluster--center">
-                        <a href="mailto:filius.tec@gmail.com?subject=Consultoría%20Filius%20Tec&body=Hola%20Filius,%20estoy%20interesado%20en%20sus%20servicios"
-                            class="btn btn--primary btn--lg">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=filius.tec@gmail.com&su=Consultoría%20Filius%20Tec&body=Hola%20Filius,%20estoy%20interesado%20en%20sus%20servicios"
+                            class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
                                     stroke="currentColor" stroke-width="2" />
@@ -24,7 +24,7 @@ export const ContactSection = () => `
                             </svg>
                             filius.tec@gmail.com
                         </a>
-                        <a href="https://wa.me/573123456789?text=Hola%20Filius,%20me%20gustaría%20solicitar%20una%20consultoría"
+                        <a href="https://wa.me/qr/VX7LGBCRWMU7G1"
                             class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path

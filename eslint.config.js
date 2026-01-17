@@ -24,6 +24,7 @@ export default [
         clearTimeout: "readonly",
         clearInterval: "readonly",
         Event: "readonly",
+        localStorage: "readonly",
         __dirname: "readonly",
         global: "readonly",
         beforeEach: "readonly",

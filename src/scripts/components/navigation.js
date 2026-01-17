@@ -29,17 +29,17 @@ const throttle = (func, limit = 100) => {
  */
 const setupSmoothScroll = () => {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      const targetId = this.getAttribute("href");
+      const targetId = this.getAttribute('href');
 
-      if (targetId === "#") return;
+      if (targetId === '#') return;
 
       const target = document.querySelector(targetId);
       if (target) {
         target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
+          behavior: 'smooth',
+          block: 'start',
         });
       }
     });
@@ -50,31 +50,31 @@ const setupSmoothScroll = () => {
  * Actualiza el enlace activo según la sección visible
  */
 const setupActiveLinks = () => {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   const updateActiveLink = () => {
-    let current = "";
+    let current = '';
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
 
       if (window.scrollY >= sectionTop - 100) {
-        current = section.getAttribute("id");
+        current = section.getAttribute('id');
       }
     });
 
     navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
       }
     });
   };
 
   // Usar throttle para optimizar el evento de scroll
   const throttledUpdate = throttle(updateActiveLink, 100);
-  window.addEventListener("scroll", throttledUpdate);
+  window.addEventListener('scroll', throttledUpdate);
 };
 
 /**
