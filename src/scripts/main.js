@@ -98,9 +98,6 @@ const App = {
     new ContentManager();
     new LanguageSwitcher();
 
-    // Inicializar eventos de cambio de idioma
-    this.initLanguageSwitcher();
-
     // Módulos existentes
     Navigation.init();
     MobileMenu.init();
@@ -109,21 +106,6 @@ const App = {
     ScrollEffects.init();
     Carousel.init();
     registerServiceWorker(); // PWA
-  },
-
-  /**
-   * Inicializa los event listeners del language switcher
-   */
-  initLanguageSwitcher() {
-    document.addEventListener("click", (e) => {
-      if (e.target.closest(".lang-btn")) {
-        const btn = e.target.closest(".lang-btn");
-        const lang = btn.dataset.lang;
-        if (lang) {
-          i18n.setLanguage(lang);
-        }
-      }
-    });
   },
 
   log(...args) {

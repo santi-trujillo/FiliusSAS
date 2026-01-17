@@ -3,7 +3,7 @@
  * Botón de cambio de idioma
  */
 
-import { i18n } from '../i18n/i18n.js';
+import { i18n } from "../i18n/i18n.js";
 
 export class LanguageSwitcher {
   constructor() {
@@ -17,9 +17,9 @@ export class LanguageSwitcher {
 
   render() {
     const currentLang = i18n.getLanguage();
-    const nextLang = currentLang === 'es' ? 'en' : 'es';
-    const flag = currentLang === 'es' ? '&#x1F1E8;&#x1F1F4;' : '🇺🇸';
-    const label = currentLang === 'es' ? 'ES' : 'EN';
+    const nextLang = currentLang === "es" ? "en" : "es";
+    const flag = currentLang === "es" ? "&#x1F1E8;&#x1F1F4;" : "🇺🇸";
+    const label = currentLang === "es" ? "ES" : "EN";
 
     const html = `
             <div class="language-switcher" aria-label="Language selector">
@@ -34,37 +34,40 @@ export class LanguageSwitcher {
   }
 
   attachEventListeners() {
-    // Se ejecuta después de que el DOM esté listo
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.lang-btn');
+    // Esperar un tick para que el DOM esté completamente renderizado
+    setTimeout(() => {
+      const buttons = document.querySelectorAll(".lang-btn");
 
       buttons.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener("click", (e) => {
           e.preventDefault();
+          e.stopPropagation();
           const lang = btn.dataset.lang;
-          i18n.setLanguage(lang);
+          if (lang) {
+            i18n.setLanguage(lang);
+          }
         });
       });
-    });
+    }, 0);
   }
 
   updateUI() {
     const currentLang = i18n.getLanguage();
-    const nextLang = currentLang === 'es' ? 'en' : 'es';
-    const flag = currentLang === 'es' ? '&#x1F1E8;&#x1F1F4;' : '🇺🇸';
-    const label = currentLang === 'es' ? 'ES' : 'EN';
-    const buttons = document.querySelectorAll('.lang-btn');
+    const nextLang = currentLang === "es" ? "en" : "es";
+    const flag = currentLang === "es" ? "&#x1F1E8;&#x1F1F4;" : "🇺🇸";
+    const label = currentLang === "es" ? "ES" : "EN";
+    const buttons = document.querySelectorAll(".lang-btn");
 
     buttons.forEach((btn) => {
       btn.dataset.lang = nextLang;
-      btn.setAttribute('aria-label', `Switch to ${nextLang.toUpperCase()}`);
-      const flagElement = btn.querySelector('.lang-flag');
-      const labelElement = btn.querySelector('.lang-label');
+      btn.setAttribute("aria-label", `Switch to ${nextLang.toUpperCase()}`);
+      const flagElement = btn.querySelector(".lang-flag");
+      const labelElement = btn.querySelector(".lang-label");
 
       // Usar textContent para prevenir XSS
       if (flagElement) {
         // Decodificar HTML entities manualmente para banderas
-        const tempDiv = document.createElement('div');
+        const tempDiv = document.createElement("div");
         tempDiv.innerHTML = flag;
         flagElement.textContent = tempDiv.textContent;
       }
@@ -78,9 +81,9 @@ export class LanguageSwitcher {
 // Export template function para usar en Header
 export const LanguageSwitcherTemplate = () => {
   const currentLang = i18n.getLanguage();
-  const nextLang = currentLang === 'es' ? 'en' : 'es';
-  const flag = currentLang === 'es' ? '&#x1F1E8;&#x1F1F4;' : '🇺🇸';
-  const label = currentLang === 'es' ? 'ES' : 'EN';
+  const nextLang = currentLang === "es" ? "en" : "es";
+  const flag = currentLang === "es" ? "&#x1F1E8;&#x1F1F4;" : "🇺🇸";
+  const label = currentLang === "es" ? "ES" : "EN";
 
   return `
         <div class="language-switcher" aria-label="Language selector">
