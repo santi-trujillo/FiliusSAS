@@ -1,10 +1,7 @@
-/* ============================================
-   CUBE CSS - BLOCK
-   Navigation Component
-   Navegación principal del sitio
-   ============================================ */
+/* Navigation Component - CUBE CSS Block
+   Navegación principal del sitio */
 
-/* ===== BASE NAVIGATION ===== */
+/* Base navigation */
 .nav {
     /* Layout */
     display: flex;

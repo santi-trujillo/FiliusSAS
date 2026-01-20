@@ -7,22 +7,23 @@
 [![Tests](https://img.shields.io/badge/tests-75%2F75%20passing-success)](./tests)
 [![Build](https://img.shields.io/badge/build-3.66s-success)](./package.json)
 
-Portfolio moderno y de alto rendimiento de **Filius Tec** - Consultora de tecnología integral especializada en desarrollo web, soporte técnico e infraestructura TI para PYMES en Colombia.
+Portfolio de **Filius Tec** - Desarrollo web, soporte técnico e infraestructura TI para PYMES en Colombia.
 
 ## 🌐 Sitio en Vivo
 
-**[filius.com.co](https://www.filius.com.co)**
+**[filiustec.me](https://www.filiustec.me)**
 
 ## 🎯 Sobre Filius Tec
 
-Somos una consultora de tecnología que ayuda a las PYMES a:
+Desarrollo web, soporte técnico e infraestructura TI para PYMES en Bogotá e Ibagué, Colombia.
 
-- ✅ Crear presencia digital con soluciones web modernas
-- ✅ Garantizar operatividad continua mediante soporte técnico especializado
-- ✅ Transformarse digitalmente con estrategia y liderazgo ágil
+**Servicios principales:**
 
-**Ubicaciones:** Bogotá e Ibagué, Colombia  
-**Cobertura:** Todo el territorio nacional
+- Sitios web y e-commerce
+- Soporte técnico y mantenimiento
+- Infraestructura y redes
+
+**Cobertura:** Nacional
 
 ## 🚀 Características
 

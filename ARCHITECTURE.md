@@ -16,24 +16,23 @@
 
 ## 🎯 Visión General
 
-**Filius Tec** es un portfolio corporativo construido con tecnologías web modernas, siguiendo las mejores prácticas de desarrollo frontend.
+Portfolio de **Filius Tec** construido con Vite, CUBE CSS y JavaScript vanilla.
 
-### Stack Tecnológico
+### Stack
 
-- **Build Tool:** Vite 5.x
-- **CSS Methodology:** CUBE CSS
-- **JavaScript:** Vanilla ES6+ (Modules)
-- **Testing:** Vitest + jsdom
-- **CI/CD:** GitHub Actions + Netlify
-- **Linting:** ESLint + Prettier
+- **Build:** Vite 5.x
+- **CSS:** CUBE CSS
+- **JS:** ES6+ Modules
+- **Tests:** Vitest + jsdom
+- **Deploy:** Netlify
 
-### Principios de Diseño
+### Principios
 
-1. **Mobile-First:** Diseñado primero para móviles
-2. **Progressive Enhancement:** Funcionalidad básica sin JavaScript
-3. **Performance First:** Optimización en cada nivel
-4. **Accessibility:** WCAG 2.1 AA compliance
-5. **SEO-Optimized:** Structured data, meta tags, sitemap
+1. **Mobile-First** - Diseño responsivo desde móvil
+2. **Progressive Enhancement** - Funciona sin JavaScript
+3. **Performance** - Optimización en cada nivel
+4. **Accessibility** - WCAG 2.1 AA
+5. **SEO** - Structured data y meta tags
 
 ---
 
@@ -186,7 +185,7 @@ Overrides basados en contexto o estado.
 
 ```css
 /* exceptions/dark-mode.css */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-primary: #0a0a0a;
   --text-primary: #ffffff;
 }
@@ -196,20 +195,20 @@ Overrides basados en contexto o estado.
 
 ```css
 /* main.css */
-@import './base/reset.css';
-@import './base/variables.css';
-@import './base/typography.css';
+@import "./base/reset.css";
+@import "./base/variables.css";
+@import "./base/typography.css";
 
-@import './composition/container.css';
-@import './composition/grid.css';
+@import "./composition/container.css";
+@import "./composition/grid.css";
 
-@import './utilities/spacing.css';
-@import './utilities/colors.css';
+@import "./utilities/spacing.css";
+@import "./utilities/colors.css";
 
-@import './blocks/button.css';
-@import './blocks/card.css';
+@import "./blocks/button.css";
+@import "./blocks/card.css";
 
-@import './exceptions/dark-mode.css';
+@import "./exceptions/dark-mode.css";
 ```
 
 ---
@@ -221,21 +220,21 @@ Overrides basados en contexto o estado.
 ```javascript
 // vite.config.js
 export default defineConfig({
-  root: './src',
-  publicDir: '../public',
+  root: "./src",
+  publicDir: "../public",
 
   build: {
-    outDir: '../dist',
-    minify: 'terser',
+    outDir: "../dist",
+    minify: "terser",
     cssMinify: true,
   },
 
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
-      '@styles': resolve(__dirname, 'src/styles'),
-      '@scripts': resolve(__dirname, 'src/scripts'),
-      '@assets': resolve(__dirname, 'src/assets'),
+      "@": resolve(__dirname, "src"),
+      "@styles": resolve(__dirname, "src/styles"),
+      "@scripts": resolve(__dirname, "src/scripts"),
+      "@assets": resolve(__dirname, "src/assets"),
     },
   },
 });
@@ -257,9 +256,9 @@ export default defineConfig({
 
 ```javascript
 // main.js - Entry Point
-import Navigation from './components/navigation.js';
-import MobileMenu from './components/mobile-menu.js';
-import ScrollProgress from './components/scroll-progress.js';
+import Navigation from "./components/navigation.js";
+import MobileMenu from "./components/mobile-menu.js";
+import ScrollProgress from "./components/scroll-progress.js";
 
 const App = {
   init() {
@@ -350,11 +349,11 @@ git push origin feature/nueva-funcionalidad
 export default defineConfig({
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./tests/setup.js'],
+    environment: "jsdom",
+    setupFiles: ["./tests/setup.js"],
     coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html'],
+      provider: "v8",
+      reporter: ["text", "json", "html"],
     },
   },
 });
@@ -364,11 +363,11 @@ export default defineConfig({
 
 ```javascript
 // tests/unit/helpers.test.js
-import { describe, it, expect } from 'vitest';
-import { debounce } from '@scripts/utils/helpers';
+import { describe, it, expect } from "vitest";
+import { debounce } from "@scripts/utils/helpers";
 
-describe('debounce', () => {
-  it('should delay function execution', async () => {
+describe("debounce", () => {
+  it("should delay function execution", async () => {
     const mockFn = vi.fn();
     const debounced = debounce(mockFn, 100);
 

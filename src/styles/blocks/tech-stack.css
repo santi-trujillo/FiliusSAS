@@ -1,11 +1,7 @@
-/**
- * Tech Stack Carousel Component
- * Carrusel mejorado con flechas, navegación y efectos visuales
- */
+/* Tech Stack Carousel Component
+   Carrusel con flechas, navegación y efectos visuales */
 
-/* ============================================================
-   CONTENEDOR PRINCIPAL DEL CARRUSEL
-   ============================================================ */
+/* Contenedor principal */
 
 .tech-carousel-container {
     position: relative;

@@ -1,10 +1,7 @@
-/* ============================================
-   CUBE CSS - BLOCK
-   Card Component
-   Tarjetas siguiendo metodología BEM
-   ============================================ */
+/* Card Component - CUBE CSS Block
+   Tarjetas siguiendo metodología BEM */
 
-/* ===== BASE CARD ===== */
+/* Base card */
 .card {
     /* Layout */
     display: flex;

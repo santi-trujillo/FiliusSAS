@@ -1,10 +1,6 @@
-/* ============================================
-   CUBE CSS - BLOCK
-   Button Component
-   Botones siguiendo metodología BEM
-   ============================================ */
+/* Button Component - CUBE CSS Block */
 
-/* ===== BASE BUTTON ===== */
+/* Base button styles */
 .btn {
     /* Layout */
     display: inline-flex;
