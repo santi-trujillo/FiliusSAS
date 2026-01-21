@@ -1,336 +1,70 @@
-# Filius Tec - Portfolio Corporativo
+# Filius Tec
 
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](./package.json)
-[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
-[![CUBE CSS](https://img.shields.io/badge/CSS-CUBE-blue)](https://cube.fyi/)
-[![Tests](https://img.shields.io/badge/tests-75%2F75%20passing-success)](./tests)
-[![Build](https://img.shields.io/badge/build-3.66s-success)](./package.json)
+Portfolio corporativo de Filius Tec - Desarrollo web, soporte técnico e infraestructura TI para PYMES en Colombia.
 
-Portfolio de **Filius Tec** - Desarrollo web, soporte técnico e infraestructura TI para PYMES en Colombia.
+Sitio: [filiustec.me](https://www.filiustec.me)
 
-## 🌐 Sitio en Vivo
+## Sobre el proyecto
 
-**[filiustec.me](https://www.filiustec.me)**
+Sitio web para Filius Tec, consultora de tecnología que ofrece:
 
-## 🎯 Sobre Filius Tec
-
-Desarrollo web, soporte técnico e infraestructura TI para PYMES en Bogotá e Ibagué, Colombia.
-
-**Servicios principales:**
-
-- Sitios web y e-commerce
-- Soporte técnico y mantenimiento
+- Desarrollo web y e-commerce
+- Soporte técnico empresarial
 - Infraestructura y redes
 
-**Cobertura:** Nacional
+Cobertura en Bogotá, Ibagué y toda Colombia.
 
-## 🚀 Características
+## Características técnicas
 
-- ✨ Diseño minimalista y moderno
-- 📱 Mobile-first responsive design (8 breakpoints)
-- ⚡ Performance optimizado con Vite (60 FPS)
-- ♿ Accesible (WCAG 2.1 AA)
-- 🔍 SEO optimizado (Schema.org, Open Graph, sitemap)
-- 🎨 Animaciones fluidas y efectos visuales
-- 💾 Arquitectura CUBE CSS modular
-- 🧪 Tests unitarios con Vitest
-- 🔧 CI/CD con GitHub Actions + Netlify
+- Diseño responsive mobile-first
+- Build con Vite 5.x
+- CSS modular con metodología CUBE
+- JavaScript vanilla (ES6 modules)
+- Tests con Vitest
+- Deploy automático en Netlify
 
-## 🛠️ Stack Tecnológico
+## Stack
 
-### Core
+- HTML5 semántico
+- CSS modular (metodología CUBE)
+- JavaScript ES6+ modules
+- Vite para build
+- Vitest para tests
+- ESLint + Prettier
 
-- **HTML5** semántico con microdata
-- **CUBE CSS** - Metodología CSS escalable
-- **JavaScript ES6+** - Módulos nativos
-- **Vite 5.x** - Build tool moderno
+## Estructura CSS
 
-### Herramientas de Desarrollo
+Usamos CUBE CSS (Composition, Utility, Block, Exception):
 
-- [Vitest](https://vitest.dev/) - Testing framework
-- [ESLint](https://eslint.org/) - Code linting
-- [Prettier](https://prettier.io/) - Code formatting
-- [GitHub Actions](https://github.com/features/actions) - CI/CD
+- Composition: layouts reutilizables (container, stack, grid)
+- Utilities: clases atómicas para spacing y tipografía
+- Blocks: componentes como botones y cards
+- Exceptions: overrides contextuales
 
-### Metodologías
+El HTML se renderiza con componentes JS modulares.
 
-- **CUBE CSS** - Composition, Utility, Block, Exception (metodología completa implementada)
-  - ✅ **Composition**: `.container`, `.stack`, `.cluster`, `.grid`
-  - ✅ **Utilities**: Spacing, typography, colors, display
-  - ✅ **Blocks**: `.btn`, `.card`, `.section`, `.nav` (componentes reutilizables)
-  - ✅ **Exceptions**: Contextos específicos y overrides
-- **BEM** - Block Element Modifier para nomenclatura consistente
-- **Mobile-First** - Diseño progresivo con 8 breakpoints
-- **Component-Driven** - Componentes modulares con Template Literals + ES6 Modules
-- **Modular HTML** - Sistema de 8 componentes reutilizables (Header, Hero, Expertise, Projects, Experience, Contact, Testimonials, Footer)
+## Instalación
 
-> **Arquitectura Real:** Este proyecto implementa CUBE CSS genuinamente con componentes `.btn`, `.card`, `.stack`, `.cluster` usados en el HTML. Combina componentes CUBE reutilizables (60%) con estilos específicos para secciones únicas (40%). El HTML es 100% modular usando JavaScript ES6 Modules.
-
-## 📋 Requisitos
-
-- Node.js 18+ o 20+
-- npm 9+
-- Git
-
-## 🚀 Inicio Rápido
-
-### 1. Clonar el repositorio
+Requisitos: Node.js 18+ y npm
 
 ```bash
 git clone https://github.com/santi-trujillo/FiliusSAS.git
 cd FiliusSAS
-```
-
-### 2. Instalar dependencias
-
-```bash
 npm install
+npm run dev  # http://localhost:3000
 ```
 
-### 3. Iniciar servidor de desarrollo
+## Scripts
 
 ```bash
-npm run dev
-```
+npm run dev      # servidor de desarrollo
+npm run build    # build de producción
+npm run preview  # preview del build
 
-El proyecto estará disponible en `http://localhost:3000` con **Hot Module Replacement** (HMR).
+## Estructura
 
-### 4. Build de producción
+Ver [ARCHITECTURE.md](ARCHITECTURE.md) para más detalles.
 
-```bash
-npm run build      # Genera dist/
-npm run preview    # Preview del build
-```
+## Licencia
 
-### 5. Ejecutar tests
-
-```bash
-npm test              # Tests con watch mode
-npm run test:ui       # Vitest UI
-npm run test:coverage # Coverage report
-```
-
-## 📁 Estructura del Proyecto
-
-```
-FiliusSAS/
-├── src/                          # Código fuente
-│   ├── index.html               # HTML modular (125 líneas - 85% reducción)
-│   ├── components/              # Sistema de componentes HTML (8 componentes)
-│   │   ├── App.js              # Orquestador principal
-│   │   ├── Header.js           # Header + Nav + Mobile Menu
-│   │   ├── Footer.js           # Footer completo
-│   │   └── sections/           # Secciones del sitio
-│   │       ├── Hero.js         # Hero + Tech Carousel
-│   │       ├── Expertise.js    # Servicios (3 tarjetas)
-│   │       ├── Projects.js     # Proyectos destacados
-│   │       ├── Experience.js   # Timeline profesional
-│   │       ├── Contact.js      # CTA de contacto
-│   │       └── Testimonials.js # Testimonios
-│   ├── styles/                  # CSS Modular (39 archivos)
-│   │   ├── base/               # Variables, reset, typography
-│   │   ├── composition/        # Layouts (container, grid, stack, cluster, flex)
-│   │   ├── utilities/          # Spacing, typography, colors, display, animations
-│   │   ├── blocks/             # Componentes (híbrido CUBE CSS + específicos)
-│   │   │   ├── button.css      # ✅ CUBE CSS puro
-│   │   │   ├── card.css        # ✅ CUBE CSS puro
-│   │   │   ├── section.css     # ✅ CUBE CSS puro
-│   │   │   ├── nav.css         # ✅ CUBE CSS puro
-│   │   │   ├── hero/           # Específico del sitio
-│   │   │   ├── header/         # Específico del sitio
-│   │   │   ├── sections/       # Específico del sitio
-│   │   │   └── ...             # Otros componentes
-│   │   └── main.css            # Entry point (52 líneas)
-│   ├── scripts/                # JavaScript ES6+ modules
-│   │   ├── components/         # 5 módulos (carousel, navigation, etc.)
-│   │   ├── utils/              # Helpers reutilizables
-│   │   └── main.js             # Entry point
-│   └── assets/                 # Recursos multimedia
-│       ├── images/
-│       ├── fonts/
-│       └── videos/
-├── public/                      # Assets estáticos (build time)
-│   ├── robots.txt
-│   ├── sitemap.xml
-│   └── site.webmanifest
-├── tests/                       # Tests unitarios (61 tests)
-│   ├── unit/
-│   │   ├── helpers.test.js     # 11 tests
-│   │   ├── components.test.js  # 18 tests
-│   │   └── css-utilities.test.js # 32 tests
-│   └── setup.js
-├── docs/                        # Documentación técnica
-│   ├── CONTRIBUTING.md
-│   ├── CSS-MODULARIZATION.md
-│   ├── CSS-GUIDE.md            # Guía completa de estilos
-│   └── setup-guide.md
-├── .github/workflows/          # CI/CD Pipeline
-│   └── ci.yml                  # Test → Build → Deploy
-├── vite.config.js              # Vite 5.x config
-├── vitest.config.js            # Testing config
-├── netlify.toml                # Deployment + headers
-├── ARCHITECTURE.md             # Documentación arquitectura
-├── PROYECTO-COMPLETADO.md      # Resumen del proyecto
-└── package.json                # v2.0.0
-```
-
-## 📜 Scripts Disponibles
-
-```bash
-# Desarrollo
-npm run dev          # Vite dev server (localhost:3000) con HMR
-
-# Build
-npm run build        # Build optimizado → dist/ (2-3s)
-npm run preview      # Preview del build local
-
-# Testing
-npm test            # Vitest (61 tests pasando)
-npm run test:ui     # Vitest UI interactiva
-npm run test:coverage # Coverage report con v8
-```
-
-## 🎨 Arquitectura CSS
-
-Este proyecto utiliza un **enfoque híbrido profesional**:
-
-### CUBE CSS Base (60%)
-
-```
-BASE Layer
-├── variables.css       # Design tokens (197 variables)
-├── reset.css          # Modern CSS reset
-└── typography.css     # Sistema tipográfico
-
-COMPOSITION Layer
-├── container.css      # Contenedores responsivos
-├── grid.css           # Sistema de grillas
-├── stack.css          # Stack vertical
-├── cluster.css        # Agrupación horizontal
-└── flex.css           # Utilities flexbox
-
-UTILITIES Layer
-├── spacing.css        # 150+ utilities (margin, padding, gap)
-├── typography.css     # Text utilities
-├── colors.css         # Color utilities
-├── display.css        # Display, flex, grid
-└── animations.css     # Animaciones reutilizables
-```
-
-### Componentes (40%)
-
-**CUBE CSS Puros (Reutilizables):**
-
-- `button.css` - Sistema completo de botones (variantes, tamaños, estados)
-- `card.css` - Tarjetas con BEM (elevated, outlined, glass)
-- `section.css` - Secciones (compact, expanded, full-height)
-- `nav.css` - Navegación responsive con menú móvil
-
-**Específicos del Sitio:**
-
-- `hero/` - Hero section único de Filius
-- `header/` - Header con navegación animada
-- `sections/` - Expertise, Experience, Projects, Testimonials
-- `footer.css`, `tech-stack.css`, etc.
-
-> 📚 Ver [docs/CSS-GUIDE.md](docs/CSS-GUIDE.md) para ejemplos y convenciones completas
-> │ │ ├── custom-cursor.js
-> │ │ ├── mobile-menu.js
-> │ │ └── scroll-progress.js
-> │ └── utils/
-> │ ├── helpers.js
-> │ └── helpers.test.js
-> │
-> └── docs/ # Documentación
-> ├── setup-guide.md
-> └── CONTRIBUTING.md
-
-````
-
-## 🎨 Metodología CUBE CSS
-
-El proyecto utiliza **CUBE CSS** (Composition, Utility, Block, Exception), una metodología moderna que organiza CSS en capas con responsabilidades claras:
-
-### Capas
-
-1. **BASE** - Reset, variables, typography
-2. **COMPOSITION** - Layouts (container, grid, stack, cluster)
-3. **UTILITIES** - Clases atómicas (spacing, colors, display)
-4. **BLOCKS** - Componentes con BEM
-5. **EXCEPTIONS** - Overrides contextuales
-
-Ver [ARCHITECTURE.md](./ARCHITECTURE.md) para más detalles.
-
-## 🧪 Testing
-
-Tests unitarios con Vitest + jsdom:
-
-```bash
-npm test              # Watch mode
-npm run test:ui       # UI interactiva
-npm run test:coverage # Coverage HTML
-````
-
-Cobertura objetivo: **>60%**
-
-## 🚀 Deployment
-
-### Netlify (Automático)
-
-Cada push a `main` dispara:
-
-1. Tests automáticos
-2. Build de producción
-3. Deploy a Netlify
-4. Lighthouse audit
-
-### Manual
-
-```bash
-npm run build
-# Subir carpeta dist/ a tu hosting
-```
-
-## 📊 Performance
-
-Métricas objetivo:
-
-- **Lighthouse Performance:** >90
-- **LCP:** <2.5s
-- **FID:** <100ms
-- **CLS:** <0.1
-
-## 📚 Documentación
-
-- [ARCHITECTURE.md](./ARCHITECTURE.md) - Arquitectura detallada
-- [CONTRIBUTING.md](./docs/CONTRIBUTING.md) - Guía de contribución
-- [PROGRESO-REFACTORIZACIÓN.md](./PROGRESO-REFACTORIZACIÓN.md) - Estado actual
-
-## 🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas!
-
-1. Fork el proyecto
-2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'feat: Add AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📜 Licencia
-
-Este proyecto está bajo la licencia ISC.
-
-## 👨‍💻 Autor
-
-**Santiago Trujillo**  
-[Filius Tec](https://www.filius.com.co)  
-Email: filius.tec@gmail.com
-
----
-
-**⭐ Si este proyecto te fue útil, considera darle una estrella!**
-
-```
-
-```
+ISC

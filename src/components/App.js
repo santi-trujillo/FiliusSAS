@@ -1,7 +1,4 @@
-/**
- * App Loader
- * Carga todos los componentes de manera modular
- */
+// App component loader
 
 import { Header } from "./Header.js";
 import { HeroSection } from "./sections/Hero.js";
@@ -12,11 +9,10 @@ import { ContactSection } from "./sections/Contact.js";
 import { TestimonialsSection } from "./sections/Testimonials.js";
 import { Footer } from "./Footer.js";
 import { LanguageSwitcherTemplate } from "./LanguageSwitcher.js";
-/**
- * Renderiza la aplicación completa
- */
+
+// Render complete app
 export const renderApp = () => {
-  // Generar HTML completo de la aplicación
+  // TODO: maybe use a proper template engine in the future?
   const appHTML = `
     ${Header()}
     <main class="main-content">
@@ -46,12 +42,8 @@ export const renderApp = () => {
   }
 };
 
-/**
- * Inicializar componentes después del render
- */
 export const initComponents = () => {
-  // Aquí se pueden inicializar componentes que requieran JS
-  // Por ahora solo marcamos que se cargaron
+  // Components initialized after render
   if (import.meta.env.DEV) {
     console.log("[Components] ✅ Componentes HTML cargados");
   }

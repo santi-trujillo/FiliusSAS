@@ -1,7 +1,4 @@
-/**
- * Hero Section Component
- * Sección principal del sitio
- */
+// Hero section
 
 export const HeroSection = () => `
     <!-- Hero Section Completo -->
@@ -78,10 +75,7 @@ export const HeroSection = () => `
     </section>
 `;
 
-/**
- * Tech Stack Items
- * Items del carousel de tecnologías
- */
+// Tech carousel items (duplicated for infinite scroll effect)
 const TechStackItems = () => `
     <div class="tech-item">
         <div class="tech-item-inner">

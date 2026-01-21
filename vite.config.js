@@ -21,14 +21,14 @@ export default defineConfig({
       },
       output: {
         manualChunks: (id) => {
-          // Separar componentes grandes en chunks
+          // split big components into chunks
           if (id.includes("/components/sections/")) {
             return "sections";
           }
           if (id.includes("/i18n/")) {
             return "i18n";
           }
-          // Scripts de utilidades
+          // utility scripts
           if (id.includes("/scripts/utils/")) {
             return "utils";
           }
@@ -41,7 +41,7 @@ export default defineConfig({
 
     terserOptions: {
       compress: {
-        drop_console: true,
+        drop_console: true, // remove console.log in production
         drop_debugger: true,
         pure_funcs: ["console.log", "console.info"],
         passes: 2,

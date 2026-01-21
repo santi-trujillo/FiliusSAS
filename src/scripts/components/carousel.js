@@ -1,35 +1,32 @@
-/**
- * Carousel Module
- * Maneja la navegación del carrusel de tecnologías
- */
+// Tech stack carousel functionality
 
 class TechCarousel {
   constructor() {
-    this.track = document.getElementById('carouselTrack');
-    this.prevBtn = document.getElementById('carouselPrev');
-    this.nextBtn = document.getElementById('carouselNext');
-    this.items = this.track?.querySelectorAll('.tech-item');
+    this.track = document.getElementById("carouselTrack");
+    this.prevBtn = document.getElementById("carouselPrev");
+    this.nextBtn = document.getElementById("carouselNext");
+    this.items = this.track?.querySelectorAll(".tech-item");
 
     if (!this.track || !this.items) return;
 
     this.currentIndex = 0;
     this.itemsToScroll = 1;
-    this.totalItems = this.items.length / 2; // Dividimos por 2 porque hay items duplicados
+    this.totalItems = this.items.length / 2; // divide by 2 because items are duplicated for infinite scroll
 
     this.init();
   }
 
   init() {
     if (this.prevBtn) {
-      this.prevBtn.addEventListener('click', () => this.scrollPrev());
+      this.prevBtn.addEventListener("click", () => this.scrollPrev());
     }
 
     if (this.nextBtn) {
-      this.nextBtn.addEventListener('click', () => this.scrollNext());
+      this.nextBtn.addEventListener("click", () => this.scrollNext());
     }
 
     // Ajustar número de items a scrollear según pantalla
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       this.updateItemsToScroll();
     });
 
@@ -84,9 +81,6 @@ class TechCarousel {
   }
 }
 
-/**
- * Inicializa el carousel
- */
 const init = () => {
   new TechCarousel();
 };

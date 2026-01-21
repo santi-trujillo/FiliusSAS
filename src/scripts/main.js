@@ -1,10 +1,4 @@
-/**
- * Main JavaScript File
- * Punto de entrada principal para la aplicación
- * @module main
- * @version 2.0.0
- */
-
+// Main entry point
 import "../styles/main.css";
 import { renderApp, initComponents } from "../components/App.js";
 import Navigation from "./components/navigation.js";
@@ -17,9 +11,7 @@ import { i18n } from "../i18n/i18n.js";
 import { ContentManager } from "./utils/content-manager.js";
 import { LanguageSwitcher } from "../components/LanguageSwitcher.js";
 
-/**
- * Registro del Service Worker para PWA
- */
+// Service Worker registration
 const registerServiceWorker = () => {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -39,10 +31,10 @@ const registerServiceWorker = () => {
   }
 };
 
-// Configuración global
+// App config
 const App = {
   version: "2.0.0",
-  debug: false,
+  debug: false, // set to true for console logs
 
   init() {
     this.log("Inicializando aplicación modular...");
@@ -90,9 +82,7 @@ const App = {
     }
   },
 
-  /**
-   * Inicializa todos los módulos de la aplicación
-   */
+  // Initialize all modules
   initializeModules() {
     // Inicializar sistema i18n PRIMERO
     new ContentManager();
