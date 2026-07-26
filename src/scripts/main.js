@@ -5,6 +5,7 @@
  * @version 2.0.0
  */
 
+import "../styles/main.css";
 import { renderApp, initComponents } from "../components/App.js";
 import Navigation from "./components/navigation.js";
 import MobileMenu from "./components/mobile-menu.js";

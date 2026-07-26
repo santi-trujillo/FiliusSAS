@@ -41,7 +41,7 @@ const setupScrollToTop = () => {
   if (!scrollTopBtn) {
     scrollTopBtn = document.createElement('button');
     scrollTopBtn.className = 'scroll-top-btn';
-    scrollTopBtn.innerHTML = '↑';
+    scrollTopBtn.textContent = '↑';
     scrollTopBtn.setAttribute('aria-label', 'Volver arriba');
     document.body.appendChild(scrollTopBtn);
   }

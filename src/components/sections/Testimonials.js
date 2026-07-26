@@ -3,7 +3,8 @@
  * Sección de testimonios de clientes
  */
 
-export const TestimonialsSection = () => `
+export const TestimonialsSection = () => {
+    const htmlString = `
     <!-- Testimonials Section -->
     <section class="section testimonials-section">
         <div class="container">
@@ -72,4 +73,13 @@ export const TestimonialsSection = () => `
             </div>
         </div>
     </section>
-`;
+    `;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const fragment = document.createDocumentFragment();
+    while (doc.body.firstChild) {
+        fragment.appendChild(doc.body.firstChild);
+    }
+    return fragment;
+};

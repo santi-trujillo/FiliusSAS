@@ -15,21 +15,7 @@
     background: var(--bg-primary);
 }
 
-/* Fondo animado con gradiente */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 80%;
-    height: 150%;
-    background: radial-gradient(circle,
-            rgba(59, 130, 246, 0.1) 0%,
-            rgba(59, 130, 246, 0.05) 30%,
-            transparent 70%);
-    animation: float 20s ease-in-out infinite;
-    pointer-events: none;
-}
+
 
 .hero-container {
     max-width: 1400px;
@@ -122,9 +108,8 @@
     width: 380px;
     height: 380px;
     border-radius: 50%;
-    background: linear-gradient(135deg,
-            rgba(59, 130, 246, 0.2),
-            rgba(139, 92, 246, 0.2));
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
     position: relative;
     display: flex;
     align-items: center;

@@ -3,14 +3,15 @@
  * Pie de página del sitio
  */
 
-export const Footer = () => `
+export const Footer = () => {
+    const htmlString = `
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" style="height: 50px;">
+                        <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" width="150" height="50" loading="lazy">
                     </div>
                     <p class="footer-tagline">
                         Desarrollo, Soporte y Estrategia Digital para PYMES.<br>
@@ -23,21 +24,21 @@ export const Footer = () => `
                 </div>
 
                 <div class="footer-links">
-                    <h4>Navegación</h4>
+                    <h2 class="footer-section-title">Navegación</h2>
                     <a href="#home" class="footer-link">Inicio</a>
                     <a href="#expertise" class="footer-link">Servicios</a>
                     <a href="#contact" class="footer-link">Contacto</a>
                 </div>
 
                 <div class="footer-services">
-                    <h4>Servicios</h4>
+                    <h2 class="footer-section-title">Servicios</h2>
                     <a href="#expertise" class="footer-link">Desarrollo Web</a>
                     <a href="#expertise" class="footer-link">Soporte TI</a>
                     <a href="#expertise" class="footer-link">Consultoría</a>
                 </div>
 
                 <div class="footer-social">
-                    <h4>Síguenos</h4>
+                    <h2 class="footer-section-title">Síguenos</h2>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/company/filius-tec" class="social-link" aria-label="LinkedIn"
                             target="_blank" rel="noopener noreferrer">
@@ -70,4 +71,13 @@ export const Footer = () => `
             </div>
         </div>
     </footer>
-`;
+    `;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const fragment = document.createDocumentFragment();
+    while (doc.body.firstChild) {
+        fragment.appendChild(doc.body.firstChild);
+    }
+    return fragment;
+};

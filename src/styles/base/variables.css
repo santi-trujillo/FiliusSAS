@@ -6,25 +6,29 @@
 
 :root {
     /* ===== COLORES PRINCIPALES ===== */
-    --primary-color: #3b82f6;
-    --secondary-color: #8b5cf6;
-    --accent-color: #3b82f6;
-    --accent-hover: #2563eb;
+    --color-accent: #0070f3;
+    --primary-color: var(--color-accent);
+    --secondary-color: var(--color-accent);
+    --accent-color: var(--color-accent);
+    --accent-hover: #005bb5;
 
     /* ===== COLORES DE FONDO ===== */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-tertiary: #1a1a1a;
-    --card-bg: #151515;
+    --bg-base: #000000;
+    --bg-surface: #0a0a0a;
+    --bg-primary: var(--bg-base);
+    --bg-secondary: var(--bg-surface);
+    --bg-tertiary: #111111;
+    --card-bg: var(--bg-surface);
 
     /* ===== COLORES DE TEXTO ===== */
     --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --text-muted: #666666;
+    --text-secondary: #aaaaaa;
+    --text-muted: #888888;
 
     /* ===== COLORES DE BORDE ===== */
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(59, 130, 246, 0.5);
+    --border-subtle: #222222;
+    --border-color: var(--border-subtle);
+    --border-hover: rgba(0, 112, 243, 0.5);
 
     /* ===== ESPACIADOS (Spacing Scale) ===== */
     --space-0: 0;

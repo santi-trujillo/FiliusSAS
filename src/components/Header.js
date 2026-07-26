@@ -1,18 +1,16 @@
 /**
  * Header Component
- * Componente del header con navegación
+ * Componente del header con navegación refactorizado a nodos del DOM reales
  */
 
-export const Header = () => `
-    <!-- Skip to main content (Accessibility) -->
-    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
-
+export const Header = () => {
+    const htmlString = `
     <!-- Header con Menú Centrado -->
     <header class="header">
         <nav class="nav">
             <!-- Logo con imagen -->
             <a href="#home" class="nav-logo">
-                <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark">
+                <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark" width="150" height="50">
             </a>
 
             <!-- Navegación Centrada con Números -->
@@ -42,16 +40,8 @@ export const Header = () => `
                 </li>
 
                 <li class="nav-item">
-                    <a href="#experience" class="nav-link">
-                        <span class="nav-number">04</span>
-                        <span class="nav-separator">/</span>
-                        <span>Experiencia</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
                     <a href="#contact" class="nav-link">
-                        <span class="nav-number">05</span>
+                        <span class="nav-number">04</span>
                         <span class="nav-separator">/</span>
                         <span>Contacto</span>
                     </a>
@@ -95,17 +85,20 @@ export const Header = () => `
                 </a>
             </li>
             <li>
-                <a href="#experience" class="mobile-nav-link">
-                    <span class="mobile-nav-number">04</span>
-                    <span>Experiencia</span>
-                </a>
-            </li>
-            <li>
                 <a href="#contact" class="mobile-nav-link">
-                    <span class="mobile-nav-number">05</span>
+                    <span class="mobile-nav-number">04</span>
                     <span>Contacto</span>
                 </a>
             </li>
         </ul>
     </div>
-`;
+    `;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const fragment = document.createDocumentFragment();
+    while (doc.body.firstChild) {
+        fragment.appendChild(doc.body.firstChild);
+    }
+    return fragment;
+};

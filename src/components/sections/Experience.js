@@ -3,7 +3,8 @@
  * Sección de experiencia laboral
  */
 
-export const ExperienceSection = () => `
+export const ExperienceSection = () => {
+    const htmlString = `
     <!-- Experience Section -->
     <section class="section experience-section" id="experience">
         <div class="container">
@@ -110,4 +111,13 @@ export const ExperienceSection = () => `
             </div>
         </div>
     </section>
-`;
+    `;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const fragment = document.createDocumentFragment();
+    while (doc.body.firstChild) {
+        fragment.appendChild(doc.body.firstChild);
+    }
+    return fragment;
+};

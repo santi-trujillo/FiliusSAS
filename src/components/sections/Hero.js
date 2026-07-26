@@ -3,15 +3,15 @@
  * Sección principal del sitio
  */
 
-export const HeroSection = () => `
+export const HeroSection = () => {
+    const htmlString = `
     <!-- Hero Section Completo -->
     <section class="hero" id="home">
-        <a id="main-content"></a>
         <div class="hero-container">
             <!-- Contenido Izquierdo -->
             <div class="hero-content stack stack--lg">
                 <h1 class="hero-title">
-                    <span class="hero-title-name">Filius Tec</span>
+                    <span class="hero-title-name">Arquitectura web y estrategia digital para negocios que escalan.</span>
                 </h1>
 
                 <h2 class="hero-subtitle">
@@ -20,18 +20,16 @@ export const HeroSection = () => `
                 </h2>
 
                 <p class="hero-description">
-                    Somos una consultora de tecnología integral que ayuda a las PYMES
-                    a digitalizarse con soluciones web modernas y garantiza su operatividad
-                    continua mediante soporte técnico especializado.
+                    En Filius Tec somos una consultora integral que transforma operaciones comerciales en ecosistemas digitales de alto rendimiento. Desde la conceptualización de marca hasta el desarrollo de plataformas transaccionales robustas, asumimos el liderazgo tecnológico para que usted se enfoque en liderar su industria.
                 </p>
 
                 <div class="hero-actions cluster cluster--center">
                     <a href="#contact" class="btn btn--primary btn--lg">
-                        Solicitar Consultoría
+                        Agendar Consultoría TI
                     </a>
 
                     <a href="#expertise" class="btn btn--secondary btn--lg">
-                        Ver Servicios
+                        Explorar Soluciones
                     </a>
                 </div>
             </div>
@@ -40,7 +38,7 @@ export const HeroSection = () => `
             <div class="hero-visual">
                 <div class="hero-circle">
                     <div class="hero-visual-content">
-                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials">
+                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials" width="220" height="220">
                     </div>
 
                     <!-- Badges flotantes -->
@@ -76,7 +74,16 @@ export const HeroSection = () => `
             </div>
         </div>
     </section>
-`;
+    `;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const fragment = document.createDocumentFragment();
+    while (doc.body.firstChild) {
+        fragment.appendChild(doc.body.firstChild);
+    }
+    return fragment;
+};
 
 /**
  * Tech Stack Items
@@ -86,70 +93,70 @@ const TechStackItems = () => `
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
-                alt="WordPress" loading="lazy">
+                alt="WordPress" loading="lazy" width="48" height="48">
         </div>
         <span>WordPress</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain.svg"
-                alt="WooCommerce" loading="lazy">
+                alt="WooCommerce" loading="lazy" width="48" height="48">
         </div>
         <span>WooCommerce</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                alt="JavaScript" loading="lazy">
+                alt="JavaScript" loading="lazy" width="48" height="48">
         </div>
         <span>JavaScript</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                alt="HTML5" loading="lazy">
+                alt="HTML5" loading="lazy" width="48" height="48">
         </div>
         <span>HTML5</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                alt="CSS3" loading="lazy">
+                alt="CSS3" loading="lazy" width="48" height="48">
         </div>
         <span>CSS3</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-                alt="PHP" loading="lazy">
+                alt="PHP" loading="lazy" width="48" height="48">
         </div>
         <span>PHP</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                alt="MySQL" loading="lazy">
+                alt="MySQL" loading="lazy" width="48" height="48">
         </div>
         <span>MySQL</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                alt="React" loading="lazy">
+                alt="React" loading="lazy" width="48" height="48">
         </div>
         <span>React</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                alt="Node.js" loading="lazy">
+                alt="Node.js" loading="lazy" width="48" height="48">
         </div>
         <span>Node.js</span>
     </div>
     <div class="tech-item">
         <div class="tech-item-inner">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                alt="Git" loading="lazy">
+                alt="Git" loading="lazy" width="48" height="48">
         </div>
         <span>Git</span>
     </div>

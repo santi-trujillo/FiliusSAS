@@ -7,31 +7,32 @@ import { Header } from "./Header.js";
 import { HeroSection } from "./sections/Hero.js";
 import { ExpertiseSection } from "./sections/Expertise.js";
 import { ProjectsSection } from "./sections/Projects.js";
-import { ExperienceSection } from "./sections/Experience.js";
 import { ContactSection } from "./sections/Contact.js";
 import { TestimonialsSection } from "./sections/Testimonials.js";
 import { Footer } from "./Footer.js";
 
 /**
- * Renderiza la aplicación completa
+ * Renderiza la aplicación completa montando componentes en sus wrappers
  */
 export const renderApp = () => {
-  // Generar HTML completo de la aplicación
-  const appHTML = `
-    ${Header()}
-    <main class="main-content">
-      ${HeroSection()}
-      ${ExpertiseSection()}
-      ${ProjectsSection()}
-      ${ExperienceSection()}
-      ${ContactSection()}
-      ${TestimonialsSection()}
-    </main>
-    ${Footer()}
-  `;
+  const mount = (id, component) => {
+    const wrapper = document.getElementById(id);
+    if (!wrapper) {
+      console.warn(`[App Loader] Wrapper con id '${id}' no encontrado.`);
+      return;
+    }
+    
+    // Montaje estricto: Asumimos que component es siempre un Nodo DOM real
+    wrapper.appendChild(component);
+  };
 
-  // Inyectar en el body
-  document.body.innerHTML = appHTML;
+  mount('header-wrapper', Header());
+  mount('hero-wrapper', HeroSection());
+  mount('expertise-wrapper', ExpertiseSection());
+  mount('projects-wrapper', ProjectsSection());
+  mount('contact-wrapper', ContactSection());
+  mount('testimonials-wrapper', TestimonialsSection());
+  mount('footer-wrapper', Footer());
 };
 
 /**
@@ -39,6 +40,5 @@ export const renderApp = () => {
  */
 export const initComponents = () => {
   // Aquí se pueden inicializar componentes que requieran JS
-  // Por ahora solo marcamos que se cargaron
-  console.log("[Components] ✅ Componentes HTML cargados");
+  console.log("[Components] ✅ Componentes DOM montados exitosamente");
 };

@@ -12,8 +12,8 @@
 
     /* Visual */
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
 
     /* Interaction */
     transition: all 0.3s var(--ease-in-out);
@@ -80,8 +80,8 @@
 
 .card--hover:hover {
     transform: translateY(-4px);
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.12);
 }
 
 /* Interactive */

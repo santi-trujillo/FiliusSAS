@@ -3,16 +3,16 @@
  * Sección de llamada a la acción de contacto
  */
 
-export const ContactSection = () => `
+export const ContactSection = () => {
+    const htmlString = `
     <!-- Contact CTA Section -->
     <section class="section contact-cta-section" id="contact">
         <div class="container">
             <div class="cta-wrapper">
                 <div class="cta-content">
-                    <h2 class="cta-title">¿Listo para transformar tu negocio?</h2>
+                    <h2 class="cta-title">¿Listo para estructurar su próximo gran proyecto?</h2>
                     <p class="cta-description">
-                        Agenda una consultoría gratuita de 30 minutos.<br>
-                        Analizamos tus necesidades y te proponemos la mejor solución.
+                        Deje la complejidad técnica en manos de expertos. Auditamos su presencia actual, estructuramos el mapa de ruta y ejecutamos la solución.
                     </p>
                     <div class="cta-buttons cluster cluster--center">
                         <a href="mailto:filius.tec@gmail.com?subject=Consultoría%20Filius%20Tec&body=Hola%20Filius,%20estoy%20interesado%20en%20sus%20servicios"
@@ -22,7 +22,7 @@ export const ContactSection = () => `
                                     stroke="currentColor" stroke-width="2" />
                                 <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" />
                             </svg>
-                            filius.tec@gmail.com
+                            Iniciar Proyecto
                         </a>
                         <a href="https://wa.me/573123456789?text=Hola%20Filius,%20me%20gustaría%20solicitar%20una%20consultoría"
                             class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
@@ -42,4 +42,13 @@ export const ContactSection = () => `
             </div>
         </div>
     </section>
-`;
+    `;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    const fragment = document.createDocumentFragment();
+    while (doc.body.firstChild) {
+        fragment.appendChild(doc.body.firstChild);
+    }
+    return fragment;
+};
