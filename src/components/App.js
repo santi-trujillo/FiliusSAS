@@ -30,8 +30,8 @@ export const renderApp = () => {
   mount('hero-wrapper', HeroSection());
   mount('expertise-wrapper', ExpertiseSection());
   mount('projects-wrapper', ProjectsSection());
-  mount('contact-wrapper', ContactSection());
   mount('testimonials-wrapper', TestimonialsSection());
+  mount('contact-wrapper', ContactSection());
   mount('footer-wrapper', Footer());
 };
 

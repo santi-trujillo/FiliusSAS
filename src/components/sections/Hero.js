@@ -9,18 +9,13 @@ export const HeroSection = () => {
     <section class="hero" id="home">
         <div class="hero-container">
             <!-- Contenido Izquierdo -->
-            <div class="hero-content stack stack--lg">
+            <div class="hero-content stack stack--md">
                 <h1 class="hero-title">
-                    <span class="hero-title-name">Arquitectura web y estrategia digital para negocios que escalan.</span>
+                    <span class="hero-title-name">Ecosistemas digitales para negocios que escalan.</span>
                 </h1>
 
-                <h2 class="hero-subtitle">
-                    <span class="hero-subtitle-highlight">Desarrollo, Soporte</span>
-                    y Estrategia Digital
-                </h2>
-
                 <p class="hero-description">
-                    En Filius Tec somos una consultora integral que transforma operaciones comerciales en ecosistemas digitales de alto rendimiento. Desde la conceptualización de marca hasta el desarrollo de plataformas transaccionales robustas, asumimos el liderazgo tecnológico para que usted se enfoque en liderar su industria.
+                    Diseñamos e implementamos plataformas web de alto rendimiento. Tecnología corporativa que multiplica la conversión y reduce la fricción en ventas B2B.
                 </p>
 
                 <div class="hero-actions cluster cluster--center">
@@ -38,7 +33,7 @@ export const HeroSection = () => {
             <div class="hero-visual">
                 <div class="hero-circle">
                     <div class="hero-visual-content">
-                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials" width="220" height="220">
+                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials">
                     </div>
 
                     <!-- Badges flotantes -->

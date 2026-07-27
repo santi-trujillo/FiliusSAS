@@ -10,7 +10,7 @@
 }
 
 .stack>*+* {
-    margin-top: var(--stack-space, var(--space-4));
+    margin-top: var(--stack-space, var(--space-2));
 }
 
 /* Tamaños de espaciado */
@@ -23,11 +23,11 @@
 }
 
 .stack--md {
-    --stack-space: var(--space-4);
+    --stack-space: var(--space-2);
 }
 
 .stack--lg {
-    --stack-space: var(--space-8);
+    --stack-space: var(--space-4);
 }
 
 .stack--xl {

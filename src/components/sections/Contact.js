@@ -34,7 +34,7 @@ export const ContactSection = () => {
                         </a>
                     </div>
 
-                    <div class="contact-info">
+                    <div class="contact-info stack stack--sm text-center">
                         <p><strong>📍 Ubicación:</strong> Bogotá e Ibagué, Colombia</p>
                         <p><strong>🌐 Cobertura:</strong> Todo el territorio nacional</p>
                     </div>

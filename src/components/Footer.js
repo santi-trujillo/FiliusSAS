@@ -11,7 +11,7 @@ export const Footer = () => {
             <div class="footer-content">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" width="150" height="50" loading="lazy">
+                        <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" class="footer-logo-image" width="150" height="50" loading="lazy">
                     </div>
                     <p class="footer-tagline">
                         Desarrollo, Soporte y Estrategia Digital para PYMES.<br>

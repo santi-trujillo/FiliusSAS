@@ -19,16 +19,10 @@ export const ProjectsSection = () => {
             </p>
 
             <!-- Proyectos -->
+            <p class="featured-label">Nuestros Casos de Éxito</p>
             <div class="featured-wrapper">
-                <p class="featured-label">Nuestros Casos de Éxito</p>
-
                 <!-- Proyecto 1 -->
-                <article class="featured-project" style="margin-bottom: var(--space-8);">
-                    <div class="project-media">
-                        <div class="project-placeholder">
-                            <span class="placeholder-text">Transformación Comercial y E-commerce</span>
-                        </div>
-                    </div>
+                <article class="featured-project">
 
                     <div class="project-content">
                         <div class="project-header">
@@ -59,12 +53,7 @@ export const ProjectsSection = () => {
                 </article>
 
                 <!-- Proyecto 2 -->
-                <article class="featured-project" style="margin-bottom: var(--space-8);">
-                    <div class="project-media">
-                        <div class="project-placeholder">
-                            <span class="placeholder-text">Presencia Digital Sector Legal</span>
-                        </div>
-                    </div>
+                <article class="featured-project">
 
                     <div class="project-content">
                         <div class="project-header">
@@ -96,11 +85,6 @@ export const ProjectsSection = () => {
 
                 <!-- Proyecto 3 -->
                 <article class="featured-project">
-                    <div class="project-media">
-                        <div class="project-placeholder">
-                            <span class="placeholder-text">Aplicaciones Interactivas</span>
-                        </div>
-                    </div>
 
                     <div class="project-content">
                         <div class="project-header">

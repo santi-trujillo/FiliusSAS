@@ -138,9 +138,10 @@
     }
 }
 
-.tech-item img {
-    width: 28px;
-    height: 28px;
+.tech-item img,
+.tech-item svg {
+    height: 2.5rem;
+    width: auto;
     object-fit: contain;
     filter: grayscale(100%) brightness(0.9);
     transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -148,7 +149,8 @@
     z-index: 1;
 }
 
-.tech-item:hover img {
+.tech-item:hover img,
+.tech-item:hover svg {
     filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 10px rgba(59, 130, 246, 0.6));
 }
 

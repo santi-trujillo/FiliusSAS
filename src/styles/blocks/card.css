@@ -9,6 +9,7 @@
     /* Layout */
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     /* Visual */
     background: var(--card-bg);
@@ -22,17 +23,17 @@
 /* ===== CARD SECTIONS ===== */
 
 .card__header {
-    padding: var(--space-6);
+    padding: var(--space-4);
     border-bottom: 1px solid var(--border-color);
 }
 
 .card__body {
-    padding: var(--space-6);
+    padding: var(--space-4);
     flex: 1;
 }
 
 .card__footer {
-    padding: var(--space-6);
+    padding: var(--space-4);
     border-top: 1px solid var(--border-color);
 }
 
