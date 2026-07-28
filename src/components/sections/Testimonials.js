@@ -18,16 +18,15 @@ export const TestimonialsSection = () => {
                     <div class="card__body stack stack--md">
                         <div class="testimonial-quote-icon">"</div>
                         <p class="testimonial-text">
-                            Filius transformó completamente nuestra presencia digital. El equipo es profesional,
-                            responsivo y entrega resultados de alta calidad. Altamente recomendados.
+                            "La transición de nuestro archivo físico a un ecosistema digital seguro en la nube fue impecable. Su soporte técnico y mantenimiento preventivo nos garantiza operar sin interrupciones."
                         </p>
                         <div class="testimonial-author cluster cluster--sm cluster--align-center">
                             <div class="author-avatar">
-                                <span>JM</span>
+                                <span>EP</span>
                             </div>
                             <div class="author-info stack stack--xs">
-                                <p class="author-name">Juan Martínez</p>
-                                <p class="author-role">Gerente General | Empresa Retail</p>
+                                <p class="author-name">Elcira Prado</p>
+                                <p class="author-role">Abogada | Banco Agrario</p>
                             </div>
                         </div>
                     </div>
@@ -37,16 +36,15 @@ export const TestimonialsSection = () => {
                     <div class="card__body stack stack--md">
                         <div class="testimonial-quote-icon">"</div>
                         <p class="testimonial-text">
-                            El soporte técnico de Filius es excepcional. Responden rápido y solucionan
-                            cualquier problema de manera eficiente. Nuestros sistemas nunca han estado mejor.
+                            "Asumieron el rescate técnico de nuestra página web desde cero. Reemplazaron una arquitectura obsoleta por una plataforma moderna, rápida y construida con verdaderos estándares de desarrollo."
                         </p>
                         <div class="testimonial-author cluster cluster--sm cluster--align-center">
                             <div class="author-avatar">
-                                <span>MR</span>
+                                <span>FS</span>
                             </div>
                             <div class="author-info stack stack--xs">
-                                <p class="author-name">María Rodríguez</p>
-                                <p class="author-role">Directora TI | Compañía Servicios</p>
+                                <p class="author-name">Favian Segura</p>
+                                <p class="author-role">Ingeniero Civil | VivaSolar Colombia</p>
                             </div>
                         </div>
                     </div>
@@ -56,16 +54,15 @@ export const TestimonialsSection = () => {
                     <div class="card__body stack stack--md">
                         <div class="testimonial-quote-icon">"</div>
                         <p class="testimonial-text">
-                            Trabajar con Filius fue una excelente decisión. Su enfoque en entender nuestras
-                            necesidades y proponer soluciones reales nos ayudó a crecer digitalmente.
+                            "Una visión integral para estructurar negocios en línea. Desde el diseño de la identidad visual hasta el despliegue transaccional, entregan soluciones de alto rendimiento que impulsan las ventas."
                         </p>
                         <div class="testimonial-author cluster cluster--sm cluster--align-center">
                             <div class="author-avatar">
-                                <span>CP</span>
+                                <span>CE</span>
                             </div>
                             <div class="author-info stack stack--xs">
-                                <p class="author-name">Carlos Pérez</p>
-                                <p class="author-role">Fundador | Startup Tech</p>
+                                <p class="author-name">Consultoría E-commerce</p>
+                                <p class="author-role">Despliegue integral | Sector Cafetero</p>
                             </div>
                         </div>
                     </div>
