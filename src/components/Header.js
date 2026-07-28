@@ -10,7 +10,7 @@ export const Header = () => {
         <nav class="nav">
             <!-- Logo con imagen -->
             <a href="#home" class="nav-logo">
-                <img src="/assets/images/logos/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark" width="150" height="50">
+                <img src="/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark" width="150" height="50">
             </a>
 
             <!-- Navegación Centrada con Números -->

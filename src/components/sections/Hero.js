@@ -33,7 +33,7 @@ export const HeroSection = () => {
             <div class="hero-visual">
                 <div class="hero-circle">
                     <div class="hero-visual-content">
-                        <img src="/assets/images/favicon/FiliusIconB.png" alt="Filius icon" class="hero-initials">
+                        <img src="/FiliusIconB.png" alt="Filius icon" class="hero-initials">
                     </div>
 
                     <!-- Badges flotantes -->
