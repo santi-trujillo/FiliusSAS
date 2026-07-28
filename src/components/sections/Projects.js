@@ -6,7 +6,7 @@
 export const ProjectsSection = () => {
     const htmlString = `
     <!-- Work Section -->
-    <section class="section work-section" id="work">
+    <section class="section work-section" id="proyectos">
         <div class="container">
             <h2 class="section-title">
                 <span class="title-line">Nuestros</span>
@@ -41,7 +41,7 @@ export const ProjectsSection = () => {
                         </div>
 
                         <div class="project-actions">
-                            <a href="#contact" class="project-link">
+                            <a href="https://wa.me/3195604302?text=Hola,%20vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20tecnol%C3%B3gico%20similar." target="_blank" rel="noopener noreferrer" class="project-link">
                                 Solicitar Proyecto Similar
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -72,7 +72,7 @@ export const ProjectsSection = () => {
                         </div>
 
                         <div class="project-actions">
-                            <a href="#contact" class="project-link">
+                            <a href="https://wa.me/3195604302?text=Hola,%20vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20tecnol%C3%B3gico%20similar." target="_blank" rel="noopener noreferrer" class="project-link">
                                 Solicitar Proyecto Similar
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -103,7 +103,7 @@ export const ProjectsSection = () => {
                         </div>
 
                         <div class="project-actions">
-                            <a href="#contact" class="project-link">
+                            <a href="https://wa.me/3195604302?text=Hola,%20vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20tecnol%C3%B3gico%20similar." target="_blank" rel="noopener noreferrer" class="project-link">
                                 Solicitar Proyecto Similar
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"

@@ -24,7 +24,7 @@ export const Header = () => {
                 </li>
 
                 <li class="nav-item">
-                    <a href="#expertise" class="nav-link">
+                    <a href="#servicios" class="nav-link">
                         <span class="nav-number">02</span>
                         <span class="nav-separator">/</span>
                         <span>Servicios</span>
@@ -32,7 +32,7 @@ export const Header = () => {
                 </li>
 
                 <li class="nav-item">
-                    <a href="#work" class="nav-link">
+                    <a href="#proyectos" class="nav-link">
                         <span class="nav-number">03</span>
                         <span class="nav-separator">/</span>
                         <span>Nuestro Trabajo</span>
@@ -40,7 +40,7 @@ export const Header = () => {
                 </li>
 
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">
+                    <a href="#contacto" class="nav-link">
                         <span class="nav-number">04</span>
                         <span class="nav-separator">/</span>
                         <span>Contacto</span>
@@ -73,19 +73,19 @@ export const Header = () => {
                 </a>
             </li>
             <li>
-                <a href="#expertise" class="mobile-nav-link">
+                <a href="#servicios" class="mobile-nav-link">
                     <span class="mobile-nav-number">02</span>
                     <span>Servicios</span>
                 </a>
             </li>
             <li>
-                <a href="#work" class="mobile-nav-link">
+                <a href="#proyectos" class="mobile-nav-link">
                     <span class="mobile-nav-number">03</span>
                     <span>Nuestro Trabajo</span>
                 </a>
             </li>
             <li>
-                <a href="#contact" class="mobile-nav-link">
+                <a href="#contacto" class="mobile-nav-link">
                     <span class="mobile-nav-number">04</span>
                     <span>Contacto</span>
                 </a>

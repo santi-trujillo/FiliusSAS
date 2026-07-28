@@ -19,11 +19,11 @@ export const HeroSection = () => {
                 </p>
 
                 <div class="hero-actions cluster cluster--center">
-                    <a href="#contact" class="btn btn--primary btn--lg">
+                    <a href="https://wa.me/3195604302?text=Hola%20Filius%20Tec,%20me%20interesa%20agendar%20una%20consultor%C3%ADa%20tecnol%C3%B3gica%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
                         Agendar Consultoría TI
                     </a>
 
-                    <a href="#expertise" class="btn btn--secondary btn--lg">
+                    <a href="#servicios" class="btn btn--secondary btn--lg">
                         Explorar Soluciones
                     </a>
                 </div>

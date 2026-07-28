@@ -6,7 +6,7 @@
 export const ExpertiseSection = () => {
     const htmlString = `
     <!-- Expertise Section -->
-    <section class="section expertise-section" id="expertise">
+    <section class="section expertise-section" id="servicios">
         <div class="container">
             <h2 class="section-title">
                 <span class="title-line">Nuestros</span>

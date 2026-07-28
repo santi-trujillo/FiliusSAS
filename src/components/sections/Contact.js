@@ -6,7 +6,7 @@
 export const ContactSection = () => {
     const htmlString = `
     <!-- Contact CTA Section -->
-    <section class="section contact-cta-section" id="contact">
+    <section class="section contact-cta-section" id="contacto">
         <div class="container">
             <div class="cta-wrapper">
                 <div class="cta-content">
@@ -24,7 +24,7 @@ export const ContactSection = () => {
                             </svg>
                             Iniciar Proyecto
                         </a>
-                        <a href="https://wa.me/573123456789?text=Hola%20Filius,%20me%20gustaría%20solicitar%20una%20consultoría"
+                        <a href="https://wa.me/3195604302?text=Hola%20Filius%20Tec,%20me%20interesa%20agendar%20una%20consultor%C3%ADa%20tecnol%C3%B3gica%20para%20mi%20empresa."
                             class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
