@@ -42,7 +42,7 @@ export const Footer = () => {
                 <div class="footer-social">
                     <h2 class="footer-section-title">Síguenos</h2>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/filius-tec" class="social-link" aria-label="LinkedIn"
+                        <a href="https://www.linkedin.com/in/santiago-trujillo-v" class="social-link" aria-label="LinkedIn"
                             target="_blank" rel="noopener noreferrer">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path
