@@ -121,19 +121,702 @@
     <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
 
     <!-- Encabezado Maestro -->
-    <header id="header-wrapper"></header>
+    <header id="header-wrapper">
+    <!-- Header con Menú Centrado -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Logo con imagen -->
+            <a href="#home" class="nav-logo">
+                <img src="/FiliusB.png" alt="Filius Logo" class="logo-image logo-dark" width="150" height="50">
+            </a>
+
+            <!-- Navegación Centrada con Números -->
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" aria-current="page">
+                        <span class="nav-number">01</span>
+                        <span class="nav-separator">/</span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#servicios" class="nav-link">
+                        <span class="nav-number">02</span>
+                        <span class="nav-separator">/</span>
+                        <span>Servicios</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#proyectos" class="nav-link">
+                        <span class="nav-number">03</span>
+                        <span class="nav-separator">/</span>
+                        <span>Nuestro Trabajo</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link">
+                        <span class="nav-number">04</span>
+                        <span class="nav-separator">/</span>
+                        <span>Contacto</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Botón Hamburguesa (móvil) -->
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+            </button>
+        </nav>
+
+        <!-- Barra de progreso de scroll -->
+        <div class="scroll-progress"></div>
+    </header>
+
+    <!-- Overlay del menú -->
+    <div class="menu-overlay"></div>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li>
+                <a href="#home" class="mobile-nav-link">
+                    <span class="mobile-nav-number">01</span>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#servicios" class="mobile-nav-link">
+                    <span class="mobile-nav-number">02</span>
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a href="#proyectos" class="mobile-nav-link">
+                    <span class="mobile-nav-number">03</span>
+                    <span>Nuestro Trabajo</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contacto" class="mobile-nav-link">
+                    <span class="mobile-nav-number">04</span>
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    </header>
 
     <!-- Contenido Principal -->
     <main id="main-content" class="main-content">
-        <section id="hero-wrapper"></section>
-        <section id="expertise-wrapper"></section>
-        <section id="projects-wrapper"></section>
-        <section id="testimonials-wrapper"></section>
-        <section id="contact-wrapper"></section>
+        <section id="hero-wrapper">
+    <!-- Hero Section Completo -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <!-- Contenido Izquierdo -->
+            <div class="hero-content stack stack--md">
+                <h1 class="hero-title">
+                    <span class="hero-title-name">Ecosistemas digitales para negocios que escalan.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Diseñamos e implementamos plataformas web de alto rendimiento. Tecnología corporativa que multiplica la conversión y reduce la fricción en ventas B2B.
+                </p>
+
+                <div class="hero-actions cluster cluster--center">
+                    <a href="https://wa.me/3195604302?text=Hola%20Filius%20Tec,%20me%20interesa%20agendar%20una%20consultor%C3%ADa%20tecnol%C3%B3gica%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+                        Agendar Consultoría TI
+                    </a>
+
+                    <a href="#servicios" class="btn btn--secondary btn--lg">
+                        Explorar Soluciones
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Derecho -->
+            <div class="hero-visual">
+                <div class="hero-circle">
+                    <div class="hero-visual-content">
+                        <img src="/FiliusIconB.png" alt="Filius icon" class="hero-initials">
+                    </div>
+
+                    <!-- Badges flotantes -->
+                    <div class="hero-badges">
+                        <div class="hero-badge hero-badge-1">
+                            <span class="hero-badge-number">50+</span>
+                            <span>Proyectos</span>
+                        </div>
+                        <div class="hero-badge hero-badge-2">
+                            <span class="hero-badge-number">100%</span>
+                            <span>Satisfacción</span>
+                        </div>
+                        <div class="hero-badge hero-badge-3">
+                            <span class="hero-badge-number">2</span>
+                            <span>Ciudades</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack Carousel Section -->
+        <div class="tech-stack-container">
+            <div class="tech-carousel-container">
+                <div class="tech-carousel">
+                    <div class="tech-carousel-track" id="carouselTrack">
+                        <!-- Primera vuelta -->
+                        
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+                alt="WordPress" loading="lazy" width="48" height="48">
+        </div>
+        <span>WordPress</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain.svg"
+                alt="WooCommerce" loading="lazy" width="48" height="48">
+        </div>
+        <span>WooCommerce</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript" loading="lazy" width="48" height="48">
+        </div>
+        <span>JavaScript</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML5" loading="lazy" width="48" height="48">
+        </div>
+        <span>HTML5</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS3" loading="lazy" width="48" height="48">
+        </div>
+        <span>CSS3</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                alt="PHP" loading="lazy" width="48" height="48">
+        </div>
+        <span>PHP</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt="MySQL" loading="lazy" width="48" height="48">
+        </div>
+        <span>MySQL</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React" loading="lazy" width="48" height="48">
+        </div>
+        <span>React</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="Node.js" loading="lazy" width="48" height="48">
+        </div>
+        <span>Node.js</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="Git" loading="lazy" width="48" height="48">
+        </div>
+        <span>Git</span>
+    </div>
+
+                        <!-- DUPLICADO para efecto infinito -->
+                        
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+                alt="WordPress" loading="lazy" width="48" height="48">
+        </div>
+        <span>WordPress</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain.svg"
+                alt="WooCommerce" loading="lazy" width="48" height="48">
+        </div>
+        <span>WooCommerce</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript" loading="lazy" width="48" height="48">
+        </div>
+        <span>JavaScript</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML5" loading="lazy" width="48" height="48">
+        </div>
+        <span>HTML5</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS3" loading="lazy" width="48" height="48">
+        </div>
+        <span>CSS3</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                alt="PHP" loading="lazy" width="48" height="48">
+        </div>
+        <span>PHP</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt="MySQL" loading="lazy" width="48" height="48">
+        </div>
+        <span>MySQL</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React" loading="lazy" width="48" height="48">
+        </div>
+        <span>React</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="Node.js" loading="lazy" width="48" height="48">
+        </div>
+        <span>Node.js</span>
+    </div>
+    <div class="tech-item">
+        <div class="tech-item-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="Git" loading="lazy" width="48" height="48">
+        </div>
+        <span>Git</span>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+        <section id="expertise-wrapper">
+    <!-- Expertise Section -->
+    <section class="section expertise-section" id="servicios">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line">Nuestros</span>
+                <span class="title-emphasis">Servicios</span>
+            </h2>
+
+            <div class="expertise-grid">
+                <!-- Servicio 1: Desarrollo Web -->
+                <article class="card card--hover card--bordered">
+                    <div class="card__body stack stack--md">
+                        <div class="expertise-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="expertise-title">Arquitectura Front-end y Desarrollo Web</h3>
+                        <p class="expertise-description">
+                            Construimos interfaces ultrarrápidas, accesibles y optimizadas. Desarrollamos soluciones a la medida y portales corporativos de alta exigencia técnica para firmas legales y corporaciones, garantizando código puro y mantenible.
+                        </p>
+                        <div class="expertise-tags cluster cluster--sm">
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Web Corporativa</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">WordPress</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Servicio 2: E-commerce -->
+                <article class="card card--hover card--bordered">
+                    <div class="card__body stack stack--md">
+                        <div class="expertise-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8M12 17v4" />
+                            </svg>
+                        </div>
+                        <h3 class="expertise-title">E-commerce y Plataformas Transaccionales</h3>
+                        <p class="expertise-description">
+                            Diseñamos e implementamos tiendas en línea de alta conversión. Estructuramos el ecosistema completo: plantillas premium, pasarelas de pago y optimización UX.
+                        </p>
+                        <div class="expertise-tags cluster cluster--sm">
+                            <span class="tag">Help Desk</span>
+                            <span class="tag">Redes</span>
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Mantenimiento</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Servicio 3: Identidad de Marca -->
+                <article class="card card--hover card--bordered">
+                    <div class="card__body stack stack--md">
+                        <div class="expertise-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                            </svg>
+                        </div>
+                        <h3 class="expertise-title">Identidad de Marca y Empaques</h3>
+                        <p class="expertise-description">
+                            Creamos universos visuales. Ejecutamos la conceptualización de marcas desde cero, diseño de packaging para productos físicos y alineación estratégica para canales digitales.
+                        </p>
+                        <div class="expertise-tags cluster cluster--sm">
+                            <span class="tag">Scrum Master</span>
+                            <span class="tag">Transformación Digital</span>
+                            <span class="tag">Estrategia</span>
+                            <span class="tag">PM</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Servicio 4: Consultoría TI -->
+                <article class="card card--hover card--bordered">
+                    <div class="card__body stack stack--md">
+                        <div class="expertise-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 8v4" />
+                                <path d="M12 16h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="expertise-title">Consultoría TI y Gestión de Proyectos</h3>
+                        <p class="expertise-description">
+                            Lideramos y auditamos sus iniciativas bajo metodologías ágiles. Evaluamos la calidad del código y gestionamos recursos para asegurar entregas impecables.
+                        </p>
+                        <div class="expertise-tags cluster cluster--sm">
+                            <span class="tag">Consultoría</span>
+                            <span class="tag">Gestión TI</span>
+                            <span class="tag">Auditoría</span>
+                            <span class="tag">Agile</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    </section>
+        <section id="projects-wrapper">
+    <!-- Work Section -->
+    <section class="section work-section" id="proyectos">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line">Nuestros</span>
+                <span class="title-emphasis">Proyectos</span>
+            </h2>
+
+            <p class="work-intro">
+                Hemos colaborado en <strong>50+ proyectos</strong> con empresas PYMES en Colombia,
+                ayudándolas a digitalizar sus operaciones y optimizar su infraestructura tecnológica.
+            </p>
+
+            <!-- Proyectos -->
+            <p class="featured-label">Nuestros Casos de Éxito</p>
+            <div class="featured-wrapper">
+                <!-- Proyecto 1 -->
+                <article class="featured-project">
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-name">Transformación Comercial y E-commerce (Consumo Masivo)</h3>
+                            <span class="project-category">Consumo Masivo</span>
+                        </div>
+
+                        <p class="project-description">
+                            Ejecución integral para negocio del sector cafetero. Abarcó creación de identidad de marca, diseño de empaques físicos y despliegue de plataforma transaccional.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Branding</span>
+                            <span class="tech-tag">E-commerce</span>
+                            <span class="tech-tag">UX/UI</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://wa.me/3195604302?text=Hola,%20vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20tecnol%C3%B3gico%20similar." target="_blank" rel="noopener noreferrer" class="project-link">
+                                Solicitar Proyecto Similar
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="featured-project">
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-name">Presencia Digital Sector Legal</h3>
+                            <span class="project-category">Firma de Abogados</span>
+                        </div>
+
+                        <p class="project-description">
+                            Diseño y arquitectura web para firma de abogados, proyectando autoridad corporativa mediante una interfaz moderna, semánticamente impecable y orientada a captación B2B.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Arquitectura Web</span>
+                            <span class="tech-tag">B2B</span>
+                            <span class="tech-tag">SEO</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://wa.me/3195604302?text=Hola,%20vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20tecnol%C3%B3gico%20similar." target="_blank" rel="noopener noreferrer" class="project-link">
+                                Solicitar Proyecto Similar
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="featured-project">
+
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-name">Aplicaciones Interactivas a Medida</h3>
+                            <span class="project-category">Desarrollo a Medida</span>
+                        </div>
+
+                        <p class="project-description">
+                            Desarrollo de sistemas web complejos y simulaciones gráficas de alta fidelidad, demostrando dominio absoluto sobre la manipulación del DOM y rendimiento nativo en el navegador.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Vanilla JS</span>
+                            <span class="tech-tag">DOM Avanzado</span>
+                            <span class="tech-tag">Performance</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://wa.me/3195604302?text=Hola,%20vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20tecnol%C3%B3gico%20similar." target="_blank" rel="noopener noreferrer" class="project-link">
+                                Solicitar Proyecto Similar
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    </section>
+        <section id="testimonials-wrapper">
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-line">Lo que dicen</span>
+                <span class="title-emphasis">Nuestros Clientes</span>
+            </h2>
+
+            <div class="testimonials-grid">
+                <article class="card card--elevated">
+                    <div class="card__body stack stack--md">
+                        <div class="testimonial-quote-icon">"</div>
+                        <p class="testimonial-text">
+                            "La transición de nuestro archivo físico a un ecosistema digital seguro en la nube fue impecable. Su soporte técnico y mantenimiento preventivo nos garantiza operar sin interrupciones."
+                        </p>
+                        <div class="testimonial-author cluster cluster--sm cluster--align-center">
+                            <div class="author-avatar">
+                                <span>EP</span>
+                            </div>
+                            <div class="author-info stack stack--xs">
+                                <p class="author-name">Elcira Prado</p>
+                                <p class="author-role">Abogada | Banco Agrario</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card card--elevated">
+                    <div class="card__body stack stack--md">
+                        <div class="testimonial-quote-icon">"</div>
+                        <p class="testimonial-text">
+                            "Asumieron el rescate técnico de nuestra página web desde cero. Reemplazaron una arquitectura obsoleta por una plataforma moderna, rápida y construida con verdaderos estándares de desarrollo."
+                        </p>
+                        <div class="testimonial-author cluster cluster--sm cluster--align-center">
+                            <div class="author-avatar">
+                                <span>FS</span>
+                            </div>
+                            <div class="author-info stack stack--xs">
+                                <p class="author-name">Favian Segura</p>
+                                <p class="author-role">Ingeniero Civil | VivaSolar Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card card--elevated">
+                    <div class="card__body stack stack--md">
+                        <div class="testimonial-quote-icon">"</div>
+                        <p class="testimonial-text">
+                            "Una visión integral para estructurar negocios en línea. Desde el diseño de la identidad visual hasta el despliegue transaccional, entregan soluciones de alto rendimiento que impulsan las ventas."
+                        </p>
+                        <div class="testimonial-author cluster cluster--sm cluster--align-center">
+                            <div class="author-avatar">
+                                <span>CE</span>
+                            </div>
+                            <div class="author-info stack stack--xs">
+                                <p class="author-name">Consultoría E-commerce</p>
+                                <p class="author-role">Despliegue integral | Sector Cafetero</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    </section>
+        <section id="contact-wrapper">
+    <!-- Contact CTA Section -->
+    <section class="section contact-cta-section" id="contacto">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="cta-content">
+                    <h2 class="cta-title">¿Listo para estructurar su próximo gran proyecto?</h2>
+                    <p class="cta-description">
+                        Deje la complejidad técnica en manos de expertos. Auditamos su presencia actual, estructuramos el mapa de ruta y ejecutamos la solución.
+                    </p>
+                    <div class="cta-buttons cluster cluster--center">
+                        <a href="mailto:filius.tec@gmail.com?subject=Consultoría%20Filius%20Tec&body=Hola%20Filius,%20estoy%20interesado%20en%20sus%20servicios"
+                            class="btn btn--primary btn--lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                            Iniciar Proyecto
+                        </a>
+                        <a href="https://wa.me/3195604302?text=Hola%20Filius%20Tec,%20me%20interesa%20agendar%20una%20consultor%C3%ADa%20tecnol%C3%B3gica%20para%20mi%20empresa."
+                            class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="contact-info stack stack--sm text-center">
+                        <p><strong>📍 Ubicación:</strong> Bogotá e Ibagué, Colombia</p>
+                        <p><strong>🌐 Cobertura:</strong> Todo el territorio nacional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
     </main>
 
     <!-- Pie de Página -->
-    <footer id="footer-wrapper"></footer>
+    <footer id="footer-wrapper">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <a href="#home">
+                            <img src="/FiliusB.png" alt="Filius Logo" class="footer-logo-image" width="150" height="50" loading="lazy">
+                        </a>
+                    </div>
+                    <p class="footer-tagline">
+                        Desarrollo, Soporte y Estrategia Digital para PYMES.<br>
+                        Tecnología que hace crecer tu negocio.
+                    </p>
+                    <p class="footer-location">
+                        📍 Bogotá e Ibagué, Colombia<br>
+                        📧 filius.tec@gmail.com
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h2 class="footer-section-title">Navegación</h2>
+                    <a href="#home" class="footer-link">Inicio</a>
+                    <a href="#expertise" class="footer-link">Servicios</a>
+                    <a href="#contact" class="footer-link">Contacto</a>
+                </div>
+
+                <div class="footer-services">
+                    <h2 class="footer-section-title">Servicios</h2>
+                    <a href="#expertise" class="footer-link">Desarrollo Web</a>
+                    <a href="#expertise" class="footer-link">Soporte TI</a>
+                    <a href="#expertise" class="footer-link">Consultoría</a>
+                </div>
+
+                <div class="footer-social">
+                    <h2 class="footer-section-title">Síguenos</h2>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/santiago-trujillo-v" class="social-link" aria-label="LinkedIn"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/filius.tec" class="social-link" aria-label="Instagram"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/santi-trujillo" class="social-link" aria-label="GitHub"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Filius. Todos los derechos reservados.</p>
+                <p>Hecho con ❤️ en Colombia</p>
+            </div>
+        </div>
+    </footer>
+    </footer>
 
     <!-- JavaScript Files (ES6 Modules) -->
     <script type="module" src="/scripts/main.js"></script>

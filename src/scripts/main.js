@@ -6,7 +6,6 @@
  */
 
 import "../styles/main.css";
-import { renderApp, initComponents } from "../components/App.js";
 import Navigation from "./components/navigation.js";
 import MobileMenu from "./components/mobile-menu.js";
 import ScrollProgress from "./components/scroll-progress.js";
@@ -37,11 +36,8 @@ const App = {
   debug: false,
 
   init() {
-    this.log("Inicializando aplicación modular...");
-    // 1. Renderizar componentes HTML PRIMERO
-    renderApp();
-    initComponents();
-
+    this.log("Inicializando aplicación de manera progresiva...");
+    
     // 2. Luego inicializar módulos JS
     this.setupGlobalListeners();
     this.handlePageLoad();
