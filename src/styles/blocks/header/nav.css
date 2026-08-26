@@ -117,15 +117,18 @@
     align-items: center;
 }
 
-/* Logo Text (Hybrid SEO Logo) */
-.logo-text-tec {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #ffffff;
-    line-height: 1;
-    letter-spacing: -0.5px;
-    margin-top: 2px;
+/* Logo Image (Unified) */
+.nav-logo img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .nav-logo img {
+        max-width: 170px;
+    }
 }
 
 /* ============================================================
