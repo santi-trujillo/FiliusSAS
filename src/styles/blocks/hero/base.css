@@ -12,9 +12,9 @@
 .nx-mega-text { font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 700; text-transform: uppercase; line-height: 1.1; margin: 0; color: var(--text-primary); }
 .nx-mega-text.accent { color: var(--text-secondary); }
 
-.nx-inline-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-.nx-pill-btn { display: flex; align-items: center; gap: 1rem; background: var(--color-accent); padding: 0.5rem 1.5rem 0.5rem 0.5rem; border-radius: 100px; text-decoration: none; color: var(--bg-base); font-weight: 600; font-size: 1.2rem; text-transform: uppercase; }
-.nx-pill-icon { background: var(--bg-base); color: var(--text-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+.nx-inline-row { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin: 0.5rem 0; }
+.nx-pill-btn { display: inline-flex; align-items: center; gap: 0.8rem; background: var(--color-accent); padding: 0.4rem 1.2rem 0.4rem 0.4rem; border-radius: 100px; text-decoration: none; color: var(--bg-base); font-weight: 600; font-size: 1.1rem; text-transform: uppercase; flex-shrink: 0; white-space: nowrap; }
+.nx-pill-icon { background: var(--bg-base); color: var(--text-primary); width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
 
 .nx-description { font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary); max-width: 85%; }
 .nx-tags-row { display: flex; align-items: center; gap: 1rem; font-family: monospace; color: var(--text-secondary); text-transform: uppercase; flex-wrap: wrap; }
