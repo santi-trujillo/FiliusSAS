@@ -1,431 +1,109 @@
-/**
- * Hero Base Styles
- * Estilos base del contenedor y layouts
- */
 
-.hero {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 6rem 0 2rem 0;
-    position: relative;
-    overflow: hidden;
-    background: var(--bg-primary);
+.hero-nexgen-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
-
-
-.hero-container {
-    max-width: 1400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    justify-content: center;
-    padding: 2rem 5%;
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-/* Contenido izquierdo - stack maneja el spacing vertical */
-.hero-content {
-    /* Stack se encarga del layout */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Nombre principal */
-.hero-title {
-    margin: 0;
-    opacity: 0;
-    animation: fadeInUp 0.6s ease 0.2s forwards;
+.hero-title-mega {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.hero-title-name {
-    display: block;
-    background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Rol/Profesión */
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    font-weight: 400;
-    margin: 0;
-    opacity: 0;
-    animation: fadeInUp 0.6s ease 0.4s forwards;
-}
-
-.hero-subtitle-highlight {
-    color: var(--text-secondary);
-    font-weight: 400;
-}
-
-/* Descripción */
-.hero-description {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    max-width: 600px;
-    opacity: 0;
-    animation: fadeInUp 0.6s ease 0.6s forwards;
-}
-
-/* Botones de acción - cluster maneja spacing */
-.hero-actions {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease 0.8s forwards;
-}
-
-/* Lado derecho - Visual/Imagen */
-.hero-visual {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    animation: fadeInRight 0.8s ease 0.4s forwards;
-}
-
-/* Asegurar que la esfera se muestre en móviles en vez de ocultarla */
-@media (max-width: 767px) {
-    .hero-visual {
-        display: flex;
-        width: 100%;
-        margin-top: 2rem;
-    }
-}
-
-/* Círculo decorativo con animación */
-.hero-circle {
-    width: 100%;
-    max-width: 280px;
-    aspect-ratio: 1 / 1;
-    height: auto;
-    border-radius: 50%;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: pulse-glow 3s ease-in-out infinite;
-    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
-}
-
-/* Texto o imagen dentro del círculo */
-.hero-visual-content {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: var(--card-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-/* Iniciales o imagen de perfil */
-.hero-initials {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: center;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-}
-
-/* Estadísticas/Badges flotantes */
-.hero-badges {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.hero-badge {
-    position: absolute;
-    padding: 0.6rem 1.2rem;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: var(--text-primary);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: floatBadge 3s ease-in-out infinite;
-    backdrop-filter: blur(10px);
-    z-index: 10 !important;
-}
-
-.hero-badge-1 {
-    top: 5%;
-    left: -5%;
-    animation-delay: 0s;
-}
-
-.hero-badge-2 {
-    top: 50%;
-    right: -5%;
-    animation-delay: 1s;
-}
-
-.hero-badge-3 {
-    bottom: 10%;
-    left: 0%;
-    animation-delay: 2s;
-}
-
-.hero-badge-number {
-    color: var(--accent-color);
-    font-size: 1rem;
-    margin-right: 0.25rem;
-    font-weight: 700;
-}
-
-/* ============================================================
-   RESPONSIVE - Mobile First Strategy with iPad Optimization
-   ============================================================ */
-
-/* BASE: Móvil (320px - 479px) */
-.hero-container {
-    text-align: center;
-}
-
-.hero {
-    padding: 7rem 5% 2rem;
-    min-height: 100svh;
-}
-
-.hero-content {
-    align-items: center;
-}
-
-
+.block { display: block; }
 
 .hero-description {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 90%;
+  opacity: 0.9;
 }
 
 .hero-actions {
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
-    .hero-circle {
-        max-width: 200px;
-        margin: 0 auto;
-    }
-
-.hero-visual-content {
-    font-size: 3.5rem;
+.hero-right {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.hero-badge {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.6rem;
-    position: absolute;
+.visual-floating-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+  position: relative;
 }
 
-.hero-badge-1 {
-    top: 8%;
-    left: -12%;
+.card-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
 }
 
-.hero-badge-2 {
-    top: 50%;
-    right: -15%;
+.hero-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.05);
 }
 
-.hero-badge-3 {
-    bottom: 12%;
-    left: -10%;
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
 }
 
-/* TABLET PEQUEÑO (480px - 599px) */
-@media (min-width: 480px) {
-    .hero {
-        padding: 8rem 5% 3rem;
-        min-height: 100svh;
-    }
-
-
-
-    .hero-description {
-        font-size: 1.1rem;
-        line-height: 1.7;
-    }
-
-    .hero-circle {
-        max-width: 220px;
-    }
-
-    .hero-visual-content {
-        font-size: 4rem;
-    }
+.metric-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
 }
 
-/* TABLET MEDIO (600px - 767px) */
-@media (min-width: 600px) {
-    .hero {
-        padding: 9rem 5% 3rem;
-        min-height: 100svh;
-    }
-
-
-
-    .hero-description {
-        font-size: 1.15rem;
-        line-height: 1.7;
-    }
-
-    .hero-circle {
-        max-width: 240px;
-    }
-
-    .hero-visual-content {
-        font-size: 4.5rem;
-    }
-
-    .hero-badge {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.65rem;
-    }
+.metric-value {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
-/* TABLET GRANDE (768px - 833px) */
-@media (min-width: 768px) {
-    .hero-container {
-        display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 2rem;
-        align-items: center;
-        text-align: left;
-    }
-
-    .hero {
-        padding: 80px 5% 4rem;
-        min-height: 100svh;
-    }
-
-
-
-    .hero-circle {
-        max-width: 220px;
-        margin: 0;
-    }
-
-    .hero-visual-content {
-        font-size: 5rem;
-    }
-
-    .hero-actions {
-        flex-direction: row;
-        width: auto;
-    }
-
-    .hero-badge {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.65rem;
-    }
-}
-
-/* IPAD PRO 11 (834px - 1023px) */
-@media (min-width: 834px) {
-    .hero-container {
-        display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 3rem;
-        text-align: left;
-        align-items: center;
-    }
-
-    .hero {
-        padding: 80px 5% 4rem;
-        min-height: 100svh;
-    }
-
-    .hero-content {
-        align-items: flex-start;
-    }
-
-
-
-    .hero-description {
-        text-align: left;
-    }
-
-    .hero-circle {
-        max-width: 250px;
-        margin: 0;
-    }
-
-    .hero-visual-content {
-        font-size: 6rem;
-    }
-
-    .hero-actions {
-        justify-content: flex-start;
-    }
-
-    .hero-badge {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.75rem;
-    }
-}
-
-/* DESKTOP (1024px+) */
-@media (min-width: 1024px) {
-    .hero {
-        min-height: 100svh;
-        padding: 6rem 5% 2rem 5%;
-    }
-
-    .hero-container {
-        display: grid;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 4rem;
-        text-align: left;
-        align-items: center;
-    }
-
-    .hero-content {
-        align-items: flex-start;
-    }
-
-
-
-    .hero-description {
-        text-align: left;
-    }
-
-    .hero-actions {
-        justify-content: flex-start;
-        flex-direction: row;
-    }
-
-    .hero-circle {
-        max-width: 280px;
-    }
-
-    .hero-visual-content {
-        font-size: 8rem;
-    }
-
-    .hero-badge {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
-    }
+@media (max-width: 1024px) {
+  .hero-split { grid-template-columns: 1fr; }
+  .hero-right { min-height: 250px; }
 }
 
 /* ============================================================
