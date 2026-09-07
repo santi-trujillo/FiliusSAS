@@ -1,125 +1,142 @@
-/* ============================================
-   EXPERTISE SECTION - Mobile First Strategy
-   ============================================ */
 
-.expertise-section {
-    padding: 5rem 5%;
-    background: var(--bg-secondary);
+/* --- Protocolo SE: Reestructuración de Servicios (Layout 2x2 NexGen) --- */
+.nx-services-section {
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.section-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 4rem;
-    font-weight: 700;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    align-items: flex-start;
+.nx-services-container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.title-line {
-    color: var(--text-secondary);
-    font-weight: 400;
-    font-size: clamp(1.8rem, 4vw, 3rem);
+.nx-section-header {
+  background: var(--bg-surface);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(var(--text-secondary-rgb), 0.1);
 }
 
-.title-emphasis {
-    color: var(--text-primary);
+.nx-section-header h2 {
+  color: var(--text-primary);
+  font-size: clamp(2rem, 3vw, 3rem);
+  text-transform: uppercase;
+  margin: 0;
 }
 
-/* BASE: Móvil (320px - 479px) */
-.expertise-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: stretch;
+.nx-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-/* TABLET PEQUEÑO (480px - 599px) */
-@media (min-width: 480px) {
-    .expertise-grid {
-        grid-template-columns: 1fr;
-        gap: 1.75rem;
-    }
+.nx-service-card {
+  background: var(--bg-surface);
+  border-radius: 16px;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(var(--text-secondary-rgb), 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* TABLET MEDIO (600px - 767px) */
-@media (min-width: 600px) {
-    .expertise-grid {
-        grid-template-columns: 1fr;
-        gap: 1.75rem;
-    }
+.nx-service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
 }
 
-/* TABLET GRANDE / IPAD (768px - 833px) */
-@media (min-width: 768px) {
-    .expertise-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
+.nx-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* IPAD PRO 11 (834px - 1023px) */
-@media (min-width: 834px) {
-    .expertise-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
+.nx-title-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 70%;
 }
 
-/* DESKTOP (1024px+) */
-@media (min-width: 1024px) {
-    .expertise-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-    }
+.nx-icon-box {
+  width: 40px;
+  height: 40px;
+  background: rgba(var(--text-secondary-rgb), 0.1);
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
-/* Estilos específicos de expertise que no están en .card */
-.expertise-icon {
-    width: 64px;
-    height: 64px;
-    color: var(--accent-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+.nx-title-group h3 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.3;
 }
 
-.card:hover .expertise-icon {
-    transform: scale(1.1) rotateY(180deg);
-    background: rgba(59, 130, 246, 0.2);
+.nx-book-call {
+  padding: 0.6rem 1.2rem;
+  background: var(--bg-base);
+  border: 1px solid rgba(var(--text-secondary-rgb), 0.2);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
-.expertise-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    font-weight: 600;
+.nx-book-call:hover {
+  background: var(--color-accent);
+  color: var(--bg-base);
+  border-color: var(--color-accent);
 }
 
-.expertise-description {
-    color: var(--text-secondary);
-    line-height: 1.8;
+.nx-card-body {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Tags ya no necesitan margin-bottom porque stack lo maneja */
-
-.tag {
-    padding: 0.25rem 0.75rem;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    font-weight: 500;
-    transition: all 0.3s ease;
+.nx-card-body p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.tag:hover {
-    background: var(--accent-color);
-    color: white;
-    transform: translateY(-2px);
+.nx-card-bottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nx-tech-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nx-tech-tags span {
+  background: rgba(var(--bg-base-rgb), 0.5);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .nx-services-grid { grid-template-columns: 1fr; }
+  .nx-title-group { max-width: 100%; }
 }
