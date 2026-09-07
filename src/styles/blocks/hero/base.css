@@ -155,3 +155,9 @@
 .nx-hero-section { padding-top: 120px !important; }
 .nx-hero-wrapper { gap: 1.5rem !important; }
 .tech-stack-container { margin-top: 1.5rem !important; }
+
+/* --- Protocolo SE: Rediseño Minimalista de Carrusel --- */
+.tech-stack-container { background: transparent !important; box-shadow: none !important; border: none !important; }
+.tech-stack-container > div, .tech-stack-container .slider { padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important; background: transparent !important; }
+.tech-stack-container img, .tech-stack-container svg { filter: grayscale(100%) opacity(0.3); transition: all 0.3s ease; transform: scale(0.9); }
+.tech-stack-container a:hover img, .tech-stack-container div:hover > img, .tech-stack-container div:hover > svg { filter: grayscale(0%) opacity(1) drop-shadow(0 0 8px rgba(62, 156, 147, 0.4)); transform: scale(1) translateY(-3px); }
