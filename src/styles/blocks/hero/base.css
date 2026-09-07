@@ -150,3 +150,8 @@
   display: flex;
   justify-content: center;
 }
+
+/* --- Protocolo SE: Simetría Espacial y Ajuste de Respiro --- */
+.nx-hero-section { padding-top: 120px !important; }
+.nx-hero-wrapper { gap: 1.5rem !important; }
+.tech-stack-container { margin-top: 1.5rem !important; }
