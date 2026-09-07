@@ -2,7 +2,14 @@
 .filius-text-logo { font-size: 1.8rem; font-weight: 800; text-decoration: none; color: var(--text-primary); letter-spacing: -1px; }
 .filius-text-logo span { color: var(--color-accent); }
 
-.nx-hero-section { width: 100%; display: flex; justify-content: center; padding: 90px 2rem 2rem 2rem; }
+.nx-hero-section { 
+  width: 100%; 
+  min-height: 100vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 80px 2rem 2rem 2rem; 
+}
 .nx-hero-wrapper { max-width: 1400px; width: 100%; display: flex; flex-direction: column; gap: 1.5rem; }
 
 .nx-split-layout {
@@ -99,7 +106,14 @@
 
 
 /* --- Protocolo SE: Compresión Vertical Extrema --- */
-.nx-hero-section { padding: 60px 2rem 1rem 2rem; }
+.nx-hero-section { 
+  width: 100%; 
+  min-height: 100vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 80px 2rem 2rem 2rem; 
+}
 .nx-hero-wrapper { gap: 1rem; }
 .nx-left-col { padding: 2rem; gap: 1rem; }
 .nx-mega-text { font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.05; }
