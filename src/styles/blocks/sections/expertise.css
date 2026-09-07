@@ -140,3 +140,17 @@
   .nx-services-grid { grid-template-columns: 1fr; }
   .nx-title-group { max-width: 100%; }
 }
+
+/* --- Protocolo SE: Compresión Vertical de Servicios --- */
+.nx-services-section { padding: 4rem 2rem 2rem 2rem !important; }
+.nx-services-container { gap: 1.5rem !important; }
+.nx-section-header { padding: 1.5rem 2rem !important; }
+.nx-section-header h2 { font-size: 2rem !important; }
+.nx-services-grid { gap: 1rem !important; }
+.nx-service-card { padding: 1.5rem !important; }
+.nx-icon-box { width: 32px !important; height: 32px !important; }
+.nx-title-group h3 { font-size: 1.15rem !important; }
+.nx-card-body { margin-top: 1rem !important; margin-bottom: 1rem !important; }
+.nx-card-body p { font-size: 0.95rem !important; line-height: 1.5 !important; }
+.nx-book-call { padding: 0.4rem 0.8rem !important; font-size: 0.8rem !important; }
+.nx-tech-tags span { padding: 0.3rem 0.6rem !important; font-size: 0.7rem !important; }
