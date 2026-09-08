@@ -1,0 +1,21 @@
+
+/* --- Protocolo SE: Terminal de Diagnóstico Interactivo (Funnel) --- */
+.nx-funnel-section { padding: 5rem 2rem; display: flex; justify-content: center; background: var(--bg-base); }
+.nx-funnel-wrapper { max-width: 900px; width: 100%; background: var(--bg-surface); border-radius: 24px; padding: 4rem; border: 1px solid rgba(var(--color-accent-rgb), 0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.5); text-align: center; }
+
+.nx-funnel-header h2 { color: var(--text-primary); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+.nx-funnel-header p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; }
+
+.nx-step { transition: opacity 0.4s ease, transform 0.4s ease; }
+.hidden-step { display: none; opacity: 0; transform: translateY(20px); }
+.active-step { display: block; opacity: 1; transform: translateY(0); animation: fadeIn 0.5s ease forwards; }
+
+.nx-step h3 { color: var(--text-primary); font-size: 1.5rem; margin-bottom: 2rem; font-weight: 500; }
+
+.nx-options-grid { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto; }
+
+.nx-opt-btn { background: var(--bg-base); color: var(--text-secondary); border: 1px solid rgba(var(--text-secondary-rgb), 0.2); padding: 1.2rem 2rem; border-radius: 12px; font-size: 1.1rem; font-family: monospace; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; }
+.nx-opt-btn:hover { background: rgba(var(--color-accent-rgb), 0.1); border-color: var(--color-accent); color: var(--color-accent); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(var(--color-accent-rgb), 0.2); }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 768px) { .nx-funnel-wrapper { padding: 2rem 1.5rem; } }
