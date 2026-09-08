@@ -63,17 +63,7 @@
     gap: 1.5rem !important;
   }
 
-  /* 3. Vitrina de Proyectos: Colapso Vertical Obligatorio */
-  .nx-project-row { 
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 1.5rem !important;
-  }
-  .nx-project-image { 
-    max-height: 350px !important; /* Le devolvemos respiro a la imagen en móvil */
-    width: 100% !important;
-    margin: 1rem 0 !important;
-  }
+  
   .nx-project-info, .nx-project-tech { 
     padding: 0 !important; 
     width: 100% !important;
@@ -266,6 +256,44 @@
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
   }
   
+
+  /* --- Protocolo SE: Rescate de Proyectos en Móvil --- */
+  /* 1. Forzar apilamiento vertical en Tarjetas de Proyecto */
+  .nx-project-card, 
+  .project-card,
+  .nx-works-card {
+    display: flex !important;
+    flex-direction: column !important; 
+    gap: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  /* 2. Liberar el ancho de las columnas internas */
+  .nx-project-card > div,
+  .nx-project-card .project-image-col,
+  .nx-project-card .project-content-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  /* 3. Evitar que la imagen se espiche */
+  .nx-project-card img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 12px !important; 
+  }
+
+  /* 4. Rescatar el Stack Tecnológico */
+  .nx-project-card .stack-tecnologico,
+  .nx-project-card .tech-stack {
+    display: flex !important;
+    flex-wrap: wrap !important; 
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
@@ -384,6 +412,16 @@
   .nx-metrics-container {
     margin-top: 1rem !important;
   }
+
+  /* --- Protocolo SE: Alivio en Tableta (Proyectos) --- */
+  .nx-project-card {
+    gap: 1.5rem !important;
+    padding: 1.5rem !important;
+  }
+  .nx-project-card .project-content-col {
+    padding-left: 0 !important; 
+  }
+  
 }
 
 /* --- MATAR HAMBURGUESA EN PC Y TABLET --- */
@@ -393,4 +431,11 @@
   .menu-overlay {
     display: none !important;
   }
+}
+
+/* --- PURGA DE CLONES EN EL FOOTER --- */
+.nx-footer-section .mobile-menu-btn,
+.nx-footer-section .hamburger,
+.nx-footer-section .menu-toggle {
+  display: none !important;
 }
