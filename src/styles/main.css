@@ -135,6 +135,50 @@
     margin-top: 0 !important;
   }
   
+
+  /* --- Protocolo SE: Erradicación Recursiva y Densidad de Terminal (Mobile) --- */
+  /* 1. Reseteo del Contenedor y Bloqueo de Scroll */
+  .nx-right-col .nx-visual-card > div, 
+  .nx-right-col .filius-terminal {
+    max-height: 200px !important; 
+    overflow: hidden !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding: 0.6rem 0.8rem !important;
+  }
+
+  /* 2. Acercar los botones macOS al código */
+  .filius-terminal .term-header {
+    margin-bottom: 0.3rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* 3. Control del motor interno (Destrucción del Gap en Móvil) */
+  .filius-terminal .term-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 4. Aplastamiento recursivo de hijos y micro-tipografía */
+  .filius-terminal .term-body * {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.15 !important;
+    min-height: 0 !important;
+    letter-spacing: normal !important;
+  }
+
+  .filius-terminal .term-line,
+  .filius-terminal .term-line.output {
+    font-size: 0.65rem !important; 
+    display: block !important;
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
