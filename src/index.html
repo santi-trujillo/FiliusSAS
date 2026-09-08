@@ -277,6 +277,55 @@ html, body {
   }
 }
 </style>
+<style id="nx-alignment-and-hero-fix">
+/* --- 1. PLOMADA MAESTRA: Alinear anchos en móviles y tablets --- */
+@media (max-width: 1024px) {
+  section, .section, header, footer,
+  .nx-hero-section, .nx-services-section, .nx-works-section, .nx-testimonials-section, .nx-footer-section {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* --- 2. FORZAR EL HERO A COLUMNA ESTRICTA --- */
+  .nx-hero-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+  }
+  
+  .nx-hero-content, .nx-hero-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    flex: none !important; /* Mata estiramientos flex previos */
+  }
+
+  /* --- 3. DOMAR LA TERMINAL DE CÓDIGO (Altura compacta) --- */
+  .nx-hero-visual > div, .terminal-window, pre {
+    max-height: 300px !important; 
+    overflow-y: auto !important; 
+    width: 100% !important;
+    border-radius: 12px !important;
+  }
+  
+  /* --- 4. CENTRAR TEXTO DEL HERO --- */
+  .nx-hero-content {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  
+  .nx-hero-content p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+</style>
 </head>
 
 <body>
