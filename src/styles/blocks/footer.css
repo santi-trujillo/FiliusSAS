@@ -1,35 +1,37 @@
 
-/* --- Protocolo SE: Footer Corporativo NexGen --- */
-.nx-footer-section { background: var(--bg-surface); border-top: 1px solid rgba(var(--text-secondary-rgb), 0.1); display: flex; flex-direction: column; align-items: center; width: 100%; overflow: hidden; }
+/* --- Protocolo SE: Footer Híbrido (Layout Asimétrico NexGen) --- */
+.nx-footer-section { background: var(--bg-base); padding: 4rem 2rem 2rem 2rem; display: flex; justify-content: center; width: 100%; border-top: 1px solid rgba(var(--text-secondary-rgb), 0.1); }
+.nx-footer-container { max-width: 1400px; width: 100%; display: flex; flex-direction: column; gap: 3rem; }
 
-/* Marquesina Animada */
-.nx-marquee-wrapper { width: 100%; background: var(--bg-base); padding: 1.5rem 0; border-bottom: 1px solid rgba(var(--text-secondary-rgb), 0.05); display: flex; overflow: hidden; white-space: nowrap; }
-.nx-marquee-content { display: flex; align-items: center; gap: 2rem; animation: marquee 15s linear infinite; color: var(--text-secondary); font-family: monospace; font-size: 1.2rem; text-transform: uppercase; }
-.nx-dot { width: 6px; height: 6px; background: var(--color-accent); border-radius: 50%; display: inline-block; }
-@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.nx-footer-main { display: flex; gap: 4rem; justify-content: space-between; align-items: flex-start; }
 
-/* Contenedor Principal */
-.nx-footer-container { max-width: 1400px; width: 100%; padding: 4rem 2rem 2rem 2rem; display: flex; flex-direction: column; gap: 4rem; }
+/* Grilla de Redes 2x2 */
+.nx-social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; flex: 2; }
+.nx-social-card { background: var(--bg-surface); padding: 2rem; border-radius: 14px; text-decoration: none; border: 1px solid rgba(var(--text-secondary-rgb), 0.05); transition: transform 0.3s ease, border-color 0.3s ease; display: flex; flex-direction: column; gap: 1.5rem; }
+.nx-social-card:hover { transform: translateY(-4px); border-color: var(--color-accent); }
 
-.nx-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+.nx-social-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.nx-social-icon { width: 40px; height: 40px; background: rgba(var(--text-secondary-rgb), 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-accent); font-family: monospace; font-weight: bold; font-size: 1.2rem; }
+.nx-social-arrow { width: 30px; height: 30px; border: 1px solid rgba(var(--text-secondary-rgb), 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: background 0.3s, color 0.3s; }
+.nx-social-card:hover .nx-social-arrow { background: var(--color-accent); color: var(--bg-base); border-color: var(--color-accent); }
 
-.nx-footer-brand { display: flex; flex-direction: column; gap: 1.5rem; }
-.nx-brand-logo { color: var(--text-primary); font-size: 2rem; margin: 0; font-family: monospace; font-weight: 700; letter-spacing: -1px; }
-.nx-footer-brand p { color: var(--text-secondary); line-height: 1.6; max-width: 400px; margin: 0; }
+.nx-social-body { display: flex; flex-direction: column; gap: 0.5rem; }
+.nx-social-body h4 { color: var(--text-primary); margin: 0; font-size: 1.2rem; text-transform: uppercase; }
+.nx-social-body p { color: var(--text-secondary); margin: 0; font-size: 0.9rem; line-height: 1.5; }
 
-/* Botones Redes Sociales */
-.nx-social-links { display: flex; gap: 1rem; }
-.nx-social-links a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; background: rgba(var(--bg-base-rgb), 0.5); border: 1px solid rgba(var(--text-secondary-rgb), 0.2); border-radius: 8px; color: var(--text-primary); font-family: monospace; font-weight: bold; text-decoration: none; transition: all 0.3s ease; }
-.nx-social-links a:hover { background: var(--color-accent); color: var(--bg-base); border-color: var(--color-accent); transform: translateY(-4px); }
+/* Sitemap */
+.nx-sitemap-grid { display: flex; gap: 4rem; flex: 1; padding: 2rem; background: var(--bg-surface); border-radius: 14px; border: 1px solid rgba(var(--text-secondary-rgb), 0.05); }
+.nx-sitemap-column { display: flex; flex-direction: column; gap: 1.5rem; }
+.nx-sitemap-column h3 { color: var(--text-primary); font-family: monospace; font-size: 1.2rem; margin: 0; }
+.nx-sitemap-column nav { display: flex; flex-direction: column; gap: 1rem; }
+.nx-sitemap-column a { color: var(--text-secondary); text-decoration: none; font-size: 1rem; transition: color 0.3s ease; }
+.nx-sitemap-column a:hover { color: var(--color-accent); }
 
-/* Enlaces */
-.nx-footer-links { display: flex; flex-direction: column; gap: 1.5rem; }
-.nx-footer-links h3 { color: var(--text-primary); font-size: 1.1rem; font-family: monospace; text-transform: uppercase; margin: 0; }
-.nx-footer-links nav { display: flex; flex-direction: column; gap: 1rem; }
-.nx-footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem; }
-.nx-footer-links a:hover { color: var(--color-accent); }
+/* Bottom Bar */
+.nx-footer-bottom { background: var(--bg-surface); padding: 2rem; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary); font-family: monospace; font-size: 0.9rem; border: 1px solid rgba(var(--text-secondary-rgb), 0.05); flex-wrap: wrap; gap: 1rem; }
+.nx-footer-bottom p { margin: 0; }
+.nx-footer-location { display: flex; align-items: center; gap: 1rem; }
+.nx-divider { color: rgba(var(--text-secondary-rgb), 0.3); }
 
-/* Barra Inferior */
-.nx-footer-bottom { border-top: 1px solid rgba(var(--text-secondary-rgb), 0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; color: var(--text-secondary); font-family: monospace; font-size: 0.9rem; }
-
-@media (max-width: 900px) { .nx-footer-grid { grid-template-columns: 1fr; gap: 3rem; } .nx-footer-bottom { flex-direction: column; text-align: center; } }
+@media (max-width: 1024px) { .nx-footer-main { flex-direction: column; } .nx-sitemap-grid { width: 100%; justify-content: space-around; } }
+@media (max-width: 768px) { .nx-social-grid { grid-template-columns: 1fr; } .nx-sitemap-grid { flex-direction: column; gap: 2rem; } .nx-footer-bottom { flex-direction: column; text-align: center; justify-content: center; } }

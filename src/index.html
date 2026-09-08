@@ -760,64 +760,100 @@
 
     <!-- Pie de Página -->
 <footer class="nx-footer-section">
-  <!-- Marquesina Animada (Stack Técnico) -->
-  <div class="nx-marquee-wrapper">
-    <div class="nx-marquee-content">
-      <span>SHOPIFY LIQUID</span> <span class="nx-dot"></span>
-      <span>JAVASCRIPT</span> <span class="nx-dot"></span>
-      <span>AGILE & SCRUM</span> <span class="nx-dot"></span>
-      <span>FEDORA LINUX</span> <span class="nx-dot"></span>
-      <span>E-COMMERCE B2C</span> <span class="nx-dot"></span>
-      <!-- Duplicado para efecto infinito -->
-      <span>SHOPIFY LIQUID</span> <span class="nx-dot"></span>
-      <span>JAVASCRIPT</span> <span class="nx-dot"></span>
-      <span>AGILE & SCRUM</span> <span class="nx-dot"></span>
-      <span>FEDORA LINUX</span> <span class="nx-dot"></span>
-      <span>E-COMMERCE B2C</span> <span class="nx-dot"></span>
-    </div>
-  </div>
-
   <div class="nx-footer-container">
-    <!-- Grilla Principal -->
-    <div class="nx-footer-grid">
-      <div class="nx-footer-brand">
-        <h2 class="nx-brand-logo">FILIUS&lt;TEC&gt;</h2>
-        <p>Tu socio tecnológico estratégico. Arquitectura web, e-commerce y gestión de proyectos TI a la medida.</p>
-        <div class="nx-social-links">
-          <a href="#" target="_blank" title="Portafolio Notion">NT</a>
-          <a href="https://x.com/TiagoTrujillo97" target="_blank" title="X (Twitter)">X</a>
-          <a href="https://www.linkedin.com/in/santiago-trujillo-v" target="_blank" title="LinkedIn">IN</a>
-          <a href="https://github.com/santi-trujillo" target="_blank" title="GitHub">GH</a>
+    
+    <!-- Bloque Principal: Redes + Navegación -->
+    <div class="nx-footer-main">
+      
+      <!-- Izquierda: Grilla 2x2 Redes -->
+      <div class="nx-social-grid">
+        
+        <!-- Tarjeta Notion -->
+        <a href="#" target="_blank" class="nx-social-card">
+          <div class="nx-social-header">
+            <div class="nx-social-icon">NT</div>
+            <div class="nx-social-arrow">↗</div>
+          </div>
+          <div class="nx-social-body">
+            <h4>Notion Portfolio</h4>
+            <p>Explora mi metodología, currículum y casos de estudio detallados bajo la marca FiliusTec.</p>
+          </div>
+        </a>
+
+        <!-- Tarjeta X -->
+        <a href="https://x.com/TiagoTrujillo97" target="_blank" class="nx-social-card">
+          <div class="nx-social-header">
+            <div class="nx-social-icon">𝕏</div>
+            <div class="nx-social-arrow">↗</div>
+          </div>
+          <div class="nx-social-body">
+            <h4>X (Twitter)</h4>
+            <p>Sígueme en @TiagoTrujillo97 para actualizaciones sobre desarrollo, e-commerce y tech.</p>
+          </div>
+        </a>
+
+        <!-- Tarjeta LinkedIn -->
+        <a href="https://www.linkedin.com/in/santiago-trujillo-v" target="_blank" class="nx-social-card">
+          <div class="nx-social-header">
+            <div class="nx-social-icon">in</div>
+            <div class="nx-social-arrow">↗</div>
+          </div>
+          <div class="nx-social-body">
+            <h4>LinkedIn</h4>
+            <p>Conecta conmigo profesionalmente. Historial como IT Project Manager y Consultor TI.</p>
+          </div>
+        </a>
+
+        <!-- Tarjeta GitHub -->
+        <a href="https://github.com/santi-trujillo" target="_blank" class="nx-social-card">
+          <div class="nx-social-header">
+            <div class="nx-social-icon">GH</div>
+            <div class="nx-social-arrow">↗</div>
+          </div>
+          <div class="nx-social-body">
+            <h4>GitHub</h4>
+            <p>Revisa mi código limpio, repositorios de Front-end y proyectos de automatización.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Derecha: Navegación y Legal -->
+      <div class="nx-sitemap-grid">
+        <div class="nx-sitemap-column">
+          <h3>Filius&lt;Tec&gt;</h3>
+          <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#contacto">Diagnóstico</a>
+          </nav>
+        </div>
+        
+        <div class="nx-sitemap-column">
+          <h3>Legal</h3>
+          <nav>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Tratamiento de Datos</a>
+          </nav>
         </div>
       </div>
       
-      <div class="nx-footer-links">
-        <h3>Navegación</h3>
-        <nav>
-          <a href="#inicio">Inicio</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-      </div>
-
-      <div class="nx-footer-links">
-        <h3>Legal</h3>
-        <nav>
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Privacidad</a>
-        </nav>
-      </div>
     </div>
 
-    <!-- Barra de Copyright -->
+    <!-- Barra Inferior -->
     <div class="nx-footer-bottom">
       <p>&copy; 2026 FiliusTec - Santiago Trujillo. Todos los derechos reservados.</p>
-      <p>Operando desde Ibagué, Colombia.</p>
+      <div class="nx-footer-location">
+        <p>Términos & Condiciones</p>
+        <span class="nx-divider">|</span>
+        <p>Operando desde Ibagué, Colombia.</p>
+      </div>
     </div>
+
   </div>
 </footer>
-
     <!-- JavaScript Files (ES6 Modules) -->
     <script type="module" src="/scripts/main.js"></script>
 <script>
