@@ -216,6 +216,45 @@
     width: 100% !important;
   }
   
+
+  /* --- 1. Fondo Oscuro (Overlay) --- */
+  .menu-overlay {
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(3px);
+    z-index: 9998 !important;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease !important;
+  }
+  .menu-overlay.active {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+
+  /* --- 2. Panel del Menú Móvil --- */
+  .mobile-menu {
+    position: fixed !important;
+    top: 0; 
+    right: -100% !important; 
+    width: 280px !important; 
+    max-width: 85vw !important;
+    height: 100vh !important;
+    background: #0a0a0a !important; 
+    z-index: 9999 !important;
+    padding: 5rem 2rem 2rem !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    transition: right 0.3s ease-in-out !important;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  }
+  .mobile-menu.active {
+    right: 0 !important; 
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */

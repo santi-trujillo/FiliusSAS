@@ -1021,6 +1021,37 @@ html, body {
     }, 2000);
   }
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.menu-overlay');
+    const navLinks = document.querySelectorAll('.mobile-menu a'); 
+
+    if (menuBtn && mobileMenu && overlay) {
+      const toggleMenu = () => {
+        mobileMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+      };
+
+      // Abrir/Cerrar con el botón
+      menuBtn.addEventListener('click', toggleMenu);
+      
+      // Cerrar al tocar el fondo oscuro
+      overlay.addEventListener('click', toggleMenu);
+
+      // Cerrar al seleccionar una opción del menú
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          overlay.classList.remove('active');
+        });
+      });
+    }
+  });
+</script>
 </body>
+
 
 </html>
