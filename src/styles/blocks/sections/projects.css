@@ -34,3 +34,19 @@
 .nx-project-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(62, 156, 147, 0.3); }
 
 @media (max-width: 1200px) { .nx-project-row { grid-template-columns: 1fr; } .nx-project-image { min-height: 300px; } }
+
+/* --- Protocolo SE: Calibración de Escala en Proyectos --- */
+.nx-works-section { padding: 3rem 2rem 2rem 2rem !important; }
+.nx-works-container { gap: 1.5rem !important; }
+.nx-works-header { padding: 1.2rem 2rem !important; }
+.nx-works-header h2 { font-size: 2rem !important; }
+.nx-view-all { padding: 0.6rem 1.2rem !important; font-size: 0.85rem !important; }
+.nx-project-row { padding: 1rem !important; gap: 1rem !important; }
+.nx-project-info, .nx-project-tech { padding: 1.5rem !important; }
+.nx-project-image { max-height: 260px !important; border-radius: 10px !important; }
+.nx-project-title-box { margin-bottom: 1rem !important; }
+.nx-project-title-box h3 { font-size: 1.15rem !important; }
+.nx-project-meta { margin-bottom: 1rem !important; padding: 0.4rem 0.8rem !important; font-size: 0.8rem !important; }
+.nx-project-desc { font-size: 0.95rem !important; }
+.nx-tech-title { margin-bottom: 1rem !important; font-size: 1rem !important; }
+.nx-project-btn { padding: 0.8rem 1rem !important; margin-top: 1.5rem !important; font-size: 0.85rem !important; }
