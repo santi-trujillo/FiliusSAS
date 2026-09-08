@@ -342,6 +342,104 @@
     gap: 20px !important;
   }
   
+
+  /* =========================================================
+     FIGMA UI MOBILE OVERRIDES (PROTOCOL SE)
+     ========================================================= */
+
+  /* --- 1. BARRA DE NAVEGACIÓN --- */
+  #header-wrapper .nx-header-inner {
+    background: #1A1A1A !important;
+    border-radius: 10px !important;
+    padding: 14px !important;
+    margin: 10px !important;
+  }
+
+  /* --- 2. HERO SECTION --- */
+  .nx-hero-wrapper .nx-split-layout {
+    gap: 16px !important;
+    padding: 10px !important;
+  }
+  .nx-left-col {
+    background: #1A1A1A !important;
+    border-radius: 12px !important;
+    padding: 30px 24px 96px 24px !important; 
+  }
+  .nx-action-row .btn, .nx-action-row a {
+    background: #CE7D63 !important;
+    color: #0F0F0F !important;
+    border-radius: 100px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* --- 3. MÉTRICAS (2x2 Grid) --- */
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 10px !important;
+    border-radius: 16px !important;
+    outline: 2px solid #1F1F1F !important;
+    outline-offset: -2px !important;
+  }
+  .nx-metrics-container > div {
+    background: #1A1A1A !important;
+    border-radius: 12px !important;
+    padding: 16px 14px !important;
+  }
+
+  /* --- 4. CONTENEDORES DE SECCIÓN (Servicios, Proyectos, Testimonios) --- */
+  .nx-services-section, 
+  .nx-works-section, 
+  .nx-testimonials-section {
+    padding: 10px !important;
+    border-radius: 16px !important;
+    outline: 2px solid #1F1F1F !important;
+    outline-offset: -2px !important;
+    margin: 16px 10px !important;
+    background: transparent !important;
+  }
+
+  /* --- 5. TARJETAS INTERNAS (Cards) --- */
+  .nx-service-card, 
+  .nx-works-card, 
+  .nx-project-card, 
+  .testimonial-card {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    gap: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Botones dentro de las tarjetas (Figma style) */
+  .nx-service-card .btn, 
+  .nx-works-card .btn, 
+  .nx-project-card .btn {
+    background: #CE7D63 !important;
+    color: #0F0F0F !important;
+    border-radius: 8px !important;
+    padding: 14px 20px !important;
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+  }
+
+  /* --- 6. FOOTER --- */
+  .nx-footer-section {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    gap: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 10px !important;
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
