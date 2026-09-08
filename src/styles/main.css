@@ -88,15 +88,10 @@
 
   /* --- Protocolo SE: Compresión Vertical Extrema de Hero --- */
   /* 1. Reducir el abismo bajo la barra de navegación */
-  .nx-hero-section {
-    padding-top: 5rem !important; 
-  }
+  
   .nx-hero-wrapper {
     margin-top: 0 !important;
     padding-top: 0 !important;
-  }
-  .nx-split-layout {
-    gap: 1rem !important; 
   }
 
   /* 2. Liposucción a la caja superior (.nx-left-col) */
@@ -257,17 +252,6 @@
 
   /* --- Protocolo SE: Colapso de Altura Fantasma en Tarjetas de Proyecto --- */
   /* 1. Destrucción de alturas fijas y estiramiento */
-  #proyectos > div > div, 
-  #proyectos .nx-works-card, 
-  #proyectos .project-card {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    min-height: 0 !important;
-    justify-content: flex-start !important; 
-    gap: 1.5rem !important;
-    padding: 1.2rem !important;
-  }
 
   /* 2. Ajuste de los contenedores internos */
   #proyectos .nx-works-card > div,
@@ -279,22 +263,83 @@
   }
 
   /* 3. Control de la imagen para celulares */
-  #proyectos .nx-works-card img,
-  #proyectos .project-card img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 220px !important; 
-    object-fit: cover !important;
-    border-radius: 8px !important;
-    display: block !important;
-    margin: 0 auto !important;
-  }
 
   /* 4. Compactar la sección inferior */
   #proyectos .stack-tecnologico,
   #proyectos .nx-works-card .nx-action-row {
     margin-top: 0 !important; 
     padding-top: 0 !important;
+  }
+
+  /* --- Protocolo SE: Arquitectura Estructural Móvil (Figma UI) --- */
+  /* --- 1. HERO Y MÉTRICAS (Alineación y Grilla Móvil) --- */
+  .nx-hero-section {
+    padding: 5rem 1rem 2rem !important; 
+  }
+  .nx-hero-wrapper .nx-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important; 
+  }
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .nx-metrics-container > div:nth-child(3) {
+    grid-column: span 2 !important; 
+  }
+
+  /* --- 2. SERVICIOS Y PROYECTOS (Tarjetas apiladas) --- */
+  .nx-services-section, 
+  .nx-works-section,
+  .nx-testimonials-section {
+    padding: 2rem 1rem !important;
+  }
+  .nx-service-card, 
+  .nx-project-card, 
+  .nx-works-card,
+  .testimonial-card {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #1A1A1A !important; 
+    border-radius: 14px !important; 
+    padding: 24px !important; 
+    gap: 16px !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 3. IMÁGENES Y BOTONES DENTRO DE TARJETAS --- */
+  .nx-project-card img,
+  .nx-works-card img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+  }
+  .nx-action-row,
+  .nx-service-card .btn,
+  .nx-project-card .btn {
+    width: 100% !important; 
+    justify-content: center !important;
+  }
+
+  /* --- 4. FOOTER (Apilamiento de enlaces) --- */
+  .nx-footer-section .footer-links,
+  .nx-footer-section .footer-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important; 
+    padding: 24px !important;
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+  }
+  .nx-footer-section .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 20px !important;
   }
   
 }
