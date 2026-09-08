@@ -106,3 +106,35 @@
   .nx-project-image { max-height: 250px !important; }
   .nx-section-header h2 { font-size: 1.8rem !important; }
 }
+
+/* --- Protocolo SE: Apilamiento Estructural del Hero (.nx-split-layout) --- */
+@media (max-width: 1024px) {
+  /* 1. Destruir el layout 60/40 y forzar una sola columna */
+  .nx-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    width: 100% !important;
+  }
+
+  /* 2. Expandir las columnas al 100% del contenedor padre */
+  .nx-left-col, .nx-right-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important; /* Anula cualquier estiramiento previo */
+    margin: 0 !important; 
+  }
+
+  /* 3. Centrar el contenido de la columna de texto para equilibrio visual */
+  .nx-left-col {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* 4. Evitar que la terminal de código sea inmensamente alta en móviles */
+  .nx-right-col .nx-visual-card > div, .nx-right-col .filius-terminal {
+    max-height: 350px !important;
+    overflow-y: auto !important;
+    width: 100% !important;
+  }
+}
