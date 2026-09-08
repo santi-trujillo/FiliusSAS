@@ -174,77 +174,50 @@
     margin-bottom: 1rem !important;
   }
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  /* --- 1. Reseteo Visual y Alineación Superior Estricta --- */
+  /* --- 1. Reducir los márgenes internos de la ventana entera --- */
   .nx-right-col .nx-visual-card > div, 
   .nx-right-col .filius-terminal {
-    max-height: 280px !important; 
-    overflow: hidden !important; 
-    padding: 1rem !important;
-    -webkit-mask-image: none !important; 
-    mask-image: none !important;
+    max-height: 280px !important;
+    overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important; 
+    justify-content: flex-start !important;
+    padding: 0.6rem 0.8rem !important; 
   }
 
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  /* --- 1. Compresión del Encabezado y Título --- */
+  /* --- 2. Pegar los botones macOS al inicio del código --- */
   .filius-terminal .term-header {
-    margin-bottom: 0 !important; 
-    padding-bottom: 0.2rem !important;
-    align-items: center !important;
-  }
-  .filius-terminal .term-title {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1 !important;
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0 !important;
+    flex-shrink: 0 !important;
   }
 
-  /* --- 2. Anulación de espacios en el cuerpo principal --- */
+  /* --- 3. Aniquilar espacios del contenedor del código --- */
   .filius-terminal .term-body {
+    display: block !important; 
     margin: 0 !important;
     padding: 0 !important;
-    gap: 0 !important; /* Previene espacios si usa Flex/Grid */
+    text-align: left !important;
+    width: 100% !important;
   }
 
-  /* --- 3. Aplastamiento de las líneas de código individuales --- */
+  /* --- 4. Compactar cada línea exactamente como en el PC --- */
   .filius-terminal .term-line,
   .filius-terminal .term-line.output,
   .filius-terminal .term-line.output.success {
+    display: block !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1.1 !important;
-    font-size: 0.65rem !important;
-    min-height: auto !important;
+    line-height: 1.15 !important; 
+    font-size: 0.7rem !important;
+    letter-spacing: -0.2px !important; 
+    opacity: 1 !important;
   }
 
-  /* --- 4. Ajuste del prompt inicial --- */
+  /* --- 5. Asegurar que el prompt y el texto fluyan juntos --- */
   .filius-terminal .prompt {
+    margin-right: 0.3rem !important;
     display: inline-block !important;
-    margin-right: 0.2rem !important; /* Solo aire lateral, cero vertical */
   }
   /* 5. Subir las métricas para cerrar la brecha inferior */
   .nx-metrics-container {
