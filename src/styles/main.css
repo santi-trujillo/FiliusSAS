@@ -50,3 +50,59 @@
 
 /* ===== EXCEPTIONS LAYER ===== */
 /* Contextos específicos y overrides */
+/* --- Protocolo SE: Rescate Responsive Global --- */
+@media (max-width: 768px) {
+  /* 1. Globales: Reducir la asfixia de paddings laterales */
+  section, .nx-footer-section { padding: 3rem 1.2rem !important; }
+  h2 { font-size: 2rem !important; line-height: 1.2 !important; }
+
+  /* 2. Estadísticas: De 4 columnas a cuadrícula 2x2 para no aplastar el texto */
+  .nx-stats-container, .stats-row, [class*="stats"] { 
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 1.5rem !important;
+  }
+
+  /* 3. Vitrina de Proyectos: Colapso Vertical Obligatorio */
+  .nx-project-row { 
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 1.5rem !important;
+  }
+  .nx-project-image { 
+    max-height: 350px !important; /* Le devolvemos respiro a la imagen en móvil */
+    width: 100% !important;
+    margin: 1rem 0 !important;
+  }
+  .nx-project-info, .nx-project-tech { 
+    padding: 0 !important; 
+    width: 100% !important;
+  }
+
+  /* 4. Testimonios: Una sola columna */
+  .nx-testimonials-grid { 
+    grid-template-columns: 1fr !important; 
+  }
+
+  /* 5. Footer: Colapso asimétrico a torre simétrica */
+  .nx-footer-container { padding: 2rem 1rem !important; }
+  .nx-footer-left { grid-template-columns: 1fr !important; }
+  .nx-sitemap-box { 
+    flex-direction: column !important; 
+    gap: 2rem !important; 
+  }
+  .nx-copyright-box { 
+    flex-direction: column !important; 
+    text-align: center !important; 
+    gap: 1.5rem !important; 
+  }
+}
+
+/* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  .nx-stats-container, .stats-row, [class*="stats"] { 
+    grid-template-columns: 1fr !important; /* Columna única definitiva */
+  }
+  .nx-project-image { max-height: 250px !important; }
+  .nx-section-header h2 { font-size: 1.8rem !important; }
+}
