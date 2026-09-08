@@ -174,7 +174,7 @@
     margin-bottom: 1rem !important;
   }
 
-  /* --- 1. Reducir los márgenes internos de la ventana entera --- */
+  /* --- 1. Reseteo Extremo del Contenedor Principal --- */
   .nx-right-col .nx-visual-card > div, 
   .nx-right-col .filius-terminal {
     max-height: 280px !important;
@@ -182,42 +182,30 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    padding: 0.6rem 0.8rem !important; 
+    gap: 0 !important; 
+    padding: 0.8rem !important;
   }
 
-  /* --- 2. Pegar los botones macOS al inicio del código --- */
-  .filius-terminal .term-header {
-    margin-bottom: 0.2rem !important;
-    padding-bottom: 0 !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* --- 3. Aniquilar espacios del contenedor del código --- */
-  .filius-terminal .term-body {
-    display: block !important; 
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: left !important;
-    width: 100% !important;
-  }
-
-  /* --- 4. Compactar cada línea exactamente como en el PC --- */
-  .filius-terminal .term-line,
-  .filius-terminal .term-line.output,
-  .filius-terminal .term-line.output.success {
+  /* --- 2. Anulación Recursiva de Hijos (El Machetazo Definitivo) --- */
+  .nx-right-col .filius-terminal .term-body {
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1.15 !important; 
-    font-size: 0.7rem !important;
-    letter-spacing: -0.2px !important; 
-    opacity: 1 !important;
   }
 
-  /* --- 5. Asegurar que el prompt y el texto fluyan juntos --- */
-  .filius-terminal .prompt {
-    margin-right: 0.3rem !important;
-    display: inline-block !important;
+  .nx-right-col .filius-terminal .term-body * {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important; 
+    min-height: 0 !important;
+    letter-spacing: normal !important;
+  }
+
+  /* --- 3. Calibración de Tipografía PC a Tablet --- */
+  .nx-right-col .filius-terminal .term-line {
+    font-size: 0.75rem !important; 
+    display: block !important;
+    margin-bottom: 2px !important; 
   }
   /* 5. Subir las métricas para cerrar la brecha inferior */
   .nx-metrics-container {
