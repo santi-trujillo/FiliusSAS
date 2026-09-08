@@ -326,6 +326,39 @@ html, body {
   }
 }
 </style>
+<style id="nx-estandarizacion-global">
+/* --- Protocolo SE: Estandarización Global de Caja (<= 1024px) --- */
+@media (max-width: 1024px) {
+  /* Reinicio de Caja */
+  * { box-sizing: border-box !important; }
+  
+  /* Plomada Universal y Anulación de Márgenes */
+  header, footer, section, .section, .nx-hero-section, .nx-services-section, .nx-works-section, .nx-testimonials-section, .nx-footer-section, .nx-funnel-section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Corrección del Hero */
+  .nx-hero-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .nx-hero-content {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .nx-hero-visual > div, .terminal-window, pre {
+    max-height: 250px !important;
+    overflow-y: auto !important;
+  }
+}
+</style>
 </head>
 
 <body>
