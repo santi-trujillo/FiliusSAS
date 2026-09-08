@@ -178,33 +178,49 @@
 
   
 
-  /* --- 1. Reducción de Padding y Ajuste de Máscara --- */
+  
+
+  
+
+  
+
+  
+
+  /* --- 1. Reseteo Visual y Alineación Superior Estricta --- */
   .nx-right-col .nx-visual-card > div, 
   .nx-right-col .filius-terminal {
-    max-height: 260px !important; 
+    max-height: 280px !important; 
     overflow: hidden !important; 
-    padding: 0.8rem !important;
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%) !important;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%) !important;
+    padding: 1rem !important;
+    -webkit-mask-image: none !important; 
+    mask-image: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important; 
   }
 
-  /* --- 2. Comprimir el Encabezado (Botones macOS) --- */
+  /* --- 2. Encabezado compacto --- */
   .filius-terminal .term-header {
-    margin-bottom: 0.5rem !important;
-    padding-bottom: 0.2rem !important;
+    margin-bottom: 0.8rem !important;
+    flex-shrink: 0 !important;
   }
 
-  /* --- 3. Eliminar el aire sobrante del cuerpo del código --- */
+  /* --- 3. Cuerpo de la terminal visible --- */
   .filius-terminal .term-body {
     padding: 0 !important;
+    display: block !important;
+    text-align: left !important;
+    width: 100% !important;
   }
 
-  /* --- 4. Micro-Tipografía para maximizar líneas visibles --- */
+  /* --- 4. Micro-Tipografía nítida --- */
   .filius-terminal code, 
   .filius-terminal .term-line {
-    font-size: 0.7rem !important; 
-    line-height: 1.2 !important;
-    margin-bottom: 0.15rem !important;
+    font-size: 0.75rem !important; 
+    line-height: 1.3 !important;
+    margin-bottom: 0.3rem !important;
+    opacity: 1 !important; 
+    display: block !important;
   }
 
   /* 5. Subir las métricas para cerrar la brecha inferior */
