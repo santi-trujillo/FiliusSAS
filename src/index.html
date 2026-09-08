@@ -143,7 +143,7 @@
 /* --- 1. TABLETS (iPad Pro / iPad Air - Hasta 1024px) --- */
 @media (max-width: 1024px) {
   .nx-hero-wrapper { flex-direction: column !important; text-align: center; gap: 3rem !important; }
-  .nx-hero-content { align-items: center !important; }
+  
   .nx-hero-visual { width: 100% !important; margin-top: 2rem !important; }
   
   /* Proyectos NexGen: Romper columnas */
@@ -217,145 +217,54 @@ html, body {
   }
 }
 </style>
-<style id="nx-hero-ui-refinement">
-/* --- 1. TABLETS (Hasta 1024px) --- */
+<style id="nx-estandarizacion-global-v2">
 @media (max-width: 1024px) {
-  .nx-hero-content {
-    text-align: center !important; 
-    align-items: center !important;
-    padding: 0 1rem !important;
-  }
-  .nx-hero-content h1 {
-    font-size: 3rem !important; 
-    line-height: 1.15 !important;
-  }
-  .nx-hero-content p {
-    max-width: 600px !important; 
-    margin: 0 auto 2rem auto !important;
-  }
-  .nx-hero-content .nx-tags, .nx-hero-content div[style*="inline-flex"] { 
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-  }
-}
-
-/* --- 2. CELULARES (Hasta 768px) --- */
-@media (max-width: 768px) {
-  .nx-hero-wrapper {
-    gap: 1.5rem !important; 
-    padding-top: 1.5rem !important;
-  }
-  .nx-hero-content h1 {
-    font-size: 2.2rem !important; 
-    margin-bottom: 1rem !important;
-  }
-  .nx-hero-content p {
-    font-size: 1rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
-  /* Micro-interacción: Terminal compacta */
-  .nx-hero-visual {
-    margin-top: 0 !important;
-    padding: 0 0.5rem !important; 
-  }
-  .nx-hero-visual > div { 
-    padding: 1.2rem !important; 
-    border-radius: 12px !important;
-  }
-  .nx-hero-visual code, .nx-hero-visual pre, .nx-hero-visual p {
-    font-size: 0.8rem !important; 
-    line-height: 1.4 !important;
-  }
-  
-  /* Flexibilidad de Etiquetas Inferiores */
-  .nx-hero-content .nx-tags, .nx-hero-content div[style*="inline-flex"] {
-    font-size: 0.75rem !important; 
-    gap: 0.8rem !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-  }
-}
-</style>
-<style id="nx-alignment-and-hero-fix">
-/* --- 1. PLOMADA MAESTRA: Alinear anchos en móviles y tablets --- */
-@media (max-width: 1024px) {
-  section, .section, header, footer,
-  .nx-hero-section, .nx-services-section, .nx-works-section, .nx-testimonials-section, .nx-footer-section {
+  /* 1. Plomada Maestra (Cajas y Paddings) */
+  * { box-sizing: border-box !important; }
+  header, footer, section, .section, .nx-hero-section, .nx-services-section, .nx-works-section, .nx-testimonials-section, .nx-footer-section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     width: 100% !important;
     max-width: 100vw !important;
-    box-sizing: border-box !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
   }
 
-  /* --- 2. FORZAR EL HERO A COLUMNA ESTRICTA --- */
+  /* 2. Hero: Corrección apuntando a las clases Reales (Sin prefijo nx-) */
   .nx-hero-wrapper {
     display: flex !important;
     flex-direction: column !important;
-    gap: 2.5rem !important;
-    width: 100% !important;
+    gap: 2rem !important;
   }
   
-  .nx-hero-content, .nx-hero-visual {
+  /* Destruir el width: 50% heredado de escritorio */
+  .hero-content, .hero-visual {
     width: 100% !important;
     max-width: 100% !important;
+    flex: 1 1 100% !important;
     margin: 0 !important;
-    flex: none !important; /* Mata estiramientos flex previos */
+    padding: 0 !important;
   }
 
-  /* --- 3. DOMAR LA TERMINAL DE CÓDIGO (Altura compacta) --- */
-  .nx-hero-visual > div, .terminal-window, pre {
-    max-height: 300px !important; 
-    overflow-y: auto !important; 
-    width: 100% !important;
-    border-radius: 12px !important;
-  }
-  
-  /* --- 4. CENTRAR TEXTO DEL HERO --- */
-  .nx-hero-content {
+  /* Centrado del texto del Hero */
+  .hero-content {
     text-align: center !important;
     align-items: center !important;
-  }
-  
-  .nx-hero-content p {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-</style>
-<style id="nx-estandarizacion-global">
-/* --- Protocolo SE: Estandarización Global de Caja (<= 1024px) --- */
-@media (max-width: 1024px) {
-  /* Reinicio de Caja */
-  * { box-sizing: border-box !important; }
-  
-  /* Plomada Universal y Anulación de Márgenes */
-  header, footer, section, .section, .nx-hero-section, .nx-services-section, .nx-works-section, .nx-testimonials-section, .nx-footer-section, .nx-funnel-section {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 1.5rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
   }
 
-  /* Corrección del Hero */
-  .nx-hero-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+  /* Contención estricta de la terminal de código */
+  .hero-visual > div, .terminal-window, pre {
     width: 100% !important;
-  }
-  .nx-hero-content {
-    align-items: center !important;
-    text-align: center !important;
-  }
-  .nx-hero-visual > div, .terminal-window, pre {
-    max-height: 250px !important;
+    max-height: 350px !important;
     overflow-y: auto !important;
+  }
+
+  /* 3. Alinear los títulos de sección con el contenido */
+  .section-header, .nx-section-header {
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
   }
 }
 </style>
