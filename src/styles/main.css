@@ -140,13 +140,13 @@
   /* 1. Reseteo del Contenedor y Bloqueo de Scroll */
   .nx-right-col .nx-visual-card > div, 
   .nx-right-col .filius-terminal {
-    max-height: 200px !important; 
+    max-height: 230px !important; 
     overflow: hidden !important; 
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
     gap: 0 !important;
-    padding: 0.6rem 0.8rem !important;
+    padding: 0.4rem 0.5rem !important;
   }
 
   /* 2. Acercar los botones macOS al código */
@@ -159,7 +159,7 @@
   .filius-terminal .term-body {
     display: flex !important;
     flex-direction: column !important;
-    gap: 2px !important; 
+    gap: 1px !important; 
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -168,14 +168,15 @@
   .filius-terminal .term-body * {
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1.15 !important;
+    line-height: 1.1 !important;
     min-height: 0 !important;
     letter-spacing: normal !important;
   }
 
   .filius-terminal .term-line,
-  .filius-terminal .term-line.output {
-    font-size: 0.65rem !important; 
+  .filius-terminal .term-line.output,
+  .filius-terminal .prompt {
+    font-size: 0.6rem !important; 
     display: block !important;
   }
   
