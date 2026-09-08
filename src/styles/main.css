@@ -271,173 +271,89 @@
     padding-top: 0 !important;
   }
 
-  /* --- Protocolo SE: Arquitectura Estructural Móvil (Figma UI) --- */
-  /* --- 1. HERO Y MÉTRICAS (Alineación y Grilla Móvil) --- */
-  .nx-hero-section {
-    padding: 5rem 1rem 2rem !important; 
+  /* =========================================================
+     PROTOCOL SE: RESCATE ESTRUCTURAL FILIUSTEC (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. HERO Y TERMINAL (Liberar espacios muertos) --- */
+  .nx-left-col {
+    background: transparent !important;
+    padding: 0 10px !important; 
   }
   .nx-hero-wrapper .nx-split-layout {
     display: flex !important;
     flex-direction: column !important;
-    gap: 24px !important; 
+    gap: 2rem !important;
+    padding: 1rem 0 !important;
   }
+
+  /* --- 2. RESTAURAR BOTONES ORIGINALES --- */
+  .nx-action-row,
+  .nx-action-row .btn, 
+  .nx-service-card .btn, 
+  .nx-works-card .btn, 
+  .nx-project-card .btn {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: unset; 
+    color: unset;
+  }
+
+  /* --- 3. MÉTRICAS (Forzar Grilla 2x2 real) --- */
   .nx-metrics-container {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    width: 100% !important;
+    gap: 12px !important;
+    padding: 1.5rem 10px !important;
+    background: transparent !important;
+    outline: none !important;
   }
-  .nx-metrics-container > div:nth-child(3) {
-    grid-column: span 2 !important; 
-  }
-
-  /* --- 2. SERVICIOS Y PROYECTOS (Tarjetas apiladas) --- */
-  .nx-services-section, 
-  .nx-works-section,
-  .nx-testimonials-section {
-    padding: 2rem 1rem !important;
-  }
-  .nx-service-card, 
-  .nx-project-card, 
-  .nx-works-card,
-  .testimonial-card {
+  .nx-metrics-container > div {
+    background: #151515 !important; 
+    border-radius: 12px !important;
+    padding: 1.5rem 1rem !important;
     display: flex !important;
     flex-direction: column !important;
-    background: #1A1A1A !important; 
-    border-radius: 14px !important; 
-    padding: 24px !important; 
-    gap: 16px !important; 
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* --- 3. IMÁGENES Y BOTONES DENTRO DE TARJETAS --- */
-  .nx-project-card img,
-  .nx-works-card img {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 8px !important;
-    object-fit: cover !important;
-  }
-  .nx-action-row,
-  .nx-service-card .btn,
-  .nx-project-card .btn {
-    width: 100% !important; 
+    align-items: center !important;
     justify-content: center !important;
   }
 
-  /* --- 4. FOOTER (Apilamiento de enlaces) --- */
-  .nx-footer-section .footer-links,
-  .nx-footer-section .footer-content {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 30px !important; 
-    padding: 24px !important;
-    background: #1A1A1A !important;
-    border-radius: 14px !important;
-  }
-  .nx-footer-section .footer-bottom {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 20px !important;
-  }
-  
-
-  /* =========================================================
-     FIGMA UI MOBILE OVERRIDES (PROTOCOL SE)
-     ========================================================= */
-
-  /* --- 1. BARRA DE NAVEGACIÓN --- */
-  #header-wrapper .nx-header-inner {
-    background: #1A1A1A !important;
-    border-radius: 10px !important;
-    padding: 14px !important;
-    margin: 10px !important;
-  }
-
-  /* --- 2. HERO SECTION --- */
-  .nx-hero-wrapper .nx-split-layout {
-    gap: 16px !important;
-    padding: 10px !important;
-  }
-  .nx-left-col {
-    background: #1A1A1A !important;
-    border-radius: 12px !important;
-    padding: 30px 24px 96px 24px !important; 
-  }
-  .nx-action-row .btn, .nx-action-row a {
-    background: #CE7D63 !important;
-    color: #0F0F0F !important;
-    border-radius: 100px !important;
-    padding: 10px 20px !important;
-  }
-
-  /* --- 3. MÉTRICAS (2x2 Grid) --- */
-  .nx-metrics-container {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    padding: 10px !important;
-    border-radius: 16px !important;
-    outline: 2px solid #1F1F1F !important;
-    outline-offset: -2px !important;
-  }
-  .nx-metrics-container > div {
-    background: #1A1A1A !important;
-    border-radius: 12px !important;
-    padding: 16px 14px !important;
-  }
-
-  /* --- 4. CONTENEDORES DE SECCIÓN (Servicios, Proyectos, Testimonios) --- */
+  /* --- 4. TARJETAS DE PROYECTOS Y SERVICIOS --- */
   .nx-services-section, 
   .nx-works-section, 
   .nx-testimonials-section {
-    padding: 10px !important;
-    border-radius: 16px !important;
-    outline: 2px solid #1F1F1F !important;
-    outline-offset: -2px !important;
-    margin: 16px 10px !important;
+    padding: 1rem 10px !important;
+    margin: 0 !important;
+    outline: none !important;
     background: transparent !important;
   }
 
-  /* --- 5. TARJETAS INTERNAS (Cards) --- */
   .nx-service-card, 
   .nx-works-card, 
   .nx-project-card, 
   .testimonial-card {
-    background: #1A1A1A !important;
-    border-radius: 14px !important;
-    padding: 24px !important;
-    gap: 20px !important;
     display: flex !important;
     flex-direction: column !important;
-    margin-bottom: 10px !important;
+    background: #121212 !important; 
+    border-radius: 14px !important;
+    padding: 1.5rem !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important; 
   }
 
-  /* Botones dentro de las tarjetas (Figma style) */
-  .nx-service-card .btn, 
-  .nx-works-card .btn, 
-  .nx-project-card .btn {
-    background: #CE7D63 !important;
-    color: #0F0F0F !important;
-    border-radius: 8px !important;
-    padding: 14px 20px !important;
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-    font-weight: 500 !important;
-    text-transform: uppercase !important;
+  /* --- 5. HEADER Y FOOTER --- */
+  #header-wrapper .nx-header-inner {
+    background: transparent !important;
+    padding: 10px !important;
+    margin: 0 !important;
   }
-
-  /* --- 6. FOOTER --- */
   .nx-footer-section {
-    background: #1A1A1A !important;
-    border-radius: 14px !important;
-    padding: 24px !important;
-    gap: 30px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    margin: 10px !important;
+    background: transparent !important;
+    padding: 2rem 10px !important;
+    gap: 2rem !important;
   }
   
 }
