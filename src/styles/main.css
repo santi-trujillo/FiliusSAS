@@ -134,7 +134,6 @@
   .nx-tags-row, .nx-tags {
     margin-top: 0 !important;
   }
-  
 
   /* --- Protocolo SE: Erradicación Recursiva y Densidad de Terminal (Mobile) --- */
   /* 1. Reseteo del Contenedor y Bloqueo de Scroll */
@@ -179,43 +178,14 @@
     font-size: 0.6rem !important; 
     display: block !important;
   }
-  
 
   /* --- Protocolo SE: Resurrección y Alineación de Navegación Móvil --- */
-  /* 1. Ocultar enlaces de escritorio para limpiar el área */
-  #header-wrapper .nx-nav-pills,
-  .nx-pill-header .nx-nav-pills {
-    display: none !important; 
-  }
-
-  /* 2. Forzar visibilidad del Botón Hamburguesa */
-  #header-wrapper .mobile-menu-btn,
-  .nx-pill-header .mobile-menu-btn {
-    display: flex !important; 
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 9999 !important; 
-    background: transparent !important;
-    border: none !important;
-    margin-left: auto !important; 
-    cursor: pointer !important;
-  }
 
   /* 3. Forzar el color de las barras a blanco para contraste */
   .mobile-menu-btn svg,
   .mobile-menu-btn path {
     stroke: #ffffff !important;
   }
-
-  /* 4. Alineación maestra del Header */
-  #header-wrapper .nx-header-inner,
-  .nx-pill-header .nx-header-inner {
-    display: flex !important;
-    justify-content: space-between !important; 
-    align-items: center !important;
-    width: 100% !important;
-  }
-  
 
   /* --- 1. Fondo Oscuro (Overlay) --- */
   .menu-overlay {
@@ -234,46 +204,7 @@
     pointer-events: all !important;
   }
 
-  /* --- 2. Panel del Menú Móvil --- */
-  .mobile-menu {
-    position: fixed !important;
-    top: 0; 
-    right: -100% !important; 
-    width: 280px !important; 
-    max-width: 85vw !important;
-    height: 100vh !important;
-    background: #0a0a0a !important; 
-    z-index: 9999 !important;
-    padding: 5rem 2rem 2rem !important; 
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2rem !important;
-    transition: right 0.3s ease-in-out !important;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-  }
-  .mobile-menu.active {
-    right: 0 !important; 
-  }
-  
-
   /* --- Protocolo SE: Rediseño Premium y Escape del Menú Móvil --- */
-  /* 1. Rescatar el Header (Siempre arriba) */
-  #header-wrapper, .nx-pill-header {
-    z-index: 10000 !important; 
-    position: relative !important;
-  }
-
-  /* 2. Rediseño del Panel del Menú (Estética FiliusTec) */
-  .mobile-menu {
-    background: rgba(10, 10, 10, 0.85) !important; 
-    backdrop-filter: blur(12px) !important; 
-    -webkit-backdrop-filter: blur(12px) !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.1) !important; 
-    border-top-left-radius: 24px !important; 
-    border-bottom-left-radius: 24px !important;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
-    padding-top: 7rem !important; 
-  }
 
   /* 3. Garantizar clics en el Overlay */
   .menu-overlay {
@@ -281,6 +212,58 @@
   }
   .menu-overlay.active {
     pointer-events: auto !important; 
+  }
+
+  /* --- 1. Reparación del Header Móvil (.nx-header-inner) --- */
+  #header-wrapper .nx-header-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  #header-wrapper .nx-nav-pills {
+    display: none !important; 
+  }
+
+  #header-wrapper .mobile-menu-btn {
+    display: flex !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    margin-left: auto !important;
+  }
+
+  /* --- 2. Panel Base del Menú Móvil --- */
+  .mobile-menu {
+    position: fixed !important;
+    top: 0; 
+    right: -100% !important; 
+    width: 280px !important; 
+    max-width: 85vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    padding: 5rem 2rem 2rem !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    transition: right 0.3s ease-in-out !important;
+  }
+  .mobile-menu.active {
+    right: 0 !important; 
+  }
+
+  /* --- 3. Forzar el Glassmorphism en el Menú --- */
+  body.loaded .mobile-menu,
+  #main-content ~ .mobile-menu,
+  .mobile-menu {
+    background: rgba(15, 15, 15, 0.65) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
   }
   
 }
@@ -400,5 +383,14 @@
   /* 5. Subir las métricas para cerrar la brecha inferior */
   .nx-metrics-container {
     margin-top: 1rem !important;
+  }
+}
+
+/* --- MATAR HAMBURGUESA EN PC Y TABLET --- */
+@media (min-width: 769px) {
+  .mobile-menu-btn,
+  .mobile-menu,
+  .menu-overlay {
+    display: none !important;
   }
 }
