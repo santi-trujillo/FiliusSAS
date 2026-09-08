@@ -63,7 +63,6 @@
     gap: 1.5rem !important;
   }
 
-  
   .nx-project-info, .nx-project-tech { 
     padding: 0 !important; 
     width: 100% !important;
@@ -255,43 +254,47 @@
     border-bottom-left-radius: 20px !important;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
   }
-  
 
-  /* --- Protocolo SE: Rescate de Proyectos en Móvil --- */
-  /* 1. Forzar apilamiento vertical en Tarjetas de Proyecto */
-  .nx-project-card, 
-  .project-card,
-  .nx-works-card {
+  /* --- Protocolo SE: Colapso de Altura Fantasma en Tarjetas de Proyecto --- */
+  /* 1. Destrucción de alturas fijas y estiramiento */
+  #proyectos > div > div, 
+  #proyectos .nx-works-card, 
+  #proyectos .project-card {
     display: flex !important;
-    flex-direction: column !important; 
-    gap: 1rem !important;
-    padding: 1rem !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important; 
+    gap: 1.5rem !important;
+    padding: 1.2rem !important;
   }
 
-  /* 2. Liberar el ancho de las columnas internas */
-  .nx-project-card > div,
-  .nx-project-card .project-image-col,
-  .nx-project-card .project-content-col {
+  /* 2. Ajuste de los contenedores internos */
+  #proyectos .nx-works-card > div,
+  #proyectos .project-card > div {
+    height: auto !important;
+    flex: none !important; 
     width: 100% !important;
-    max-width: 100% !important;
-    flex: none !important;
+    margin: 0 !important;
   }
 
-  /* 3. Evitar que la imagen se espiche */
-  .nx-project-card img {
+  /* 3. Control de la imagen para celulares */
+  #proyectos .nx-works-card img,
+  #proyectos .project-card img {
     width: 100% !important;
     height: auto !important;
+    max-height: 220px !important; 
     object-fit: cover !important;
-    border-radius: 12px !important; 
+    border-radius: 8px !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
 
-  /* 4. Rescatar el Stack Tecnológico */
-  .nx-project-card .stack-tecnologico,
-  .nx-project-card .tech-stack {
-    display: flex !important;
-    flex-wrap: wrap !important; 
-    gap: 0.5rem !important;
-    width: 100% !important;
+  /* 4. Compactar la sección inferior */
+  #proyectos .stack-tecnologico,
+  #proyectos .nx-works-card .nx-action-row {
+    margin-top: 0 !important; 
+    padding-top: 0 !important;
   }
   
 }
