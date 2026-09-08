@@ -186,26 +186,29 @@
     padding: 0.8rem !important;
   }
 
-  /* --- 2. Anulación Recursiva de Hijos (El Machetazo Definitivo) --- */
+  /* --- 1. Control del motor interno (Destrucción del Gap) --- */
   .nx-right-col .filius-terminal .term-body {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important; 
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  .nx-right-col .filius-terminal .term-body * {
+  /* --- 2. Aplastamiento del bloque de texto individual --- */
+  .nx-right-col .filius-terminal .term-title,
+  .nx-right-col .filius-terminal .term-line,
+  .nx-right-col .filius-terminal .term-line.output {
     margin: 0 !important;
     padding: 0 !important;
     line-height: 1.2 !important; 
-    min-height: 0 !important;
-    letter-spacing: normal !important;
+    font-size: 0.75rem !important;
+    min-height: auto !important;
   }
 
-  /* --- 3. Calibración de Tipografía PC a Tablet --- */
-  .nx-right-col .filius-terminal .term-line {
-    font-size: 0.75rem !important; 
-    display: block !important;
-    margin-bottom: 2px !important; 
+  /* --- 3. Ajuste del encabezado para que no empuje el cuerpo --- */
+  .nx-right-col .filius-terminal .term-header {
+    margin-bottom: 0.5rem !important; 
   }
   /* 5. Subir las métricas para cerrar la brecha inferior */
   .nx-metrics-container {
