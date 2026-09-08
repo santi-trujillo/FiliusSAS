@@ -114,6 +114,31 @@
         }
     </script>
 
+<style id="nx-funnel-styles">
+  /* --- Protocolo SE: Rescate CSS Funnel --- */
+  .nx-funnel-section { padding: 5rem 2rem !important; display: flex !important; justify-content: center !important; background: var(--bg-base) !important; clear: both !important; }
+  
+  .nx-funnel-wrapper { max-width: 900px !important; width: 100% !important; background: var(--bg-surface) !important; border-radius: 24px !important; padding: 4rem !important; border: 1px solid rgba(var(--color-accent-rgb), 0.2) !important; box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important; text-align: center !important; margin: 0 auto !important; position: relative !important; z-index: 10 !important; }
+  
+  .nx-funnel-header h2 { color: var(--text-primary) !important; font-size: 2.5rem !important; text-transform: uppercase !important; margin-bottom: 0.5rem !important; line-height: 1.2 !important; }
+  .nx-funnel-header p { color: var(--text-secondary) !important; font-size: 1.1rem !important; margin-bottom: 3rem !important; }
+  
+  .nx-step { transition: opacity 0.4s ease, transform 0.4s ease !important; }
+  .hidden-step { display: none !important; opacity: 0 !important; transform: translateY(20px) !important; }
+  .active-step { display: block !important; opacity: 1 !important; transform: translateY(0) !important; animation: fadeIn 0.5s ease forwards !important; }
+  
+  .nx-step h3 { color: var(--text-primary) !important; font-size: 1.5rem !important; margin-bottom: 2rem !important; font-weight: 500 !important; }
+  
+  .nx-options-grid { display: flex !important; flex-direction: column !important; gap: 1rem !important; max-width: 500px !important; margin: 0 auto !important; }
+  
+  .nx-opt-btn { background: var(--bg-base) !important; color: var(--text-secondary) !important; border: 1px solid rgba(var(--text-secondary-rgb), 0.2) !important; padding: 1.2rem 2rem !important; border-radius: 12px !important; font-size: 1.1rem !important; font-family: monospace !important; cursor: pointer !important; transition: all 0.3s ease !important; text-transform: uppercase !important; width: 100% !important; }
+  
+  .nx-opt-btn:hover { background: rgba(var(--color-accent-rgb), 0.1) !important; border-color: var(--color-accent) !important; color: var(--color-accent) !important; transform: translateY(-2px) !important; box-shadow: 0 5px 15px rgba(var(--color-accent-rgb), 0.2) !important; }
+  
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  
+  @media (max-width: 768px) { .nx-funnel-wrapper { padding: 2rem 1.5rem !important; } .nx-funnel-header h2 { font-size: 1.8rem !important; } }
+</style>
 </head>
 
 <body>
