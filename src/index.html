@@ -139,6 +139,42 @@
   
   @media (max-width: 768px) { .nx-funnel-wrapper { padding: 2rem 1.5rem !important; } .nx-funnel-header h2 { font-size: 1.8rem !important; } }
 </style>
+<style id="nx-mobile-rescue">
+@media (max-width: 900px) {
+  /* 1. Hero y Estadísticas */
+  .hero-stats { 
+    display: grid !important; 
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 1.5rem !important; 
+    height: auto !important;
+  }
+  .stat-item { padding: 1rem !important; border: none !important; border-bottom: 1px solid #333 !important; }
+
+  /* 2. Servicios y Proyectos (Colapso Vertical) */
+  .services-list, .work-list { display: flex !important; flex-direction: column !important; gap: 2rem !important; }
+  .service-item, .work-item { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    padding: 1.5rem !important; 
+    height: auto !important;
+  }
+  .work-item img { width: 100% !important; height: auto !important; margin: 1.5rem 0 !important; }
+  
+  /* 3. Testimonios */
+  .nx-testimonials-grid { grid-template-columns: 1fr !important; }
+  .nx-testi-card { height: auto !important; }
+
+  /* 4. Footer Asimétrico a Vertical */
+  .nx-footer-container { flex-direction: column !important; padding: 2rem 1rem !important; }
+  .nx-footer-left { grid-template-columns: 1fr !important; }
+  .nx-sitemap-box { flex-direction: column !important; gap: 2rem !important; text-align: center !important; }
+  .nx-copyright-box { flex-direction: column !important; text-align: center !important; gap: 1rem !important; }
+
+  /* 5. Respiración Global (Paddings) */
+  .section { padding: 3rem 1.5rem !important; }
+  h2 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+}
+</style>
 </head>
 
 <body>
