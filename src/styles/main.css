@@ -425,7 +425,7 @@
 
   /* 2. Reducir la tipografía principal para evitar saltos de línea extra */
   .nx-mega-title-box h1 {
-    font-size: 2.2rem !important;
+    font-size: clamp(2.5rem, 4vw, 3.2rem) !important;
     line-height: 1.1 !important;
     margin-bottom: 0.5rem !important;
   }
@@ -479,6 +479,22 @@
   .nx-project-card {
     gap: 1.5rem !important;
     padding: 1.5rem !important;
+  }
+  /* --- Protocolo SE: Apilamiento en Tablet --- */
+  .nx-project-card, .project-card, .nx-works-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .nx-project-card > div, .nx-project-card .project-image-col, .nx-project-card .project-content-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+  .nx-project-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px !important;
+    object-fit: cover !important;
   }
   .nx-project-card .project-content-col {
     padding-left: 0 !important; 
