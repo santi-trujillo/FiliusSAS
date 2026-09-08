@@ -217,6 +217,66 @@ html, body {
   }
 }
 </style>
+<style id="nx-hero-ui-refinement">
+/* --- 1. TABLETS (Hasta 1024px) --- */
+@media (max-width: 1024px) {
+  .nx-hero-content {
+    text-align: center !important; 
+    align-items: center !important;
+    padding: 0 1rem !important;
+  }
+  .nx-hero-content h1 {
+    font-size: 3rem !important; 
+    line-height: 1.15 !important;
+  }
+  .nx-hero-content p {
+    max-width: 600px !important; 
+    margin: 0 auto 2rem auto !important;
+  }
+  .nx-hero-content .nx-tags, .nx-hero-content div[style*="inline-flex"] { 
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* --- 2. CELULARES (Hasta 768px) --- */
+@media (max-width: 768px) {
+  .nx-hero-wrapper {
+    gap: 1.5rem !important; 
+    padding-top: 1.5rem !important;
+  }
+  .nx-hero-content h1 {
+    font-size: 2.2rem !important; 
+    margin-bottom: 1rem !important;
+  }
+  .nx-hero-content p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Micro-interacción: Terminal compacta */
+  .nx-hero-visual {
+    margin-top: 0 !important;
+    padding: 0 0.5rem !important; 
+  }
+  .nx-hero-visual > div { 
+    padding: 1.2rem !important; 
+    border-radius: 12px !important;
+  }
+  .nx-hero-visual code, .nx-hero-visual pre, .nx-hero-visual p {
+    font-size: 0.8rem !important; 
+    line-height: 1.4 !important;
+  }
+  
+  /* Flexibilidad de Etiquetas Inferiores */
+  .nx-hero-content .nx-tags, .nx-hero-content div[style*="inline-flex"] {
+    font-size: 0.75rem !important; 
+    gap: 0.8rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+}
+</style>
 </head>
 
 <body>
