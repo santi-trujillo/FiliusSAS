@@ -517,3 +517,70 @@
 .nx-footer-section .menu-toggle {
   display: none !important;
 }
+
+
+/* =========================================================
+   PROTOCOL SE: ROLLBACK ESTRUCTURAL Y MICRO-CIRUGÍA UI
+   ========================================================= */
+
+/* --- 1. ABISMO EN PROYECTOS (Aplica Global y Móvil) --- */
+.nx-project-card, 
+.nx-works-card, 
+.project-card {
+  height: auto !important; 
+  justify-content: flex-start !important; 
+}
+.nx-project-card > div {
+  height: auto !important;
+}
+.nx-project-card img {
+  height: auto !important;
+  max-height: 280px !important; 
+  object-fit: cover !important;
+}
+
+/* --- 2. TERMINAL ASFIXIADA (Tablet y Móvil <= 1024px) --- */
+@media (max-width: 1024px) {
+  .nx-right-col .nx-visual-card > div, 
+  .nx-right-col .filius-terminal {
+    max-height: none !important; 
+    height: auto !important; 
+    min-height: max-content !important; 
+    overflow: hidden !important; 
+  }
+}
+
+/* --- 3. BOTONES COLAPSADOS Y MÉTRICAS ASIMÉTRICAS (Móvil <= 768px) --- */
+@media (max-width: 768px) {
+  .nx-service-card .nx-action-row, 
+  .nx-service-card .btn {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important; 
+    padding: 12px 10px !important;
+  }
+  
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .nx-metrics-container > div {
+    width: 100% !important;
+    padding: 1rem 0.5rem !important;
+  }
+}
+
+/* --- 4. MENÚ FANTASMA (Móvil <= 768px) --- */
+@media (max-width: 768px) {
+  .mobile-menu {
+    background: rgba(15, 15, 15, 0.98) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    z-index: 99999 !important; 
+    border-left: 1px solid rgba(255,255,255,0.05) !important;
+  }
+}
