@@ -181,6 +181,42 @@
   .nx-copyright-box { flex-direction: column !important; text-align: center !important; gap: 1rem !important; padding: 1.5rem !important; }
 }
 </style>
+<style id="nx-overflow-killswitch">
+/* --- SEGURO ANTI-DESBORDAMIENTO (GLOBAL) --- */
+/* 1. Cortar el scroll lateral de raíz en el documento */
+html, body { 
+  overflow-x: hidden !important; 
+  width: 100% !important; 
+  max-width: 100vw !important; 
+}
+
+/* 2. Obligar a todos los elementos a respetar sus bordes sin sumar padding al ancho */
+*, *::before, *::after { 
+  box-sizing: border-box !important; 
+}
+
+@media (max-width: 1024px) {
+  /* 3. Contención estricta del Menú/Header */
+  header, nav, .header-container { 
+    max-width: 100% !important; 
+    overflow-x: hidden !important;
+    flex-wrap: wrap !important; 
+  }
+  
+  /* 4. Contención de la Terminal de Código (Forzar salto de línea) */
+  pre, code, .terminal-window, [class*="terminal"] {
+    white-space: pre-wrap !important; /* Permite el salto de línea */
+    word-break: break-word !important; /* Rompe palabras ultra largas */
+    max-width: 100% !important; 
+    overflow-x: hidden !important;
+  }
+
+  /* 5. Re-anclar el botón de scroll to top dentro del límite visible */
+  .scroll-top, .back-to-top, [id*="scroll"], [class*="scroll"] {
+    right: 15px !important;
+  }
+}
+</style>
 </head>
 
 <body>
