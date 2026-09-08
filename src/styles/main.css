@@ -199,31 +199,39 @@
     justify-content: flex-start !important; 
   }
 
-  /* --- 2. Encabezado compacto --- */
+  
+
+  
+
+  
+
+  
+  /* --- 2. Eliminar el aire debajo de los botones --- */
   .filius-terminal .term-header {
-    margin-bottom: 0.8rem !important;
-    flex-shrink: 0 !important;
+    margin-bottom: 0.2rem !important; 
+    padding-bottom: 0 !important;
+    min-height: auto !important;
   }
 
-  /* --- 3. Cuerpo de la terminal visible --- */
+  /* --- 3. Eliminar aire superior del cuerpo --- */
   .filius-terminal .term-body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
     padding: 0 !important;
     display: block !important;
     text-align: left !important;
     width: 100% !important;
   }
 
-  
-
-  /* --- 4. Micro-Tipografía nítida y ultracompacta --- */
+  /* --- 4. Compresión máxima de líneas de código --- */
   .filius-terminal code, 
   .filius-terminal .term-line,
   .filius-terminal .term-body div,
   .filius-terminal .term-body p {
-    font-size: 0.7rem !important;
-    line-height: 1.1 !important; 
-    margin-bottom: 0.15rem !important; 
-    padding-bottom: 0 !important; 
+    font-size: 0.65rem !important; 
+    line-height: 1.05 !important; 
+    margin-bottom: 0 !important; 
+    padding-bottom: 0.1rem !important; 
     opacity: 1 !important; 
     display: block !important;
   }
