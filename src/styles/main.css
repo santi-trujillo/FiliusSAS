@@ -255,6 +255,34 @@
     right: 0 !important; 
   }
   
+
+  /* --- Protocolo SE: Rediseño Premium y Escape del Menú Móvil --- */
+  /* 1. Rescatar el Header (Siempre arriba) */
+  #header-wrapper, .nx-pill-header {
+    z-index: 10000 !important; 
+    position: relative !important;
+  }
+
+  /* 2. Rediseño del Panel del Menú (Estética FiliusTec) */
+  .mobile-menu {
+    background: rgba(10, 10, 10, 0.85) !important; 
+    backdrop-filter: blur(12px) !important; 
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important; 
+    border-top-left-radius: 24px !important; 
+    border-bottom-left-radius: 24px !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
+    padding-top: 7rem !important; 
+  }
+
+  /* 3. Garantizar clics en el Overlay */
+  .menu-overlay {
+    cursor: pointer !important; 
+  }
+  .menu-overlay.active {
+    pointer-events: auto !important; 
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */

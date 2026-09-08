@@ -1027,21 +1027,23 @@ html, body {
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.menu-overlay');
-    const navLinks = document.querySelectorAll('.mobile-menu a'); 
 
     if (menuBtn && mobileMenu && overlay) {
-      const toggleMenu = () => {
+      // El botón abre/cierra
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita conflictos de clics
         mobileMenu.classList.toggle('active');
         overlay.classList.toggle('active');
-      };
+      });
 
-      // Abrir/Cerrar con el botón
-      menuBtn.addEventListener('click', toggleMenu);
-      
-      // Cerrar al tocar el fondo oscuro
-      overlay.addEventListener('click', toggleMenu);
+      // Forzar el cierre al tocar el fondo oscuro
+      overlay.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+      });
 
       // Cerrar al seleccionar una opción del menú
+      const navLinks = document.querySelectorAll('.mobile-menu a'); 
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.remove('active');
