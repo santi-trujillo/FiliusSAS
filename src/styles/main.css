@@ -206,34 +206,45 @@
   
 
   
-  /* --- 2. Eliminar el aire debajo de los botones --- */
+  
+
+  
+
+  
+  /* --- 1. Compresión del Encabezado y Título --- */
   .filius-terminal .term-header {
-    margin-bottom: 0.2rem !important; 
-    padding-bottom: 0 !important;
+    margin-bottom: 0 !important; 
+    padding-bottom: 0.2rem !important;
+    align-items: center !important;
+  }
+  .filius-terminal .term-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+
+  /* --- 2. Anulación de espacios en el cuerpo principal --- */
+  .filius-terminal .term-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important; /* Previene espacios si usa Flex/Grid */
+  }
+
+  /* --- 3. Aplastamiento de las líneas de código individuales --- */
+  .filius-terminal .term-line,
+  .filius-terminal .term-line.output,
+  .filius-terminal .term-line.output.success {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
+    font-size: 0.65rem !important;
     min-height: auto !important;
   }
 
-  /* --- 3. Eliminar aire superior del cuerpo --- */
-  .filius-terminal .term-body {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    padding: 0 !important;
-    display: block !important;
-    text-align: left !important;
-    width: 100% !important;
-  }
-
-  /* --- 4. Compresión máxima de líneas de código --- */
-  .filius-terminal code, 
-  .filius-terminal .term-line,
-  .filius-terminal .term-body div,
-  .filius-terminal .term-body p {
-    font-size: 0.65rem !important; 
-    line-height: 1.05 !important; 
-    margin-bottom: 0 !important; 
-    padding-bottom: 0.1rem !important; 
-    opacity: 1 !important; 
-    display: block !important;
+  /* --- 4. Ajuste del prompt inicial --- */
+  .filius-terminal .prompt {
+    display: inline-block !important;
+    margin-right: 0.2rem !important; /* Solo aire lateral, cero vertical */
   }
   /* 5. Subir las métricas para cerrar la brecha inferior */
   .nx-metrics-container {
