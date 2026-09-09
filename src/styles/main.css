@@ -438,6 +438,67 @@
     margin-bottom: 0.5rem !important; 
   }
   
+
+  /* --- Protocolo SE: Compresión Extrema Above-the-Fold y Grilla 2x2 --- */
+  /* 1. Compresión del Contenedor Maestro y Gaps */
+  .nx-hero-wrapper, 
+  .nx-split-layout {
+    gap: 0.5rem !important; 
+    margin-bottom: 0 !important;
+  }
+
+  /* 2. Compactación Extrema del Cajón Principal */
+  .nx-left-col {
+    padding: 1.2rem 1rem !important; 
+    gap: 0.6rem !important; 
+  }
+
+  /* 3. Forzar Grilla 2x2 Simétrica y Pura */
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    padding: 0 !important; 
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* Aniquilar el grid-column: span 2 de reglas anteriores */
+  .nx-metrics-container > div, 
+  .nx-metrics-container > div:nth-child(n) {
+    grid-column: span 1 !important; 
+    flex-direction: column !important; 
+    padding: 0.8rem 0.2rem !important; 
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  /* Micro-tipografía para que los números no inflen las cajas */
+  .nx-metrics-container > div * {
+    margin: 0 !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+  }
+  .nx-metrics-container > div .metric-value,
+  .nx-metrics-container > div h3,
+  .nx-metrics-container > div strong,
+  .nx-metrics-container > div .nx-metric-number {
+    font-size: 1.2rem !important; 
+  }
+  .nx-metrics-container > div .metric-label,
+  .nx-metrics-container > div p,
+  .nx-metrics-container > div span,
+  .nx-metrics-container > div .nx-metric-title {
+    font-size: 0.65rem !important; 
+  }
+
+  /* 4. Subir el Carrusel */
+  .tech-stack-container {
+    margin-top: 0.2rem !important; 
+    padding-top: 0 !important;
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
