@@ -402,13 +402,11 @@
     flex-direction: row !important;
     padding: 20px 16px !important;
   }
-  
 
   /* --- Ocultar Segunda Caja en Móvil (Matching Figma UI) --- */
   .nx-hero-wrapper .nx-right-col {
     display: none !important;
   }
-  
 
   /* --- Protocolo SE: Compactación de Primer Plano (Mobile Above the Fold) --- */
   /* 1. Liberar la altura forzada de la sección */
@@ -437,7 +435,6 @@
     line-height: 1.4 !important;
     margin-bottom: 0.5rem !important; 
   }
-  
 
   /* --- Protocolo SE: Compresión Extrema Above-the-Fold y Grilla 2x2 --- */
   /* 1. Compresión del Contenedor Maestro y Gaps */
@@ -498,7 +495,6 @@
     margin-top: 0.2rem !important; 
     padding-top: 0 !important;
   }
-  
 
   /* =========================================================
      FASE 2: ESTRUCTURA FIGMA - SERVICIOS (MÓVIL)
@@ -565,105 +561,97 @@
     font-size: 0.85rem !important;
     margin-top: 0 !important;
   }
-  
 
   /* =========================================================
-     FASE 3: ESTRUCTURA FIGMA - PROYECTOS (MÓVIL)
+     FASE 3 REAL: MAPEO EXACTO DEL DOM - PROYECTOS (MÓVIL)
      ========================================================= */
 
-  /* --- 1. CONTENEDOR GLOBAL DE PROYECTOS --- */
-  .nx-works-section {
+  /* --- 1. CABECERA DE LA SECCIÓN --- */
+  .nx-works-header {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 16px 20px !important;
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: flex-start !important;
+    gap: 16px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* --- 2. CAJA EXTERIOR (El Marco Matrioshka) --- */
+  .nx-project-row {
+    display: flex !important;
+    flex-direction: column !important;
+    background: transparent !important;
     padding: 10px !important;
     border-radius: 16px !important;
     outline: 2px solid rgba(255, 255, 255, 0.05) !important;
     outline-offset: -2px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    margin-top: 1rem !important;
-    background: transparent !important;
+    border: none !important;
+    gap: 0 !important; 
+    margin-bottom: 1rem !important;
   }
 
-  /* --- 2. CAJA DEL TÍTULO DE SECCIÓN --- */
-  .nx-works-section .nx-section-header,
-  .nx-works-section > h2,
-  .nx-works-section .section-title {
-    background: #1A1A1A !important;
+  /* --- 3. REORDENAMIENTO VISUAL (Figma Style) --- */
+  .nx-project-row .nx-project-image { order: 1 !important; }
+  .nx-project-row .nx-project-info { order: 2 !important; }
+  .nx-project-row .nx-project-tech { order: 3 !important; }
+
+  /* --- 4. IMAGEN (Arriba) --- */
+  .nx-project-row .nx-project-image {
+    width: 100% !important;
+    height: 220px !important;
     border-radius: 14px !important;
-    padding: 16px 20px !important; 
-    margin: 0 !important;
-    text-align: left !important;
+    overflow: hidden !important;
+    margin-bottom: 10px !important; 
+    display: block !important;
+    padding: 0 !important;
+  }
+  .nx-project-row .nx-project-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* --- 5. FUSIÓN DE CAJAS OSCURAS INTERNAS (Info + Tech) --- */
+  .nx-project-row .nx-project-info,
+  .nx-project-row .nx-project-tech {
+    background: #1A1A1A !important;
+    padding: 20px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* --- 3. CAJA EXTERIOR DE LA TARJETA (El Marco) --- */
-  .nx-project-card,
-  .nx-works-card {
-    padding: 10px !important;
-    border-radius: 16px !important;
-    outline: 2px solid rgba(255, 255, 255, 0.05) !important;
-    outline-offset: -2px !important;
-    background: transparent !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    margin: 0 !important;
+  /* Borde superior curvo para la info, inferior curvo para el tech */
+  .nx-project-row .nx-project-info {
+    border-radius: 10px 10px 0 0 !important;
+    padding-bottom: 10px !important;
+  }
+  .nx-project-row .nx-project-tech {
+    border-radius: 0 0 10px 10px !important;
+    padding-top: 10px !important;
   }
 
-  /* --- 4. IMAGEN DEL PROYECTO --- */
-  .nx-project-card img,
-  .nx-works-card img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 220px !important; 
-    object-fit: cover !important;
-    border-radius: 14px !important;
-  }
-
-  /* --- 5. CAJA INTERIOR (Textos y Botones) --- */
-  .nx-project-card .project-content-col,
-  .nx-works-card > div:not(img) { 
-    padding: 24px 20px !important;
-    background: #1A1A1A !important;
-    border-radius: 10px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-  }
-
-  /* --- 6. ETIQUETAS (Stack Tecnológico / Categorías) --- */
-  .nx-project-card .stack-tecnologico,
-  .nx-project-card .tech-stack {
+  /* --- 6. ETIQUETAS DE TECNOLOGÍA (Píldoras) --- */
+  .nx-tech-tags {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
+    margin-bottom: 1rem !important;
   }
-  
-  .nx-project-card .stack-tecnologico span,
-  .nx-project-card .stack-tecnologico a,
-  .nx-project-card .tech-badge {
+  .nx-tech-tags span {
     padding: 6px 12px !important;
     background: #1F1F1F !important;
     border-radius: 45px !important;
     font-size: 0.75rem !important;
     color: #E6E6E6 !important;
-    border: none !important;
   }
 
-  /* --- 7. BOTÓN INFERIOR (VER TODOS LOS PROYECTOS) --- */
-  .nx-works-section > .btn-wrapper,
-  .nx-works-section > .nx-action-row,
-  .nx-works-section > a.btn {
-    padding: 16px !important;
-    background: #1A1A1A !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+  /* Forzar que el botón de proyecto ocupe el ancho */
+  .nx-project-row .nx-project-btn {
     width: 100% !important;
+    text-align: center !important;
     box-sizing: border-box !important;
-    margin: 0 !important;
   }
   
 }
