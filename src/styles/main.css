@@ -523,7 +523,7 @@
   .nx-services-section .section-title {
     background: #1A1A1A !important;
     border-radius: 14px !important;
-    padding: 24px !important;
+    padding: 16px 20px !important;
     margin: 0 !important;
     text-align: left !important;
     width: 100% !important;
@@ -534,10 +534,10 @@
   .nx-service-card {
     background: #1A1A1A !important;
     border-radius: 14px !important;
-    padding: 24px !important;
+    padding: 20px 16px !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important; 
+    gap: 16px !important; 
     width: 100% !important;
     box-sizing: border-box !important;
     margin: 0 !important; 
@@ -556,13 +556,13 @@
   /* --- 5. BOTONES DE ACCIÓN (CTAs) --- */
   .nx-service-card .nx-action-row,
   .nx-service-card .btn {
-    padding: 14px 20px !important; 
+    padding: 10px 16px !important; 
     border-radius: 8px !important;
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
     text-align: center !important;
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
     margin-top: 0 !important;
   }
   
