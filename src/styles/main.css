@@ -563,23 +563,11 @@
   }
 
   /* =========================================================
-     FASE 3 REAL: MAPEO EXACTO DEL DOM - PROYECTOS (MÓVIL)
+     FASE 3 (CORREGIDA): ALTA ESPECIFICIDAD Y MATRIOSHKA
      ========================================================= */
 
-  /* --- 1. CABECERA DE LA SECCIÓN --- */
-  .nx-works-header {
-    background: #1A1A1A !important;
-    border-radius: 14px !important;
-    padding: 16px 20px !important;
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: flex-start !important;
-    gap: 16px !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* --- 2. CAJA EXTERIOR (El Marco Matrioshka) --- */
-  .nx-project-row {
+  /* --- 1. Contenedor Maestro (Matrioshka Exterior) --- */
+  #proyectos .nx-project-row {
     display: flex !important;
     flex-direction: column !important;
     background: transparent !important;
@@ -589,69 +577,49 @@
     outline-offset: -2px !important;
     border: none !important;
     gap: 0 !important; 
-    margin-bottom: 1rem !important;
   }
 
-  /* --- 3. REORDENAMIENTO VISUAL (Figma Style) --- */
-  .nx-project-row .nx-project-image { order: 1 !important; }
-  .nx-project-row .nx-project-info { order: 2 !important; }
-  .nx-project-row .nx-project-tech { order: 3 !important; }
-
-  /* --- 4. IMAGEN (Arriba) --- */
-  .nx-project-row .nx-project-image {
+  /* --- 2. Reordenamiento y Diseño de Imagen (Va Arriba) --- */
+  #proyectos .nx-project-row > .nx-project-image {
+    order: 1 !important;
     width: 100% !important;
-    height: 220px !important;
-    border-radius: 14px !important;
-    overflow: hidden !important;
-    margin-bottom: 10px !important; 
-    display: block !important;
+    height: 200px !important; 
+    margin: 0 0 10px 0 !important; 
     padding: 0 !important;
-  }
-  .nx-project-row .nx-project-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
+    border-radius: 14px !important;
   }
 
-  /* --- 5. FUSIÓN DE CAJAS OSCURAS INTERNAS (Info + Tech) --- */
-  .nx-project-row .nx-project-info,
-  .nx-project-row .nx-project-tech {
+  /* --- 3. Caja de Información (Matrioshka Interior - Mitad Superior) --- */
+  #proyectos .nx-project-row > .nx-project-info {
+    order: 2 !important;
     background: #1A1A1A !important;
-    padding: 20px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Borde superior curvo para la info, inferior curvo para el tech */
-  .nx-project-row .nx-project-info {
+    padding: 24px 24px 10px 24px !important; 
     border-radius: 10px 10px 0 0 !important;
-    padding-bottom: 10px !important;
-  }
-  .nx-project-row .nx-project-tech {
-    border-radius: 0 0 10px 10px !important;
-    padding-top: 10px !important;
+    margin: 0 !important;
   }
 
-  /* --- 6. ETIQUETAS DE TECNOLOGÍA (Píldoras) --- */
-  .nx-tech-tags {
+  /* --- 4. Caja de Tecnología (Matrioshka Interior - Mitad Inferior) --- */
+  #proyectos .nx-project-row > .nx-project-tech {
+    order: 3 !important;
+    background: #1A1A1A !important;
+    padding: 0 24px 24px 24px !important; 
+    border-radius: 0 0 10px 10px !important;
+    margin: 0 !important;
+  }
+
+  /* --- 5. Etiquetas Píldora del Stack (Figma) --- */
+  #proyectos .nx-project-row .nx-tech-tags {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
-    margin-bottom: 1rem !important;
   }
-  .nx-tech-tags span {
-    padding: 6px 12px !important;
+  #proyectos .nx-project-row .nx-tech-tags span {
     background: #1F1F1F !important;
     border-radius: 45px !important;
+    padding: 6px 12px !important;
     font-size: 0.75rem !important;
     color: #E6E6E6 !important;
-  }
-
-  /* Forzar que el botón de proyecto ocupe el ancho */
-  .nx-project-row .nx-project-btn {
-    width: 100% !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
+    border: none !important;
   }
   
 }
