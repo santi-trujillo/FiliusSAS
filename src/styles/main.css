@@ -499,6 +499,73 @@
     padding-top: 0 !important;
   }
   
+
+  /* =========================================================
+     FASE 2: ESTRUCTURA FIGMA - SERVICIOS (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. CONTENEDOR GLOBAL DE LA SECCIÓN --- */
+  .nx-services-section {
+    padding: 10px !important;
+    border-radius: 16px !important;
+    outline: 2px solid rgba(255, 255, 255, 0.05) !important; 
+    outline-offset: -2px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important; 
+    margin-top: 1rem !important;
+    background: transparent !important;
+  }
+
+  /* --- 2. CAJA DEL TÍTULO DE SECCIÓN --- */
+  .nx-services-section .nx-section-header,
+  .nx-services-section > h2,
+  .nx-services-section .section-title {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    margin: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 3. TARJETAS DE SERVICIOS (Cards) --- */
+  .nx-service-card {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important; 
+  }
+
+  /* --- 4. CONTENEDOR DE ICONOS --- */
+  .nx-service-card .icon-wrapper,
+  .nx-service-card .service-icon {
+    padding: 14px !important;
+    background: #1F1F1F !important;
+    border-radius: 10px !important;
+    outline: 1px solid #333333 !important;
+    outline-offset: -1px !important;
+  }
+
+  /* --- 5. BOTONES DE ACCIÓN (CTAs) --- */
+  .nx-service-card .nx-action-row,
+  .nx-service-card .btn {
+    padding: 14px 20px !important; 
+    border-radius: 8px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    margin-top: 0 !important;
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
