@@ -403,6 +403,12 @@
     padding: 20px 16px !important;
   }
   
+
+  /* --- Ocultar Segunda Caja en Móvil (Matching Figma UI) --- */
+  .nx-hero-wrapper .nx-right-col {
+    display: none !important;
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
