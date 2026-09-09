@@ -566,6 +566,106 @@
     margin-top: 0 !important;
   }
   
+
+  /* =========================================================
+     FASE 3: ESTRUCTURA FIGMA - PROYECTOS (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. CONTENEDOR GLOBAL DE PROYECTOS --- */
+  .nx-works-section {
+    padding: 10px !important;
+    border-radius: 16px !important;
+    outline: 2px solid rgba(255, 255, 255, 0.05) !important;
+    outline-offset: -2px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 1rem !important;
+    background: transparent !important;
+  }
+
+  /* --- 2. CAJA DEL TÍTULO DE SECCIÓN --- */
+  .nx-works-section .nx-section-header,
+  .nx-works-section > h2,
+  .nx-works-section .section-title {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 16px 20px !important; 
+    margin: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 3. CAJA EXTERIOR DE LA TARJETA (El Marco) --- */
+  .nx-project-card,
+  .nx-works-card {
+    padding: 10px !important;
+    border-radius: 16px !important;
+    outline: 2px solid rgba(255, 255, 255, 0.05) !important;
+    outline-offset: -2px !important;
+    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin: 0 !important;
+  }
+
+  /* --- 4. IMAGEN DEL PROYECTO --- */
+  .nx-project-card img,
+  .nx-works-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px !important; 
+    object-fit: cover !important;
+    border-radius: 14px !important;
+  }
+
+  /* --- 5. CAJA INTERIOR (Textos y Botones) --- */
+  .nx-project-card .project-content-col,
+  .nx-works-card > div:not(img) { 
+    padding: 24px 20px !important;
+    background: #1A1A1A !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* --- 6. ETIQUETAS (Stack Tecnológico / Categorías) --- */
+  .nx-project-card .stack-tecnologico,
+  .nx-project-card .tech-stack {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  
+  .nx-project-card .stack-tecnologico span,
+  .nx-project-card .stack-tecnologico a,
+  .nx-project-card .tech-badge {
+    padding: 6px 12px !important;
+    background: #1F1F1F !important;
+    border-radius: 45px !important;
+    font-size: 0.75rem !important;
+    color: #E6E6E6 !important;
+    border: none !important;
+  }
+
+  /* --- 7. BOTÓN INFERIOR (VER TODOS LOS PROYECTOS) --- */
+  .nx-works-section > .btn-wrapper,
+  .nx-works-section > .nx-action-row,
+  .nx-works-section > a.btn {
+    padding: 16px !important;
+    background: #1A1A1A !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
