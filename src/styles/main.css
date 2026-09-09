@@ -563,55 +563,54 @@
   }
 
   /* =========================================================
-     FASE 3 (CORREGIDA): ALTA ESPECIFICIDAD Y MATRIOSHKA
+     FASE 3 (DEFINITIVA): MAPEO EXACTO Y ESPECIFICIDAD MÁXIMA
      ========================================================= */
 
-  /* --- 1. Contenedor Maestro (Matrioshka Exterior) --- */
+  /* --- 1. Destruir el Grid Rebelde --- */
   #proyectos .nx-project-row {
     display: flex !important;
     flex-direction: column !important;
+    gap: 0 !important; 
+    padding: 10px !important; 
     background: transparent !important;
-    padding: 10px !important;
     border-radius: 16px !important;
     outline: 2px solid rgba(255, 255, 255, 0.05) !important;
     outline-offset: -2px !important;
     border: none !important;
-    gap: 0 !important; 
   }
 
-  /* --- 2. Reordenamiento y Diseño de Imagen (Va Arriba) --- */
-  #proyectos .nx-project-row > .nx-project-image {
-    order: 1 !important;
-    width: 100% !important;
-    height: 200px !important; 
+  /* --- 2. Forzar Imagen a la Cima --- */
+  #proyectos .nx-project-row .nx-project-image {
+    order: -1 !important; 
     margin: 0 0 10px 0 !important; 
     padding: 0 !important;
     border-radius: 14px !important;
+    width: 100% !important;
+    display: block !important;
   }
 
-  /* --- 3. Caja de Información (Matrioshka Interior - Mitad Superior) --- */
-  #proyectos .nx-project-row > .nx-project-info {
+  /* --- 3. Fusión Superior (Info) --- */
+  #proyectos .nx-project-row .nx-project-info {
     order: 2 !important;
     background: #1A1A1A !important;
-    padding: 24px 24px 10px 24px !important; 
+    padding: 20px 20px 10px 20px !important; 
     border-radius: 10px 10px 0 0 !important;
-    margin: 0 !important;
   }
 
-  /* --- 4. Caja de Tecnología (Matrioshka Interior - Mitad Inferior) --- */
-  #proyectos .nx-project-row > .nx-project-tech {
+  /* --- 4. Fusión Inferior (Tech y Botón) --- */
+  #proyectos .nx-project-row .nx-project-tech {
     order: 3 !important;
     background: #1A1A1A !important;
-    padding: 0 24px 24px 24px !important; 
+    padding: 0 20px 20px 20px !important; 
     border-radius: 0 0 10px 10px !important;
-    margin: 0 !important;
   }
 
-  /* --- 5. Etiquetas Píldora del Stack (Figma) --- */
+  /* --- 5. Etiquetas Píldora de Figma --- */
   #proyectos .nx-project-row .nx-tech-tags {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
+    margin-bottom: 16px !important;
   }
   #proyectos .nx-project-row .nx-tech-tags span {
     background: #1F1F1F !important;
