@@ -276,10 +276,7 @@
      ========================================================= */
 
   /* --- 1. HERO Y TERMINAL (Liberar espacios muertos) --- */
-  .nx-left-col {
-    background: transparent !important;
-    padding: 0 10px !important; 
-  }
+  
   .nx-hero-wrapper .nx-split-layout {
     display: flex !important;
     flex-direction: column !important;
@@ -302,23 +299,6 @@
   }
 
   /* --- 3. MÉTRICAS (Forzar Grilla 2x2 real) --- */
-  .nx-metrics-container {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-    padding: 1.5rem 10px !important;
-    background: transparent !important;
-    outline: none !important;
-  }
-  .nx-metrics-container > div {
-    background: #151515 !important; 
-    border-radius: 12px !important;
-    padding: 1.5rem 1rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
 
   /* --- 4. TARJETAS DE PROYECTOS Y SERVICIOS --- */
   .nx-services-section, 
@@ -354,6 +334,73 @@
     background: transparent !important;
     padding: 2rem 10px !important;
     gap: 2rem !important;
+  }
+
+  /* =========================================================
+     FASE 1: ESTRUCTURA FIGMA - HERO & MÉTRICAS (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. HERO LEFT COL (Caja de Título y Descripción) --- */
+  .nx-left-col {
+    background: #1A1A1A !important; 
+    border-radius: 12px !important; 
+    padding: 30px 24px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Título y textos internos del Hero */
+  .nx-mega-title-box {
+    gap: 4px !important; 
+  }
+  .nx-mega-title-box h1 {
+    font-size: 28px !important; 
+    line-height: 1.5 !important;
+  }
+
+  /* --- 2. CONTENEDOR MAESTRO DE MÉTRICAS --- */
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 10px !important; 
+    padding: 10px !important; 
+    border-radius: 16px !important; 
+    outline: 2px solid rgba(255, 255, 255, 0.05) !important; 
+    outline-offset: -2px !important;
+    background: transparent !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 3. CAJAS INTERNAS DE MÉTRICAS (Cards) --- */
+  .nx-metrics-container > div {
+    background: #1A1A1A !important; 
+    border-radius: 12px !important;
+    padding: 16px 14px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Tercera caja (Años de Experiencia) ocupa todo el ancho */
+  .nx-metrics-container > div:nth-child(3) {
+    grid-column: span 2 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  /* Cuarta caja (Botón Know More / CTA) ocupa todo el ancho */
+  .nx-metrics-container > div:nth-child(4) {
+    grid-column: span 2 !important;
+    flex-direction: row !important;
+    padding: 20px 16px !important;
   }
   
 }
