@@ -409,6 +409,35 @@
     display: none !important;
   }
   
+
+  /* --- Protocolo SE: Compactación de Primer Plano (Mobile Above the Fold) --- */
+  /* 1. Liberar la altura forzada de la sección */
+  .nx-hero-section {
+    min-height: auto !important; 
+    padding-top: 5rem !important; 
+    padding-bottom: 1rem !important; 
+    height: auto !important;
+  }
+
+  /* 2. Compactar el cajón principal (Hero Card) */
+  .nx-left-col {
+    padding: 2rem 1.5rem !important; 
+    gap: 1rem !important; 
+  }
+
+  /* 3. Densidad Tipográfica para ahorrar píxeles verticales */
+  .nx-mega-title-box h1 {
+    font-size: 1.8rem !important; 
+    line-height: 1.15 !important; 
+    margin-bottom: 0 !important;
+  }
+
+  .nx-description {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.5rem !important; 
+  }
+  
 }
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
