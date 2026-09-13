@@ -51,8 +51,165 @@
 /* ===== EXCEPTIONS LAYER ===== */
 /* Contextos específicos y overrides */
 /* --- Protocolo SE: Rescate Responsive Global --- */
+
+
+/* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  .nx-stats-container, .stats-row, [class*="stats"] { 
+    grid-template-columns: 1fr !important; /* Columna única definitiva */
+  }
+  .nx-project-image { max-height: 250px !important; }
+  .nx-section-header h2 { font-size: 1.8rem !important; }
+}
+
+/* --- SOLO CELULARES (Hasta 768px) --- */
+
+
+/* --- SOLO TABLETS (769px a 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* 1. Drenar el exceso de padding vertical */
+  .nx-left-col, .nx-right-col {
+    padding: 1.5rem 1rem !important; 
+    justify-content: center !important;
+  }
+
+  /* 2. Reducir la tipografía principal para evitar saltos de línea extra */
+  .nx-mega-title-box h1 {
+    font-size: clamp(2.5rem, 4vw, 3.2rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .nx-description {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* --- 1. Reseteo Extremo del Contenedor Principal --- */
+  .nx-right-col .nx-visual-card > div, 
+  .nx-right-col .filius-terminal {
+    max-height: 280px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 0 !important; 
+    padding: 0.8rem !important;
+  }
+
+  /* --- 1. Control del motor interno (Destrucción del Gap) --- */
+  .nx-right-col .filius-terminal .term-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* --- 2. Aplastamiento del bloque de texto individual --- */
+  .nx-right-col .filius-terminal .term-title,
+  .nx-right-col .filius-terminal .term-line,
+  .nx-right-col .filius-terminal .term-line.output {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important; 
+    font-size: 0.75rem !important;
+    min-height: auto !important;
+  }
+
+  /* --- 3. Ajuste del encabezado para que no empuje el cuerpo --- */
+  .nx-right-col .filius-terminal .term-header {
+    margin-bottom: 0.5rem !important; 
+  }
+  /* 5. Subir las métricas para cerrar la brecha inferior */
+  .nx-metrics-container {
+    margin-top: 1rem !important;
+  }
+
+  /* --- Protocolo SE: Alivio en Tableta (Proyectos) --- */
+  .nx-project-card {
+    gap: 1.5rem !important;
+    padding: 1.5rem !important;
+  }
+  /* --- Protocolo SE: Apilamiento en Tablet --- */
+  .nx-project-card, .project-card, .nx-works-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .nx-project-card > div, .nx-project-card .project-image-col, .nx-project-card .project-content-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+  .nx-project-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px !important;
+    object-fit: cover !important;
+  }
+  .nx-project-card .project-content-col {
+    padding-left: 0 !important; 
+  }
+  
+}
+
+/* --- MATAR HAMBURGUESA EN PC Y TABLET --- */
+@media (min-width: 769px) {
+  .mobile-menu-btn,
+  .mobile-menu,
+  .menu-overlay {
+    display: none !important;
+  }
+}
+
+/* --- PURGA DE CLONES EN EL FOOTER --- */
+.nx-footer-section .mobile-menu-btn,
+.nx-footer-section .hamburger,
+.nx-footer-section .menu-toggle {
+  display: none !important;
+}
+
+
+/* =========================================================
+   PROTOCOL SE: ROLLBACK ESTRUCTURAL Y MICRO-CIRUGÍA UI
+   ========================================================= */
+
+/* --- 1. ABISMO EN PROYECTOS (Aplica Global y Móvil) --- */
+.nx-project-card, 
+.nx-works-card, 
+.project-card {
+  height: auto !important; 
+  justify-content: flex-start !important; 
+}
+.nx-project-card > div {
+  height: auto !important;
+}
+.nx-project-card img {
+  height: auto !important;
+  max-height: 280px !important; 
+  object-fit: cover !important;
+}
+
+/* --- 2. TERMINAL ASFIXIADA (Tablet y Móvil <= 1024px) --- */
+@media (max-width: 1024px) {
+  .nx-right-col .nx-visual-card > div, 
+  .nx-right-col .filius-terminal {
+    max-height: none !important; 
+    height: auto !important; 
+    min-height: max-content !important; 
+    overflow: hidden !important; 
+  }
+}
+
+/* --- 3. BOTONES COLAPSADOS Y MÉTRICAS ASIMÉTRICAS (Móvil <= 768px) --- */
+
+
+/* --- 4. MENÚ FANTASMA (Móvil <= 768px) --- */
+
+/* =========================================================
+   BLOQUE MAESTRO CONSOLIDADO MÓVIL (max-width: 768px)
+   ========================================================= */
 @media (max-width: 768px) {
-  /* 1. Globales: Reducir la asfixia de paddings laterales */
+/* 1. Globales: Reducir la asfixia de paddings laterales */
   section, 
   h2 { font-size: 2rem !important; line-height: 1.2 !important; }
 
@@ -878,21 +1035,8 @@
   footer .hamburger {
     display: none !important;
   }
-  
-}
 
-/* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
-@media (max-width: 480px) {
-  .nx-stats-container, .stats-row, [class*="stats"] { 
-    grid-template-columns: 1fr !important; /* Columna única definitiva */
-  }
-  .nx-project-image { max-height: 250px !important; }
-  .nx-section-header h2 { font-size: 1.8rem !important; }
-}
-
-/* --- SOLO CELULARES (Hasta 768px) --- */
-@media (max-width: 768px) {
-  /* Apilamiento del layout 60/40 */
+/* Apilamiento del layout 60/40 */
   .nx-split-layout {
     display: flex !important;
     flex-direction: column !important;
@@ -936,146 +1080,8 @@
   .nx-metrics-container {
     margin-top: 1rem !important;
   }
-}
 
-/* --- SOLO TABLETS (769px a 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* 1. Drenar el exceso de padding vertical */
-  .nx-left-col, .nx-right-col {
-    padding: 1.5rem 1rem !important; 
-    justify-content: center !important;
-  }
-
-  /* 2. Reducir la tipografía principal para evitar saltos de línea extra */
-  .nx-mega-title-box h1 {
-    font-size: clamp(2.5rem, 4vw, 3.2rem) !important;
-    line-height: 1.1 !important;
-    margin-bottom: 0.5rem !important;
-  }
-  .nx-description {
-    font-size: 0.9rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* --- 1. Reseteo Extremo del Contenedor Principal --- */
-  .nx-right-col .nx-visual-card > div, 
-  .nx-right-col .filius-terminal {
-    max-height: 280px !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    gap: 0 !important; 
-    padding: 0.8rem !important;
-  }
-
-  /* --- 1. Control del motor interno (Destrucción del Gap) --- */
-  .nx-right-col .filius-terminal .term-body {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2px !important; 
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* --- 2. Aplastamiento del bloque de texto individual --- */
-  .nx-right-col .filius-terminal .term-title,
-  .nx-right-col .filius-terminal .term-line,
-  .nx-right-col .filius-terminal .term-line.output {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1.2 !important; 
-    font-size: 0.75rem !important;
-    min-height: auto !important;
-  }
-
-  /* --- 3. Ajuste del encabezado para que no empuje el cuerpo --- */
-  .nx-right-col .filius-terminal .term-header {
-    margin-bottom: 0.5rem !important; 
-  }
-  /* 5. Subir las métricas para cerrar la brecha inferior */
-  .nx-metrics-container {
-    margin-top: 1rem !important;
-  }
-
-  /* --- Protocolo SE: Alivio en Tableta (Proyectos) --- */
-  .nx-project-card {
-    gap: 1.5rem !important;
-    padding: 1.5rem !important;
-  }
-  /* --- Protocolo SE: Apilamiento en Tablet --- */
-  .nx-project-card, .project-card, .nx-works-card {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  .nx-project-card > div, .nx-project-card .project-image-col, .nx-project-card .project-content-col {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: none !important;
-  }
-  .nx-project-card img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 350px !important;
-    object-fit: cover !important;
-  }
-  .nx-project-card .project-content-col {
-    padding-left: 0 !important; 
-  }
-  
-}
-
-/* --- MATAR HAMBURGUESA EN PC Y TABLET --- */
-@media (min-width: 769px) {
-  .mobile-menu-btn,
-  .mobile-menu,
-  .menu-overlay {
-    display: none !important;
-  }
-}
-
-/* --- PURGA DE CLONES EN EL FOOTER --- */
-.nx-footer-section .mobile-menu-btn,
-.nx-footer-section .hamburger,
-.nx-footer-section .menu-toggle {
-  display: none !important;
-}
-
-
-/* =========================================================
-   PROTOCOL SE: ROLLBACK ESTRUCTURAL Y MICRO-CIRUGÍA UI
-   ========================================================= */
-
-/* --- 1. ABISMO EN PROYECTOS (Aplica Global y Móvil) --- */
-.nx-project-card, 
-.nx-works-card, 
-.project-card {
-  height: auto !important; 
-  justify-content: flex-start !important; 
-}
-.nx-project-card > div {
-  height: auto !important;
-}
-.nx-project-card img {
-  height: auto !important;
-  max-height: 280px !important; 
-  object-fit: cover !important;
-}
-
-/* --- 2. TERMINAL ASFIXIADA (Tablet y Móvil <= 1024px) --- */
-@media (max-width: 1024px) {
-  .nx-right-col .nx-visual-card > div, 
-  .nx-right-col .filius-terminal {
-    max-height: none !important; 
-    height: auto !important; 
-    min-height: max-content !important; 
-    overflow: hidden !important; 
-  }
-}
-
-/* --- 3. BOTONES COLAPSADOS Y MÉTRICAS ASIMÉTRICAS (Móvil <= 768px) --- */
-@media (max-width: 768px) {
-  .nx-service-card .nx-action-row, 
+.nx-service-card .nx-action-row, 
   .nx-service-card .btn {
     width: 100% !important;
     display: flex !important;
@@ -1095,11 +1101,8 @@
     width: 100% !important;
     padding: 1rem 0.5rem !important;
   }
-}
 
-/* --- 4. MENÚ FANTASMA (Móvil <= 768px) --- */
-@media (max-width: 768px) {
-  .mobile-menu {
+.mobile-menu {
     background: rgba(15, 15, 15, 0.98) !important; 
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
