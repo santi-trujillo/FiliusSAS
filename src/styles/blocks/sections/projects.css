@@ -50,3 +50,7 @@
 .nx-project-desc { font-size: 0.95rem !important; }
 .nx-tech-title { margin-bottom: 1rem !important; font-size: 1rem !important; }
 .nx-project-btn { padding: 0.8rem 1rem !important; margin-top: 1.5rem !important; font-size: 0.85rem !important; }
+
+@media (max-width: 768px) {
+  .nx-works-section { padding: 2rem 1rem; }
+}

@@ -19,3 +19,7 @@
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 768px) { .nx-funnel-wrapper { padding: 2rem 1.5rem; } }
+
+@media (max-width: 768px) {
+  .whatsapp-button, .nx-opt-btn { padding: 1rem; transform: scale(0.95); }
+}
