@@ -563,22 +563,26 @@
   }
 
   /* =========================================================
-     FASE 3 (CALIBRACIÓN MAESTRA): CLON EXACTO DE FIGMA
+     FASE 3 (FINAL Y DEFINITIVA): CLON EXACTO DE FIGMA
      ========================================================= */
 
-  /* --- 1. Reestructuración del Contenedor Principal --- */
+  /* --- 1. CONTENEDOR MAESTRO --- */
+  #proyectos.nx-works-section { padding: 0 !important; }
   #proyectos .nx-works-container {
     display: flex !important;
     flex-direction: column !important;
     gap: 10px !important;
+    padding: 10px !important;
+    border-radius: 16px !important;
+    border: 2px solid rgba(255, 255, 255, 0.05) !important;
+    background: transparent !important;
+    outline: none !important;
   }
 
-  /* --- 2. Magia Negra: Desacoplar Título y Botón --- */
-  #proyectos .nx-works-header {
-    display: contents !important; 
-  }
+  /* --- 2. LIBERAR EL HEADER (Magia para separar Título y Botón) --- */
+  #proyectos .nx-works-header { display: contents !important; }
 
-  /* Título Arriba */
+  /* --- 3. TÍTULO "NUESTRO TRABAJO" --- */
   #proyectos .nx-works-header h2 {
     order: 1 !important;
     background: #1A1A1A !important;
@@ -587,88 +591,77 @@
     margin: 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    text-align: left !important;
   }
 
-  /* Botón "Ver Todos" al Fondo (Copia de Figma) */
-  #proyectos .nx-works-header a,
-  #proyectos .nx-works-header .nx-btn-outline {
-    order: 99 !important; 
-    background: #1A1A1A !important;
-    border-radius: 12px !important;
-    padding: 20px 16px !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-top: 10px !important; 
-    border: none !important;
-    box-sizing: border-box !important;
-  }
+  /* --- 4. FILTRAR A SOLO 2 PROYECTOS Y POSICIONARLOS --- */
+  #proyectos .nx-project-row { order: 2 !important; }
+  #proyectos .nx-works-container > div:nth-child(n+4) { display: none !important; }
 
-  /* --- 3. Ocultar el 3er Proyecto (Solo mostrar 2) --- */
-  #proyectos > .nx-works-container > .nx-project-row:nth-child(n+4) {
-    display: none !important;
-  }
-
-  #proyectos .nx-project-row {
-    order: 2 !important; 
-  }
-
-  /* --- 4. Ilusión Perfecta de "2 Pedazos" en la Tarjeta --- */
+  /* --- 5. EL MARCO DE CADA PROYECTO --- */
   #proyectos .nx-project-row {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0 !important; 
+    gap: 0 !important;
     padding: 10px !important;
+    border-radius: 14px !important;
+    border: 2px solid rgba(255, 255, 255, 0.05) !important;
     background: transparent !important;
-    border-radius: 16px !important;
-    outline: 2px solid rgba(255, 255, 255, 0.05) !important;
-    outline-offset: -2px !important;
-    border: none !important;
   }
 
-  #proyectos .nx-project-row .nx-project-image {
+  /* --- 6. LA IMAGEN (Control Absoluto de Altura) --- */
+  #proyectos .nx-project-row > a.nx-project-image {
     order: 1 !important;
-    margin-bottom: 10px !important; 
-    border-radius: 14px !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: 220px !important;
     display: block !important;
+    width: 100% !important;
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+    border-radius: 10px !important;
     overflow: hidden !important;
   }
+  #proyectos .nx-project-row > a.nx-project-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  #proyectos .nx-project-row > a.nx-project-image .nx-image-overlay { display: none !important; }
 
-  /* Fusión Seamless (Sin Costuras) */
-  #proyectos .nx-project-row .nx-project-info {
+  /* --- 7. FUSIÓN DE CAJAS OSCURAS (Info y Tech soldados) --- */
+  #proyectos .nx-project-row > .nx-project-info {
     order: 2 !important;
     background: #1A1A1A !important;
-    padding: 24px 24px 10px 24px !important; 
+    padding: 24px 20px 10px 20px !important;
     border-radius: 10px 10px 0 0 !important;
     margin: 0 !important;
   }
-
-  #proyectos .nx-project-row .nx-project-tech {
+  #proyectos .nx-project-row > .nx-project-tech {
     order: 3 !important;
     background: #1A1A1A !important;
-    padding: 0 24px 24px 24px !important; 
+    padding: 10px 20px 24px 20px !important;
     border-radius: 0 0 10px 10px !important;
     margin: 0 !important;
   }
 
-  /* --- 5. Etiquetas Píldora del Stack (Restauradas de Figma) --- */
-  #proyectos .nx-project-row .nx-tech-tags {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-    margin-bottom: 16px !important;
-  }
-  #proyectos .nx-project-row .nx-tech-tags span {
-    background: #1F1F1F !important;
-    border-radius: 45px !important;
-    padding: 6px 12px !important;
-    font-size: 0.75rem !important;
-    color: #E6E6E6 !important;
+  /* --- 8. BOTÓN "VER TODOS LOS PROYECTOS" (Al fondo) --- */
+  #proyectos .nx-works-header a.nx-btn-outline {
+    order: 99 !important;
+    background: #1A1A1A !important;
+    color: #B3B3B2 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
     border: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
   }
   
 }
