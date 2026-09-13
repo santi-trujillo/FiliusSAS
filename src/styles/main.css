@@ -562,20 +562,64 @@
     margin-top: 0 !important;
   }
 
-  
   /* =========================================================
-     FASE 3 (PURGA TOTAL): DESTRUCCIÓN DE FANTASMAS DE ALTURA
+     FASE 3 (CALIBRACIÓN MAESTRA): CLON EXACTO DE FIGMA
      ========================================================= */
 
-  /* --- 1. Resetear Contenedor y Matar el Elástico --- */
+  /* --- 1. Reestructuración del Contenedor Principal --- */
+  #proyectos .nx-works-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  /* --- 2. Magia Negra: Desacoplar Título y Botón --- */
+  #proyectos .nx-works-header {
+    display: contents !important; 
+  }
+
+  /* Título Arriba */
+  #proyectos .nx-works-header h2 {
+    order: 1 !important;
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Botón "Ver Todos" al Fondo (Copia de Figma) */
+  #proyectos .nx-works-header a,
+  #proyectos .nx-works-header .nx-btn-outline {
+    order: 99 !important; 
+    background: #1A1A1A !important;
+    border-radius: 12px !important;
+    padding: 20px 16px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 10px !important; 
+    border: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 3. Ocultar el 3er Proyecto (Solo mostrar 2) --- */
+  #proyectos > .nx-works-container > .nx-project-row:nth-child(n+4) {
+    display: none !important;
+  }
+
+  #proyectos .nx-project-row {
+    order: 2 !important; 
+  }
+
+  /* --- 4. Ilusión Perfecta de "2 Pedazos" en la Tarjeta --- */
   #proyectos .nx-project-row {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important; 
-    height: auto !important;
-    min-height: 0 !important;
+    gap: 0 !important; 
     padding: 10px !important;
-    gap: 10px !important; 
     background: transparent !important;
     border-radius: 16px !important;
     outline: 2px solid rgba(255, 255, 255, 0.05) !important;
@@ -583,25 +627,22 @@
     border: none !important;
   }
 
-  /* --- 2. Aniquilar la Altura Fantasma de la Imagen --- */
   #proyectos .nx-project-row .nx-project-image {
-    order: -1 !important;
+    order: 1 !important;
+    margin-bottom: 10px !important; 
+    border-radius: 14px !important;
     width: 100% !important;
     height: auto !important;
-    min-height: 0 !important; 
     max-height: 220px !important;
-    margin: 0 !important; 
-    padding: 0 !important;
-    border-radius: 10px !important;
     display: block !important;
     overflow: hidden !important;
   }
 
-  /* --- 3. Fusión de la Matrioshka Interior (Textos en #1A1A1A) --- */
+  /* Fusión Seamless (Sin Costuras) */
   #proyectos .nx-project-row .nx-project-info {
     order: 2 !important;
     background: #1A1A1A !important;
-    padding: 24px 20px 0 20px !important; 
+    padding: 24px 24px 10px 24px !important; 
     border-radius: 10px 10px 0 0 !important;
     margin: 0 !important;
   }
@@ -609,12 +650,12 @@
   #proyectos .nx-project-row .nx-project-tech {
     order: 3 !important;
     background: #1A1A1A !important;
-    padding: 16px 20px 24px 20px !important; 
+    padding: 0 24px 24px 24px !important; 
     border-radius: 0 0 10px 10px !important;
     margin: 0 !important;
   }
-  
-  /* --- 5. Etiquetas Píldora de Figma --- */
+
+  /* --- 5. Etiquetas Píldora del Stack (Restauradas de Figma) --- */
   #proyectos .nx-project-row .nx-tech-tags {
     display: flex !important;
     flex-wrap: wrap !important;
