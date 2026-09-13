@@ -175,3 +175,89 @@
         display: flex;
     }
 }
+
+/* --- Protocolo SE: Migración Modular W3C --- */
+@media (max-width: 768px) {
+  body /* --- Protocolo SE: Resurrección y Alineación de Navegación Móvil --- */
+
+  /* 3. Forzar el color de las barras a blanco para contraste */
+  .mobile-menu-btn svg, body .mobile-menu-btn path {
+    stroke: #ffffff;
+  }
+
+  body /* --- 1. Fondo Oscuro (Overlay) --- */
+  .menu-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+    z-index: 9998;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+  }
+
+  body .menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  body /* --- Protocolo SE: Rediseño Premium y Escape del Menú Móvil --- */
+
+  /* 3. Garantizar clics en el Overlay */
+  .menu-overlay {
+    cursor: pointer;
+  }
+
+  body .menu-overlay.active {
+    pointer-events: auto;
+  }
+
+  body #header-wrapper .mobile-menu-btn {
+    display: flex;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    margin-left: auto;
+  }
+
+  body /* --- 2. Panel Base del Menú Móvil --- */
+  .mobile-menu {
+    position: fixed;
+    top: 0; 
+    right: -100%; 
+    width: 280px; 
+    max-width: 85vw;
+    height: 100vh;
+    z-index: 9999;
+    padding: 5rem 2rem 2rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+  }
+
+  body .mobile-menu.active {
+    right: 0;
+  }
+
+  body /* --- 3. Forzar el Glassmorphism en el Menú --- */
+  body.loaded .mobile-menu, body #main-content ~ .mobile-menu, body .mobile-menu {
+    background: rgba(15, 15, 15, 0.65); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+  }
+
+  body .mobile-menu {
+    background: rgba(15, 15, 15, 0.98); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 99999; 
+    border-left: 1px solid rgba(255,255,255,0.05);
+  }
+}

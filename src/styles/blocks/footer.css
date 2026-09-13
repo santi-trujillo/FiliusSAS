@@ -47,3 +47,161 @@
   .nx-sitemap-box { flex-direction: column; padding: 1.5rem; gap: 1.5rem; }
   .nx-copyright-box { padding: 1.5rem; }
 }
+
+
+/* --- Protocolo SE: Migración Modular W3C --- */
+@media (max-width: 768px) {
+  body /* 4. Testimonios: Una sola columna */
+
+  /* 5. Footer: Colapso asimétrico a torre simétrica */
+
+  .nx-sitemap-box {
+    flex-direction: column; 
+    gap: 2rem;
+  }
+
+  body .nx-copyright-box {
+    flex-direction: column; 
+    text-align: center; 
+    gap: 1.5rem;
+  }
+
+  body /* --- 5. HEADER Y FOOTER --- */
+  #header-wrapper .nx-header-inner {
+    background: transparent;
+    padding: 10px;
+    margin: 0;
+  }
+
+  body /* --- 6. PIE DE LA TARJETA (Autor en Bitono) --- */
+  #testimonios .nx-testi-footer {
+    background: #1F1F1F; /* El gris un poco más claro del diseño */
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body /* =========================================================
+     FASE 5: CLON EXACTO FIGMA - FOOTER (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. CONTENEDOR MAESTRO --- */
+  footer.nx-footer-section {
+    padding: 0;
+    margin-top: 1rem;
+    background: transparent;
+  }
+
+  body footer .nx-footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    padding: 10px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    background: transparent;
+  }
+
+  body /* --- 2. COLUMNA IZQUIERDA (Redes Sociales 4 en fila) --- */
+  footer .nx-footer-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+  }
+
+  body footer .nx-footer-left .nx-social-card {
+    background: #1F1F1F;
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0;
+    margin: 0;
+  }
+
+  body /* Ocultar textos para dejar solo el ícono tipo Figma */
+  footer .nx-social-body, body footer .nx-social-arrow {
+    display: none;
+  }
+
+  body /* --- 3. COLUMNA DERECHA (Sitemap y Legal) --- */
+  footer .nx-footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  body /* --- 4. SITEMAP (2 Columnas) --- */
+  footer .nx-sitemap-box {
+    background: #1A1A1A;
+    border-radius: 14px;
+    padding: 24px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0;
+  }
+
+  body footer .nx-sitemap-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 45%;
+  }
+
+  body footer .nx-sitemap-column h3 {
+    color: #F3DFD8;
+    font-size: 1.1rem;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+  }
+
+  body footer .nx-sitemap-column nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  body footer .nx-sitemap-column a {
+    color: #81807E;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  body /* --- 5. COPYRIGHT (Caja Final) --- */
+  footer .nx-copyright-box {
+    background: #1A1A1A;
+    border-radius: 14px;
+    padding: 24px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin: 0;
+  }
+
+  body footer .nx-copyright-box p {
+    color: #B3B3B2;
+    font-size: 0.85rem;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+  }
+
+  body /* --- 6. PURGA DE CLONES Y BASURA --- */
+  footer .mobile-menu-btn, body footer .hamburger {
+    display: none;
+  }
+}

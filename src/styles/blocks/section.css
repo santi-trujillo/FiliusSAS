@@ -141,3 +141,12 @@
         margin-bottom: var(--space-3);
     }
 }
+
+
+/* --- Protocolo SE: Migración Modular W3C --- */
+@media (max-width: 768px) {
+  body /* 1. Globales: Reducir la asfixia de paddings laterales */
+  section, body h2 {
+    font-size: 2rem; line-height: 1.2;
+  }
+}

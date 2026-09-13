@@ -226,3 +226,12 @@
         display: flex;
     }
 }
+
+/* --- Protocolo SE: Migración Modular W3C --- */
+@media (max-width: 768px) {
+  body .nx-action-row {
+    margin-bottom: 1rem; 
+    margin-top: 0;
+    padding: 0;
+  }
+}

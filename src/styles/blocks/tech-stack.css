@@ -529,3 +529,12 @@
         height: 30.8px;
     }
 }
+
+/* --- Protocolo SE: Migración Modular W3C --- */
+@media (max-width: 768px) {
+  body /* 4. Subir el Carrusel */
+  .tech-stack-container {
+    margin-top: 0.2rem; 
+    padding-top: 0;
+  }
+}
