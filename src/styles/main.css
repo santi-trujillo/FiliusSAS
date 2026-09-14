@@ -51,7 +51,835 @@
 /* ===== EXCEPTIONS LAYER ===== */
 /* Contextos específicos y overrides */
 /* --- Protocolo SE: Rescate Responsive Global --- */
+@media (max-width: 768px) {
+  /* 1. Globales: Reducir la asfixia de paddings laterales */
+  section, 
+  h2 { font-size: 2rem !important; line-height: 1.2 !important; }
 
+  /* 2. Estadísticas: De 4 columnas a cuadrícula 2x2 para no aplastar el texto */
+  .nx-stats-container, .stats-row, [class*="stats"] { 
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 1.5rem !important;
+  }
+
+  .nx-project-info, .nx-project-tech { 
+    padding: 0 !important; 
+    width: 100% !important;
+  }
+
+  /* 4. Testimonios: Una sola columna */
+
+  /* 5. Footer: Colapso asimétrico a torre simétrica */
+
+  .nx-sitemap-box { 
+    flex-direction: column !important; 
+    gap: 2rem !important; 
+  }
+  .nx-copyright-box { 
+    flex-direction: column !important; 
+    text-align: center !important; 
+    gap: 1.5rem !important; 
+  }
+
+  /* --- Protocolo SE: Compresión Vertical Extrema de Hero --- */
+  /* 1. Reducir el abismo bajo la barra de navegación */
+  
+  .nx-hero-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* 2. Liposucción a la caja superior (.nx-left-col) */
+  .nx-left-col {
+    padding: 1.2rem 1rem !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important; 
+  }
+
+  /* 3. Acercar los textos y el botón */
+  .nx-mega-title-box {
+    margin-bottom: 0.5rem !important;
+  }
+  .nx-description {
+    margin-bottom: 1rem !important; 
+    margin-top: 0 !important;
+  }
+  .nx-action-row {
+    margin-bottom: 1rem !important; 
+    margin-top: 0 !important;
+    padding: 0 !important;
+  }
+  .nx-tags-row, .nx-tags {
+    margin-top: 0 !important;
+  }
+
+  /* --- Protocolo SE: Erradicación Recursiva y Densidad de Terminal (Mobile) --- */
+  /* 1. Reseteo del Contenedor y Bloqueo de Scroll */
+  .nx-right-col .nx-visual-card > div, 
+  .nx-right-col .filius-terminal {
+    max-height: 230px !important; 
+    overflow: hidden !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding: 0.4rem 0.5rem !important;
+  }
+
+  /* 2. Acercar los botones macOS al código */
+  .filius-terminal .term-header {
+    margin-bottom: 0.3rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* 3. Control del motor interno (Destrucción del Gap en Móvil) */
+  .filius-terminal .term-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 4. Aplastamiento recursivo de hijos y micro-tipografía */
+  .filius-terminal .term-body * {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
+    min-height: 0 !important;
+    letter-spacing: normal !important;
+  }
+
+  .filius-terminal .term-line,
+  .filius-terminal .term-line.output,
+  .filius-terminal .prompt {
+    font-size: 0.6rem !important; 
+    display: block !important;
+  }
+
+  /* --- Protocolo SE: Resurrección y Alineación de Navegación Móvil --- */
+
+  /* 3. Forzar el color de las barras a blanco para contraste */
+  .mobile-menu-btn svg,
+  .mobile-menu-btn path {
+    stroke: #ffffff !important;
+  }
+
+  /* --- 1. Fondo Oscuro (Overlay) --- */
+  .menu-overlay {
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(3px);
+    z-index: 9998 !important;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease !important;
+  }
+  .menu-overlay.active {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+
+  /* --- Protocolo SE: Rediseño Premium y Escape del Menú Móvil --- */
+
+  /* 3. Garantizar clics en el Overlay */
+  .menu-overlay {
+    cursor: pointer !important; 
+  }
+  .menu-overlay.active {
+    pointer-events: auto !important; 
+  }
+
+  /* --- 1. Reparación del Header Móvil (.nx-header-inner) --- */
+  #header-wrapper .nx-header-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  #header-wrapper .nx-nav-pills {
+    display: none !important; 
+  }
+
+  #header-wrapper .mobile-menu-btn {
+    display: flex !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    margin-left: auto !important;
+  }
+
+  /* --- 2. Panel Base del Menú Móvil --- */
+  .mobile-menu {
+    position: fixed !important;
+    top: 0; 
+    right: -100% !important; 
+    width: 280px !important; 
+    max-width: 85vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    padding: 5rem 2rem 2rem !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    transition: right 0.3s ease-in-out !important;
+  }
+  .mobile-menu.active {
+    right: 0 !important; 
+  }
+
+  /* --- 3. Forzar el Glassmorphism en el Menú --- */
+  body.loaded .mobile-menu,
+  #main-content ~ .mobile-menu,
+  .mobile-menu {
+    background: rgba(15, 15, 15, 0.65) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* --- Protocolo SE: Colapso de Altura Fantasma en Tarjetas de Proyecto --- */
+  /* 1. Destrucción de alturas fijas y estiramiento */
+
+  /* 2. Ajuste de los contenedores internos */
+  #proyectos .nx-works-card > div,
+  #proyectos .project-card > div {
+    height: auto !important;
+    flex: none !important; 
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* 3. Control de la imagen para celulares */
+
+  /* 4. Compactar la sección inferior */
+  #proyectos .stack-tecnologico,
+  #proyectos .nx-works-card .nx-action-row {
+    margin-top: 0 !important; 
+    padding-top: 0 !important;
+  }
+
+  /* =========================================================
+     PROTOCOL SE: RESCATE ESTRUCTURAL FILIUSTEC (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. HERO Y TERMINAL (Liberar espacios muertos) --- */
+  
+  .nx-hero-wrapper .nx-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 1rem 0 !important;
+  }
+
+  /* --- 2. RESTAURAR BOTONES ORIGINALES --- */
+  .nx-action-row,
+  .nx-action-row .btn, 
+  .nx-service-card .btn, 
+  .nx-works-card .btn, 
+  .nx-project-card .btn {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: unset; 
+    color: unset;
+  }
+
+  /* --- 3. MÉTRICAS (Forzar Grilla 2x2 real) --- */
+
+  /* --- 4. TARJETAS DE PROYECTOS Y SERVICIOS --- */
+  .nx-services-section, 
+  .nx-works-section, 
+  .nx-testimonials-section {
+    padding: 1rem 10px !important;
+    margin: 0 !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+
+  .nx-service-card, 
+  .nx-works-card, 
+  .nx-project-card, 
+  .testimonial-card {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #121212 !important; 
+    border-radius: 14px !important;
+    padding: 1.5rem !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important; 
+  }
+
+  /* --- 5. HEADER Y FOOTER --- */
+  #header-wrapper .nx-header-inner {
+    background: transparent !important;
+    padding: 10px !important;
+    margin: 0 !important;
+  }
+
+  /* =========================================================
+     FASE 1: ESTRUCTURA FIGMA - HERO & MÉTRICAS (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. HERO LEFT COL (Caja de Título y Descripción) --- */
+  .nx-left-col {
+    background: #1A1A1A !important; 
+    border-radius: 12px !important; 
+    padding: 30px 24px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Título y textos internos del Hero */
+  .nx-mega-title-box {
+    gap: 4px !important; 
+  }
+  .nx-mega-title-box h1 {
+    font-size: 28px !important; 
+    line-height: 1.5 !important;
+  }
+
+  /* --- 2. CONTENEDOR MAESTRO DE MÉTRICAS --- */
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 10px !important; 
+    padding: 10px !important; 
+    border-radius: 16px !important; 
+    outline: 2px solid rgba(255, 255, 255, 0.05) !important; 
+    outline-offset: -2px !important;
+    background: transparent !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 3. CAJAS INTERNAS DE MÉTRICAS (Cards) --- */
+  .nx-metrics-container > div {
+    background: #1A1A1A !important; 
+    border-radius: 12px !important;
+    padding: 16px 14px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Tercera caja (Años de Experiencia) ocupa todo el ancho */
+  .nx-metrics-container > div:nth-child(3) {
+    grid-column: span 2 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  /* Cuarta caja (Botón Know More / CTA) ocupa todo el ancho */
+  .nx-metrics-container > div:nth-child(4) {
+    grid-column: span 2 !important;
+    flex-direction: row !important;
+    padding: 20px 16px !important;
+  }
+
+  /* --- Ocultar Segunda Caja en Móvil (Matching Figma UI) --- */
+  .nx-hero-wrapper .nx-right-col {
+    display: none !important;
+  }
+
+  /* --- Protocolo SE: Compactación de Primer Plano (Mobile Above the Fold) --- */
+  /* 1. Liberar la altura forzada de la sección */
+  .nx-hero-section {
+    min-height: auto !important; 
+    padding-top: 5rem !important; 
+    padding-bottom: 1rem !important; 
+    height: auto !important;
+  }
+
+  /* 2. Compactar el cajón principal (Hero Card) */
+  .nx-left-col {
+    padding: 2rem 1.5rem !important; 
+    gap: 1rem !important; 
+  }
+
+  /* 3. Densidad Tipográfica para ahorrar píxeles verticales */
+  .nx-mega-title-box h1 {
+    font-size: 1.8rem !important; 
+    line-height: 1.15 !important; 
+    margin-bottom: 0 !important;
+  }
+
+  .nx-description {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.5rem !important; 
+  }
+
+  /* --- Protocolo SE: Compresión Extrema Above-the-Fold y Grilla 2x2 --- */
+  /* 1. Compresión del Contenedor Maestro y Gaps */
+  .nx-hero-wrapper, 
+  .nx-split-layout {
+    gap: 0.5rem !important; 
+    margin-bottom: 0 !important;
+  }
+
+  /* 2. Compactación Extrema del Cajón Principal */
+  .nx-left-col {
+    padding: 1.2rem 1rem !important; 
+    gap: 0.6rem !important; 
+  }
+
+  /* 3. Forzar Grilla 2x2 Simétrica y Pura */
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    padding: 0 !important; 
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* Aniquilar el grid-column: span 2 de reglas anteriores */
+  .nx-metrics-container > div, 
+  .nx-metrics-container > div:nth-child(n) {
+    grid-column: span 1 !important; 
+    flex-direction: column !important; 
+    padding: 0.8rem 0.2rem !important; 
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+
+  /* Micro-tipografía para que los números no inflen las cajas */
+  .nx-metrics-container > div * {
+    margin: 0 !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+  }
+  .nx-metrics-container > div .metric-value,
+  .nx-metrics-container > div h3,
+  .nx-metrics-container > div strong,
+  .nx-metrics-container > div .nx-metric-number {
+    font-size: 1.2rem !important; 
+  }
+  .nx-metrics-container > div .metric-label,
+  .nx-metrics-container > div p,
+  .nx-metrics-container > div span,
+  .nx-metrics-container > div .nx-metric-title {
+    font-size: 0.65rem !important; 
+  }
+
+  /* 4. Subir el Carrusel */
+  .tech-stack-container {
+    margin-top: 0.2rem !important; 
+    padding-top: 0 !important;
+  }
+
+  /* =========================================================
+     FASE 2: ESTRUCTURA FIGMA - SERVICIOS (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. CONTENEDOR GLOBAL DE LA SECCIÓN --- */
+  .nx-services-section {
+    padding: 10px !important;
+    border-radius: 16px !important;
+    outline: 2px solid rgba(255, 255, 255, 0.05) !important; 
+    outline-offset: -2px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important; 
+    margin-top: 1rem !important;
+    background: transparent !important;
+  }
+
+  /* --- 2. CAJA DEL TÍTULO DE SECCIÓN --- */
+  .nx-services-section .nx-section-header,
+  .nx-services-section > h2,
+  .nx-services-section .section-title {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 16px 20px !important;
+    margin: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 3. TARJETAS DE SERVICIOS (Cards) --- */
+  .nx-service-card {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 20px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important; 
+  }
+
+  /* --- 4. CONTENEDOR DE ICONOS --- */
+  .nx-service-card .icon-wrapper,
+  .nx-service-card .service-icon {
+    padding: 14px !important;
+    background: #1F1F1F !important;
+    border-radius: 10px !important;
+    outline: 1px solid #333333 !important;
+    outline-offset: -1px !important;
+  }
+
+  /* --- 5. BOTONES DE ACCIÓN (CTAs) --- */
+  .nx-service-card .nx-action-row,
+  .nx-service-card .btn {
+    padding: 10px 16px !important; 
+    border-radius: 8px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 0.85rem !important;
+    margin-top: 0 !important;
+  }
+
+  /* =========================================================
+     FASE 3 (FINAL Y DEFINITIVA): CLON EXACTO DE FIGMA
+     ========================================================= */
+
+  /* --- 1. CONTENEDOR MAESTRO --- */
+  #proyectos.nx-works-section { padding: 0 !important; }
+  #proyectos .nx-works-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 10px !important;
+    border-radius: 16px !important;
+    border: 2px solid rgba(255, 255, 255, 0.05) !important;
+    background: transparent !important;
+    outline: none !important;
+  }
+
+  /* --- 2. LIBERAR EL HEADER (Magia para separar Título y Botón) --- */
+  #proyectos .nx-works-header { display: contents !important; }
+
+  /* --- 3. TÍTULO "NUESTRO TRABAJO" --- */
+  #proyectos .nx-works-header h2 {
+    order: 1 !important;
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+
+  /* --- 4. FILTRAR A SOLO 2 PROYECTOS Y POSICIONARLOS --- */
+  #proyectos .nx-project-row { order: 2 !important; }
+  #proyectos .nx-works-container > div:nth-child(n+4) { display: none !important; }
+
+  /* --- 5. EL MARCO DE CADA PROYECTO --- */
+  #proyectos .nx-project-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 10px !important;
+    border-radius: 14px !important;
+    border: 2px solid rgba(255, 255, 255, 0.05) !important;
+    background: transparent !important;
+  }
+
+  /* --- 6. LA IMAGEN (Control Absoluto de Altura) --- */
+  #proyectos .nx-project-row > a.nx-project-image {
+    order: 1 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+  #proyectos .nx-project-row > a.nx-project-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  #proyectos .nx-project-row > a.nx-project-image .nx-image-overlay { display: none !important; }
+
+  /* --- 7. FUSIÓN DE CAJAS OSCURAS (Info y Tech soldados) --- */
+  #proyectos .nx-project-row > .nx-project-info {
+    order: 2 !important;
+    background: #1A1A1A !important;
+    padding: 24px 20px 10px 20px !important;
+    border-radius: 10px 10px 0 0 !important;
+    margin: 0 !important;
+  }
+  #proyectos .nx-project-row > .nx-project-tech {
+    order: 3 !important;
+    background: #1A1A1A !important;
+    padding: 10px 20px 24px 20px !important;
+    border-radius: 0 0 10px 10px !important;
+    margin: 0 !important;
+  }
+
+  /* --- 8. BOTÓN "VER TODOS LOS PROYECTOS" (Al fondo) --- */
+  #proyectos .nx-works-header a.nx-btn-outline {
+    order: 99 !important;
+    background: #1A1A1A !important;
+    color: #B3B3B2 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+  }
+
+  /* =========================================================
+     FASE 4: CLON EXACTO FIGMA - TESTIMONIOS (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. CONTENEDOR MAESTRO (Matrioshka Externa) --- */
+  #testimonios.nx-testimonials-section {
+    padding: 0 !important; 
+    margin-top: 1rem !important;
+  }
+  
+  #testimonios .nx-testimonials-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important; /* Separación exacta de Figma */
+    padding: 10px !important;
+    border-radius: 16px !important;
+    border: 2px solid rgba(255, 255, 255, 0.05) !important;
+    background: transparent !important;
+    outline: none !important;
+  }
+
+  /* --- 2. CAJA DEL TÍTULO --- */
+  #testimonios .nx-section-header {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+  
+  #testimonios .nx-section-header h2 {
+    margin: 0 !important;
+    font-size: 1.5rem !important;
+  }
+
+  /* --- 3. GRILLA A FLEXBOX --- */
+  #testimonios .nx-testimonials-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important; /* Espacio entre tarjetas */
+  }
+
+  /* --- 4. TARJETA INDIVIDUAL (Contenedor) --- */
+  #testimonios .nx-testi-card {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #1A1A1A !important;
+    border-radius: 10px !important;
+    overflow: hidden !important; /* Vital para que el footer no se salga de las curvas */
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important; /* Cero grietas entre texto y autor */
+  }
+
+  /* --- 5. CUERPO DE LA TARJETA (Cita) --- */
+  #testimonios .nx-testi-body {
+    background: #1A1A1A !important;
+    padding: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  #testimonios .nx-testi-quote {
+    color: #B3B3B2 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  /* --- 6. PIE DE LA TARJETA (Autor en Bitono) --- */
+  #testimonios .nx-testi-footer {
+    background: #1F1F1F !important; /* El gris un poco más claro del diseño */
+    padding: 16px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  #testimonios .nx-testi-author {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  
+  #testimonios .nx-author-info h4 {
+    color: #F3DFD8 !important; /* Color de tu Figma para los nombres */
+    margin: 0 0 4px 0 !important;
+    font-size: 1rem !important;
+  }
+  
+  #testimonios .nx-author-info span {
+    color: #81807E !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* =========================================================
+     FASE 5: CLON EXACTO FIGMA - FOOTER (MÓVIL)
+     ========================================================= */
+
+  /* --- 1. CONTENEDOR MAESTRO --- */
+  footer.nx-footer-section {
+    padding: 0 !important;
+    margin-top: 1rem !important;
+    background: transparent !important;
+  }
+  
+  footer .nx-footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important; 
+    padding: 10px !important;
+    border-radius: 16px !important;
+    border: 2px solid rgba(255, 255, 255, 0.05) !important;
+    background: transparent !important;
+  }
+
+  /* --- 2. COLUMNA IZQUIERDA (Redes Sociales 4 en fila) --- */
+  footer .nx-footer-left {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  
+  footer .nx-footer-left .nx-social-card {
+    background: #1F1F1F !important;
+    border-radius: 10px !important;
+    padding: 14px !important;
+    border: 1px solid #333333 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1 1 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Ocultar textos para dejar solo el ícono tipo Figma */
+  footer .nx-social-body,
+  footer .nx-social-arrow { 
+    display: none !important; 
+  }
+
+  /* --- 3. COLUMNA DERECHA (Sitemap y Legal) --- */
+  footer .nx-footer-right {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* --- 4. SITEMAP (2 Columnas) --- */
+  footer .nx-sitemap-box {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    border: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    margin: 0 !important;
+  }
+  
+  footer .nx-sitemap-column {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    min-width: 45% !important;
+  }
+  
+  footer .nx-sitemap-column h3 {
+    color: #F3DFD8 !important;
+    font-size: 1.1rem !important;
+    font-family: 'Roboto Mono', monospace !important;
+    margin: 0 !important;
+  }
+  
+  footer .nx-sitemap-column nav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  footer .nx-sitemap-column a {
+    color: #81807E !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+  }
+
+  /* --- 5. COPYRIGHT (Caja Final) --- */
+  footer .nx-copyright-box {
+    background: #1A1A1A !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    border: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+  }
+  
+  footer .nx-copyright-box p {
+    color: #B3B3B2 !important;
+    font-size: 0.85rem !important;
+    font-family: 'Roboto Mono', monospace !important;
+    margin: 0 !important;
+  }
+
+  /* --- 6. PURGA DE CLONES Y BASURA --- */
+  footer .mobile-menu-btn,
+  footer .hamburger {
+    display: none !important;
+  }
+  
+}
 
 /* Extra: Parche para móviles ultra pequeños (iPhone SE, etc.) */
 @media (max-width: 480px) {
@@ -63,7 +891,52 @@
 }
 
 /* --- SOLO CELULARES (Hasta 768px) --- */
+@media (max-width: 768px) {
+  /* Apilamiento del layout 60/40 */
+  .nx-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.2rem !important;
+    width: 100% !important;
+  }
 
+  /* Expansión y compresión de paddings */
+  .nx-left-col, .nx-right-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    margin: 0 !important; 
+    padding: 1.5rem !important;
+  }
+
+  /* Centrado visual */
+  .nx-left-col {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .nx-mega-title-box { margin-bottom: 1rem !important; }
+  .nx-description { margin-bottom: 1.5rem !important; }
+
+  /* Guillotina a la terminal de código */
+  .nx-right-col .nx-visual-card > div, 
+  .nx-right-col .filius-terminal {
+    max-height: 220px !important;
+    overflow-y: auto !important;
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+  .filius-terminal code, 
+  .filius-terminal .term-line {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  /* Ajuste de métricas inferiores */
+  .nx-metrics-container {
+    margin-top: 1rem !important;
+  }
+}
 
 /* --- SOLO TABLETS (769px a 1024px) --- */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -201,7 +1074,36 @@
 }
 
 /* --- 3. BOTONES COLAPSADOS Y MÉTRICAS ASIMÉTRICAS (Móvil <= 768px) --- */
-
+@media (max-width: 768px) {
+  .nx-service-card .nx-action-row, 
+  .nx-service-card .btn {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important; 
+    padding: 12px 10px !important;
+  }
+  
+  .nx-metrics-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .nx-metrics-container > div {
+    width: 100% !important;
+    padding: 1rem 0.5rem !important;
+  }
+}
 
 /* --- 4. MENÚ FANTASMA (Móvil <= 768px) --- */
-
+@media (max-width: 768px) {
+  .mobile-menu {
+    background: rgba(15, 15, 15, 0.98) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    z-index: 99999 !important; 
+    border-left: 1px solid rgba(255,255,255,0.05) !important;
+  }
+}
