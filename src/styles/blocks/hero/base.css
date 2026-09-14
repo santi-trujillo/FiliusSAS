@@ -175,3 +175,98 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(62, 156, 147, 0.4); /* glow cyan */
 }
+
+/* --- W3C NATIVE MOBILE-FIRST: HERO & METRICS --- */
+
+/* Contenedor Principal (Reemplaza anchos fijos) */
+.nx-hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem; /* Margen de respiro general */
+}
+
+/* Caja Oscura del Título */
+.nx-hero-content {
+  background-color: #1A1A1A;
+  border-radius: 12px;
+  padding: 1.875rem 1.5rem 4rem 1.5rem; /* ~30px 24px 64px 24px */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tipografía Principal */
+.nx-hero-title {
+  color: #F9EFEC;
+  font-size: 1.75rem; /* 28px */
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.nx-hero-description {
+  color: #676665;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Botón Start a Project */
+.nx-hero-btn {
+  background-color: #CE7D63;
+  color: #1A1A1A;
+  border-radius: 100px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+/* Grilla de Métricas (100% Fluida, cero absolute) */
+.nx-metrics-grid {
+  border: 2px solid #1F1F1F;
+  border-radius: 16px;
+  padding: 0.625rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas perfectas */
+  gap: 0.625rem; /* 10px */
+}
+
+.nx-metric-card {
+  background-color: #1A1A1A;
+  border-radius: 12px;
+  padding: 1rem 0.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.nx-metric-label {
+  color: #B3B3B2;
+  font-size: 0.875rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.nx-metric-value {
+  color: #DA9E8B;
+  font-size: 2.5rem; /* 40px */
+  font-weight: 600;
+}
+
+/* Tarjeta de ancho completo (10+ Years) */
+.nx-metric-card.full-width {
+  grid-column: 1 / -1;
+}
