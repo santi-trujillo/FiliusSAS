@@ -52,26 +52,32 @@
     padding: 2rem;
   }
 
-  /* Contenedor Exterior: Limpio y sin cajas dobles */
+  /* 1. ENVOLTORIO INVISIBLE (Sticky Scroll) */
   .nx-header-section {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    max-width: 1200px;
-    margin: 2rem auto;
-    display: block; /* Removemos el flex para evitar colisiones */
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    padding: 1.5rem 0 0 0 !important; /* Margen superior para que no toque el techo */
+    margin: 0 !important;
+    border: none !important;
+    z-index: 9999 !important;
+    max-width: 100% !important;
+    display: block !important;
   }
 
-  /* Barra de Navegación Real: Diseño Premium Flotante */
-  .nx-header-section .nx-navbar {
-    background-color: var(--bg-card) !important; 
+  /* 2. LA PASTILLA FLOTANTE CORPORATIVA (Figma UI) */
+  .nx-navbar {
+    background-color: var(--bg-card) !important; /* Fondo #1A1A1A */
     border: 1px solid #1C1C21 !important;
     border-radius: 14px !important;
     padding: 1.25rem 2.5rem !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    max-width: 1200px !important;
+    margin: 0 auto !important; /* Centrado absoluto */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Sombra profunda para separarlo del fondo oscuro */
   }
 
   /* Comportamiento del Navbar Laptop */
