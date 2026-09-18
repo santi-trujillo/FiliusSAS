@@ -90,76 +90,7 @@
   margin-left: 0.5rem;
 }
 
-/* Newsletter */
-.nx-footer-newsletter {
-  background-color: var(--bg-card);
-  border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
 
-.nx-news-label {
-  color: #676665;
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.nx-news-title {
-  color: var(--text-main);
-  font-size: 1.25rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.nx-news-form {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
-
-.nx-news-input-group {
-  flex: 1;
-  border-bottom: 1px solid #333333;
-  padding: 0.875rem 1rem;
-}
-
-.nx-news-input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: var(--text-main);
-  font-size: 0.875rem;
-  outline: none;
-  font-family: var(--font-heading);
-}
-
-.nx-news-input::placeholder {
-  color: #676665;
-}
-
-.nx-news-submit {
-  background-color: #1F1F1F;
-  border: 1px solid #333333;
-  border-radius: 50px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.nx-news-submit svg {
-  width: 16px;
-  height: 16px;
-  color: #E7BEB1;
-}
 
 /* Legales */
 .nx-footer-legal {
