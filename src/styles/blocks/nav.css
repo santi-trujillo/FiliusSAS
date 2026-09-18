@@ -24,9 +24,11 @@
 }
 
 .nx-nav-logo img {
-  height: 40px; /* Aumentado de 24px a 40px */
+  height: 55px; /* Aumentamos la altura base */
   width: auto;
   object-fit: contain;
+  transform: scale(1.35); /* Escala visual para matar el padding del PNG */
+  transform-origin: left center; /* Para que crezca hacia la derecha y no se salga de la pantalla */
 }
 
 .nx-menu-btn {
