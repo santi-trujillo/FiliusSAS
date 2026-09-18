@@ -1,19 +1,24 @@
 /* --- W3C NATIVE: TABLET & DESKTOP MEDIA QUERIES --- */
 
-/* TABLET (768px en adelante) */
+/* --- RECALIBRACIÓN TABLET (768px - 1023px) --- */
 @media (min-width: 768px) {
-  /* Expansión de Grillas a 2 columnas */
-  .nx-services-grid,
-  .nx-works-grid,
-  .nx-testi-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  /* Liberamos el ancho ahorcado de los contenedores */
+  .nx-services-section,
+  .nx-works-section,
+  .nx-testi-section,
+  .nx-contact-section,
+  .nx-footer-section {
+    max-width: 90%; /* Deja que el contenido respire */
+    margin-left: auto;
+    margin-right: auto;
   }
   
   /* El Header y Hero respiran más */
   .nx-header-section {
     padding: 1.5rem 2rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .nx-hero-section {
@@ -21,65 +26,96 @@
   }
   
   .nx-hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem; /* Evitamos que el texto se rompa */
   }
   
-  /* Ajuste de Contacto */
-  .nx-contact-section {
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
+  /* Expansión de Grillas a 2 columnas */
+  .nx-services-grid,
+  .nx-works-grid,
+  .nx-testi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 
-/* DESKTOP (1024px en adelante) */
+/* --- RECALIBRACIÓN LAPTOP / SMALL DESKTOP (1024px en adelante) --- */
 @media (min-width: 1024px) {
-  /* Contenedor Maestro: Centrado y con ancho máximo para pantallas gigantes */
+  /* Contenedor Maestro para Laptop (Basado en Figma 1360px) */
   .nx-services-section,
   .nx-works-section,
   .nx-testi-section,
-  .nx-footer-section {
+  .nx-footer-section,
+  .nx-contact-section {
     max-width: 1200px;
     margin: 0 auto 4rem auto;
     padding: 2rem;
   }
 
-  /* Cambiar la grilla de servicios a 2 o 4 columnas para mantener simetría con 4 items */
+  /* Header Flotante Premium (Diseño Laptop 1360px) */
+  .nx-header-section {
+    background-color: var(--bg-card); /* #1A1A1A */
+    border: 1px solid #1C1C21;
+    border-radius: 14px; /* Figma: 14px */
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem; /* Figma: 20px top/bot/right, 40px left */
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Comportamiento del Navbar Laptop */
+  .nx-menu-btn {
+    display: none;
+  }
+  
+  .nx-desktop-nav {
+    display: flex !important;
+    gap: 0.875rem; /* Figma: 14px */
+    align-items: center;
+  }
+  
+  /* Estilo "Tecla" (Diseño Laptop 1360px) */
+  .nx-desktop-nav a {
+    background-color: var(--bg-dark); /* #0F0F0F */
+    border-radius: 10px; /* Figma: 10px */
+    padding: 0.875rem 1.25rem; /* Figma: 14px 20px */
+    color: #81807E;
+    font-family: var(--font-mono);
+    font-size: 0.875rem; /* Figma: 14px */
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .nx-desktop-nav a:hover {
+    color: var(--text-main);
+    transform: translateY(-2px);
+  }
+
+  /* Botón Destacado de Cotizar */
+  .nx-desktop-nav a.nx-nav-cta {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+  }
+
+  .nx-desktop-nav a.nx-nav-cta:hover {
+    background-color: #E7BEB1;
+    color: var(--bg-dark);
+  }
+  
+  /* Grillas principales a 3 y 4 columnas */
   .nx-services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2x2 simétrico */
     gap: 1.5rem;
   }
   
-  /* Portafolio y Testimonios se mantienen a 3 columnas */
   .nx-works-grid,
   .nx-testi-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-  }
-
-  /* Comportamiento del Navbar Desktop */
-  .nx-menu-btn {
-    display: none; /* Ocultamos el botón hamburguesa */
-  }
-  
-  /* Inyectamos una navegación en línea para Desktop (oculta en móvil) */
-  .nx-desktop-nav {
-    display: flex !important;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .nx-desktop-nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-family: var(--font-mono);
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    transition: color 0.2s ease;
-  }
-  
-  .nx-desktop-nav a:hover {
-    color: var(--accent-primary);
   }
 
   /* Hero Desktop */
