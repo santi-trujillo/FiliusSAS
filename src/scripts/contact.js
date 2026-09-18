@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const terminalBody = document.getElementById('terminal-body');
   
   const answers = {};
-  const phoneNumber = '573000000000'; // Tu numero de WhatsApp
+  const phoneNumber = '573238789853'; // Tu numero de WhatsApp
   
   const titles = [
     "Paso 1 de 4: Objetivo",
