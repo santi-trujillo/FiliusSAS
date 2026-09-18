@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./styles/blocks/testimonials.css">
   <link rel="stylesheet" href="./styles/blocks/footer.css">
   <link rel="stylesheet" href="./styles/blocks/contact.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
 
@@ -24,6 +25,13 @@
       <a href="#" class="nx-nav-logo">
         <img src="./assets/images/logos/FiliusB.png" alt="FiliusTec Logo">
       </a>
+      <!-- Navegación Desktop (Oculta por defecto en móvil, visible en media query) -->
+      <nav class="nx-desktop-nav" style="display: none;">
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Portafolio</a>
+        <a href="#testimonios">Clientes</a>
+        <a href="#cotizador" style="color: var(--accent-primary); border: 1px solid var(--accent-primary); padding: 0.5rem 1rem; border-radius: 8px;">Cotizar</a>
+      </nav>
       <button class="nx-menu-btn" aria-label="Abrir menú">
         <svg viewBox="0 0 18 12" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0H18V2H0V0ZM0 5H18V7H0V5ZM0 10H18V12H0V10Z"/>

@@ -1,0 +1,121 @@
+/* --- W3C NATIVE: TABLET & DESKTOP MEDIA QUERIES --- */
+
+/* TABLET (768px en adelante) */
+@media (min-width: 768px) {
+  /* Expansión de Grillas a 2 columnas */
+  .nx-services-grid,
+  .nx-works-grid,
+  .nx-testi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  /* El Header y Hero respiran más */
+  .nx-header-section {
+    padding: 1.5rem 2rem;
+  }
+  
+  .nx-hero-section {
+    padding: 4rem 2rem;
+  }
+  
+  .nx-hero-title {
+    font-size: 3.5rem;
+  }
+  
+  /* Ajuste de Contacto */
+  .nx-contact-section {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+}
+
+/* DESKTOP (1024px en adelante) */
+@media (min-width: 1024px) {
+  /* Contenedor Maestro: Centrado y con ancho máximo para pantallas gigantes */
+  .nx-services-section,
+  .nx-works-section,
+  .nx-testi-section,
+  .nx-footer-section {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 2rem;
+  }
+
+  /* Grillas principales a 3 columnas */
+  .nx-services-grid,
+  .nx-works-grid,
+  .nx-testi-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Comportamiento del Navbar Desktop */
+  .nx-menu-btn {
+    display: none; /* Ocultamos el botón hamburguesa */
+  }
+  
+  /* Inyectamos una navegación en línea para Desktop (oculta en móvil) */
+  .nx-desktop-nav {
+    display: flex !important;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .nx-desktop-nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+  }
+  
+  .nx-desktop-nav a:hover {
+    color: var(--accent-primary);
+  }
+
+  /* Hero Desktop */
+  .nx-hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nx-hero-title {
+    font-size: 4.5rem;
+    max-width: 900px;
+  }
+
+  .nx-hero-desc {
+    font-size: 1.125rem;
+    max-width: 600px;
+  }
+
+  /* Footer Desktop */
+  .nx-footer-nav {
+    grid-template-columns: repeat(4, 1fr); /* Expande enlaces en una sola línea */
+  }
+  
+  .nx-footer-legal {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .nx-legal-links {
+    flex-direction: row;
+    width: auto;
+  }
+  
+  .nx-legal-divider {
+    width: 1px;
+    height: 14px;
+  }
+}
