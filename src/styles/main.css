@@ -19,6 +19,7 @@ body, html {
   background-color: var(--bg-dark);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth; /* Deslizamiento premium */
 }
 
 *, *::before, *::after {
