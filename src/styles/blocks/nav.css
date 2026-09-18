@@ -24,8 +24,9 @@
 }
 
 .nx-nav-logo img {
-  height: 24px; /* Ajuste automático para tu logo */
+  height: 40px; /* Aumentado de 24px a 40px */
   width: auto;
+  object-fit: contain;
 }
 
 .nx-menu-btn {

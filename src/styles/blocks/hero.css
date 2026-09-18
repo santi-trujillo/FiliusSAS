@@ -9,7 +9,7 @@
 .nx-hero-card {
   background-color: var(--bg-card);
   border-radius: 12px;
-  padding: 2.5rem 1.5rem;
+  padding: 3rem 1.5rem; /* Más respiro vertical */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,14 +35,30 @@
 .nx-btn-primary {
   background-color: var(--accent-primary);
   color: var(--bg-dark);
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.25rem 0.5rem 0.5rem; /* Padding asimétrico para el círculo */
   border-radius: 100px;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+}
+
+.nx-btn-icon {
+  background-color: var(--bg-dark);
+  color: var(--accent-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nx-btn-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* Grilla Fluida para las Métricas */

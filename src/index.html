@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/blocks/nav.css">
   <link rel="stylesheet" href="./styles/blocks/hero.css">
+  <link rel="stylesheet" href="./styles/blocks/menu.css">
 </head>
 <body>
 
@@ -26,6 +27,16 @@
     </nav>
   </header>
 
+<div class="nx-mobile-menu">
+  <button class="nx-close-btn" aria-label="Cerrar menú">✕</button>
+  <ul class="nx-mobile-nav-list">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proyectos">Nuestro Trabajo</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</div>
+
 <main>
   <!-- SECCIÓN HERO -->
   <section class="nx-hero-section">
@@ -34,7 +45,12 @@
     <div class="nx-hero-card">
       <h1 class="nx-hero-title">Soluciones Digitales<br>Que Impulsan<br>Tu Empresa</h1>
       <p class="nx-hero-desc">Somos el socio tecnológico integral que ayuda a las PYMES a digitalizarse con soluciones web modernas y garantiza su operatividad continua mediante soporte técnico especializado.</p>
-      <a href="#contacto" class="nx-btn-primary">Iniciar Proyecto</a>
+      <a href="#contacto" class="nx-btn-primary">
+        <span class="nx-btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+        Iniciar Proyecto
+      </a>
     </div>
 
     <!-- Grilla de Métricas -->
@@ -60,5 +76,6 @@
   </section>
 </main>
 
+<script src="./scripts/main.js"></script>
 </body>
 </html>
