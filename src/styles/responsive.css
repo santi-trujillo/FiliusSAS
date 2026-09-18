@@ -43,8 +43,13 @@
     padding: 2rem;
   }
 
-  /* Grillas principales a 3 columnas */
-  .nx-services-grid,
+  /* Cambiar la grilla de servicios a 2 o 4 columnas para mantener simetría con 4 items */
+  .nx-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* Portafolio y Testimonios se mantienen a 3 columnas */
   .nx-works-grid,
   .nx-testi-grid {
     grid-template-columns: repeat(3, 1fr);
