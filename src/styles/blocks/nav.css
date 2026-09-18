@@ -1,0 +1,51 @@
+/* --- W3C NATIVE MOBILE-FIRST: HEADER & NAVBAR --- */
+.nx-header-section {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.nx-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-card);
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nx-nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nx-nav-logo img {
+  height: 24px; /* Ajuste automático para tu logo */
+  width: auto;
+}
+
+.nx-menu-btn {
+  background-color: var(--bg-dark);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.nx-menu-btn svg {
+  width: 18px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.nx-nav-links {
+  display: none; /* Oculto en móvil por defecto */
+}
