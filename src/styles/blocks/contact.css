@@ -1,4 +1,4 @@
-/* --- W3C NATIVE: INTERACTIVE CONTACT QUIZ --- */
+/* --- W3C NATIVE: PREMIUM INTERACTIVE QUIZ --- */
 .nx-contact-section {
   padding: 0.625rem;
   margin: 0 1rem 2rem 1rem;
@@ -11,13 +11,30 @@
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   gap: 1.5rem;
-  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Progress Bar */
+.nx-quiz-progress-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #1F1F1F;
+}
+
+.nx-quiz-progress-fill {
+  height: 100%;
+  width: 25%; /* Inicial al paso 1 */
+  background-color: var(--accent-primary);
+  transition: width 0.4s ease;
 }
 
 .nx-quiz-header {
+  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -25,7 +42,7 @@
 
 .nx-quiz-title {
   color: var(--text-main);
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-family: var(--font-heading);
   font-weight: 600;
   text-transform: uppercase;
@@ -56,31 +73,108 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.nx-quiz-options {
+/* Tarjetas Cuadradas */
+.nx-quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+/* Opción especial a lo ancho completo */
+.nx-col-span-2 {
+  grid-column: span 2;
+}
+
+.nx-quiz-option {
+  background-color: #1F1F1F;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 0.75rem;
-  width: 100%;
-}
-
-.nx-quiz-btn {
-  background-color: #1F1F1F;
-  color: var(--text-main);
-  border: 1px solid #333333;
-  border-radius: 10px;
-  padding: 1rem;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: center;
 }
 
-.nx-quiz-btn:hover, .nx-quiz-btn:active {
+.nx-quiz-option:active {
   border-color: var(--accent-primary);
-  background-color: rgba(206, 125, 99, 0.1);
+  background-color: rgba(206, 125, 99, 0.05);
+  transform: scale(0.98);
+}
+
+.nx-quiz-option svg {
+  width: 24px;
+  height: 24px;
+  color: #E7BEB1;
+  transition: color 0.2s ease;
+}
+
+.nx-quiz-option:active svg {
   color: var(--accent-primary);
+}
+
+.nx-quiz-option-text {
+  color: var(--text-main);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Terminal CSS */
+.nx-terminal-window {
+  background-color: #0A0A0A;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.nx-terminal-top {
+  background-color: #1F1F1F;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  gap: 0.375rem;
+  border-bottom: 1px solid #333333;
+}
+
+.nx-term-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.nx-term-dot.red { background-color: #FF5F56; }
+.nx-term-dot.yel { background-color: #FFBD2E; }
+.nx-term-dot.grn { background-color: #27C93F; }
+
+.nx-terminal-body {
+  padding: 1rem;
+  color: #27C93F; /* Verde fósforo */
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  min-height: 160px;
+}
+
+.nx-terminal-line {
+  margin-bottom: 0.25rem;
+}
+
+.nx-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background-color: #27C93F;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .nx-quiz-final-btn {
@@ -95,9 +189,11 @@
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
-  display: flex;
+  display: none; /* Oculto hasta que termine la terminal */
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   width: 100%;
+  margin-top: 1rem;
+  animation: fadeIn 0.5s ease;
 }
