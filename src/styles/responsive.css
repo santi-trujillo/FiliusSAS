@@ -52,14 +52,22 @@
     padding: 2rem;
   }
 
-  /* Header Flotante Premium (Diseño Laptop 1360px) */
+  /* Contenedor Exterior: Limpio y sin cajas dobles */
   .nx-header-section {
-    background-color: var(--bg-card); /* #1A1A1A */
-    border: 1px solid #1C1C21;
-    border-radius: 14px; /* Figma: 14px */
-    padding: 1.25rem 1.25rem 1.25rem 2.5rem; /* Figma: 20px top/bot/right, 40px left */
+    background-color: transparent;
+    border: none;
+    padding: 0;
     max-width: 1200px;
     margin: 2rem auto;
+    display: block; /* Removemos el flex para evitar colisiones */
+  }
+
+  /* Barra de Navegación Real: Diseño Premium Flotante */
+  .nx-navbar {
+    background-color: var(--bg-card); /* #1A1A1A */
+    border: 1px solid #1C1C21;
+    border-radius: 14px;
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
