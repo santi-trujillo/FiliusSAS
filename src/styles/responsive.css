@@ -63,14 +63,15 @@
   }
 
   /* Barra de Navegación Real: Diseño Premium Flotante */
-  .nx-navbar {
-    background-color: var(--bg-card); /* #1A1A1A */
-    border: 1px solid #1C1C21;
-    border-radius: 14px;
-    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  .nx-header-section .nx-navbar {
+    background-color: var(--bg-card) !important; 
+    border: 1px solid #1C1C21 !important;
+    border-radius: 14px !important;
+    padding: 1.25rem 2.5rem !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   /* Comportamiento del Navbar Laptop */
