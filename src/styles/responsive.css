@@ -81,11 +81,19 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Sombra profunda para separarlo del fondo oscuro */
   }
 
-  /* Escalar el logo en Desktop */
+  /* Blindaje del contenedor del logo para evitar compresión (Flex Shrink) */
+  .nx-navbar .nx-nav-logo {
+    flex-shrink: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Escalar el logo en Desktop para imponer autoridad */
   .nx-navbar .nx-nav-logo img,
   .nx-navbar .nx-nav-logo svg {
-    height: 28px !important; /* Crece el logo respecto a su tamaño móvil */
+    height: 42px !important; /* Aumentamos drásticamente de 28px a 42px */
     width: auto !important;
+    object-fit: contain;
   }
 
   /* Comportamiento del Navbar Laptop */
