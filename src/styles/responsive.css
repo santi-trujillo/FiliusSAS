@@ -171,60 +171,57 @@
     margin-bottom: 1.5rem;
   }
 
-  /* Descripción: Más grande y centrada */
+  /* Descripción empoderada */
   .nx-hero-section .nx-hero-desc {
-    font-size: 1.125rem; /* Subimos a 18px para quitar la debilidad visual */
+    font-size: 1.25rem !important; /* Subimos a 20px */
     line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 2.5rem auto; /* Centrado con margen inferior */
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
     color: #B3B3B2;
   }
 
-  /* Botón Principal (Iniciar Proyecto): Escala Premium */
-  .nx-hero-section .nx-hero-card a[href="#cotizador"],
+  /* Botón gigante y llamativo */
   .nx-hero-section .nx-hero-btn {
     background-color: var(--accent-primary);
-    color: var(--bg-dark);
-    padding: 1.25rem 2.5rem; /* Píldora gigante */
-    border-radius: 100px; /* Bordes totalmente redondeados como en Figma */
+    color: var(--bg-dark) !important;
+    padding: 1.25rem 3rem !important; /* Más ancho */
+    border-radius: 100px;
     font-family: var(--font-mono);
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.25rem !important; /* Subimos a 20px */
+    font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .nx-hero-section .nx-hero-card a[href="#cotizador"]:hover,
-  .nx-hero-section .nx-hero-btn:hover {
-    transform: scale(1.05);
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
 
-  /* Pastilla Negra de Servicios (Consultoría TI • Desarrollo Web...) */
-  .nx-hero-section .nx-hero-card ul,
+  /* Pastilla Negra de Servicios: Diseño Figma */
   .nx-hero-section .nx-hero-tags {
-    background-color: var(--bg-dark); /* #0F0F0F */
+    background-color: var(--bg-dark); /* Fondo negro absoluto #0F0F0F */
     width: 100%;
-    max-width: 860px; /* Ancho exacto de Figma */
-    margin: 3rem auto 0 auto;
-    padding: 1.25rem;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1.5rem;
-    list-style: none;
   }
   
-  .nx-hero-section .nx-hero-card ul li,
   .nx-hero-section .nx-hero-tags span {
     font-family: var(--font-mono);
-    font-size: 0.875rem; /* 14px legibles */
+    font-size: 1rem; /* Subimos a 16px */
     color: #81807E;
     text-transform: uppercase;
+  }
+
+  /* Puntos de separación en color cobre para contraste */
+  .nx-hero-section .nx-hero-tags span.dot {
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    line-height: 0;
   }
 
   /* --- BARRA DE MÉTRICAS DESKTOP (Fila Horizontal) --- */
