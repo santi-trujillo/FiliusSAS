@@ -68,6 +68,7 @@
 
   /* 2. LA PASTILLA FLOTANTE CORPORATIVA (Figma UI) */
   .nx-navbar {
+    width: 92% !important; 
     background-color: var(--bg-card) !important; /* Fondo #1A1A1A */
     border: 1px solid #1C1C21 !important;
     border-radius: 14px !important;
@@ -78,6 +79,13 @@
     justify-content: space-between !important;
     align-items: center !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Sombra profunda para separarlo del fondo oscuro */
+  }
+
+  /* Escalar el logo en Desktop */
+  .nx-navbar .nx-nav-logo img,
+  .nx-navbar .nx-nav-logo svg {
+    height: 28px !important; /* Crece el logo respecto a su tamaño móvil */
+    width: auto !important;
   }
 
   /* Comportamiento del Navbar Laptop */
