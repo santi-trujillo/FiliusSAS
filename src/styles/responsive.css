@@ -52,52 +52,50 @@
     padding: 2rem;
   }
 
-  /* 1. ENVOLTORIO INVISIBLE (Sticky Scroll) */
+  /* 1. ENVOLTORIO (Sticky) - Especificidad base */
   .nx-header-section {
-    position: sticky !important;
-    top: 0 !important;
-    width: 100% !important;
-    background-color: transparent !important;
-    padding: 1.5rem 0 0 0 !important; /* Margen superior para que no toque el techo */
-    margin: 0 !important;
-    border: none !important;
-    z-index: 9999 !important;
-    max-width: 100% !important;
-    display: block !important;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 1.5rem 0 0 0;
+    margin: 0;
+    border: none;
+    z-index: 9999;
+    max-width: 100%;
+    display: block;
   }
 
-  /* 2. LA PASTILLA FLOTANTE CORPORATIVA (Figma UI) */
-  .nx-navbar {
-    width: 92% !important; 
-    background-color: var(--bg-card) !important; /* Fondo #1A1A1A */
-    border: 1px solid #1C1C21 !important;
-    border-radius: 14px !important;
-    padding: 1.25rem 2.5rem !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important; /* Centrado absoluto */
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Sombra profunda para separarlo del fondo oscuro */
+  /* 2. PASTILLA FLOTANTE - Especificidad alta (.clase .clase) */
+  .nx-header-section .nx-navbar {
+    background-color: var(--bg-card);
+    border: 1px solid #1C1C21;
+    border-radius: 14px;
+    padding: 1.25rem 2.5rem;
+    max-width: 1200px;
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   }
 
-  /* Envoltorio del logo: Altura fija dominante */
-  .nx-navbar .nx-nav-logo {
-    height: 48px !important; /* Caja generosa */
-    display: flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-    overflow: visible !important;
+  /* 3. CONTENEDOR DEL LOGO */
+  .nx-header-section .nx-nav-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
   }
 
-  /* Gráfico del logo: Llenado total y forzado visual */
-  .nx-navbar .nx-nav-logo img,
-  .nx-navbar .nx-nav-logo svg {
-    height: 100% !important;
-    width: auto !important;
-    object-fit: contain !important;
-    transform: scale(1.4) !important; /* Truco para inflar el gráfico ignorando márgenes internos */
-    transform-origin: left center !important; /* Anclado a la izquierda para mantener la alineación */
+  /* 4. LOGO - Tamaño absoluto superior al móvil (55px -> 75px) */
+  .nx-header-section .nx-nav-logo img,
+  .nx-header-section .nx-nav-logo svg {
+    height: 75px; 
+    width: auto;
+    object-fit: contain;
+    transform: scale(1.2); /* Escala sutil para compensar padding interno del SVG */
+    transform-origin: left center;
   }
 
   /* Comportamiento del Navbar Laptop */
