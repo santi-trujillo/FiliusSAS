@@ -151,34 +151,80 @@
     gap: 1.5rem;
   }
 
-  /* --- HERO CARD DESKTOP (Alineación y Espaciado Figma) --- */
+  /* --- HERO CARD DESKTOP: Centrado Absoluto (Figma Specs) --- */
   .nx-hero-section .nx-hero-card {
-    background-color: var(--bg-card); /* #1A1A1A */
+    background-color: var(--bg-card);
     border-radius: 16px;
-    padding: 5rem 3.75rem; /* ~80px top/bot, ~60px left/right */
+    padding: 5rem 3.75rem; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Todo alineado a la izquierda */
-    text-align: left;
+    align-items: center; /* Restauramos el centrado */
+    text-align: center;
     position: relative;
-    overflow: hidden;
   }
 
-  /* Título Imponente a 58px */
+  /* Título Centrado */
   .nx-hero-section .nx-hero-title {
-    font-size: 3.625rem; /* 58px */
+    font-size: 3.625rem;
     line-height: 1.1;
-    max-width: 800px;
+    max-width: 900px; /* Mayor espacio para que no se rompa tan rápido */
     margin-bottom: 1.5rem;
   }
 
-  /* Descripción */
+  /* Descripción: Más grande y centrada */
   .nx-hero-section .nx-hero-desc {
-    font-size: 1rem; /* 16px */
-    line-height: 1.5;
-    max-width: 600px;
-    margin-left: 0;
-    margin-bottom: 2rem;
+    font-size: 1.125rem; /* Subimos a 18px para quitar la debilidad visual */
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto; /* Centrado con margen inferior */
+    color: #B3B3B2;
+  }
+
+  /* Botón Principal (Iniciar Proyecto): Escala Premium */
+  .nx-hero-section .nx-hero-card a[href="#cotizador"],
+  .nx-hero-section .nx-hero-btn {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+    padding: 1.25rem 2.5rem; /* Píldora gigante */
+    border-radius: 100px; /* Bordes totalmente redondeados como en Figma */
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .nx-hero-section .nx-hero-card a[href="#cotizador"]:hover,
+  .nx-hero-section .nx-hero-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* Pastilla Negra de Servicios (Consultoría TI • Desarrollo Web...) */
+  .nx-hero-section .nx-hero-card ul,
+  .nx-hero-section .nx-hero-tags {
+    background-color: var(--bg-dark); /* #0F0F0F */
+    width: 100%;
+    max-width: 860px; /* Ancho exacto de Figma */
+    margin: 3rem auto 0 auto;
+    padding: 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  .nx-hero-section .nx-hero-card ul li,
+  .nx-hero-section .nx-hero-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.875rem; /* 14px legibles */
+    color: #81807E;
+    text-transform: uppercase;
   }
 
   /* --- BARRA DE MÉTRICAS DESKTOP (Fila Horizontal) --- */
