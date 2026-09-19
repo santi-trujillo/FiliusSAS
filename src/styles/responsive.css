@@ -151,25 +151,71 @@
     gap: 1.5rem;
   }
 
-  /* Hero Desktop */
-  .nx-hero-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 6rem 2rem;
+  /* --- HERO CARD DESKTOP (Alineación y Espaciado Figma) --- */
+  .nx-hero-section .nx-hero-card {
+    background-color: var(--bg-card); /* #1A1A1A */
+    border-radius: 16px;
+    padding: 5rem 3.75rem; /* ~80px top/bot, ~60px left/right */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Todo alineado a la izquierda */
+    text-align: left;
+    position: relative;
+    overflow: hidden;
   }
 
-  .nx-hero-title {
-    font-size: 4.5rem;
-    max-width: 900px;
+  /* Título Imponente a 58px */
+  .nx-hero-section .nx-hero-title {
+    font-size: 3.625rem; /* 58px */
+    line-height: 1.1;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
   }
 
-  .nx-hero-desc {
-    font-size: 1.125rem;
+  /* Descripción */
+  .nx-hero-section .nx-hero-desc {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5;
     max-width: 600px;
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  /* --- BARRA DE MÉTRICAS DESKTOP (Fila Horizontal) --- */
+  .nx-hero-section .nx-metrics-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #1F1F1F;
+    border-radius: 16px;
+    background-color: transparent;
+    margin-top: 1.5rem;
+  }
+
+  /* Tarjetas individuales de métricas */
+  .nx-hero-section .nx-metric-item {
+    flex: 1; /* Para que todas midan lo mismo */
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.25rem 1rem; /* 20px 16px */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  /* Textos de métricas alineados a la izquierda */
+  .nx-hero-section .nx-metric-title {
+    font-size: 0.875rem; /* 14px */
+    text-align: left;
+  }
+
+  .nx-hero-section .nx-metric-value {
+    font-size: 2.5rem; /* 40px */
+    text-align: left;
   }
 
   /* Footer Desktop */
