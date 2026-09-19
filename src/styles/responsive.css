@@ -81,19 +81,23 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Sombra profunda para separarlo del fondo oscuro */
   }
 
-  /* Blindaje del contenedor del logo para evitar compresión (Flex Shrink) */
+  /* Envoltorio del logo: Altura fija dominante */
   .nx-navbar .nx-nav-logo {
+    height: 48px !important; /* Caja generosa */
+    display: flex !important;
+    align-items: center !important;
     flex-shrink: 0 !important;
-    display: flex;
-    align-items: center;
+    overflow: visible !important;
   }
 
-  /* Escalar el logo en Desktop para imponer autoridad */
+  /* Gráfico del logo: Llenado total y forzado visual */
   .nx-navbar .nx-nav-logo img,
   .nx-navbar .nx-nav-logo svg {
-    height: 42px !important; /* Aumentamos drásticamente de 28px a 42px */
+    height: 100% !important;
     width: auto !important;
-    object-fit: contain;
+    object-fit: contain !important;
+    transform: scale(1.4) !important; /* Truco para inflar el gráfico ignorando márgenes internos */
+    transform-origin: left center !important; /* Anclado a la izquierda para mantener la alineación */
   }
 
   /* Comportamiento del Navbar Laptop */
