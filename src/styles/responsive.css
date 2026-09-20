@@ -21,12 +21,70 @@
     margin-right: auto;
   }
   
-  .nx-hero-section {
-    padding: 4rem 2rem;
+  /* =========================================
+     TABLETA (Puente Transicional - 768px+)
+     ========================================= */
+  
+  /* El contenedor general respira, pero sin llegar a las márgenes monumentales de PC */
+  .nx-hero-section .nx-hero-card {
+    padding: 3rem 2rem; 
+    gap: 2rem;
+  }
+
+  /* Título escalado proporcionalmente (de 32px en móvil a ~44px en tableta) */
+  .nx-hero-section .nx-hero-title {
+    font-size: 2.75rem; 
+    max-width: 90%;
+  }
+
+  /* Descripción */
+  .nx-hero-section .nx-hero-desc {
+    font-size: 1.125rem; /* 18px */
+    max-width: 85%;
+  }
+
+  /* Botón: Liberado del 100% de ancho del móvil */
+  .nx-hero-section .nx-hero-btn {
+    width: auto; 
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+  }
+
+  /* Pastilla de Servicios: Escala intermedia */
+  .nx-hero-section .nx-hero-tags {
+    padding: 1.25rem;
+    gap: 1.25rem;
   }
   
-  .nx-hero-title {
-    font-size: 3rem; /* Evitamos que el texto se rompa */
+  .nx-hero-section .nx-hero-tags span {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  /* Métricas: Rompemos la grilla 2x2 a una fila compacta si cabe, o la mantenemos 2x2 pero más ancha */
+  .nx-hero-section .nx-metrics-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite acomodarse sin desbordar */
+    justify-content: center;
+    gap: 1rem;
+    border: 2px solid #1F1F1F;
+    border-radius: 16px;
+    padding: 1rem;
+    background-color: transparent;
+  }
+
+  .nx-hero-section .nx-metric-item {
+    flex: 1 1 calc(50% - 1rem); /* Mantiene un 2x2 elegante en tableta */
+    padding: 1.25rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .nx-hero-section .nx-metric-title {
+    text-align: center;
+  }
+  
+  .nx-hero-section .nx-metric-value {
+    text-align: center;
   }
   
   /* Expansión de Grillas a 2 columnas */
