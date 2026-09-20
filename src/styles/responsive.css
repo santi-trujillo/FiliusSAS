@@ -322,3 +322,34 @@
   }
   .nx-service-card { padding: 3.75rem; } /* Más aire interno copiando a Figma */
 }
+
+/* --- NUESTRO TRABAJO: DESKTOP (1024px+) --- */
+@media (min-width: 1024px) {
+  .nx-works-section {
+    padding: 5rem 3.75rem;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  .nx-works-section .nx-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Transforma la tarjeta en una fila de 3 columnas (Info | Imagen | Tech) */
+  .nx-work-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .nx-work-image {
+    display: flex;
+  }
+  
+  .nx-work-image img {
+    height: 100%; /* Forzamos a que llene la altura de la tarjeta */
+  }
+}

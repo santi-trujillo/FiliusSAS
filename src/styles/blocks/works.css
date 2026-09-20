@@ -1,173 +1,108 @@
-/* --- W3C NATIVE MOBILE-FIRST: OUR WORKS SECTION --- */
-.nx-works-section {
-  padding: 0.625rem;
-  border: 2px solid var(--border-color);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  margin: 0 1rem 2rem 1rem;
-}
+  /* --- NUESTRO TRABAJO BASE (MOBILE) --- */
+  .nx-works-section {
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-.nx-works-header {
-  background-color: var(--bg-card);
-  border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-}
+  .nx-btn-outline {
+    border: 1px solid #333;
+    background: transparent;
+    color: #B3B3B2;
+    padding: 0.75rem 1.25rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
 
-.nx-works-title {
-  color: var(--text-main);
-  font-size: 1.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 0;
-}
+  .nx-works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-.nx-works-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
+  .nx-work-card {
+    background-color: transparent;
+    border: 2px solid #1F1F1F;
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-.nx-work-card {
-  padding: 0.625rem;
-  border: 2px solid var(--border-color);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
+  .nx-work-info, .nx-work-tech {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-.nx-work-img {
-  width: 100%;
-  height: 184px;
-  object-fit: cover;
-  border-radius: 14px;
-  background-color: #2A2A2A; /* Placeholder color */
-}
+  .nx-work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-.nx-work-content {
-  background-color: var(--bg-card);
-  border-radius: 10px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
+  .nx-work-title {
+    color: var(--text-main);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
 
-.nx-work-top {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+  .nx-work-details-btn {
+    color: #B3B3B2;
+    background-color: #1F1F1F;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
 
-.nx-work-icon {
-  background-color: #1F1F1F;
-  border: 1px solid #333333;
-  border-radius: 10px;
-  padding: 0.875rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .nx-work-tags, .nx-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-.nx-work-icon svg {
-  width: 20px;
-  height: 20px;
-  color: var(--accent-primary);
-}
+  .nx-tag, .nx-tech-tag {
+    background-color: #1F1F1F;
+    color: #E6E6E6;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+  }
 
-.nx-work-name {
-  color: var(--text-main);
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin: 0;
-}
+  .nx-work-desc {
+    color: #B3B3B2;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
 
-.nx-work-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
+  .nx-work-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
 
-.nx-pill {
-  background-color: #1F1F1F;
-  border-radius: 45px;
-  padding: 0.375rem 0.625rem;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
+  .nx-tech-title {
+    color: var(--text-main);
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
 
-.nx-pill-label {
-  color: #B3B3B2;
-  font-size: 0.75rem;
-}
-
-.nx-pill-dot {
-  width: 4px;
-  height: 4px;
-  background-color: var(--accent-primary);
-  border-radius: 50%;
-}
-
-.nx-pill-value {
-  color: #E6E6E6;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.nx-work-desc {
-  color: #B3B3B2;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.nx-work-details {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #B3B3B2;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-.nx-details-icon {
-  background-color: #1F1F1F;
-  border: 1px solid #333333;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nx-details-icon svg {
-  width: 14px;
-  height: 14px;
-  color: #E7BEB1;
-}
-
-.nx-works-all {
-  background-color: var(--bg-card);
-  border-radius: 12px;
-  padding: 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: #B3B3B2;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-}
+  .nx-work-cta {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+    text-align: center;
+    margin-top: auto;
+  }
