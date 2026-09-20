@@ -352,4 +352,26 @@
   .nx-work-image img {
     height: 100%; /* Forzamos a que llene la altura de la tarjeta */
   }
+
+/* --- TESTIMONIOS: TABLETA Y DESKTOP --- */
+@media (min-width: 768px) {
+  .nx-testi-section { padding: 4rem 2.5rem; }
+  .nx-testi-section .nx-section-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .nx-testi-section {
+    padding: 5rem 3.75rem;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  .nx-testi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Grilla 2x2 sólida */
+    gap: 1.5rem;
+  }
 }
