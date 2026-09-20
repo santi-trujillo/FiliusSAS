@@ -52,3 +52,38 @@
 .nx-nav-links {
   display: none; /* Oculto en móvil por defecto */
 }
+
+/* --- MENÚ MÓVIL (OVERLAY) --- */
+.nx-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-dark); /* Fondo oscuro absoluto */
+  z-index: 10000;
+  display: none; /* Oculto por defecto, se asume activación vía JS */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Clase activa inyectada por JS (ej: toggle de clase 'open' o 'active') */
+.nx-mobile-menu.open, 
+.nx-mobile-menu.active {
+  display: flex;
+}
+
+.nx-mobile-menu a {
+  color: #F9EFEC;
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nx-mobile-menu a:hover {
+  color: var(--accent-primary);
+}

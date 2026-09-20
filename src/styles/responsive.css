@@ -375,3 +375,26 @@
     gap: 1.5rem;
   }
 }
+
+/* --- FILTRO DE PROYECTO: TABLETA Y DESKTOP --- */
+@media (min-width: 768px) {
+  .nx-filter-section {
+    margin: 4rem auto;
+    max-width: 90%;
+    padding: 4rem 3rem;
+  }
+  .nx-filter-grid {
+    flex-direction: row; /* En fila */
+    justify-content: center;
+  }
+  .nx-filter-btn {
+    flex: 1; /* Distribución equitativa */
+  }
+}
+
+@media (min-width: 1024px) {
+  .nx-filter-section {
+    max-width: 1000px; /* Evita que se estire demasiado en monitores gigantes */
+  }
+  .nx-filter-title { font-size: 2rem; }
+}
