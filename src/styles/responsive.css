@@ -397,4 +397,38 @@
     max-width: 1000px; /* Evita que se estire demasiado en monitores gigantes */
   }
   .nx-filter-title { font-size: 2rem; }
+
+/* --- FOOTER: TABLETA (768px+) --- */
+@media (min-width: 768px) {
+  .nx-footer-main { 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+  }
+  .nx-footer-col { flex: 1 1 calc(33.333% - 2rem); }
+  .nx-footer-bottom { 
+    flex-direction: row; 
+    justify-content: space-between; 
+  }
+}
+
+/* --- FOOTER: DESKTOP (1024px+) --- */
+@media (min-width: 1024px) {
+  .nx-footer-section {
+    padding: 5rem 3.75rem 2rem 3.75rem;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  .nx-footer-newsletter {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 3rem 4rem;
+  }
+  .nx-news-form {
+    width: 400px;
+  }
+  .nx-footer-main, .nx-footer-bottom {
+    padding: 3rem 4rem;
+  }
 }

@@ -317,62 +317,60 @@
   </section>
 
   <!-- SECCIÓN FOOTER -->
-  <footer class="nx-footer-section" id="contacto">
+  <footer id="contacto" class="nx-footer-section">
     
-    <!-- Redes Sociales -->
-    <div class="nx-social-bar">
-      <!-- Facebook (Pendiente) -->
-      <a href="#" class="nx-social-icon" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-      </a>
-      <!-- Instagram (Pendiente) -->
-      <a href="#" class="nx-social-icon" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-      </a>
-      <!-- GitHub (Link Real) -->
-      <a href="https://github.com/santi-trujillo" target="_blank" rel="noopener noreferrer" class="nx-social-icon" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-      </a>
-      <!-- Correo Electrónico (Link Real) -->
-      <a href="mailto:filius.tec@gmail.com" class="nx-social-icon" aria-label="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-      </a>
+    <!-- Bloque Newsletter -->
+    <div class="nx-footer-newsletter">
+      <div class="nx-news-text">
+        <span class="nx-news-label">Newsletter</span>
+        <h2 class="nx-news-title">Suscríbete a nuestro boletín</h2>
+      </div>
+      <form class="nx-news-form" action="#" method="POST">
+        <input type="email" placeholder="Ingresa tu correo" required aria-label="Correo electrónico">
+        <button type="submit" class="nx-news-btn" aria-label="Suscribirse">→</button>
+      </form>
     </div>
 
-    <!-- Navegación del Footer -->
-    <div class="nx-footer-nav">
-      <div class="nx-nav-col">
-        <h4 class="nx-nav-col-title">Agencia</h4>
-        <div class="nx-nav-links">
-          <a href="#inicio">Inicio</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#proyectos">Portafolio</a>
-          <a href="#testimonios">Clientes</a>
-        </div>
+    <!-- Bloque Enlaces y Navegación -->
+    <div class="nx-footer-main">
+      <div class="nx-footer-col">
+        <h3 class="nx-col-title">Inicio</h3>
+        <ul>
+          <li><a href="#hero">Por qué FiliusTec</a></li>
+          <li><a href="#about">Sobre nosotros</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
+        </ul>
       </div>
-      <div class="nx-nav-col">
-        <h4 class="nx-nav-col-title">Servicios</h4>
-        <div class="nx-nav-links">
-          <a href="#servicios">Consultoría TI</a>
-          <a href="#servicios">Desarrollo Web</a>
-          <a href="#servicios">E-Commerce</a>
-          <a href="#servicios">Infraestructura</a>
-        </div>
+      <div class="nx-footer-col">
+        <h3 class="nx-col-title">Servicios</h3>
+        <ul>
+          <li><a href="#servicios">Desarrollo Web Vanilla</a></li>
+          <li><a href="#servicios">E-commerce Shopify</a></li>
+          <li><a href="#servicios">Consultoría TI</a></li>
+          <li><a href="#servicios">Arquitectura Cloud</a></li>
+        </ul>
+      </div>
+      <div class="nx-footer-col">
+        <h3 class="nx-col-title">Conecta</h3>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
       </div>
     </div>
 
-
-
-    <!-- Legales -->
-    <div class="nx-footer-legal">
-      <p class="nx-legal-text">© 2026 FiliusTec. Todos los derechos reservados.</p>
-      <div class="nx-legal-links">
+    <!-- Bloque Legal -->
+    <div class="nx-footer-bottom">
+      <p>© 2026 FiliusTec. Todos los derechos reservados.</p>
+      <div class="nx-footer-legal">
         <a href="#">Términos y Condiciones</a>
-        <div class="nx-legal-divider"></div>
+        <span class="nx-separator">|</span>
         <a href="#">Política de Privacidad</a>
       </div>
     </div>
-
   </footer>
 
 <script src="./scripts/main.js"></script>
