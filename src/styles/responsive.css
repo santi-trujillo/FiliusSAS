@@ -489,3 +489,43 @@
     border-radius: 12px;
   }
 }
+
+/* --- HERO: LAPTOP (Figma 1360px Specs) --- */
+@media (min-width: 1024px) {
+  .nx-hero-card {
+    padding: 5rem 3.75rem 8rem 3.75rem; /* 80px top, 150px bot */
+  }
+  .nx-hero-title {
+    font-size: 3.625rem; /* 58px */
+  }
+  .nx-hero-cta { font-size: 1.25rem; padding: 1rem 2rem; }
+  .nx-hero-desc { font-size: 1rem; /* 16px */ max-width: 800px; }
+  .nx-hero-tags { padding: 1rem 2rem; font-size: 1rem; }
+  
+  .nx-metrics-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .nx-metric-item { flex: 1; }
+  .nx-metric-highlight { grid-column: auto; }
+}
+
+/* --- HERO: DESKTOP XL (Figma 1820px Specs) --- */
+@media (min-width: 1600px) {
+  .nx-hero-card {
+    padding: 6.25rem 5rem 11.25rem 5rem; /* 100px top, 180px bot */
+  }
+  .nx-hero-title {
+    font-size: 4.875rem; /* 78px */
+    line-height: 1.1;
+  }
+  .nx-hero-cta { font-size: 1.5rem; padding: 1.25rem 2.5rem; }
+  .nx-hero-desc { font-size: 1.125rem; /* 18px */ }
+  .nx-hero-tags { font-size: 1.25rem; padding: 1.5rem 2.5rem; }
+  
+  .nx-metrics-container { padding: 1.25rem; gap: 1.25rem; }
+  .nx-metric-item { padding: 2rem 1.25rem; }
+  .nx-metric-title { font-size: 1.125rem; /* 18px */ }
+  .nx-metric-value { font-size: 3.75rem; /* 60px */ }
+}
