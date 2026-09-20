@@ -7,46 +7,39 @@
   background-color: transparent;
 }
 
+/* --- NAVBAR BASE (MÓVIL - 358px Specs) --- */
 .nx-navbar {
+  background-color: #1A1A1A;
+  border-radius: 10px;
+  padding: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-card);
-  padding: 0.875rem 1rem;
-  border-radius: 10px;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.nx-nav-logo {
-  display: flex;
-  align-items: center;
+/* Ocultamos links en móvil */
+.nx-desktop-nav {
+  display: none;
 }
 
-.nx-nav-logo img {
-  height: 55px; /* Aumentamos la altura base */
-  width: auto;
-  object-fit: contain;
-  transform: scale(1.35); /* Escala visual para matar el padding del PNG */
-  transform-origin: left center; /* Para que crezca hacia la derecha y no se salga de la pantalla */
-}
-
+/* Botón Hamburguesa */
 .nx-menu-btn {
-  background-color: var(--bg-dark);
-  border: none;
+  background-color: #0F0F0F;
   border-radius: 10px;
-  padding: 10px 12px;
+  padding: 10px;
+  width: 44px; /* 24px icono + 20px padding total */
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  color: #F9EFEC;
   cursor: pointer;
-  color: var(--text-main);
 }
 
 .nx-menu-btn svg {
-  width: 18px;
-  height: 12px;
-  fill: currentColor;
+  width: 24px;
+  height: 24px;
 }
 
 .nx-nav-links {

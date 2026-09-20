@@ -432,3 +432,60 @@
     padding: 3rem 4rem;
   }
 }
+
+/* --- NAVBAR: LAPTOP (Figma 1360px Specs) --- */
+@media (min-width: 1024px) {
+  .nx-navbar {
+    padding: 20px 20px 20px 40px;
+    border-radius: 14px;
+    outline: 1px solid #1C1C21;
+  }
+  
+  .nx-menu-btn { display: none; }
+  
+  .nx-desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .nx-desktop-nav a {
+    padding: 14px 20px;
+    background-color: #0F0F0F;
+    border-radius: 10px;
+    color: #81807E;
+    font-size: 14px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .nx-desktop-nav a.active {
+    color: #E7BEB1;
+  }
+  
+  .nx-desktop-nav a.nx-nav-cta {
+    background-color: #CE7D63;
+    color: #0F0F0F;
+  }
+}
+
+/* --- NAVBAR: DESKTOP XL (Figma 1820px Specs) --- */
+@media (min-width: 1600px) {
+  .nx-navbar {
+    padding: 24px 24px 24px 50px;
+    border-radius: 16px;
+  }
+  
+  .nx-desktop-nav {
+    gap: 16px;
+  }
+  
+  .nx-desktop-nav a {
+    padding: 18px 24px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+}

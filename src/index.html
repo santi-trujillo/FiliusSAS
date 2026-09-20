@@ -50,20 +50,26 @@
 
   <header class="nx-header-section">
     <nav class="nx-navbar">
+      <!-- Logo (El espacio vacío en tu Figma es el logo) -->
       <a href="#" class="nx-nav-logo">
         <img src="./assets/images/logos/FiliusB.png" alt="FiliusTec Logo">
       </a>
-      <!-- Navegación Desktop (Oculta por defecto en móvil, visible en media query) -->
-      <nav class="nx-desktop-nav" style="display: none;">
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Portafolio</a>
-        <a href="#testimonios">Clientes</a>
-        <a href="#cotizador" class="nx-nav-cta">Cotizar</a>
-      </nav>
+
+      <!-- Navegación Desktop / Laptop -->
+      <div class="nx-desktop-nav">
+        <a href="#hero" class="active">Home</a>
+        <a href="#servicios">Services</a>
+        <a href="#proyectos">Projects</a>
+        <a href="#about">About</a>
+        <a href="#careers">Careers</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#contacto" class="nx-nav-cta">Contact Us</a>
+      </div>
+
+      <!-- Botón Hamburguesa Móvil -->
       <button class="nx-menu-btn" aria-label="Abrir menú">
-        <svg viewBox="0 0 18 12" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0H18V2H0V0ZM0 5H18V7H0V5ZM0 10H18V12H0V10Z"/>
-        </svg>
+        <!-- Ícono Hamburguesa SVG -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </nav>
   </header>
