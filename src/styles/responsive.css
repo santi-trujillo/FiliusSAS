@@ -298,3 +298,27 @@
     height: 14px;
   }
 }
+
+/* --- SERVICIOS: TABLETA (768px+) --- */
+@media (min-width: 768px) {
+  .nx-services-section { padding: 4rem 2.5rem; }
+  .nx-service-header { flex-direction: row; justify-content: space-between; align-items: center; }
+  .nx-service-link { align-self: center; }
+  .nx-service-price { align-self: flex-end; }
+}
+
+/* --- SERVICIOS: DESKTOP (1024px+) --- */
+@media (min-width: 1024px) {
+  .nx-services-section {
+    padding: 5rem 3.75rem;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  .nx-section-title { font-size: 2.5rem; }
+  .nx-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Grilla 2x2 perfecta */
+    gap: 1.5rem;
+  }
+  .nx-service-card { padding: 3.75rem; } /* Más aire interno copiando a Figma */
+}
