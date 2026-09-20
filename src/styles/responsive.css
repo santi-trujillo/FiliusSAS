@@ -180,85 +180,43 @@
     color: #B3B3B2;
   }
 
-  /* Botón gigante y llamativo */
+  /* Ajustes específicos para Desktop (Heredando la base) */
   .nx-hero-section .nx-hero-btn {
-    background-color: var(--accent-primary);
-    color: var(--bg-dark) !important;
-    padding: 1.25rem 3rem !important; /* Más ancho */
-    border-radius: 100px;
-    font-family: var(--font-mono);
-    font-size: 1.25rem !important; /* Subimos a 20px */
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-
-  /* Pastilla Negra de Servicios: Diseño Figma */
-  .nx-hero-section .nx-hero-tags {
-    background-color: var(--bg-dark); /* Fondo negro absoluto #0F0F0F */
-    width: 100%;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+    width: auto; /* Quitamos el 100% del celular */
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
   }
   
+  .nx-hero-section .nx-hero-btn:hover {
+    transform: scale(1.05);
+  }
+
+  .nx-hero-section .nx-hero-tags {
+    max-width: 860px;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    gap: 1.5rem;
+  }
+
   .nx-hero-section .nx-hero-tags span {
-    font-family: var(--font-mono);
-    font-size: 1rem; /* Subimos a 16px */
-    color: #81807E;
-    text-transform: uppercase;
+    font-size: 1rem;
   }
 
-  /* Puntos de separación en color cobre para contraste */
-  .nx-hero-section .nx-hero-tags span.dot {
-    color: var(--accent-primary);
-    font-size: 1.5rem;
-    line-height: 0;
-  }
-
-  /* --- BARRA DE MÉTRICAS DESKTOP (Fila Horizontal) --- */
   .nx-hero-section .nx-metrics-container {
-    display: flex;
+    display: flex; /* Rompemos la grilla de celular y pasamos a fila horizontal */
     flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
     padding: 10px;
     border: 2px solid #1F1F1F;
     border-radius: 16px;
     background-color: transparent;
-    margin-top: 1.5rem;
   }
 
-  /* Tarjetas individuales de métricas */
   .nx-hero-section .nx-metric-item {
     flex: 1; /* Para que todas midan lo mismo */
     background-color: var(--bg-card);
     border-radius: 12px;
-    padding: 1.25rem 1rem; /* 20px 16px */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    padding: 1.25rem 1rem;
     gap: 12px;
-  }
-
-  /* Textos de métricas alineados a la izquierda */
-  .nx-hero-section .nx-metric-title {
-    font-size: 0.875rem; /* 14px */
-    text-align: left;
-  }
-
-  .nx-hero-section .nx-metric-value {
-    font-size: 2.5rem; /* 40px */
-    text-align: left;
   }
 
   /* Footer Desktop */
