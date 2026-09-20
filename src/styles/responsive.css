@@ -433,8 +433,8 @@
   }
 }
 
-/* --- NAVBAR: LAPTOP (Figma 1360px Specs) --- */
-@media (min-width: 1024px) {
+/* --- NAVBAR: LAPTOP (Ajustado a 1200px para evitar superposición) --- */
+@media (min-width: 1200px) {
   .nx-navbar {
     padding: 20px 20px 20px 40px;
     border-radius: 14px;
