@@ -1,0 +1,54 @@
+/* =========================================
+   VARIABLES DE SISTEMA (DESIGN TOKENS)
+   ========================================= */
+:root {
+  --bg-dark: #0F0F0F;
+  --bg-card: #1A1A1A;
+  --text-main: #F9EFEC;
+  --text-muted: #676665;
+  --text-light: #B3B3B2;
+  --accent-primary: #CE7D63;
+  --accent-secondary: #DA9E8B;
+  
+  --font-heading: 'Roboto Flex', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+/* =========================================
+   RESET UNIVERSAL W3C Y ESCUDO ESTRUCTURAL
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box; /* El padding y border se calculan hacia adentro */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  line-height: 1.5;
+  overflow-x: hidden; /* Bloqueo absoluto de scroll horizontal */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Regla de oro: Imágenes, SVG y videos 100% elásticos y fluidos */
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reseteo base de listas y enlaces para no repetir código después */
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
