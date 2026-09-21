@@ -23,14 +23,37 @@
 }
 
 .nx-logo img {
-  max-height: 32px;
+  max-height: 48px; /* Aumentado de 32px para mayor presencia */
   width: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* Ocultamos la botonera en móvil */
+.nx-logo:hover img {
+  transform: scale(1.05); /* Pequeño efecto de interacción al tocar el logo */
+}
+
+/* Ocultamos la botonera en móvil y la preparamos para JS */
 .nx-nav-links {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 0 0 14px 14px;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  border: 1px solid #1C1C21;
+  border-top: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Clase inyectada por JS para abrir el menú */
+.nx-nav-links.active {
+  display: flex;
 }
 
 /* Botón Hamburguesa */
@@ -56,6 +79,10 @@
    NAVBAR - LAPTOP (Figma 1360px -> CSS 1024px+)
    ========================================= */
 @media (min-width: 1024px) {
+  .nx-logo img {
+    max-height: 56px; /* Más grande en Laptop */
+  }
+
   .nx-navbar {
     padding: 20px 20px 20px 40px; /* Tokens exactos Figma Laptop */
     border-radius: 14px;
@@ -99,6 +126,10 @@
    NAVBAR - DESKTOP XL (Figma 1820px -> CSS 1440px+)
    ========================================= */
 @media (min-width: 1440px) {
+  .nx-logo img {
+    max-height: 64px; /* Monumental en Desktop XL */
+  }
+
   .nx-navbar {
     padding: 24px 24px 24px 50px; /* Tokens exactos Figma Desktop */
     border-radius: 16px;
