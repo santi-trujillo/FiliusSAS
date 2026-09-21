@@ -8,8 +8,7 @@
   /* Eliminamos min-height: calc(100vh - 120px) y justify-content: center */
   min-height: auto; 
   justify-content: flex-start;
-  /* Ajuste móvil: reducimos el padding superior a 0.5rem manteniendo los laterales y el fondo */
-  padding: 0.5rem 1rem 3rem 1rem;
+  padding: 0.5rem 1rem 1.5rem 1rem; /* Bajamos el bottom de 3rem a 1.5rem */
   gap: 16px;
 }
 
@@ -137,7 +136,7 @@
    ========================================= */
 @media (min-width: 1024px) {
   .nx-hero-section {
-    padding: 3rem 40px 6rem 40px; /* Respiro superior e inferior, manteniendo 40px lateral */
+    padding: 3rem 40px 2rem 40px; /* Bajamos el bottom drásticamente para acercar la siguiente sección */
   }
   
   .nx-hero-main {

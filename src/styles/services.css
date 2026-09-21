@@ -3,7 +3,7 @@
    ========================================= */
 .nx-services-section {
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem 2rem 1rem; /* Reducimos el top de 2rem a 1rem */
 }
 
 .nx-services-wrapper {
@@ -133,7 +133,7 @@
 
 @media (min-width: 1024px) {
   .nx-services-section {
-    padding: 4rem 40px;
+    padding: 2rem 40px 4rem 40px; /* Reducimos el top de 4rem a 2rem */
   }
   
   .nx-services-wrapper {
