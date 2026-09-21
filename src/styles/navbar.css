@@ -3,9 +3,16 @@
    ========================================= */
 .nx-header {
   width: 100%;
-  padding: 1rem; /* Margen exterior protector */
-  position: relative;
-  z-index: 100;
+  padding: 1rem;
+  /* Comportamiento Sticky nativo W3C */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Prioridad de capa sobre cualquier gráfico o sección */
+  /* Efecto de cristal sutil para cuando pase contenido por debajo */
+  background-color: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
 }
 
 .nx-container {
