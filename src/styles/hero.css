@@ -17,7 +17,7 @@
 .nx-hero-main {
   background-color: var(--bg-card);
   border-radius: 12px;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   display: grid;
   grid-template-columns: 1fr; /* Una columna en móvil */
   gap: 2rem;
@@ -27,8 +27,6 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 600px; /* Evita que el texto se estire infinitamente a la izquierda */
-  margin-right: auto; /* Mantiene la alineación pero controla el desborde */
 }
 
 /* 3. Contrapeso Gráfico: Le damos presencia al espacio vacío mientras carga la imagen */
@@ -47,11 +45,11 @@
 }
 
 .nx-hero-title {
+  font-size: var(--fs-h1);
   font-family: var(--font-heading);
-  font-size: 28px;
   font-weight: 600;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.1; /* Reducimos el interlineado para títulos masivos */
   color: var(--text-main);
 }
 
@@ -74,9 +72,9 @@
 }
 
 .nx-hero-desc {
+  font-size: var(--fs-body);
   color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Barra de Métricas */
@@ -112,7 +110,7 @@
 
 .nx-metric-number {
   color: var(--accent-secondary);
-  font-size: 32px;
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
   font-weight: 600;
 }
 
@@ -125,11 +123,13 @@
    TABLETA (768px+) - Punto de quiebre intermedio
    ========================================= */
 @media (min-width: 768px) {
+  .nx-hero-main {
+    padding: 2rem;
+  }
   .nx-metric-box {
     flex: 1 1 calc(33.333% - 10px); /* 3 arriba, 2 centrados abajo en tableta */
     max-width: 220px;
   }
-  .nx-hero-title { font-size: 36px; }
 }
 
 /* =========================================
@@ -141,17 +141,9 @@
   }
   
   .nx-hero-main {
-    padding: 3rem; /* Reducido de 4rem para ahorrar altura */
-    grid-template-columns: 1fr 1fr;
+    padding: 3rem; /* Estandarizado */
+    grid-template-columns: 1fr 1fr; /* Mitad texto, mitad imagen */
     align-items: center;
-  }
-
-  .nx-hero-title {
-    font-size: 48px; /* Reducido para evitar desbordes */
-  }
-
-  .nx-hero-desc {
-    font-size: 16px;
   }
 
   .nx-metrics-container {
@@ -170,16 +162,6 @@
 @media (min-width: 1440px) {
   .nx-hero-section {
     padding: 24px 50px;
-    gap: 20px;
-  }
-  .nx-hero-main {
-    padding: 4rem; /* Reducido de 6rem */
-  }
-  .nx-hero-title {
-    font-size: 60px; /* Reducido de 78px para encajar en el viewport */
-    line-height: 1.1;
-  }
-  .nx-metric-number {
-    font-size: 48px;
+    gap: 20px; /* Token exacto XL */
   }
 }
