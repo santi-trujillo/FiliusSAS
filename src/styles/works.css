@@ -87,20 +87,6 @@
   object-fit: cover;
 }
 
-/* Columna 3: Tech & Equipo */
-.nx-work-tech-team {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.nx-tech-title {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
 
 .nx-tags-group {
   display: flex;
@@ -117,30 +103,6 @@
   color: var(--text-light);
 }
 
-/* CSS Avatars */
-.nx-avatars-group {
-  display: flex;
-  align-items: center;
-}
-
-.nx-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #2A2A32;
-  border: 2px solid var(--bg-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: var(--text-main);
-  margin-left: -10px; /* Efecto overlapping */
-}
-.nx-avatar:first-child { margin-left: 0; }
-.nx-avatar:nth-child(1) { background-color: #4A3A59; }
-.nx-avatar:nth-child(2) { background-color: #3A4A59; }
-.nx-avatar:nth-child(3) { background-color: #594A3A; }
 
 
 /* =========================================
@@ -155,7 +117,8 @@
   /* La magia del CSS Grid para la tarjeta */
   .nx-work-card {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr; /* 3 columnas asimétricas */
+    /* Cambiamos de 3 a 2 columnas. Texto (1fr) | Imagen (1.5fr) */
+    grid-template-columns: 1fr 1.5fr; 
     gap: 2rem;
     padding: 2.5rem;
   }
