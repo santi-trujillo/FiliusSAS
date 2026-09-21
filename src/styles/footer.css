@@ -1,6 +1,5 @@
-
 /* =========================================
-   FOOTER GRID
+   FOOTER GRID - BASE MÓVIL
    ========================================= */
 .nx-footer {
   width: 100%;
@@ -14,63 +13,60 @@
   gap: 3rem;
 }
 
-/* Mitad Izquierda: Redes */
+/* REDES SOCIALES (MÓVIL: Solo íconos en fila) */
 .nx-social-grid {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Distribuye los 4 íconos en móvil */
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
 }
 
 .nx-social-card {
-  /* Reset de tarjeta para móvil: solo el ícono */
+  text-decoration: none;
   background: transparent;
   border: none;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  display: block;
 }
 
-.nx-social-name {
-  display: none; /* Ocultamos el texto "LINKEDIN", "GITHUB", etc. en móvil */
+/* Ocultamos textos y flechas en móvil para dejar solo la bolita */
+.nx-social-arrow,
+.nx-social-info {
+  display: none; 
 }
 
 .nx-social-icon {
-  width: 40px;
-  height: 40px;
-  background-color: #2A2A32;
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-card);
+  border: 1px solid #1C1C21;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent-primary);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  transition: all 0.3s ease;
 }
 
-.nx-social-card:hover .nx-social-icon {
+.nx-social-icon:hover {
   background-color: var(--accent-primary);
   color: var(--bg-dark);
-  transform: translateY(-2px);
 }
 
-/* Mitad Derecha: Enlaces y Newsletter */
-.nx-footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
+/* ENLACES (MÓVIL: Grilla 2x2) */
 .nx-links-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
 .nx-link-col h4 {
   font-family: var(--font-heading);
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--text-main);
   margin-bottom: 1rem;
 }
@@ -88,80 +84,49 @@
   color: var(--accent-primary);
 }
 
-/* Newsletter */
-.nx-newsletter {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.nx-newsletter h4 {
-  font-size: 0.875rem;
-  color: var(--text-main);
-}
-
-.nx-input-group {
-  display: flex;
-  background-color: var(--bg-card);
-  border: 1px solid #1C1C21;
-  border-radius: 8px;
-  padding: 4px;
-}
-
-.nx-input-group input {
-  flex-grow: 1;
-  background: transparent;
-  border: none;
-  padding: 10px 12px;
-  color: var(--text-main);
-  outline: none;
-  font-size: 0.875rem;
-}
-
-.nx-input-group button {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  padding: 0 12px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.nx-input-group button:hover {
-  color: var(--accent-primary);
-}
-
+/* FOOTER BOTTOM (Copyright y Legal) */
 .nx-footer-bottom {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid #1C1C21;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   font-size: 0.75rem;
   color: var(--text-muted);
   text-align: center;
 }
 
-/* =========================================
-   TABLETA Y ESCRITORIO
-   ========================================= */
-@media (min-width: 768px) {
-  .nx-links-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas de enlaces */
-  }
-  
-  .nx-footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
+.nx-footer-legal-links {
+  display: flex;
+  gap: 1rem;
 }
 
+.nx-footer-legal-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nx-footer-legal-links a:hover {
+  color: var(--accent-primary);
+}
+
+/* =========================================
+   TABLETA Y ESCRITORIO (Diseño Exacto Figma)
+   ========================================= */
 @media (min-width: 1024px) {
+  .nx-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mitad redes, mitad enlaces */
+    gap: 4rem;
+  }
+  
+  /* EN ESCRITORIO: Las redes se vuelven tarjetas completas 2x2 */
   .nx-social-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Vuelve la grilla 2x2 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
@@ -170,8 +135,8 @@
     border: 1px solid #1C1C21;
     border-radius: 12px;
     padding: 1.5rem;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
     transition: border-color 0.3s ease;
   }
   
@@ -180,19 +145,50 @@
   }
   
   .nx-social-card:hover .nx-social-icon {
-    /* Reseteamos el hover del ícono para que la tarjeta entera haga el efecto */
-    background-color: #2A2A32;
+    background-color: var(--bg-dark); /* Restaurar color original en hover de tarjeta */
     color: var(--accent-primary);
-    transform: none;
+  }
+  
+  .nx-social-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  
+  /* Reaparecen los elementos ocultos en móvil */
+  .nx-social-arrow,
+  .nx-social-info {
+    display: block;
+  }
+  
+  .nx-social-arrow {
+    color: var(--text-muted);
+    font-size: 1.2rem;
   }
   
   .nx-social-name {
-    display: block; /* Reaparece el texto en escritorio */
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  
+  .nx-social-desc {
+    color: var(--text-muted);
+    font-size: var(--fs-small);
+    line-height: 1.5;
   }
 
-  .nx-footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Mitad redes, mitad enlaces */
-    gap: 4rem;
+  /* EN ESCRITORIO: Los enlaces pasan de 2x2 a 4 columnas en línea */
+  .nx-links-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .nx-footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
