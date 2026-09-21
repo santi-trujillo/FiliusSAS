@@ -32,7 +32,7 @@
 /* 3. Contrapeso Gráfico: Le damos presencia al espacio vacío mientras carga la imagen */
 .nx-hero-graphic {
   width: 100%;
-  min-height: 300px; /* Altura mínima para que la columna derecha no colapse si falla la imagen */
+  min-height: auto; /* Anulamos los 300px anteriores */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,8 +83,9 @@
   border: 1px solid #1C1C21;
   border-radius: 12px;
   padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Grilla 2x2 en móvil */
+  display: flex; /* Cambiamos a Flexbox */
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los elementos huérfanos */
   gap: 10px;
 }
 
@@ -96,6 +97,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1 1 calc(50% - 10px); /* 2 por fila en móvil */
+  min-width: 130px;
 }
 
 .nx-metric-title {
@@ -111,23 +114,20 @@
   font-weight: 600;
 }
 
+/* Limpiamos cualquier rastro de grid-column del código anterior */
 .nx-metric-box:last-child {
-  grid-column: 1 / -1; /* Obliga a la última tarjeta a expandirse por todas las columnas */
+  grid-column: auto;
 }
 
 /* =========================================
    TABLETA (768px+) - Punto de quiebre intermedio
    ========================================= */
 @media (min-width: 768px) {
-  .nx-metrics-container {
-    grid-template-columns: repeat(3, 1fr);
+  .nx-metric-box {
+    flex: 1 1 calc(33.333% - 10px); /* 3 arriba, 2 centrados abajo en tableta */
+    max-width: 220px;
   }
-  .nx-hero-title { font-size: 40px; }
-  
-  /* Parche crítico: Matamos la herencia del móvil para estabilizar la tableta */
-  .nx-metric-box:last-child {
-    grid-column: auto;
-  }
+  .nx-hero-title { font-size: 36px; }
 }
 
 /* =========================================
@@ -139,13 +139,13 @@
   }
   
   .nx-hero-main {
-    padding: 4rem;
-    grid-template-columns: 1fr 1fr; /* Mitad texto, mitad imagen */
+    padding: 3rem; /* Reducido de 4rem para ahorrar altura */
+    grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 
   .nx-hero-title {
-    font-size: 58px;
+    font-size: 48px; /* Reducido para evitar desbordes */
   }
 
   .nx-hero-desc {
@@ -155,12 +155,10 @@
   .nx-metrics-container {
     padding: 1.5rem;
   }
-}
 
-/* Nuevo punto de quiebre para oxigenar las métricas */
-@media (min-width: 1280px) {
-  .nx-metrics-container {
-    grid-template-columns: repeat(5, 1fr);
+  .nx-metric-box {
+    flex: 1 1 0; /* Todos en una sola línea horizontal */
+    max-width: none;
   }
 }
 
@@ -170,18 +168,15 @@
 @media (min-width: 1440px) {
   .nx-hero-section {
     padding: 24px 50px;
-    gap: 20px; /* Token exacto XL */
+    gap: 20px;
   }
-
   .nx-hero-main {
-    padding: 6rem;
+    padding: 4rem; /* Reducido de 6rem */
   }
-
   .nx-hero-title {
-    font-size: 78px;
+    font-size: 60px; /* Reducido de 78px para encajar en el viewport */
     line-height: 1.1;
   }
-  
   .nx-metric-number {
     font-size: 48px;
   }
