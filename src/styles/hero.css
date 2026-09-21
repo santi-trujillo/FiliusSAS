@@ -104,6 +104,11 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .nx-hero-title { font-size: 40px; }
+  
+  /* Parche crítico: Matamos la herencia del móvil para estabilizar la tableta */
+  .nx-metric-box:last-child {
+    grid-column: auto;
+  }
 }
 
 /* =========================================
