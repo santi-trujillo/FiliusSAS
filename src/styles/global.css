@@ -13,8 +13,8 @@
   --font-heading: 'Roboto Flex', sans-serif;
   --font-mono: 'Roboto Mono', monospace;
   
-  /* FLUID TYPOGRAPHY TOKENS (Min | Preferred | Max) */
-  --fs-h1: clamp(2.25rem, 4vw + 1rem, 4.5rem); /* Escala de 36px a 72px suavemente */
+  /* FLUID TYPOGRAPHY TOKENS - CALIBRADOS */
+  --fs-h1: clamp(1.75rem, 3vw + 0.5rem, 3.25rem); /* Escala de 28px en móvil a 52px en escritorio */
   --fs-body: clamp(0.875rem, 1vw + 0.5rem, 1.125rem); /* Escala de 14px a 18px */
   --fs-small: clamp(0.75rem, 0.5vw + 0.5rem, 0.875rem); /* Escala de 12px a 14px */
 }
