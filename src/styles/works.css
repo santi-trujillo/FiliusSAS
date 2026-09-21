@@ -12,7 +12,7 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem; /* Reducido de 2rem para compactar el espacio vertical interno */
 }
 
 .nx-works-header {
@@ -20,20 +20,9 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #1C1C21;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem; /* Reducido de 1rem para acercar la línea divisoria al título */
 }
 
-.nx-works-link {
-  color: var(--text-light);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nx-works-link:hover {
-  color: var(--accent-primary);
-}
 
 .nx-works-grid {
   display: flex;
@@ -153,18 +142,6 @@
 .nx-avatar:nth-child(2) { background-color: #3A4A59; }
 .nx-avatar:nth-child(3) { background-color: #594A3A; }
 
-.nx-btn-work {
-  background-color: var(--accent-primary);
-  color: var(--bg-dark);
-  text-align: center;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  display: block;
-  margin-top: auto;
-}
 
 /* =========================================
    TABLETA Y ESCRITORIO (Mutación a 3 columnas)
