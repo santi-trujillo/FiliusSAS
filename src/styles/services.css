@@ -76,41 +76,18 @@
   line-height: 1.6;
 }
 
-.nx-service-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: auto; /* Empuja el footer al fondo de la tarjeta */
-}
-
-.nx-service-price {
-  font-family: var(--font-mono);
-  color: var(--text-light);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-}
-
-/* Mutación del Botón de Acción */
-.nx-btn-service-mobile {
-  background-color: var(--accent-primary);
-  color: var(--bg-dark);
-  text-align: center;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  display: block; /* Visible en móvil por defecto */
-}
 
 .nx-btn-service-desktop {
-  display: none; /* Oculto en móvil por defecto */
+  display: flex;
+  align-items: center;
+  gap: 4px;
   color: var(--text-light);
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 1px;
   transition: color 0.3s ease;
+  text-decoration: none; /* Asegurar que no tenga subrayado nativo */
 }
 
 .nx-btn-service-desktop:hover {
@@ -138,20 +115,5 @@
     padding: 4rem;
     border-radius: 24px;
   }
-
-  /* Ejecutamos la mutación del botón en escritorio */
-  .nx-btn-service-mobile {
-    display: none; /* Matamos el botón masivo */
-  }
-
-  .nx-btn-service-desktop {
-    display: flex; /* Activamos el enlace sutil superior */
-    align-items: center;
-    gap: 4px;
-  }
-
-  .nx-service-footer {
-    flex-direction: row;
-    justify-content: flex-end; /* Alineamos el precio a la derecha */
-  }
 }
+
