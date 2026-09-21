@@ -92,6 +92,10 @@
   font-weight: 600;
 }
 
+.nx-metric-box:last-child {
+  grid-column: 1 / -1; /* Obliga a la última tarjeta a expandirse por todas las columnas */
+}
+
 /* =========================================
    TABLETA (768px+) - Punto de quiebre intermedio
    ========================================= */
@@ -125,8 +129,14 @@
   }
 
   .nx-metrics-container {
-    grid-template-columns: repeat(5, 1fr); /* Fila completa horizontal */
     padding: 1.5rem;
+  }
+}
+
+/* Nuevo punto de quiebre para oxigenar las métricas */
+@media (min-width: 1280px) {
+  .nx-metrics-container {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
