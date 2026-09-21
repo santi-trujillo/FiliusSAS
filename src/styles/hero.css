@@ -8,8 +8,8 @@
   /* Eliminamos min-height: calc(100vh - 120px) y justify-content: center */
   min-height: auto; 
   justify-content: flex-start;
-  /* Añadimos un respiro superior e inferior controlado */
-  padding: 2rem 1rem 4rem 1rem; /* Mantiene 1rem a los lados de móvil */
+  /* Ajuste móvil: reducimos el padding superior a 0.5rem manteniendo los laterales y el fondo */
+  padding: 0.5rem 1rem 3rem 1rem;
   gap: 16px;
 }
 
@@ -127,8 +127,8 @@
     padding: 2rem;
   }
   .nx-metric-box {
-    flex: 1 1 calc(33.333% - 10px); /* 3 arriba, 2 centrados abajo en tableta */
-    max-width: 220px;
+    flex: 1 1 calc(50% - 12px); /* 2x2 perfecto y centrado en tableta */
+    max-width: none;
   }
 }
 
