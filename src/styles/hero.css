@@ -1,0 +1,154 @@
+/* =========================================
+   HERO SECTION - BASE MÓVIL (Figma 358px)
+   ========================================= */
+.nx-hero-section {
+  width: 100%;
+  padding: 1rem; /* Margen exterior protector */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Token extraído de Figma */
+}
+
+/* Tarjeta Principal (Textos e Imagen) */
+.nx-hero-main {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móvil */
+  gap: 2rem;
+}
+
+.nx-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nx-hero-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+.nx-hero-btn {
+  align-self: flex-start;
+  background-color: var(--accent-primary);
+  color: var(--bg-dark);
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease;
+}
+
+.nx-hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nx-hero-desc {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Barra de Métricas */
+.nx-metrics-container {
+  background-color: transparent;
+  border: 1px solid #1C1C21;
+  border-radius: 12px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Grilla 2x2 en móvil */
+  gap: 10px;
+}
+
+.nx-metric-box {
+  background-color: var(--bg-card);
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nx-metric-title {
+  color: var(--text-light);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.nx-metric-number {
+  color: var(--accent-secondary);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* =========================================
+   TABLETA (768px+) - Punto de quiebre intermedio
+   ========================================= */
+@media (min-width: 768px) {
+  .nx-metrics-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nx-hero-title { font-size: 40px; }
+}
+
+/* =========================================
+   LAPTOP (Figma 1360px -> CSS 1024px+)
+   ========================================= */
+@media (min-width: 1024px) {
+  .nx-hero-section {
+    padding: 20px 40px;
+  }
+  
+  .nx-hero-main {
+    padding: 4rem;
+    grid-template-columns: 1fr 1fr; /* Mitad texto, mitad imagen */
+    align-items: center;
+  }
+
+  .nx-hero-title {
+    font-size: 58px;
+  }
+
+  .nx-hero-desc {
+    font-size: 16px;
+  }
+
+  .nx-metrics-container {
+    grid-template-columns: repeat(5, 1fr); /* Fila completa horizontal */
+    padding: 1.5rem;
+  }
+}
+
+/* =========================================
+   DESKTOP XL (Figma 1820px -> CSS 1440px+)
+   ========================================= */
+@media (min-width: 1440px) {
+  .nx-hero-section {
+    padding: 24px 50px;
+    gap: 20px; /* Token exacto XL */
+  }
+
+  .nx-hero-main {
+    padding: 6rem;
+  }
+
+  .nx-hero-title {
+    font-size: 78px;
+    line-height: 1.1;
+  }
+  
+  .nx-metric-number {
+    font-size: 48px;
+  }
+}
