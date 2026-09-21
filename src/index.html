@@ -12,8 +12,32 @@
   
   <!-- Cimientos Globales -->
   <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/navbar.css">
 </head>
 <body>
-  <!-- El lienzo está en blanco, listo para la Fase 1 -->
+  <header class="nx-header">
+    <div class="nx-container">
+      <nav class="nx-navbar">
+        
+        <a href="#" class="nx-logo">
+          <img src="./assets/images/logos/FiliusB.png" alt="FiliusTec Logo">
+        </a>
+        
+        <div class="nx-nav-links">
+          <a href="#hero" class="active">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#proyectos">Nuestro Trabajo</a>
+          <a href="#contacto" class="nx-btn-cta">Contacto</a>
+        </div>
+
+        <button class="nx-menu-btn" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+      </nav>
+    </div>
+  </header>
 </body>
 </html>

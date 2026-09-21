@@ -1,0 +1,116 @@
+/* =========================================
+   NAVBAR - BASE MÓVIL (Figma 358px)
+   ========================================= */
+.nx-header {
+  width: 100%;
+  padding: 1rem; /* Margen exterior protector */
+  position: relative;
+  z-index: 100;
+}
+
+.nx-container {
+  max-width: 1820px; /* Tope máximo del monitor gigante */
+  margin: 0 auto;
+}
+
+.nx-navbar {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  padding: 14px; /* Token exacto de Figma Móvil */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nx-logo img {
+  max-height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ocultamos la botonera en móvil */
+.nx-nav-links {
+  display: none;
+}
+
+/* Botón Hamburguesa */
+.nx-menu-btn {
+  background-color: var(--bg-dark);
+  border: none;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.nx-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* =========================================
+   NAVBAR - LAPTOP (Figma 1360px -> CSS 1024px+)
+   ========================================= */
+@media (min-width: 1024px) {
+  .nx-navbar {
+    padding: 20px 20px 20px 40px; /* Tokens exactos Figma Laptop */
+    border-radius: 14px;
+  }
+
+  .nx-menu-btn {
+    display: none; /* Apagamos hamburguesa */
+  }
+
+  .nx-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .nx-nav-links a {
+    color: var(--text-light);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .nx-nav-links a:hover,
+  .nx-nav-links a.active {
+    color: var(--text-main); /* Efecto hover / activo */
+  }
+
+  /* Botón de Contacto - CTA */
+  .nx-nav-links a.nx-btn-cta {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark);
+  }
+}
+
+/* =========================================
+   NAVBAR - DESKTOP XL (Figma 1820px -> CSS 1440px+)
+   ========================================= */
+@media (min-width: 1440px) {
+  .nx-navbar {
+    padding: 24px 24px 24px 50px; /* Tokens exactos Figma Desktop */
+    border-radius: 16px;
+  }
+
+  .nx-nav-links {
+    gap: 16px;
+  }
+
+  .nx-nav-links a {
+    font-size: 18px;
+    padding: 18px 24px;
+    border-radius: 12px;
+  }
+}
