@@ -1,0 +1,122 @@
+/* =========================================
+   SECTION TESTIMONIALS - BASE MÓVIL
+   ========================================= */
+.nx-testimonials-section {
+  width: 100%;
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
+}
+
+.nx-testimonials-wrapper {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nx-testimonials-header {
+  display: flex;
+  align-items: center; /* Alineación simple, sin space-between porque no hay botones */
+  border-bottom: 1px solid #1C1C21;
+  padding-bottom: 0.5rem;
+}
+
+.nx-testimonials-grid {
+  display: grid;
+  /* Magia W3C: Cuadrícula responsiva automática */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta Individual de Testimonio */
+.nx-testimonial-card {
+  background-color: var(--bg-dark);
+  border: 1px solid #1C1C21;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.nx-testimonial-card:hover {
+  border-color: var(--text-muted);
+}
+
+.nx-testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.nx-testimonial-text {
+  color: var(--text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  flex-grow: 1; /* Empuja el footer del cliente hacia abajo */
+}
+
+.nx-testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Avatar CSS Reutilizado y Adaptado */
+.nx-testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--bg-dark);
+  flex-shrink: 0;
+}
+
+.nx-testimonial-client-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nx-testimonial-client-name {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  color: var(--text-main);
+}
+
+.nx-testimonial-client-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* =========================================
+   TABLETA Y ESCRITORIO
+   ========================================= */
+@media (min-width: 1024px) {
+  .nx-testimonials-wrapper {
+    padding: 4rem;
+    border-radius: 24px;
+    gap: 2.5rem;
+  }
+  
+  .nx-testimonials-header {
+    padding-bottom: 1rem;
+  }
+  
+  .nx-testimonials-grid {
+    gap: 2rem;
+  }
+}
