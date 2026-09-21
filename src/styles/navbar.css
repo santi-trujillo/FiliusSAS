@@ -93,7 +93,14 @@
   }
 
   .nx-nav-links {
-    display: flex;
+    display: flex !important; /* Forzamos visibilidad ignorando el JS del móvil */
+    position: static;         /* Matamos la posición absoluta del celular */
+    flex-direction: row;      /* Volvemos a alinear en horizontal */
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
     align-items: center;
     gap: 14px;
   }
