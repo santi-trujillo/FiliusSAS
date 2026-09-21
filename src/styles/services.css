@@ -48,8 +48,9 @@
 
 .nx-service-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Apilamiento vertical en móviles */
+  align-items: flex-start; /* Alineados a la izquierda */
+  gap: 12px; /* Espacio de respiración entre el título y el enlace */
 }
 
 .nx-service-title-group {
@@ -98,6 +99,12 @@
    TABLETA Y ESCRITORIO
    ========================================= */
 @media (min-width: 768px) {
+  .nx-service-header {
+    flex-direction: row; /* Frente a frente de nuevo */
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .nx-services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
