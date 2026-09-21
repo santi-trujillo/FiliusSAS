@@ -48,9 +48,7 @@
 
 .nx-service-header {
   display: flex;
-  flex-direction: column; /* Apilamiento vertical en móviles */
-  align-items: flex-start; /* Alineados a la izquierda */
-  gap: 12px; /* Espacio de respiración entre el título y el enlace */
+  align-items: center;
 }
 
 .nx-service-title-group {
@@ -78,33 +76,10 @@
 }
 
 
-.nx-btn-service-desktop {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--text-light);
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-  text-decoration: none; /* Asegurar que no tenga subrayado nativo */
-}
-
-.nx-btn-service-desktop:hover {
-  color: var(--accent-primary);
-}
-
 /* =========================================
    TABLETA Y ESCRITORIO
    ========================================= */
 @media (min-width: 768px) {
-  .nx-service-header {
-    flex-direction: row; /* Frente a frente de nuevo */
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .nx-services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
