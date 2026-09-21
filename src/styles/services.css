@@ -1,0 +1,159 @@
+/* =========================================
+   SECTION SERVICES - BASE MÓVIL
+   ========================================= */
+.nx-services-section {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.nx-services-wrapper {
+  background-color: var(--bg-card); /* Caja contenedora principal */
+  border-radius: 16px;
+  padding: 1.5rem; /* Ajuste UX: superando los 10px de Figma */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nx-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2vw + 1rem, 2rem);
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.nx-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px; /* Token base de Figma */
+}
+
+/* Tarjeta Individual de Servicio */
+.nx-service-card {
+  background-color: var(--bg-dark); /* Contraste con el wrapper */
+  border: 1px solid #1C1C21;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.3s ease;
+}
+
+.nx-service-card:hover {
+  border-color: var(--text-muted);
+}
+
+.nx-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nx-service-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nx-service-icon {
+  color: var(--accent-primary);
+  font-size: 1.25rem;
+}
+
+.nx-service-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.nx-service-desc {
+  color: var(--text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.nx-service-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto; /* Empuja el footer al fondo de la tarjeta */
+}
+
+.nx-service-price {
+  font-family: var(--font-mono);
+  color: var(--text-light);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+/* Mutación del Botón de Acción */
+.nx-btn-service-mobile {
+  background-color: var(--accent-primary);
+  color: var(--bg-dark);
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  display: block; /* Visible en móvil por defecto */
+}
+
+.nx-btn-service-desktop {
+  display: none; /* Oculto en móvil por defecto */
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nx-btn-service-desktop:hover {
+  color: var(--accent-primary);
+}
+
+/* =========================================
+   TABLETA Y ESCRITORIO
+   ========================================= */
+@media (min-width: 768px) {
+  .nx-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .nx-services-wrapper {
+    padding: 2.5rem;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nx-services-section {
+    padding: 4rem 40px;
+  }
+  
+  .nx-services-wrapper {
+    padding: 4rem;
+    border-radius: 24px;
+  }
+
+  /* Ejecutamos la mutación del botón en escritorio */
+  .nx-btn-service-mobile {
+    display: none; /* Matamos el botón masivo */
+  }
+
+  .nx-btn-service-desktop {
+    display: flex; /* Activamos el enlace sutil superior */
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nx-service-footer {
+    flex-direction: row;
+    justify-content: flex-end; /* Alineamos el precio a la derecha */
+  }
+}
