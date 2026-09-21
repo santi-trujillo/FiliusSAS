@@ -79,12 +79,22 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  /* Nuevas reglas de interacción */
+  cursor: pointer;
+  text-decoration: none; /* Por si hereda estilos de enlace */
 }
 
 .nx-work-visual img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  /* Transición suave para el zoom */
+  transition: transform 0.4s ease; 
+}
+
+/* Efecto Hover en la tarjeta visual */
+.nx-work-visual:hover img {
+  transform: scale(1.05);
 }
 
 
@@ -117,8 +127,8 @@
   /* La magia del CSS Grid para la tarjeta */
   .nx-work-card {
     display: grid;
-    /* Cambiamos de 3 a 2 columnas. Texto (1fr) | Imagen (1.5fr) */
-    grid-template-columns: 1fr 1.5fr; 
+    /* Ajuste UX: Texto más amplio (1.2fr) e Imagen contenida (1fr) */
+    grid-template-columns: 1.2fr 1fr; 
     gap: 2rem;
     padding: 2.5rem;
   }
