@@ -8,7 +8,8 @@
   /* Eliminamos min-height: calc(100vh - 120px) y justify-content: center */
   min-height: auto; 
   justify-content: flex-start;
-  padding: 0.5rem 1rem 1.5rem 1rem; /* Bajamos el bottom de 3rem a 1.5rem */
+  /* Estandarización absoluta */
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
   gap: 16px;
 }
 
@@ -135,9 +136,6 @@
    LAPTOP (Figma 1360px -> CSS 1024px+)
    ========================================= */
 @media (min-width: 1024px) {
-  .nx-hero-section {
-    padding: 3rem 40px 2rem 40px; /* Bajamos el bottom drásticamente para acercar la siguiente sección */
-  }
   
   .nx-hero-main {
     padding: 3rem; /* Estandarizado */
@@ -160,7 +158,6 @@
    ========================================= */
 @media (min-width: 1440px) {
   .nx-hero-section {
-    padding: 24px 50px;
     gap: 20px; /* Token exacto XL */
   }
 }

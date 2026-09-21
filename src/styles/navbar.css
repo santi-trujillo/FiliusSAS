@@ -3,7 +3,7 @@
    ========================================= */
 .nx-header {
   width: 100%;
-  padding: 1rem;
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
   /* Comportamiento Sticky nativo W3C */
   position: sticky;
   top: 0;

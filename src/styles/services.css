@@ -3,7 +3,8 @@
    ========================================= */
 .nx-services-section {
   width: 100%;
-  padding: 1rem 1rem 2rem 1rem; /* Reducimos el top de 2rem a 1rem */
+  /* Estandarización absoluta */
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
 }
 
 .nx-services-wrapper {
@@ -132,9 +133,6 @@
 }
 
 @media (min-width: 1024px) {
-  .nx-services-section {
-    padding: 2rem 40px 4rem 40px; /* Reducimos el top de 4rem a 2rem */
-  }
   
   .nx-services-wrapper {
     padding: 4rem;
