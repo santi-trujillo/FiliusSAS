@@ -7,26 +7,36 @@
   margin-bottom: 2rem;
 }
 
-/* Caja Principal idéntica a las tarjetas de proyectos */
+/* Caja Contenedora Gris Principal */
 .nx-contact-wrapper {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-card); /* Gris oscuro #1A1A1A */
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Sub-cajas Negras Internas */
+.nx-contact-info,
+.nx-contact-interactive {
+  background-color: var(--bg-dark); /* Negro #0F0F0F */
   border: 1px solid #1C1C21;
   border-radius: 12px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  justify-content: center;
   transition: border-color 0.3s ease;
 }
 
-.nx-contact-wrapper:hover {
+.nx-contact-info:hover,
+.nx-contact-interactive:hover {
   border-color: #2A2A32;
 }
 
 /* División 1: Textos */
 .nx-contact-info {
-  display: flex;
-  flex-direction: column;
   gap: 1.5rem;
 }
 
@@ -46,10 +56,7 @@
 
 /* División 2: Interactividad */
 .nx-contact-interactive {
-  display: flex;
-  flex-direction: column;
   gap: 1.5rem;
-  justify-content: center;
 }
 
 .nx-wizard-question {
@@ -84,7 +91,6 @@
   transition: all 0.3s ease;
 }
 
-/* Flecha indicadora en los botones */
 .nx-wizard-btn::after {
   content: "→";
   font-family: var(--font-mono);
@@ -96,7 +102,7 @@
 .nx-wizard-btn:hover {
   border-color: var(--accent-primary);
   color: var(--text-main);
-  transform: translateX(4px); /* Deslizamiento sutil en vez de salto vertical */
+  transform: translateX(4px);
 }
 
 .nx-wizard-btn:hover::after {
@@ -109,15 +115,14 @@
    ========================================= */
 @media (min-width: 1024px) {
   .nx-contact-wrapper {
-    /* Copiamos la grilla 1.2fr 1fr de la sección de Proyectos */
+    padding: 2.5rem; /* Margen interno de la caja gris */
     display: grid;
     grid-template-columns: 1.2fr 1fr; 
-    gap: 4rem;
-    padding: 4rem;
+    gap: 2rem; /* Espacio separador entre las dos cajas negras */
   }
   
+  .nx-contact-info,
   .nx-contact-interactive {
-    padding-left: 4rem;
-    border-left: 1px solid #1C1C21; /* Línea divisoria elegante estilo B2B */
+    padding: 3rem; /* Margen interno de las cajas negras */
   }
 }
