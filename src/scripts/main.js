@@ -3,19 +3,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nx-nav-links');
 
   // Toggle del menú al hacer clic en la hamburguesa
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
 
   // Cerrar el menú automáticamente al hacer clic en un enlace
   const links = document.querySelectorAll('.nx-nav-links a');
   links.forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < 1024 && navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
       }
     });
   });
+
+  // Función de sanitización para prevenir XSS
+  const sanitizeHTML = (str) => {
+    const temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+  };
 
   // Lógica del Wizard de Contacto
   const wizardBtns = document.querySelectorAll('.nx-wizard-btn');
@@ -24,26 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
   if (wizardBtns.length > 0 && interactiveBox) {
     wizardBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        // 1. Capturar el texto del botón (removiendo la flecha → si existe)
-        const selectedService = e.target.innerText.replace('→', '').trim();
+        // 1. Capturar el texto del botón y sanitizarlo
+        const rawService = e.target.innerText.replace('→', '').trim();
+        const selectedService = sanitizeHTML(rawService);
 
         // 2. Iniciar transición de salida
         interactiveBox.style.opacity = '0';
 
         // 3. Esperar a que la caja se desvanezca para mutar el DOM
         setTimeout(() => {
-          // Reemplazamos el contenido interno por el Paso 2
+          // Eliminamos los estilos en línea residuales y construimos la estructura segura
           interactiveBox.innerHTML = `
             <h3 class="nx-wizard-question" style="margin-bottom: 0;">¡Excelente elección!</h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-bottom: 1rem;">
+            <p class="nx-contact-desc" style="text-align: center; margin-bottom: 1rem;">
               Hablemos sobre cómo escalar tu proyecto de <strong style="color: var(--text-main);">${selectedService}</strong>.
             </p>
             
-            <form class="nx-wizard-form" onsubmit="event.preventDefault(); alert('¡Lead capturado para: ${selectedService}!');" style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
-              <input type="email" placeholder="Tu correo corporativo" required 
-                style="width: 100%; padding: 1rem; background-color: var(--bg-card); border: 1px solid #1C1C21; border-radius: 8px; color: var(--text-main); font-family: var(--font-body); font-size: 0.9rem; outline: none;">
+            <form id="nx-wizard-form" class="nx-wizard-form">
+              <input type="email" name="email" placeholder="Tu correo corporativo" required>
               
-              <button type="submit" class="nx-wizard-btn" style="justify-content: center; background-color: var(--accent-primary); color: var(--bg-dark); border: none; font-weight: 600;">
+              <button type="submit" class="nx-wizard-btn nx-submit-btn">
                 Solicitar Propuesta ↗
               </button>
             </form>
@@ -52,13 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
           // 4. Iniciar transición de entrada
           interactiveBox.style.opacity = '1';
           
-          // Opcional: Agregar hover effect dinámico al nuevo input
-          const inputElement = interactiveBox.querySelector('input');
-          inputElement.addEventListener('focus', () => inputElement.style.borderColor = 'var(--accent-primary)');
-          inputElement.addEventListener('blur', () => inputElement.style.borderColor = '#1C1C21');
+          // Opcional: Agregar lógica extra si es necesaria
+          const formElement = document.getElementById('nx-wizard-form');
+
+          if (formElement) {
+            formElement.addEventListener('submit', (eSubmit) => {
+              eSubmit.preventDefault(); // Prevención de recarga de página y filtrado de datos en URL
+              alert('¡Lead capturado para: ' + selectedService + '!');
+            });
+          }
           
-        }, 300); // 300ms debe coincidir con la transición del CSS
-      });
+        }, 300); 
+      }, { once: true }); // Evita listeners repetidos (memory leaks)
     });
   }
 });
