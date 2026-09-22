@@ -13,6 +13,10 @@
   gap: 16px;
 }
 
+.nx-mobile-hidden {
+  display: none;
+}
+
 /* Tarjeta Principal (Textos e Imagen) */
 .nx-hero-main {
   background-color: var(--bg-card);
@@ -145,6 +149,10 @@
     padding: 3rem; /* Estandarizado */
     grid-template-columns: 1fr 1fr; /* Mitad texto, mitad imagen */
     align-items: center;
+  }
+  
+  .nx-mobile-hidden {
+    display: inline;
   }
 
   .nx-metrics-container {
