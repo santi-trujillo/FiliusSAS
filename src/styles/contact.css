@@ -42,7 +42,7 @@
 
 .nx-contact-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem);
+  font-size: 1.8rem; /* FIX: Tamaño estático y reducido solo para móvil */
   color: var(--text-main);
   line-height: 1.2;
   text-transform: uppercase;
@@ -125,5 +125,9 @@
   .nx-contact-info,
   .nx-contact-interactive {
     padding: 3rem; /* Margen interno de las cajas negras */
+  }
+  
+  .nx-contact-title {
+    font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem); /* Restauramos el tamaño gigante para Desktop */
   }
 }

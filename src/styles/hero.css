@@ -33,7 +33,7 @@
 .nx-hero-graphic {
   width: 100%;
   min-height: auto; /* Anulamos los 300px anteriores */
-  display: flex;
+  display: none; /* Base (Móvil): Ocultar imagen */
   align-items: center;
   justify-content: center;
 }
@@ -129,6 +129,10 @@
   .nx-metric-box {
     flex: 1 1 calc(50% - 12px); /* 2x2 perfecto y centrado en tableta */
     max-width: none;
+  }
+  
+  .nx-hero-graphic {
+    display: flex; /* Escritorio: Mostrar imagen */
   }
 }
 
