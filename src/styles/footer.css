@@ -69,9 +69,14 @@
 
 /* ENLACES (Móvil: Caja oscura, grilla 2x2) */
 .nx-links-wrapper {
-  background-color: var(--bg-card); /* Equivalente al #1A1A1A */
+  background-color: var(--bg-card);
   border-radius: 14px;
   padding: 24px;
+  /* INYECCIÓN PARA ESTIRAR EL CONTENIDO: */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .nx-links-grid {
@@ -126,13 +131,14 @@
 
 /* FOOTER BOTTOM (Móvil: Caja oscura aislada) */
 .nx-footer-bottom {
-  background-color: var(--bg-card); /* #1A1A1A */
-  border-radius: 14px;
-  padding: 24px;
+  width: 100%;
+  padding-top: 24px;
+  border-top: 1px solid #333333;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  /* Eliminamos background-color y border-radius porque los hereda del padre */
 }
 
 .nx-copyright {
@@ -284,8 +290,7 @@
 
   /* Footer Bottom Laptop */
   .nx-footer-bottom {
-    padding: 30px;
-    border-radius: 14px;
+    padding: 30px 0 0 0; /* Ajustado: 0 a los lados para alinear con los links */
     flex-direction: row;
     justify-content: space-between;
   }
@@ -354,7 +359,6 @@
   }
 
   .nx-footer-bottom {
-    padding: 40px;
-    border-radius: 16px;
+    padding: 40px 0 0 0; /* Ajustado: 0 a los lados */
   }
 }
