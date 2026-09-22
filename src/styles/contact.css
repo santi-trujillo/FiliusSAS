@@ -1,50 +1,63 @@
 /* =========================================
-   CONTACT WIZARD SECTION
+   CONTACT SECTION - BASE MÓVIL
    ========================================= */
 .nx-contact-section {
   width: 100%;
-  padding: 6rem var(--spacing-horizontal) 4rem var(--spacing-horizontal);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
+  margin-bottom: 2rem;
 }
 
-.nx-contact-header {
-  text-align: center;
-  max-width: 800px;
+/* Caja Principal idéntica a las tarjetas de proyectos */
+.nx-contact-wrapper {
+  background-color: var(--bg-dark);
+  border: 1px solid #1C1C21;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  transition: border-color 0.3s ease;
+}
+
+.nx-contact-wrapper:hover {
+  border-color: #2A2A32;
+}
+
+/* División 1: Textos */
+.nx-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .nx-contact-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw + 1rem, 3rem);
+  font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem);
   color: var(--text-main);
   line-height: 1.2;
-  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-/* Caja Central Interactiva */
-.nx-wizard-box {
-  background-color: var(--bg-card); /* Fondo gris oscuro #1A1A1A */
-  border: 1px solid #1C1C21;
-  border-top: 4px solid var(--accent-primary); /* Línea de acento superior */
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  width: 100%;
-  max-width: 600px;
+.nx-contact-desc {
+  color: var(--text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+/* División 2: Interactividad */
+.nx-contact-interactive {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .nx-wizard-question {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--text-main);
-  text-align: center;
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .nx-wizard-options {
@@ -54,36 +67,57 @@
   width: 100%;
 }
 
+/* Botones Selectores Premium */
 .nx-wizard-btn {
-  background-color: var(--bg-dark); /* Fondo ultra oscuro #0F0F0F */
+  background-color: var(--bg-card);
   color: var(--text-muted);
-  border: 1px solid #333333;
+  border: 1px solid #1C1C21;
   padding: 1.25rem 1.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: all 0.3s ease;
-  width: 100%;
-  text-align: center;
+}
+
+/* Flecha indicadora en los botones */
+.nx-wizard-btn::after {
+  content: "→";
+  font-family: var(--font-mono);
+  color: #333333;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 .nx-wizard-btn:hover {
   border-color: var(--accent-primary);
   color: var(--text-main);
-  background-color: #1F1F1F;
-  transform: translateY(-2px);
+  transform: translateX(4px); /* Deslizamiento sutil en vez de salto vertical */
+}
+
+.nx-wizard-btn:hover::after {
+  color: var(--accent-primary);
+  transform: translateX(4px);
 }
 
 /* =========================================
    TABLETA Y ESCRITORIO
    ========================================= */
-@media (min-width: 768px) {
-  .nx-wizard-box {
+@media (min-width: 1024px) {
+  .nx-contact-wrapper {
+    /* Copiamos la grilla 1.2fr 1fr de la sección de Proyectos */
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; 
+    gap: 4rem;
     padding: 4rem;
   }
   
-  .nx-wizard-question {
-    font-size: 1.5rem;
+  .nx-contact-interactive {
+    padding-left: 4rem;
+    border-left: 1px solid #1C1C21; /* Línea divisoria elegante estilo B2B */
   }
 }
