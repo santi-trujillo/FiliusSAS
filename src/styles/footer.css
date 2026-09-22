@@ -173,32 +173,28 @@
    ========================================= */
 @media (min-width: 1024px) {
   .nx-footer-top {
-    flex-direction: row; /* Izquierda redes, derecha enlaces */
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* 40% Redes, 60% Enlaces */
+    gap: 20px;
   }
 
-  /* En escritorio las redes son tarjetas oscuras gigantes */
+  /* Redes Sociales en Laptop */
   .nx-social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 554px; /* Ancho fijo extraído de Figma */
-    flex-shrink: 0;
+    width: 100%; /* Eliminamos el ancho fijo que colapsaba el layout */
     gap: 10px;
   }
 
   .nx-social-card {
-    background-color: var(--bg-card); /* #1A1A1A outer box */
+    background-color: var(--bg-card); 
     border: none;
     border-radius: 14px;
-    padding: 30px;
+    padding: 20px; /* Reducido para laptop */
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 60px; /* Separación interna para empujar al techo y piso */
-  }
-
-  .nx-social-card:hover {
-    background-color: var(--bg-card); /* Mantiene el fondo oscuro */
+    gap: 30px; /* Reducido para evitar overflow */
   }
 
   .nx-social-header {
@@ -206,7 +202,6 @@
     justify-content: space-between;
   }
 
-  /* Burbujas internas para Ícono y Flecha en Escritorio */
   .nx-social-arrow,
   .nx-social-info {
     display: flex;
@@ -223,15 +218,15 @@
   }
 
   .nx-social-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .nx-social-arrow {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     color: var(--text-main);
   }
@@ -249,12 +244,12 @@
 
   .nx-social-info {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
   .nx-social-name {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--text-main);
     text-transform: uppercase;
@@ -262,36 +257,35 @@
 
   .nx-social-desc {
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
-  /* Enlaces en Escritorio (Caja oscura gigante derecha) */
+  /* Enlaces en Laptop */
   .nx-links-wrapper {
-    flex-grow: 1;
-    padding: 60px;
-    border-radius: 20px;
+    padding: 30px; /* Reducido a la mitad para dar oxígeno */
+    border-radius: 16px;
   }
 
   .nx-links-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 16px; /* Separación compacta para laptop */
   }
 
   .nx-link-col h4 {
-    font-size: 22px;
-    margin-bottom: 16px;
+    font-size: 18px;
+    margin-bottom: 12px;
   }
 
   .nx-link-col a {
-    font-size: 16px;
+    font-size: 14px;
   }
 
-  /* Footer Bottom Escritorio */
+  /* Footer Bottom Laptop */
   .nx-footer-bottom {
-    padding: 40px;
-    border-radius: 16px;
+    padding: 30px;
+    border-radius: 14px;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -305,5 +299,62 @@
   .nx-divider {
     width: 1px;
     height: 20px;
+  }
+}
+
+/* =========================================
+   ESCRITORIO XL (Medidas Exactas Figma)
+   ========================================= */
+@media (min-width: 1440px) {
+  .nx-footer-top {
+    grid-template-columns: 554px 1fr; /* Restauramos el ancho estricto Figma */
+    gap: 40px;
+  }
+
+  .nx-social-card {
+    padding: 30px;
+    gap: 60px;
+  }
+
+  .nx-social-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+  }
+
+  .nx-social-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nx-social-name {
+    font-size: 22px;
+  }
+
+  .nx-social-desc {
+    font-size: 16px;
+  }
+
+  .nx-links-wrapper {
+    padding: 60px;
+    border-radius: 20px;
+  }
+
+  .nx-links-grid {
+    gap: 40px;
+  }
+
+  .nx-link-col h4 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .nx-link-col a {
+    font-size: 16px;
+  }
+
+  .nx-footer-bottom {
+    padding: 40px;
+    border-radius: 16px;
   }
 }
