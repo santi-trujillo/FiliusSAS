@@ -68,15 +68,18 @@
 }
 
 /* ENLACES (Móvil: Caja oscura, grilla 2x2) */
+.nx-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* La misma separación estricta de Figma */
+  width: 100%;
+}
+
 .nx-links-wrapper {
   background-color: var(--bg-card);
   border-radius: 14px;
   padding: 24px;
-  /* INYECCIÓN PARA ESTIRAR EL CONTENIDO: */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 40px;
+  flex-grow: 1; /* Magia: Absorbe el espacio vertical extra empujando la caja legal al fondo */
 }
 
 .nx-links-grid {
@@ -131,14 +134,14 @@
 
 /* FOOTER BOTTOM (Móvil: Caja oscura aislada) */
 .nx-footer-bottom {
-  width: 100%;
-  padding-top: 24px;
-  border-top: 1px solid #333333;
+  background-color: var(--bg-card); /* Restauramos el fondo oscuro */
+  border-radius: 14px; /* Restauramos los bordes */
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  /* Eliminamos background-color y border-radius porque los hereda del padre */
+  border-top: none; /* Ya no necesitamos la línea divisoria porque son cajas separadas */
 }
 
 .nx-copyright {
@@ -290,7 +293,7 @@
 
   /* Footer Bottom Laptop */
   .nx-footer-bottom {
-    padding: 30px 0 0 0; /* Ajustado: 0 a los lados para alinear con los links */
+    padding: 30px; /* Restaurado */
     flex-direction: row;
     justify-content: space-between;
   }
@@ -359,6 +362,6 @@
   }
 
   .nx-footer-bottom {
-    padding: 40px 0 0 0; /* Ajustado: 0 a los lados */
+    padding: 40px; /* Restaurado */
   }
 }
