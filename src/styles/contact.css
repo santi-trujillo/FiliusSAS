@@ -42,7 +42,8 @@
 
 .nx-contact-title {
   font-family: var(--font-heading);
-  font-size: 1.75rem; /* FIX: Tamaño compacto y seguro solo para móvil */
+  /* Tamaño balanceado: 1.5rem en móvil, escalando suavemente hasta 2rem máximo en escritorio */
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
   color: var(--text-main);
   line-height: 1.2;
   text-transform: uppercase;
@@ -126,9 +127,5 @@
   .nx-contact-info,
   .nx-contact-interactive {
     padding: 3rem; /* Margen interno de las cajas negras */
-  }
-  
-  .nx-contact-title {
-    font-size: 2.5rem; /* Restauramos el impacto visual en pantallas grandes */
   }
 }
