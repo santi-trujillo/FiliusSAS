@@ -158,7 +158,7 @@
 .nx-wizard-btn.nx-submit-btn {
   justify-content: center;
   background-color: var(--accent-primary);
-  color: var(--bg-dark);
+  color: #FFFFFF;
   border: none;
   font-weight: 600;
   padding: 14px 24px;

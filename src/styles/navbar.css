@@ -132,7 +132,7 @@
   /* Botón de Contacto - CTA */
   .nx-nav-links a.nx-btn-cta {
     background-color: var(--accent-primary);
-    color: var(--bg-dark);
+    color: #FFFFFF;
   }
 }
 

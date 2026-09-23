@@ -2,13 +2,23 @@
    VARIABLES DE SISTEMA (DESIGN TOKENS)
    ========================================= */
 :root {
-  --bg-dark: #0F0F0F;
-  --bg-card: #1A1A1A;
-  --text-main: #F9EFEC;
-  --text-muted: #676665;
-  --text-light: #B3B3B2;
-  --accent-primary: #CE7D63;
-  --accent-secondary: #DA9E8B;
+  /* =========================================
+     BASE ASFALTO Y TEXTURA
+     ========================================= */
+  --bg-dark: #0F0F0F;   /* Asfalto oscuro puro: Profundidad infinita */
+  --bg-card: #161618;   /* Base levemente elevada para las futuras tarjetas */
+  
+  /* =========================================
+     TINTA DE ALTA LEGIBILIDAD
+     ========================================= */
+  --text-main: #FDFEFB;  /* Blanco humo para títulos impecables */
+  --text-muted: #8A8D93; /* Gris plomo para lectura secundaria suave */
+  
+  /* =========================================
+     ACENTOS DE LUZ (Fintech Premium)
+     ========================================= */
+  --accent-primary: #433BFF;   /* Azul Eléctrico: CTA principal */
+  --accent-secondary: #229DE6; /* Azul Hielo: Para brillos y gradientes secundarios */
   
   /* TIPOGRAFÍAS */
   --font-heading: 'Poppins', sans-serif;
@@ -40,11 +50,28 @@ html {
 
 body {
   background-color: var(--bg-dark);
+  position: relative;
+  z-index: 0;
+  overflow-x: hidden;
   color: var(--text-main);
   font-family: var(--font-body);
   line-height: 1.5;
-  overflow-x: clip; /* QA FIX: Usamos clip en lugar de hidden para no quebrar el position: sticky del Navbar */
   -webkit-font-smoothing: antialiased;
+}
+
+/* Orbes de luz estáticos para profundidad volumétrica */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(67, 59, 255, 0.12) 0%, transparent 45%), /* Foco Azul Eléctrico superior */
+    radial-gradient(circle at 90% 85%, rgba(34, 157, 230, 0.08) 0%, transparent 50%); /* Foco Azul Hielo inferior */
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Regla de oro: Imágenes, SVG y videos 100% elásticos y fluidos */
