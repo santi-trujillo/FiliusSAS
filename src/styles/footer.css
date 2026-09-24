@@ -177,14 +177,17 @@
 
 /* FOOTER BOTTOM (Móvil: Caja oscura aislada) */
 .nx-footer-bottom {
-  background-color: var(--bg-card); /* Restauramos el fondo oscuro */
+  background-color: var(--bg-card) !important;
+  box-shadow: 
+    inset 40px 0 60px -20px rgba(67, 59, 255, 0.08), 
+    inset -40px 0 60px -20px rgba(0, 212, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
   border-radius: 14px; /* Restauramos los bordes */
   padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  border-top: none; /* Ya no necesitamos la línea divisoria porque son cajas separadas */
 }
 
 .nx-copyright {
