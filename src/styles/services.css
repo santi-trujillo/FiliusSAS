@@ -42,10 +42,18 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.nx-service-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-primary);
-  box-shadow: 0 12px 40px rgba(67, 59, 255, 0.15); /* Resplandor amplificado */
+@media (hover: hover) and (pointer: fine) {
+  .nx-service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 12px 40px rgba(67, 59, 255, 0.15); /* Resplandor amplificado */
+  }
+}
+
+.nx-service-card:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.1s ease-in-out;
+  border-color: var(--accent-secondary);
 }
 
 .nx-service-header {

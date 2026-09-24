@@ -102,15 +102,23 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.nx-wizard-btn:hover {
-  border-color: var(--accent-primary);
-  color: var(--text-main);
-  transform: translateX(4px);
+@media (hover: hover) and (pointer: fine) {
+  .nx-wizard-btn:hover {
+    border-color: var(--accent-primary);
+    color: var(--text-main);
+    transform: translateX(4px);
+  }
+
+  .nx-wizard-btn:hover::after {
+    color: var(--accent-primary);
+    transform: translateX(4px);
+  }
 }
 
-.nx-wizard-btn:hover::after {
-  color: var(--accent-primary);
-  transform: translateX(4px);
+.nx-wizard-btn:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.1s ease-in-out;
+  border-color: var(--accent-secondary);
 }
 
 /* =========================================
@@ -164,9 +172,17 @@
   padding: 14px 24px;
 }
 
-.nx-wizard-btn.nx-submit-btn:hover {
-  transform: scale(1.02);
+@media (hover: hover) and (pointer: fine) {
+  .nx-wizard-btn.nx-submit-btn:hover {
+    transform: scale(1.02);
+    background-color: var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(34, 157, 230, 0.4);
+    color: #FFFFFF;
+  }
+}
+
+.nx-wizard-btn.nx-submit-btn:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.1s ease-in-out;
   background-color: var(--accent-secondary);
-  box-shadow: 0 0 20px rgba(34, 157, 230, 0.4);
-  color: #FFFFFF;
 }

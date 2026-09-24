@@ -43,10 +43,18 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.nx-social-card:hover {
+@media (hover: hover) and (pointer: fine) {
+  .nx-social-card:hover {
+    border-color: var(--accent-secondary);
+    background-color: #1F1F1F;
+    transform: translateY(-2px);
+  }
+}
+
+.nx-social-card:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.1s ease-in-out;
   border-color: var(--accent-secondary);
-  background-color: #1F1F1F;
-  transform: translateY(-2px);
 }
 
 .nx-social-header {
@@ -65,8 +73,10 @@
   justify-content: center;
 }
 
-.nx-social-card:hover .nx-social-icon {
-  color: var(--accent-secondary);
+@media (hover: hover) and (pointer: fine) {
+  .nx-social-card:hover .nx-social-icon {
+    color: var(--accent-secondary);
+  }
 }
 
 .nx-social-arrow,
@@ -118,9 +128,17 @@
   transition: color 0.3s ease;
 }
 
-.nx-link-col a:hover {
+@media (hover: hover) and (pointer: fine) {
+  .nx-link-col a:hover {
+    color: var(--accent-secondary);
+    transform: translateY(-2px);
+  }
+}
+
+.nx-link-col a:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.1s ease-in-out;
   color: var(--accent-secondary);
-  transform: translateY(-2px);
 }
 
 /* Novedad Figma: Badge 'Soon' */
