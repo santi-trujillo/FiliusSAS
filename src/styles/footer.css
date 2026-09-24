@@ -97,6 +97,10 @@
   border-radius: 14px;
   padding: 24px;
   flex-grow: 1; /* Magia: Absorbe el espacio vertical extra empujando la caja legal al fondo */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  height: 100% !important; /* Asegura que herede la altura total de la fila */
 }
 
 .nx-links-grid {
