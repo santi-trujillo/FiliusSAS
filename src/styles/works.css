@@ -7,9 +7,8 @@
 }
 
 .nx-works-wrapper {
-  background-color: var(--bg-card);
-  border-radius: 16px;
-  padding: 1.5rem;
+  background-color: transparent;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem; /* Reducido de 2rem para compactar el espacio vertical interno */
@@ -32,7 +31,9 @@
 
 /* Tarjeta del Proyecto */
 .nx-work-card {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;

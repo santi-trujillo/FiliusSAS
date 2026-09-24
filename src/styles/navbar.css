@@ -2,16 +2,16 @@
    NAVBAR - BASE MÓVIL (Figma 358px)
    ========================================= */
 .nx-header {
-  width: 100%;
+  max-width: 1820px;
+  margin: 20px auto 0 auto;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
-  /* Comportamiento Sticky nativo W3C */
+  border-radius: 16px;
   position: sticky;
-  top: 0;
-  z-index: 1000; /* Prioridad de capa sobre cualquier gráfico o sección */
-  /* Efecto de cristal sutil para cuando pase contenido por debajo */
-  background-color: rgba(15, 15, 15, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  top: 20px;
+  z-index: 1000;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   transition: all 0.3s ease;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .nx-navbar {
-  background-color: var(--bg-card);
+  background-color: transparent;
   border-radius: 10px;
   padding: 14px; /* Token exacto de Figma Móvil */
   display: flex;

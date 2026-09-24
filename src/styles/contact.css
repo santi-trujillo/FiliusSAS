@@ -9,9 +9,8 @@
 
 /* Caja Contenedora Gris Principal */
 .nx-contact-wrapper {
-  background-color: var(--bg-card); /* Gris oscuro #1A1A1A */
-  border-radius: 16px;
-  padding: 1.5rem;
+  background-color: transparent;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -20,8 +19,9 @@
 /* Sub-cajas Negras Internas */
 .nx-contact-info,
 .nx-contact-interactive {
-  background-color: var(--bg-dark); /* Negro #0F0F0F */
-  border: 1px solid #1C1C21;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   border-radius: 12px;
   padding: 2rem;
   display: flex;
