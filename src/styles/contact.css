@@ -91,7 +91,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .nx-wizard-btn::after {
@@ -99,7 +99,7 @@
   font-family: var(--font-mono);
   color: #333333;
   font-size: 1.2rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .nx-wizard-btn:hover {
@@ -162,4 +162,11 @@
   border: none;
   font-weight: 600;
   padding: 14px 24px;
+}
+
+.nx-wizard-btn.nx-submit-btn:hover {
+  transform: scale(1.02);
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 20px rgba(34, 157, 230, 0.4);
+  color: #FFFFFF;
 }

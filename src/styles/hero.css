@@ -64,11 +64,13 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .nx-hero-btn:hover {
-  transform: translateY(-2px);
+  transform: scale(1.02);
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 20px rgba(34, 157, 230, 0.4);
 }
 
 .nx-hero-desc {

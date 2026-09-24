@@ -141,6 +141,14 @@
   .nx-nav-links a.nx-btn-cta {
     background-color: var(--accent-primary);
     color: #FFFFFF;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .nx-nav-links a.nx-btn-cta:hover {
+    transform: scale(1.02);
+    background-color: var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(34, 157, 230, 0.4);
+    color: #FFFFFF;
   }
 }
 
