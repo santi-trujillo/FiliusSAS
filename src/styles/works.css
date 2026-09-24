@@ -31,8 +31,9 @@
 
 /* Tarjeta del Proyecto */
 .nx-work-card {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--text-main) !important;
+  color: var(--bg-dark) !important;
+  border: none !important;
   box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   border-radius: 12px;
   padding: 1.5rem;
@@ -40,6 +41,10 @@
   flex-direction: column;
   gap: 1.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nx-work-card h3, .nx-work-card p, .nx-work-card span {
+  color: var(--bg-dark) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
