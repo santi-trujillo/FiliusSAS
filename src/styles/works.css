@@ -40,16 +40,16 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Proyecto 1: Azul Vivo */
-.nx-work-card:nth-child(1) { background-color: var(--bento-accent) !important; border: none !important; }
+/* Proyecto 1 (Azul Vivo a Púrpura) */
+.nx-work-card:nth-child(1) { background: linear-gradient(135deg, var(--bento-accent) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
 .nx-work-card:nth-child(1) * { color: var(--text-main) !important; }
 
-/* Proyecto 2: Azul Profundo */
-.nx-work-card:nth-child(2) { background-color: var(--bento-secondary) !important; border: none !important; }
+/* Proyecto 2 (Azul Profundo a Púrpura) */
+.nx-work-card:nth-child(2) { background: linear-gradient(135deg, var(--bento-secondary) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
 .nx-work-card:nth-child(2) * { color: var(--text-main) !important; }
 
-/* Proyecto 3: Azul Cielo Claro */
-.nx-work-card:nth-child(3) { background-color: var(--bento-primary) !important; border: none !important; }
+/* Proyecto 3 (Azul Cielo a Cian) */
+.nx-work-card:nth-child(3) { background: linear-gradient(135deg, var(--bento-primary) 0%, var(--bento-cyan) 100%) !important; border: none !important; }
 .nx-work-card:nth-child(3) * { color: var(--bg-dark) !important; }
 
 @media (hover: hover) and (pointer: fine) {

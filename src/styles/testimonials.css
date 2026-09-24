@@ -39,10 +39,12 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.nx-testimonial-card:nth-child(odd) { background-color: var(--bento-accent) !important; border: none !important; } /* Azul Vivo */
+/* Impares: Azul Vivo a Púrpura */
+.nx-testimonial-card:nth-child(odd) { background: linear-gradient(135deg, var(--bento-accent) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
 .nx-testimonial-card:nth-child(odd) * { color: var(--text-main) !important; }
 
-.nx-testimonial-card:nth-child(even) { background-color: var(--bento-secondary) !important; border: none !important; } /* Azul Profundo */
+/* Pares: Azul Profundo a Púrpura */
+.nx-testimonial-card:nth-child(even) { background: linear-gradient(135deg, var(--bento-secondary) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
 .nx-testimonial-card:nth-child(even) * { color: var(--text-main) !important; }
 
 @media (hover: hover) and (pointer: fine) {

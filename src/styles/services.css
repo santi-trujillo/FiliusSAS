@@ -40,20 +40,20 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Caja 1: Azul Profundo */
-.nx-service-card:nth-child(1) { background-color: var(--bento-secondary) !important; border: none !important; }
+/* Caja 1 (Azul Profundo a Púrpura) */
+.nx-service-card:nth-child(1) { background: linear-gradient(135deg, var(--bento-secondary) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
 .nx-service-card:nth-child(1) * { color: var(--text-main) !important; }
 
-/* Caja 2: Azul Cielo Claro */
-.nx-service-card:nth-child(2) { background-color: var(--bento-primary) !important; border: none !important; }
+/* Caja 2 (Azul Cielo a Cian) */
+.nx-service-card:nth-child(2) { background: linear-gradient(135deg, var(--bento-primary) 0%, var(--bento-cyan) 100%) !important; border: none !important; }
 .nx-service-card:nth-child(2) * { color: var(--bg-dark) !important; }
 
-/* Caja 3: Azul Vivo */
-.nx-service-card:nth-child(3) { background-color: var(--bento-accent) !important; border: none !important; }
+/* Caja 3 (Azul Vivo a Púrpura) */
+.nx-service-card:nth-child(3) { background: linear-gradient(135deg, var(--bento-accent) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
 .nx-service-card:nth-child(3) * { color: var(--text-main) !important; }
 
-/* Caja 4: Azul Cielo Claro (Para equilibrar la cuadrícula con la Caja 2) */
-.nx-service-card:nth-child(4) { background-color: var(--bento-primary) !important; border: none !important; }
+/* Caja 4 (Azul Cielo a Cian) */
+.nx-service-card:nth-child(4) { background: linear-gradient(135deg, var(--bento-primary) 0%, var(--bento-cyan) 100%) !important; border: none !important; }
 .nx-service-card:nth-child(4) * { color: var(--bg-dark) !important; }
 
 @media (hover: hover) and (pointer: fine) {
