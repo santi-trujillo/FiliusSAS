@@ -40,20 +40,44 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Caja 1 (Azul Profundo a Púrpura) */
-.nx-service-card:nth-child(1) { background: linear-gradient(135deg, var(--bento-secondary) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
+/* Caja 1: Base Azul Profundo + Orbe Cian (Arriba Izq) y Orbe Púrpura (Abajo Der) */
+.nx-service-card:nth-child(1) {
+  background-color: var(--bento-secondary) !important;
+  background-image: 
+    radial-gradient(circle at 0% 0%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 100% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-service-card:nth-child(1) * { color: var(--text-main) !important; }
 
-/* Caja 2 (Azul Cielo a Cian) */
-.nx-service-card:nth-child(2) { background: linear-gradient(135deg, var(--bento-primary) 0%, var(--bento-cyan) 100%) !important; border: none !important; }
+/* Caja 2: Base Cielo + Orbe Púrpura (Arriba Der) y Orbe Vivo (Abajo Izq) */
+.nx-service-card:nth-child(2) {
+  background-color: var(--bento-primary) !important;
+  background-image: 
+    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%),
+    radial-gradient(circle at 0% 100%, var(--bento-accent) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-service-card:nth-child(2) * { color: var(--bg-dark) !important; }
 
-/* Caja 3 (Azul Vivo a Púrpura) */
-.nx-service-card:nth-child(3) { background: linear-gradient(135deg, var(--bento-accent) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
+/* Caja 3: Base Vivo + Orbe Cian (Centro Arriba) y Orbe Púrpura (Centro Abajo) */
+.nx-service-card:nth-child(3) {
+  background-color: var(--bento-accent) !important;
+  background-image: 
+    radial-gradient(circle at 50% 0%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 50% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-service-card:nth-child(3) * { color: var(--text-main) !important; }
 
-/* Caja 4 (Azul Cielo a Cian) */
-.nx-service-card:nth-child(4) { background: linear-gradient(135deg, var(--bento-primary) 0%, var(--bento-cyan) 100%) !important; border: none !important; }
+/* Caja 4: Base Cielo + Orbe Cian (Abajo Izq) y Orbe Púrpura (Arriba Der) */
+.nx-service-card:nth-child(4) {
+  background-color: var(--bento-primary) !important;
+  background-image: 
+    radial-gradient(circle at 0% 100%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-service-card:nth-child(4) * { color: var(--bg-dark) !important; }
 
 @media (hover: hover) and (pointer: fine) {

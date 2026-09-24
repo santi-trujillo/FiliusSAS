@@ -39,12 +39,24 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Impares: Azul Vivo a Púrpura */
-.nx-testimonial-card:nth-child(odd) { background: linear-gradient(135deg, var(--bento-accent) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
+/* Impares: Base Vivo + Orbes Centro Izq/Der */
+.nx-testimonial-card:nth-child(odd) {
+  background-color: var(--bento-accent) !important;
+  background-image: 
+    radial-gradient(circle at 0% 50%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 100% 50%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-testimonial-card:nth-child(odd) * { color: var(--text-main) !important; }
 
-/* Pares: Azul Profundo a Púrpura */
-.nx-testimonial-card:nth-child(even) { background: linear-gradient(135deg, var(--bento-secondary) 0%, var(--bento-aurora) 100%) !important; border: none !important; }
+/* Pares: Base Profundo + Orbes Esquinas Contrarias */
+.nx-testimonial-card:nth-child(even) {
+  background-color: var(--bento-secondary) !important;
+  background-image: 
+    radial-gradient(circle at 100% 0%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 0% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-testimonial-card:nth-child(even) * { color: var(--text-main) !important; }
 
 @media (hover: hover) and (pointer: fine) {
