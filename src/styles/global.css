@@ -20,6 +20,11 @@
   --accent-primary: #433BFF;   /* Azul Eléctrico: CTA principal */
   --accent-secondary: #229DE6; /* Azul Hielo: Para brillos y gradientes secundarios */
   
+  /* PALETA BENTO TRICOLOR */
+  --bento-primary: #96c7e4;   /* Azul Cielo Claro */
+  --bento-secondary: #19618b; /* Azul Profundo */
+  --bento-accent: #229de6;    /* Azul Vivo */
+  
   /* TIPOGRAFÍAS */
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;

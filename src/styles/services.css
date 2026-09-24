@@ -40,21 +40,21 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Caja 1: Azul Eléctrico */
-.nx-service-card:nth-child(1) { background-color: var(--accent-primary) !important; border: none !important; }
-.nx-service-card:nth-child(1) h3, .nx-service-card:nth-child(1) p, .nx-service-card:nth-child(1) i { color: var(--text-main) !important; }
+/* Caja 1: Azul Profundo */
+.nx-service-card:nth-child(1) { background-color: var(--bento-secondary) !important; border: none !important; }
+.nx-service-card:nth-child(1) * { color: var(--text-main) !important; }
 
-/* Caja 2: Azul Hielo */
-.nx-service-card:nth-child(2) { background-color: var(--accent-secondary) !important; border: none !important; }
-.nx-service-card:nth-child(2) h3, .nx-service-card:nth-child(2) p, .nx-service-card:nth-child(2) i { color: var(--bg-dark) !important; }
+/* Caja 2: Azul Cielo Claro */
+.nx-service-card:nth-child(2) { background-color: var(--bento-primary) !important; border: none !important; }
+.nx-service-card:nth-child(2) * { color: var(--bg-dark) !important; }
 
-/* Caja 3: Blanco Humo */
-.nx-service-card:nth-child(3) { background-color: var(--text-main) !important; border: none !important; }
-.nx-service-card:nth-child(3) h3, .nx-service-card:nth-child(3) p, .nx-service-card:nth-child(3) i { color: var(--bg-dark) !important; }
+/* Caja 3: Azul Vivo */
+.nx-service-card:nth-child(3) { background-color: var(--bento-accent) !important; border: none !important; }
+.nx-service-card:nth-child(3) * { color: var(--text-main) !important; }
 
-/* Caja 4: Asfalto (Tarjeta Oscura) */
+/* Caja 4: Asfalto Oscuro (Mantiene el cristal) */
 .nx-service-card:nth-child(4) { background-color: var(--bg-card) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; }
-.nx-service-card:nth-child(4) h3, .nx-service-card:nth-child(4) p, .nx-service-card:nth-child(4) i { color: var(--text-main) !important; }
+.nx-service-card:nth-child(4) * { color: var(--text-main) !important; }
 
 @media (hover: hover) and (pointer: fine) {
   .nx-service-card:hover {
