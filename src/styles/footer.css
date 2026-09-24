@@ -105,13 +105,22 @@
   gap: 30px;
 }
 
-.nx-link-col {
+.nx-footer-col {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.nx-link-col h4 {
+.nx-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nx-footer-col h4 {
   font-family: var(--font-mono);
   font-size: 18px;
   font-weight: 700;
@@ -119,7 +128,7 @@
   margin-bottom: 2px;
 }
 
-.nx-link-col a {
+.nx-footer-col a {
   color: var(--text-muted);
   font-family: var(--font-body);
   font-size: 14px;
@@ -129,13 +138,13 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nx-link-col a:hover {
+  .nx-footer-col a:hover {
     color: var(--accent-secondary);
     transform: translateY(-2px);
   }
 }
 
-.nx-link-col a:active {
+.nx-footer-col a:active {
   transform: scale(0.97) !important;
   transition: transform 0.1s ease-in-out;
   color: var(--accent-secondary);
@@ -308,12 +317,12 @@
     gap: 16px; /* Separación compacta para laptop */
   }
 
-  .nx-link-col h4 {
+  .nx-footer-col h4 {
     font-size: 18px;
     margin-bottom: 12px;
   }
 
-  .nx-link-col a {
+  .nx-footer-col a {
     font-size: 14px;
   }
 
@@ -378,12 +387,12 @@
     gap: 40px;
   }
 
-  .nx-link-col h4 {
+  .nx-footer-col h4 {
     font-size: 22px;
     margin-bottom: 16px;
   }
 
-  .nx-link-col a {
+  .nx-footer-col a {
     font-size: 16px;
   }
 
