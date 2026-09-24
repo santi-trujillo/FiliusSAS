@@ -2,16 +2,18 @@
    NAVBAR - BASE MÓVIL (Figma 358px)
    ========================================= */
 .nx-header {
-  max-width: 1820px;
-  margin: 20px auto 0 auto;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: 0 !important;
+  margin-top: 0;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
-  border-radius: 16px;
   position: sticky;
-  top: 20px;
+  top: 0;
   z-index: 1000;
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   transition: all 0.3s ease;
 }
 
@@ -21,9 +23,15 @@
 }
 
 .nx-navbar {
-  background-color: transparent;
-  border-radius: 10px;
-  padding: 14px; /* Token exacto de Figma Móvil */
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: 0 !important;
+  margin-top: 0;
+  padding: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
