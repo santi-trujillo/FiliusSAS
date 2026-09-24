@@ -111,20 +111,44 @@
   min-width: 130px;
 }
 
-/* Caja 1 (Clientes): Azul Profundo */
-.nx-metric-box:nth-child(1) { background-color: var(--bento-secondary) !important; border: none !important; }
+/* Caja 1 (Clientes): Base Profunda + Orbes Cian/Púrpura */
+.nx-metric-box:nth-child(1) {
+  background-color: var(--bento-secondary) !important;
+  background-image: 
+    radial-gradient(circle at 0% 0%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 100% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-metric-box:nth-child(1) * { color: var(--text-main) !important; }
 
-/* Caja 2 (Proyectos): Azul Cielo Claro */
-.nx-metric-box:nth-child(2) { background-color: var(--bento-primary) !important; border: none !important; }
+/* Caja 2 (Proyectos): Base Cielo + Orbes Púrpura/Vivo */
+.nx-metric-box:nth-child(2) {
+  background-color: var(--bento-primary) !important;
+  background-image: 
+    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%),
+    radial-gradient(circle at 0% 100%, var(--bento-accent) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-metric-box:nth-child(2) * { color: var(--bg-dark) !important; }
 
-/* Caja 3 (Seguidores): Azul Vivo */
-.nx-metric-box:nth-child(3) { background-color: var(--bento-accent) !important; border: none !important; }
+/* Caja 3 (Seguidores): Base Vivo + Orbes Cian/Púrpura */
+.nx-metric-box:nth-child(3) {
+  background-color: var(--bento-accent) !important;
+  background-image: 
+    radial-gradient(circle at 50% 0%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 50% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-metric-box:nth-child(3) * { color: var(--text-main) !important; }
 
-/* Caja 4 (Años Exp.): Azul Cielo Claro (Retoma el balance) */
-.nx-metric-box:nth-child(4) { background-color: var(--bento-primary) !important; border: none !important; }
+/* Caja 4 (Años Exp.): Base Cielo + Orbes Cian/Púrpura */
+.nx-metric-box:nth-child(4) {
+  background-color: var(--bento-primary) !important;
+  background-image: 
+    radial-gradient(circle at 0% 100%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%) !important;
+  border: none !important;
+}
 .nx-metric-box:nth-child(4) * { color: var(--bg-dark) !important; }
 
 .nx-metric-title {
