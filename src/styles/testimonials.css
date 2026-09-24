@@ -30,9 +30,6 @@
 
 /* Tarjeta Individual de Testimonio */
 .nx-testimonial-card {
-  background-color: var(--accent-primary) !important;
-  color: var(--text-main) !important;
-  border: none !important;
   box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   border-radius: 12px;
   padding: 1.5rem;
@@ -42,9 +39,11 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.nx-testimonial-card h3, .nx-testimonial-card p, .nx-testimonial-card span, .nx-testimonial-card div {
-  color: var(--text-main) !important;
-}
+.nx-testimonial-card:nth-child(odd) { background-color: var(--accent-primary) !important; border: none !important; }
+.nx-testimonial-card:nth-child(odd) * { color: var(--text-main) !important; }
+
+.nx-testimonial-card:nth-child(even) { background-color: var(--text-main) !important; border: none !important; }
+.nx-testimonial-card:nth-child(even) * { color: var(--bg-dark) !important; }
 
 @media (hover: hover) and (pointer: fine) {
   .nx-testimonial-card:hover {
