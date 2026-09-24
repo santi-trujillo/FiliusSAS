@@ -66,6 +66,20 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+.nx-nav-links a {
+  color: var(--text-light); /* Fallback */
+  text-decoration: none;
+}
+
+.nx-nav-links a:nth-child(1) { color: var(--bento-primary) !important; }
+.nx-nav-links a:nth-child(2) { color: var(--bento-accent) !important; }
+.nx-nav-links a:nth-child(3) { color: var(--bento-secondary) !important; }
+
+.nx-nav-links a:hover,
+.nx-nav-links a.active {
+  color: var(--text-main) !important; /* Efecto hover / activo */
+}
+
 /* Clase inyectada por JS para abrir el menú */
 .nx-nav-links.active {
   display: flex;
@@ -121,7 +135,6 @@
   }
 
   .nx-nav-links a {
-    color: var(--text-light);
     font-family: var(--font-mono);
     font-size: 14px;
     font-weight: 500;
@@ -130,11 +143,6 @@
     background-color: var(--bg-dark);
     border-radius: 10px;
     transition: all 0.3s ease;
-  }
-
-  .nx-nav-links a:hover,
-  .nx-nav-links a.active {
-    color: var(--text-main); /* Efecto hover / activo */
   }
 
   /* Botón de Contacto - CTA */

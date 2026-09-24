@@ -111,6 +111,22 @@
   min-width: 130px;
 }
 
+/* Caja 1 (Clientes): Azul Profundo */
+.nx-metric-box:nth-child(1) { background-color: var(--bento-secondary) !important; border: none !important; }
+.nx-metric-box:nth-child(1) * { color: var(--text-main) !important; }
+
+/* Caja 2 (Proyectos): Azul Cielo Claro */
+.nx-metric-box:nth-child(2) { background-color: var(--bento-primary) !important; border: none !important; }
+.nx-metric-box:nth-child(2) * { color: var(--bg-dark) !important; }
+
+/* Caja 3 (Seguidores): Azul Vivo */
+.nx-metric-box:nth-child(3) { background-color: var(--bento-accent) !important; border: none !important; }
+.nx-metric-box:nth-child(3) * { color: var(--text-main) !important; }
+
+/* Caja 4 (Años Exp.): Azul Cielo Claro (Retoma el balance) */
+.nx-metric-box:nth-child(4) { background-color: var(--bento-primary) !important; border: none !important; }
+.nx-metric-box:nth-child(4) * { color: var(--bg-dark) !important; }
+
 .nx-metric-title {
   color: var(--text-light);
   font-family: var(--font-mono);
