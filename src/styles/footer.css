@@ -189,34 +189,36 @@
    TABLETA Y ESCRITORIO (Layout Orgánico Symbiótico)
    ========================================= */
 @media (min-width: 1024px) {
-  /* 1. Sincronización automática: Las dos columnas maestras heredan la misma altura física */
+  /* 1. Proporciones Maestras y Auto-Sincronización */
   #nx-app .nx-footer-top {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.5fr; /* Restaura 40% Izq / 60% Der */
     gap: 20px;
-    align-items: stretch; 
+    align-items: stretch; /* Iguala las alturas físicas de las 2 columnas */
+    width: 100%;
   }
 
-  /* Redes Sociales en Laptop */
-  /* 2. Blindaje Bento: Las tarjetas se anclan arriba para NO estirarse */
+  /* 2. Cuadrícula Social Izquierda */
   #nx-app .nx-social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    align-content: start; 
+    gap: 16px;
+    align-content: start; /* Ancla las tarjetas arriba para evitar estiramiento vertical */
+    width: 100%;
   }
 
-  /* 3. Las tarjetas abrazan su contenido naturalmente */
+  /* 3. Tarjetas Bento */
   #nx-app .nx-social-card {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 20px;
+    padding: 24px;
     border-radius: 16px;
-    border: none;
-    aspect-ratio: 1 / 1;
     height: auto; 
+    aspect-ratio: 1 / 1; /* Restaura la forma cuadrada perfecta Figma */
     gap: 16px;
+    width: 100%;
   }
 
   #nx-app .nx-social-header {
@@ -247,37 +249,41 @@
     font-size: 18px;
   }
 
-  /* Enlaces en Laptop */
+  /* 4. Columna Derecha Base */
   #nx-app .nx-right-column {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
   }
 
-  /* 4. Expansión fluida: La caja derecha baja hasta la nueva línea base y reparte el aire */
+  /* 5. Caja Oscura Derecha (Navegación y Legales) */
   #nx-app .nx-links-wrapper {
-    height: 100%; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    padding: 32px 40px;
+    justify-content: space-between;
+    padding: 32px 40px; /* Restaura el respiro interno elegante */
     gap: 40px;
+    height: 100%; /* Baja a cubrir la misma línea base de la izquierda */
+    width: 100%; /* Obliga a la caja a expandirse horizontalmente */
+    flex-grow: 1;
   }
 
+  /* 6. Textos de Navegación */
   #nx-app .nx-links-grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    width: 100%;
   }
-
-  #nx-app .nx-footer-col h4 {
-    font-size: 18px;
-  }
-
+  
+  /* 7. Bloque Legal Inferior */
   #nx-app .nx-footer-legal-block {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 24px;
-    margin-top: auto; /* Garantía extra para anclarlo al piso */
+    margin-top: auto;
+    width: 100%;
   }
 }
 
@@ -286,15 +292,14 @@
    ========================================= */
 @media (min-width: 1440px) {
   #nx-app .nx-footer-top {
-    grid-template-columns: 554px 1fr;
+    grid-template-columns: 554px 1fr; /* Medidas exactas de Figma */
     gap: 40px;
   }
   #nx-app .nx-links-wrapper {
     padding: 40px 48px;
   }
   #nx-app .nx-social-card {
-    padding: 24px; /* Reducido de 28px/30px a 24px */
-    gap: 20px; /* Ajuste proporcional para pantallas gigantes */
+    padding: 24px;
   }
 }
 
