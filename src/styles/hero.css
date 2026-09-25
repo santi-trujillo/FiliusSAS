@@ -57,50 +57,53 @@
   color: var(--text-main);
 }
 
+/* Contenedor Principal (Ghost Pill) */
 .nx-hero-btn {
-  background: rgba(255, 255, 255, 0.03) !important; /* Fondo casi invisible */
-  color: #ffffff !important;
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 24px 8px 8px !important; /* Padding asimétrico para abrazar el círculo */
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 50px !important; /* Forma de píldora */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: max-content !important; /* Evita que el botón se estire */
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50px !important;
+  padding: 6px 28px 6px 6px !important; /* Padding ajustado: ajustado a la izq, espacioso a la der */
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Encapsular el ícono (i o svg) en un círculo de color */
-.nx-hero-btn i, .nx-hero-btn svg {
+/* Anillo del Ícono (A la izquierda) */
+.nx-hero-btn .nx-icon-ring {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  background-color: var(--bento-accent) !important; /* Azul corporativo */
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
+  border: 2px solid var(--bento-accent) !important; /* Anillo de color corporativo */
+  background-color: transparent;
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+/* Tipografía del Botón */
+.nx-hero-btn .nx-btn-text {
   color: #ffffff !important;
-  transition: transform 0.3s ease;
-  font-style: normal;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .nx-hero-btn:hover {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border-color: var(--bento-accent) !important;
-  }
-
-  .nx-hero-btn:hover i, .nx-hero-btn:hover svg {
-    transform: scale(1.05) rotate(-15deg); /* Micro-interacción */
-  }
+/* Interacción Hover */
+.nx-hero-btn:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
-.nx-hero-btn:active {
-  transform: scale(0.97) !important;
-  transition: transform 0.1s ease-in-out;
+.nx-hero-btn:hover .nx-icon-ring {
+  background-color: var(--bento-accent) !important; /* Se rellena de color al pasar el mouse */
+  color: #ffffff !important;
+  transform: rotate(-45deg); /* Micro-interacción dinámica */
 }
 
 .nx-hero-desc {
