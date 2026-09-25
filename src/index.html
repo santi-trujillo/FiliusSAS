@@ -300,10 +300,34 @@
         
         <!-- División 2: Wizard Interactivo (Derecha en Desktop) -->
         <div class="nx-contact-interactive">
-          <h3 class="nx-wizard-question">¿En qué pilar estratégico debemos enfocarnos?</h3>
-          <div class="nx-wizard-options">
-            <button class="nx-wizard-btn">Desarrollo Web, E-commerce & UI/UX</button>
-            <button class="nx-wizard-btn">Branding, Consultoría & Project Mgmt</button>
+          <div class="nx-whatsapp-card" id="wa-wizard-container">
+            <!-- Paso 1 -->
+            <div class="wa-step active" id="wa-step-1">
+              <h4 class="wa-question">1. ¿En qué pilar estratégico debemos enfocarnos?</h4>
+              <div class="wa-options">
+                <button class="wa-btn" data-step="1" data-val="Desarrollo Web & UI/UX">Desarrollo Web & UI/UX</button>
+                <button class="wa-btn" data-step="1" data-val="E-commerce & Conversión">E-commerce & Conversión</button>
+                <button class="wa-btn" data-step="1" data-val="Consultoría TI & Project Mgmt">Consultoría TI & Project Mgmt</button>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="wa-step" id="wa-step-2" style="display: none;">
+              <h4 class="wa-question">2. ¿Cómo está conformada tu entidad?</h4>
+              <div class="wa-options">
+                <button class="wa-btn" data-step="2" data-val="Empresa Constituida (B2B)">Empresa Constituida (B2B)</button>
+                <button class="wa-btn" data-step="2" data-val="Persona Natural / Emprendedor">Persona Natural / Emprendedor</button>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="wa-step" id="wa-step-3" style="display: none;">
+              <h4 class="wa-question">3. ¿Cuál es el tamaño de tu operación?</h4>
+              <div class="wa-options">
+                <button class="wa-btn final-btn" data-step="3" data-val="Startup / PYME">Startup / PYME</button>
+                <button class="wa-btn final-btn" data-step="3" data-val="Mediana / Gran Empresa">Mediana / Gran Empresa</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -422,5 +446,43 @@
     </div>
   </footer>
   <script src="./scripts/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let leadData = { pilar: "", entidad: "", tamano: "" };
+      
+      // Capturar todos los botones del Wizard
+      const waButtons = document.querySelectorAll('.wa-btn');
+      
+      waButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const step = this.getAttribute('data-step');
+          const value = this.getAttribute('data-val');
+          
+          if(step === "1") {
+            leadData.pilar = value;
+            document.getElementById('wa-step-1').style.display = 'none';
+            document.getElementById('wa-step-2').style.display = 'block';
+          } 
+          else if(step === "2") {
+            leadData.entidad = value;
+            document.getElementById('wa-step-2').style.display = 'none';
+            document.getElementById('wa-step-3').style.display = 'block';
+          }
+          else if(step === "3") {
+            leadData.tamano = value;
+            // Disparo final a WhatsApp
+            const mensaje = `¡Hola, FiliusTec! Estoy interesado en iniciar un proyecto.%0A%0A*Detalles de mi perfil:*%0A- *Servicio:* ${leadData.pilar}%0A- *Entidad:* ${leadData.entidad}%0A- *Operación:* ${leadData.tamano}%0A%0AQuisiera recibir asesoría comercial.`;
+            
+            const numeroWhatsApp = "573238789853"; // Número oficial de FiliusTec
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+            
+            // Reiniciar el form por si el usuario vuelve
+            document.getElementById('wa-step-3').style.display = 'none';
+            document.getElementById('wa-step-1').style.display = 'block';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

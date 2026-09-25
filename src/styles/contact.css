@@ -62,63 +62,51 @@
   transition: opacity 0.3s ease, border-color 0.3s ease;
 }
 
-.nx-wizard-question {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: var(--text-main);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.nx-wizard-options {
+/* Generador Dinámico de Leads */
+.nx-whatsapp-card {
+  background-color: var(--bg-card) !important;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 
+    inset 40px 40px 60px -20px rgba(0, 212, 255, 0.08), 
+    inset -40px -40px 60px -20px rgba(67, 59, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  min-height: 280px; /* Evita saltos bruscos de altura al cambiar de paso */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 100%;
+  justify-content: center;
 }
 
-/* Botones Selectores Premium */
-.nx-wizard-btn {
-  background-color: var(--bg-card);
-  color: var(--text-muted);
-  border: 1px solid #1C1C21;
-  padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.nx-wizard-btn::after {
-  content: "→";
-  font-family: var(--font-mono);
-  color: #333333;
+.wa-question {
+  color: var(--text-main);
+  margin-bottom: 24px;
   font-size: 1.2rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .nx-wizard-btn:hover {
-    border-color: var(--accent-primary);
-    color: var(--text-main);
-    transform: translateX(4px);
-  }
-
-  .nx-wizard-btn:hover::after {
-    color: var(--accent-primary);
-    transform: translateX(4px);
-  }
+.wa-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.nx-wizard-btn:active {
-  transform: scale(0.97) !important;
-  transition: transform 0.1s ease-in-out;
-  border-color: var(--accent-secondary);
+.wa-btn {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.wa-btn:hover {
+  background-color: var(--bento-secondary);
+  border-color: var(--bento-cyan);
+  transform: translateX(5px);
 }
 
 /* =========================================
