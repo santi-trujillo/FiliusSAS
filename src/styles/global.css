@@ -45,6 +45,11 @@
   --z-base: 1;
   --z-nav: 100;
   --z-overlay: 1000;
+
+  /* SISTEMA DE ANIMACIÓN Y ELEVACIÓN BENTO */
+  --shadow-bento: 0 8px 32px rgba(67, 59, 255, 0.05);
+  --shadow-bento-hover: 0 12px 40px rgba(67, 59, 255, 0.15);
+  --transition-bento: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* =========================================

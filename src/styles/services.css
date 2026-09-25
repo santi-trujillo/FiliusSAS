@@ -31,13 +31,13 @@
 
 /* Tarjeta Individual de Servicio */
 #nx-app .nx-service-card {
-  box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
+  box-shadow: var(--shadow-bento);
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: var(--transition-bento);
 }
 
 /* Caja 1: Base Azul Profundo + Orbe Cian (Arriba Izq) y Orbe Púrpura (Abajo Der) */
@@ -80,7 +80,7 @@
   #nx-app .nx-service-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent-primary);
-    box-shadow: 0 12px 40px rgba(67, 59, 255, 0.15); /* Resplandor amplificado */
+    box-shadow: var(--shadow-bento-hover); /* Resplandor amplificado */
   }
 }
 
