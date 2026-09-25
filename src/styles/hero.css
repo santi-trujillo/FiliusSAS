@@ -1,7 +1,7 @@
 /* =========================================
    HERO SECTION - BASE MÓVIL (Figma 358px)
    ========================================= */
-.nx-hero-section {
+#nx-app .nx-hero-section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,12 +14,12 @@
 }
 
 /* Tarjeta Principal (Textos e Imagen) */
-.nx-hero-main {
-  background-color: var(--bg-card) !important;
+#nx-app .nx-hero-main {
+  background-color: var(--bg-card);
   box-shadow: 
     inset 40px 40px 60px -20px rgba(0, 212, 255, 0.08), 
-    inset -40px -40px 60px -20px rgba(67, 59, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important; /* Refuerza el cristal */
+    inset -40px -40px 60px -20px rgba(67, 59, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Refuerza el cristal */
   border-radius: 12px;
   padding: 1.5rem;
   display: grid;
@@ -27,14 +27,14 @@
   gap: 2rem;
 }
 
-.nx-hero-text {
+#nx-app .nx-hero-text {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
 /* 3. Contrapeso Gráfico: Le damos presencia al espacio vacío mientras carga la imagen */
-.nx-hero-graphic {
+#nx-app .nx-hero-graphic {
   width: 100%;
   min-height: auto; /* Anulamos los 300px anteriores */
   display: none; /* Base (Móvil): Ocultar imagen */
@@ -42,13 +42,13 @@
   justify-content: center;
 }
 
-.nx-hero-graphic img {
+#nx-app .nx-hero-graphic img {
   object-fit: contain;
   max-height: 500px; /* Previene que una imagen gigante rompa la caja vertical */
   width: 100%;
 }
 
-.nx-hero-title {
+#nx-app .nx-hero-title {
   font-size: var(--fs-h1);
   font-family: var(--font-heading);
   font-weight: 600;
@@ -58,62 +58,62 @@
 }
 
 /* Contenedor Principal (Ghost Pill) */
-.nx-hero-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 16px !important;
-  width: max-content !important; /* Evita que el botón se estire */
-  background: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 50px !important;
-  padding: 6px 28px 6px 6px !important; /* Padding ajustado: ajustado a la izq, espacioso a la der */
-  text-decoration: none !important;
-  transition: all 0.3s ease !important;
+#nx-app .nx-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content; /* Evita que el botón se estire */
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 6px 28px 6px 6px; /* Padding ajustado: ajustado a la izq, espacioso a la der */
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 /* Anillo del Ícono (A la izquierda) */
-.nx-hero-btn .nx-icon-ring {
-  display: flex !important;
+#nx-app .nx-hero-btn .nx-icon-ring {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 2px solid var(--bento-accent) !important; /* Anillo de color corporativo */
+  border: 2px solid var(--bento-accent); /* Anillo de color corporativo */
   background-color: transparent;
   color: var(--text-main);
   transition: all 0.3s ease;
 }
 
 /* Tipografía del Botón */
-.nx-hero-btn .nx-btn-text {
-  color: #ffffff !important;
-  font-weight: 600 !important;
+#nx-app .nx-hero-btn .nx-btn-text {
+  color: #ffffff;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
 
 /* Interacción Hover */
-.nx-hero-btn:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
+#nx-app .nx-hero-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.nx-hero-btn:hover .nx-icon-ring {
-  background-color: var(--bento-accent) !important; /* Se rellena de color al pasar el mouse */
-  color: #ffffff !important;
+#nx-app .nx-hero-btn:hover .nx-icon-ring {
+  background-color: var(--bento-accent); /* Se rellena de color al pasar el mouse */
+  color: #ffffff;
   transform: rotate(-45deg); /* Micro-interacción dinámica */
 }
 
-.nx-hero-desc {
+#nx-app .nx-hero-desc {
   font-size: var(--fs-body);
   color: var(--text-muted);
   line-height: 1.6;
 }
 
 /* Barra de Métricas */
-.nx-metrics-container {
+#nx-app .nx-metrics-container {
   background-color: transparent;
   border: 1px solid #1C1C21;
   border-radius: 12px;
@@ -124,7 +124,7 @@
   gap: 10px;
 }
 
-.nx-metric-box {
+#nx-app .nx-metric-box {
   background-color: var(--bg-card);
   padding: 1.5rem 1rem;
   border-radius: 10px;
@@ -137,67 +137,67 @@
 }
 
 /* Forzar blanco absoluto, negrita y sombra en el texto de las estadísticas */
-.nx-metric-box * {
-  color: #ffffff !important;
-  font-weight: 600 !important;
-  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5) !important;
+#nx-app .nx-metric-box * {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Caja 1 (Clientes): Base Profunda + Orbes Cian/Púrpura */
-.nx-metric-box:nth-child(1) {
-  background-color: var(--bento-secondary) !important;
+#nx-app .nx-metric-box:nth-child(1) {
+  background-color: var(--bento-secondary);
   background-image: 
     radial-gradient(circle at 0% 0%, var(--bento-cyan) 0%, transparent 65%),
-    radial-gradient(circle at 100% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 100% 100%, var(--bento-aurora) 0%, transparent 65%);
+  border: none;
 }
-.nx-metric-box:nth-child(1) * { color: var(--text-main) !important; }
+#nx-app .nx-metric-box:nth-child(1) * { color: var(--text-main); }
 
 /* Caja 2 (Proyectos): Base Cielo + Orbes Púrpura/Vivo */
-.nx-metric-box:nth-child(2) {
-  background-color: var(--bento-primary) !important;
+#nx-app .nx-metric-box:nth-child(2) {
+  background-color: var(--bento-primary);
   background-image: 
     radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%),
-    radial-gradient(circle at 0% 100%, var(--bento-accent) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 0% 100%, var(--bento-accent) 0%, transparent 65%);
+  border: none;
 }
 /* Caja 3 (Seguidores): Base Vivo + Orbes Cian/Púrpura */
-.nx-metric-box:nth-child(3) {
-  background-color: var(--bento-accent) !important;
+#nx-app .nx-metric-box:nth-child(3) {
+  background-color: var(--bento-accent);
   background-image: 
     radial-gradient(circle at 50% 0%, var(--bento-cyan) 0%, transparent 65%),
-    radial-gradient(circle at 50% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 50% 100%, var(--bento-aurora) 0%, transparent 65%);
+  border: none;
 }
-.nx-metric-box:nth-child(3) * { color: var(--text-main) !important; }
+#nx-app .nx-metric-box:nth-child(3) * { color: var(--text-main); }
 
 /* Caja 4 (Años Exp.): Base Cielo + Orbes Cian/Púrpura */
-.nx-metric-box:nth-child(4) {
-  background-color: var(--bento-primary) !important;
+#nx-app .nx-metric-box:nth-child(4) {
+  background-color: var(--bento-primary);
   background-image: 
     radial-gradient(circle at 0% 100%, var(--bento-cyan) 0%, transparent 65%),
-    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%);
+  border: none;
 }
-.nx-metric-title {
+#nx-app .nx-metric-title {
   color: var(--text-light);
   font-family: var(--font-mono);
   font-size: 12px;
   text-transform: uppercase;
 }
 
-.nx-metric-number {
+#nx-app .nx-metric-number {
   color: var(--accent-secondary);
   font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
   font-weight: 600;
 }
 
-.nx-metric-box:last-child {
+#nx-app .nx-metric-box:last-child {
   grid-column: auto;
 }
 
 /* Hero Image Main Asset */
-.nx-hero-main-img {
+#nx-app .nx-hero-main-img {
   width: 100%;
   height: auto;
   max-height: 550px;
@@ -218,15 +218,15 @@
    TABLETA (768px+) - Punto de quiebre intermedio
    ========================================= */
 @media (min-width: 768px) {
-  .nx-hero-main {
+  #nx-app .nx-hero-main {
     padding: 2rem;
   }
-  .nx-metric-box {
+  #nx-app .nx-metric-box {
     flex: 1 1 calc(50% - 12px); /* 2x2 perfecto y centrado en tableta */
     max-width: none;
   }
   
-  .nx-hero-graphic {
+  #nx-app .nx-hero-graphic {
     display: flex; /* Escritorio: Mostrar imagen */
   }
 }
@@ -236,17 +236,17 @@
    ========================================= */
 @media (min-width: 1024px) {
   
-  .nx-hero-main {
+  #nx-app .nx-hero-main {
     padding: 3rem; /* Estandarizado */
     grid-template-columns: 1fr 1fr; /* Mitad texto, mitad imagen */
     align-items: center;
   }
 
-  .nx-metrics-container {
+  #nx-app .nx-metrics-container {
     padding: 1.5rem;
   }
 
-  .nx-metric-box {
+  #nx-app .nx-metric-box {
     flex: 1 1 0; /* Todos en una sola línea horizontal */
     max-width: none;
   }
@@ -256,7 +256,7 @@
    DESKTOP XL (Figma 1820px -> CSS 1440px+)
    ========================================= */
 @media (min-width: 1440px) {
-  .nx-hero-section {
+  #nx-app .nx-hero-section {
     gap: 20px; /* Token exacto XL */
   }
 }

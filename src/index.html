@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="./styles/footer.css">
   <link rel="stylesheet" href="./styles/contact.css">
 </head>
-<body>
+<body id="nx-app">
   <header class="nx-header">
     <div class="nx-container">
       <nav class="nx-navbar">
@@ -314,14 +314,16 @@
         
         <!-- División 2: Wizard Interactivo (Derecha en Desktop) -->
         <div class="nx-contact-interactive">
-          <div class="nx-whatsapp-card" id="wa-wizard-container">
+          <div class="nx-whatsapp-card" id="wa-wizard-container" 
+               data-wa-number="573238789853" 
+               data-wa-message="¡Hola, FiliusTec! Estoy interesado en iniciar un proyecto.%0A%0A*Detalles de mi perfil:*%0A- *Servicio:* {pilar}%0A- *Entidad:* {entidad}%0A- *Operación:* {tamano}%0A%0AQuisiera recibir asesoría comercial.">
             <!-- Paso 1 -->
             <div class="wa-step active" id="wa-step-1">
               <h4 class="wa-question">1. ¿En qué pilar estratégico debemos enfocarnos?</h4>
               <div class="wa-options">
-                <button type="button" class="wa-btn" data-step="1" data-val="Desarrollo Web & UI/UX">Desarrollo Web & UI/UX</button>
-                <button type="button" class="wa-btn" data-step="1" data-val="E-commerce & Conversión">E-commerce & Conversión</button>
-                <button type="button" class="wa-btn" data-step="1" data-val="Consultoría TI & Project Mgmt">Consultoría TI & Project Mgmt</button>
+                <button type="button" class="wa-btn" data-step="1" data-val="Desarrollo Web & UI/UX" aria-label="Seleccionar Desarrollo Web y UI/UX">Desarrollo Web & UI/UX</button>
+                <button type="button" class="wa-btn" data-step="1" data-val="E-commerce & Conversión" aria-label="Seleccionar E-commerce y Conversión">E-commerce & Conversión</button>
+                <button type="button" class="wa-btn" data-step="1" data-val="Consultoría TI & Project Mgmt" aria-label="Seleccionar Consultoría TI y Project Management">Consultoría TI & Project Mgmt</button>
               </div>
             </div>
 
@@ -329,8 +331,8 @@
             <div class="wa-step" id="wa-step-2" style="display: none;">
               <h4 class="wa-question">2. ¿Cómo está conformada tu entidad?</h4>
               <div class="wa-options">
-                <button type="button" class="wa-btn" data-step="2" data-val="Empresa Constituida (B2B)">Empresa Constituida (B2B)</button>
-                <button type="button" class="wa-btn" data-step="2" data-val="Persona Natural / Emprendedor">Persona Natural / Emprendedor</button>
+                <button type="button" class="wa-btn" data-step="2" data-val="Empresa Constituida (B2B)" aria-label="Seleccionar Empresa Constituida">Empresa Constituida (B2B)</button>
+                <button type="button" class="wa-btn" data-step="2" data-val="Persona Natural / Emprendedor" aria-label="Seleccionar Persona Natural o Emprendedor">Persona Natural / Emprendedor</button>
               </div>
             </div>
 
@@ -338,8 +340,8 @@
             <div class="wa-step" id="wa-step-3" style="display: none;">
               <h4 class="wa-question">3. ¿Cuál es el tamaño de tu operación?</h4>
               <div class="wa-options">
-                <button type="button" class="wa-btn final-btn" data-step="3" data-val="Startup / PYME">Startup / PYME</button>
-                <button type="button" class="wa-btn final-btn" data-step="3" data-val="Mediana / Gran Empresa">Mediana / Gran Empresa</button>
+                <button type="button" class="wa-btn final-btn" data-step="3" data-val="Startup / PYME" aria-label="Seleccionar Startup o PYME">Startup / PYME</button>
+                <button type="button" class="wa-btn final-btn" data-step="3" data-val="Mediana / Gran Empresa" aria-label="Seleccionar Mediana o Gran Empresa">Mediana / Gran Empresa</button>
               </div>
             </div>
           </div>
@@ -459,44 +461,6 @@
     </div>
   </footer>
   <script src="./scripts/main.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      let leadData = { pilar: "", entidad: "", tamano: "" };
-      
-      // Capturar todos los botones del Wizard
-      const waButtons = document.querySelectorAll('.wa-btn');
-      
-      waButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const step = this.getAttribute('data-step');
-          const value = this.getAttribute('data-val');
-          
-          if(step === "1") {
-            leadData.pilar = value;
-            document.getElementById('wa-step-1').style.display = 'none';
-            document.getElementById('wa-step-2').style.display = 'block';
-          } 
-          else if(step === "2") {
-            leadData.entidad = value;
-            document.getElementById('wa-step-2').style.display = 'none';
-            document.getElementById('wa-step-3').style.display = 'block';
-          }
-          else if(step === "3") {
-            leadData.tamano = value;
-            // Disparo final a WhatsApp
-            const mensaje = `¡Hola, FiliusTec! Estoy interesado en iniciar un proyecto.%0A%0A*Detalles de mi perfil:*%0A- *Servicio:* ${leadData.pilar}%0A- *Entidad:* ${leadData.entidad}%0A- *Operación:* ${leadData.tamano}%0A%0AQuisiera recibir asesoría comercial.`;
-            
-            const numeroWhatsApp = "573238789853"; // Número oficial de FiliusTec
-            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
-            
-            // Reiniciar el form por si el usuario vuelve
-            document.getElementById('wa-step-3').style.display = 'none';
-            document.getElementById('wa-step-1').style.display = 'block';
-          }
-        });
-      });
-    });
-  </script>
 
   <!-- Botón Scroll to Top -->
   <a href="#hero" id="nx-scroll-top" class="nx-scroll-btn" aria-label="Volver arriba" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">

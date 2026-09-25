@@ -105,17 +105,17 @@ a {
 /* =========================================
    ACCESIBILIDAD Y CONTRASTE (Fase 58)
    ========================================= */
-.nx-service-card *, .nx-work-card *, .nx-testimonial-card * {
-  font-weight: 600 !important;
+#nx-app .nx-service-card *, #nx-app .nx-work-card *, #nx-app .nx-testimonial-card * {
+  font-weight: 600;
   /* Fuerza el texto blanco con sombra oscura para legibilidad extrema */
-  color: #ffffff !important; 
-  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5) !important;
+  color: #ffffff; 
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 /* Excepción: si hay etiquetas pequeñas o metadatos, bájalas a 500 */
-.nx-work-card .nx-category { font-weight: 500 !important; }
+#nx-app .nx-work-card .nx-category { font-weight: 500; }
 
 /* Botón Flotante 'Scroll to Top' */
-.nx-scroll-btn {
+#nx-app .nx-scroll-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -137,17 +137,17 @@ a {
   z-index: 9999;
   text-decoration: none;
 }
-.nx-scroll-btn:hover {
+#nx-app .nx-scroll-btn:hover {
   opacity: 1;
   transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {
-  .nx-scroll-btn {
-    bottom: 16px !important;
-    right: 16px !important;
-    width: 44px !important;
-    height: 44px !important;
+  #nx-app .nx-scroll-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
   }
 }
 

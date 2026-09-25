@@ -1,14 +1,14 @@
 /* =========================================
    NAVBAR - BASE MÓVIL (Figma 358px)
    ========================================= */
-.nx-header {
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  border-radius: 0 !important;
+#nx-app .nx-header {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
   margin-top: 0;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
   position: sticky;
@@ -17,21 +17,21 @@
   transition: all 0.3s ease;
 }
 
-.nx-container {
+#nx-app .nx-container {
   max-width: 1820px; /* Tope máximo del monitor gigante */
   margin: 0 auto;
 }
 
-.nx-navbar {
-  background-color: var(--bg-card) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+#nx-app .nx-navbar {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   /* Sombra exterior pesada + 3 luces internas cruzadas para efecto tricolor */
   box-shadow: 
     0 12px 40px rgba(0, 0, 0, 0.6), 
     inset 30px 0 30px -10px rgba(0, 212, 255, 0.15),   /* Cian Izquierda */
     inset 0 10px 30px -10px rgba(34, 157, 230, 0.15),  /* Azul Vivo Arriba */
-    inset -30px 0 30px -10px rgba(67, 59, 255, 0.15) !important; /* Púrpura Derecha */
-  border-radius: 16px !important;
+    inset -30px 0 30px -10px rgba(67, 59, 255, 0.15); /* Púrpura Derecha */
+  border-radius: 16px;
   max-width: 1820px;
   margin: 16px auto;
   padding: 12px 24px;
@@ -42,19 +42,19 @@
   align-items: center;
 }
 
-.nx-logo img {
+#nx-app .nx-logo img {
   max-height: 48px; /* Aumentado de 32px para mayor presencia */
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
-.nx-logo:hover img {
+#nx-app .nx-logo:hover img {
   transform: scale(1.05); /* Pequeño efecto de interacción al tocar el logo */
 }
 
 /* Ocultamos la botonera en móvil y la preparamos para JS */
-.nx-nav-links {
+#nx-app .nx-nav-links {
   display: none;
   position: absolute;
   top: 100%;
@@ -71,27 +71,27 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.nx-nav-links a {
+#nx-app .nx-nav-links a {
   color: var(--text-light); /* Fallback */
   text-decoration: none;
 }
 
-.nx-nav-links a:nth-child(1) { color: var(--bento-primary) !important; }
-.nx-nav-links a:nth-child(2) { color: var(--bento-accent) !important; }
-.nx-nav-links a:nth-child(3) { color: var(--bento-secondary) !important; }
+#nx-app .nx-nav-links a:nth-child(1) { color: var(--bento-primary); }
+#nx-app .nx-nav-links a:nth-child(2) { color: var(--bento-accent); }
+#nx-app .nx-nav-links a:nth-child(3) { color: var(--bento-secondary); }
 
-.nx-nav-links a:hover,
-.nx-nav-links a.active {
-  color: var(--text-main) !important; /* Efecto hover / activo */
+#nx-app .nx-nav-links a:hover,
+#nx-app .nx-nav-links a.active {
+  color: var(--text-main); /* Efecto hover / activo */
 }
 
 /* Clase inyectada por JS para abrir el menú */
-.nx-nav-links.active {
+#nx-app .nx-nav-links.active {
   display: flex;
 }
 
 /* Botón Hamburguesa */
-.nx-menu-btn {
+#nx-app .nx-menu-btn {
   background-color: var(--bg-dark);
   border: none;
   border-radius: 8px;
@@ -104,7 +104,7 @@
   cursor: pointer;
 }
 
-.nx-menu-btn svg {
+#nx-app .nx-menu-btn svg {
   width: 24px;
   height: 24px;
 }
@@ -113,21 +113,21 @@
    NAVBAR - LAPTOP (Figma 1360px -> CSS 1024px+)
    ========================================= */
 @media (min-width: 1024px) {
-  .nx-logo img {
+  #nx-app .nx-logo img {
     max-height: 56px; /* Más grande en Laptop */
   }
 
-  .nx-navbar {
+  #nx-app .nx-navbar {
     padding: 20px 20px 20px 40px; /* Tokens exactos Figma Laptop */
     border-radius: 14px;
   }
 
-  .nx-menu-btn {
+  #nx-app .nx-menu-btn {
     display: none; /* Apagamos hamburguesa */
   }
 
-  .nx-nav-links {
-    display: flex !important; /* Forzamos visibilidad ignorando el JS del móvil */
+  #nx-app .nx-nav-links {
+    display: flex; /* Forzamos visibilidad ignorando el JS del móvil */
     position: static;         /* Matamos la posición absoluta del celular */
     flex-direction: row;      /* Volvemos a alinear en horizontal */
     width: auto;
@@ -139,7 +139,7 @@
     gap: 14px;
   }
 
-  .nx-nav-links a {
+  #nx-app .nx-nav-links a {
     font-family: var(--font-mono);
     font-size: 14px;
     font-weight: 500;
@@ -151,29 +151,29 @@
   }
 
   /* Botón de Contacto - CTA */
-  .nx-nav-links a.nx-btn-cta {
-    background-color: rgba(15, 15, 15, 0.8) !important;
-    color: var(--text-main) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  #nx-app .nx-nav-links a.nx-btn-cta {
+    background-color: rgba(15, 15, 15, 0.8);
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 
       inset 15px 0 20px -10px rgba(0, 212, 255, 0.2), 
-      inset -15px 0 20px -10px rgba(67, 59, 255, 0.2) !important;
+      inset -15px 0 20px -10px rgba(67, 59, 255, 0.2);
     backdrop-filter: blur(10px);
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .nx-nav-links a.nx-btn-cta:hover {
+    #nx-app .nx-nav-links a.nx-btn-cta:hover {
       transform: translateY(-2px);
       box-shadow: 
         inset 25px 0 25px -10px rgba(0, 212, 255, 0.4), 
-        inset -25px 0 25px -10px rgba(67, 59, 255, 0.4) !important;
+        inset -25px 0 25px -10px rgba(67, 59, 255, 0.4);
     }
   }
 
-  .nx-nav-links a.nx-btn-cta:active {
-    transform: scale(0.97) !important;
+  #nx-app .nx-nav-links a.nx-btn-cta:active {
+    transform: scale(0.97);
     transition: transform 0.1s ease-in-out;
   }
 }
@@ -182,20 +182,20 @@
    NAVBAR - DESKTOP XL (Figma 1820px -> CSS 1440px+)
    ========================================= */
 @media (min-width: 1440px) {
-  .nx-logo img {
+  #nx-app .nx-logo img {
     max-height: 64px; /* Monumental en Desktop XL */
   }
 
-  .nx-navbar {
+  #nx-app .nx-navbar {
     padding: 24px 24px 24px 50px; /* Tokens exactos Figma Desktop */
     border-radius: 16px;
   }
 
-  .nx-nav-links {
+  #nx-app .nx-nav-links {
     gap: 16px;
   }
 
-  .nx-nav-links a {
+  #nx-app .nx-nav-links a {
     font-size: 18px;
     padding: 18px 24px;
     border-radius: 12px;
@@ -204,33 +204,33 @@
 
 /* Ecosistema Menú Móvil */
 @media (max-width: 1023px) {
-  .nx-nav-links {
-    background-color: var(--bg-card) !important;
-    border: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  #nx-app .nx-nav-links {
+    background-color: var(--bg-card);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 
       inset 30px 0 30px -10px rgba(0, 212, 255, 0.08), 
-      inset -30px 0 30px -10px rgba(67, 59, 255, 0.08) !important;
+      inset -30px 0 30px -10px rgba(67, 59, 255, 0.08);
     backdrop-filter: blur(16px);
-    border-radius: 24px !important; /* Redondeo en las 4 esquinas */
-    padding: 24px 16px !important;
+    border-radius: 24px; /* Redondeo en las 4 esquinas */
+    padding: 24px 16px;
     gap: 12px;
   }
 
-  .nx-nav-links a {
+  #nx-app .nx-nav-links a {
     display: block;
     background-color: rgba(255, 255, 255, 0.03); /* Fondo acrílico oscuro */
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 16px;
     border-radius: 12px; /* Forma Bento */
     text-align: center;
     transition: all 0.2s ease;
-    color: var(--text-main) !important;
+    color: var(--text-main);
     font-weight: 600;
   }
 
   /* Sincronización cromática interactiva de cada cajita */
-  .nx-nav-links a:nth-child(1):hover { border-color: var(--bento-primary) !important; background: rgba(150, 199, 228, 0.1) !important; color: #ffffff !important; }
-  .nx-nav-links a:nth-child(2):hover { border-color: var(--bento-accent) !important; background: rgba(34, 157, 230, 0.1) !important; color: #ffffff !important; }
-  .nx-nav-links a:nth-child(3):hover { border-color: var(--bento-secondary) !important; background: rgba(25, 97, 139, 0.1) !important; color: #ffffff !important; }
+  #nx-app .nx-nav-links a:nth-child(1):hover { border-color: var(--bento-primary); background: rgba(150, 199, 228, 0.1); color: #ffffff; }
+  #nx-app .nx-nav-links a:nth-child(2):hover { border-color: var(--bento-accent); background: rgba(34, 157, 230, 0.1); color: #ffffff; }
+  #nx-app .nx-nav-links a:nth-child(3):hover { border-color: var(--bento-secondary); background: rgba(25, 97, 139, 0.1); color: #ffffff; }
 }

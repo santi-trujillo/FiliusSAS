@@ -1,14 +1,14 @@
 /* =========================================
    FOOTER GLOBAL Y BASE MÓVIL
    ========================================= */
-.nx-footer {
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  border-radius: 0 !important;
+#nx-app .nx-footer {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
   margin-top: 0;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
   display: flex;
@@ -16,21 +16,21 @@
   gap: 10px;
 }
 
-.nx-footer-top {
+#nx-app .nx-footer-top {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 /* REDES SOCIALES (Móvil: Fila de 4 cajas oscuras) */
-.nx-social-grid {
+#nx-app .nx-social-grid {
   display: flex;
   flex-direction: row;
   gap: 10px;
   width: 100%;
 }
 
-.nx-social-card {
+#nx-app .nx-social-card {
   flex: 1;
   background-color: #1F1F1F;
   border: 1px solid #333333;
@@ -44,26 +44,26 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nx-social-card:hover {
+  #nx-app .nx-social-card:hover {
     border-color: var(--accent-secondary);
     background-color: #1F1F1F;
     transform: translateY(-2px);
   }
 }
 
-.nx-social-card:active {
-  transform: scale(0.97) !important;
+#nx-app .nx-social-card:active {
+  transform: scale(0.97);
   transition: transform 0.1s ease-in-out;
   border-color: var(--accent-secondary);
 }
 
-.nx-social-header {
+#nx-app .nx-social-header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nx-social-icon {
+#nx-app .nx-social-icon {
   font-family: var(--font-heading);
   font-size: 16px;
   font-weight: bold;
@@ -74,52 +74,52 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nx-social-card:hover .nx-social-icon {
+  #nx-app .nx-social-card:hover .nx-social-icon {
     color: var(--accent-secondary);
   }
 }
 
-.nx-social-arrow,
-.nx-social-info {
+#nx-app .nx-social-arrow,
+#nx-app .nx-social-info {
   display: none; /* Ocultos en móvil */
 }
 
 /* ENLACES (Móvil: Caja oscura, grilla 2x2) */
-.nx-right-column {
+#nx-app .nx-right-column {
   display: flex;
   flex-direction: column;
   gap: 10px; /* La misma separación estricta de Figma */
   width: 100%;
 }
 
-.nx-links-wrapper {
-  background-color: var(--bg-card) !important;
+#nx-app .nx-links-wrapper {
+  background-color: var(--bg-card);
   box-shadow: 
     inset 30px 0 50px -20px rgba(34, 157, 230, 0.08), 
-    inset -30px 0 50px -20px rgba(25, 97, 139, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    inset -30px 0 50px -20px rgba(25, 97, 139, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px;
   padding: 24px;
   flex-grow: 1; /* Magia: Absorbe el espacio vertical extra empujando la caja legal al fondo */
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  height: 100% !important; /* Asegura que herede la altura total de la fila */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Asegura que herede la altura total de la fila */
 }
 
-.nx-links-grid {
+#nx-app .nx-links-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
-.nx-footer-col {
+#nx-app .nx-footer-col {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.nx-footer-col ul {
+#nx-app .nx-footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -128,7 +128,7 @@
   gap: 14px;
 }
 
-.nx-footer-col h4 {
+#nx-app .nx-footer-col h4 {
   font-family: var(--font-mono);
   font-size: 18px;
   font-weight: 700;
@@ -136,7 +136,7 @@
   margin-bottom: 2px;
 }
 
-.nx-footer-col a {
+#nx-app .nx-footer-col a {
   color: var(--text-muted);
   font-family: var(--font-body);
   font-size: 14px;
@@ -146,26 +146,26 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nx-footer-col a:hover {
+  #nx-app .nx-footer-col a:hover {
     color: var(--accent-secondary);
     transform: translateY(-2px);
   }
 }
 
-.nx-footer-col a:active {
-  transform: scale(0.97) !important;
+#nx-app .nx-footer-col a:active {
+  transform: scale(0.97);
   transition: transform 0.1s ease-in-out;
   color: var(--accent-secondary);
 }
 
 /* Novedad Figma: Badge 'Soon' */
-.nx-link-soon {
+#nx-app .nx-link-soon {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.nx-badge {
+#nx-app .nx-badge {
   background-color: #262626;
   border: 1px solid #333333;
   border-radius: 6px;
@@ -176,12 +176,12 @@
 }
 
 /* FOOTER BOTTOM (Móvil: Caja oscura aislada) */
-.nx-footer-bottom {
-  background-color: var(--bg-card) !important;
+#nx-app .nx-footer-bottom {
+  background-color: var(--bg-card);
   box-shadow: 
     inset 40px 0 60px -20px rgba(67, 59, 255, 0.08), 
-    inset -40px 0 60px -20px rgba(0, 212, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    inset -40px 0 60px -20px rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px; /* Restauramos los bordes */
   padding: 24px;
   display: flex;
@@ -190,14 +190,14 @@
   gap: 20px;
 }
 
-.nx-copyright {
+#nx-app .nx-copyright {
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 14px;
   text-align: center;
 }
 
-.nx-footer-legal-links {
+#nx-app .nx-footer-legal-links {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,7 +205,7 @@
   width: 100%;
 }
 
-.nx-footer-legal-links a {
+#nx-app .nx-footer-legal-links a {
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 14px;
@@ -213,11 +213,11 @@
   transition: color 0.3s ease;
 }
 
-.nx-footer-legal-links a:hover {
+#nx-app .nx-footer-legal-links a:hover {
   color: var(--accent-primary);
 }
 
-.nx-divider {
+#nx-app .nx-divider {
   width: 100%;
   height: 1px;
   background-color: #333333;
@@ -227,21 +227,21 @@
    TABLETA Y ESCRITORIO (Diseño Exacto Figma)
    ========================================= */
 @media (min-width: 1024px) {
-  .nx-footer-top {
+  #nx-app .nx-footer-top {
     display: grid;
     grid-template-columns: 1fr 1.5fr; /* 40% Redes, 60% Enlaces */
     gap: 20px;
   }
 
   /* Redes Sociales en Laptop */
-  .nx-social-grid {
+  #nx-app .nx-social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%; /* Eliminamos el ancho fijo que colapsaba el layout */
     gap: 10px;
   }
 
-  .nx-social-card {
+  #nx-app .nx-social-card {
     background-color: var(--bg-card); 
     border: none;
     border-radius: 14px;
@@ -252,18 +252,18 @@
     gap: 30px; /* Reducido para evitar overflow */
   }
 
-  .nx-social-header {
+  #nx-app .nx-social-header {
     width: 100%;
     justify-content: space-between;
   }
 
-  .nx-social-arrow,
-  .nx-social-info {
+  #nx-app .nx-social-arrow,
+  #nx-app .nx-social-info {
     display: flex;
   }
 
-  .nx-social-icon,
-  .nx-social-arrow {
+  #nx-app .nx-social-icon,
+  #nx-app .nx-social-arrow {
     background-color: #1F1F1F;
     border: 1px solid #333333;
     display: flex;
@@ -272,37 +272,37 @@
     transition: all 0.3s ease;
   }
 
-  .nx-social-icon {
+  #nx-app .nx-social-icon {
     width: 50px;
     height: 50px;
     border-radius: 12px;
     font-size: 20px;
   }
 
-  .nx-social-arrow {
+  #nx-app .nx-social-arrow {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     color: var(--text-main);
   }
 
-  .nx-social-card:hover .nx-social-icon {
+  #nx-app .nx-social-card:hover .nx-social-icon {
     background-color: var(--accent-primary);
     border-color: var(--accent-primary);
     color: var(--bg-dark);
   }
 
-  .nx-social-card:hover .nx-social-arrow {
+  #nx-app .nx-social-card:hover .nx-social-arrow {
     background-color: var(--text-main);
     color: var(--bg-dark);
   }
 
-  .nx-social-info {
+  #nx-app .nx-social-info {
     flex-direction: column;
     gap: 8px;
   }
 
-  .nx-social-name {
+  #nx-app .nx-social-name {
     font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 500;
@@ -310,7 +310,7 @@
     text-transform: uppercase;
   }
 
-  .nx-social-desc {
+  #nx-app .nx-social-desc {
     font-family: var(--font-body);
     font-size: 14px;
     color: var(--text-muted);
@@ -318,39 +318,39 @@
   }
 
   /* Enlaces en Laptop */
-  .nx-links-wrapper {
+  #nx-app .nx-links-wrapper {
     padding: 30px; /* Reducido a la mitad para dar oxígeno */
     border-radius: 16px;
   }
 
-  .nx-links-grid {
+  #nx-app .nx-links-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px; /* Separación compacta para laptop */
   }
 
-  .nx-footer-col h4 {
+  #nx-app .nx-footer-col h4 {
     font-size: 18px;
     margin-bottom: 12px;
   }
 
-  .nx-footer-col a {
+  #nx-app .nx-footer-col a {
     font-size: 14px;
   }
 
   /* Footer Bottom Laptop */
-  .nx-footer-bottom {
+  #nx-app .nx-footer-bottom {
     padding: 30px; /* Restaurado */
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .nx-footer-legal-links {
+  #nx-app .nx-footer-legal-links {
     width: auto;
     flex-direction: row;
     gap: 12px;
   }
 
-  .nx-divider {
+  #nx-app .nx-divider {
     width: 1px;
     height: 20px;
   }
@@ -360,59 +360,59 @@
    ESCRITORIO XL (Medidas Exactas Figma)
    ========================================= */
 @media (min-width: 1440px) {
-  .nx-footer-top {
+  #nx-app .nx-footer-top {
     grid-template-columns: 554px 1fr; /* Restauramos el ancho estricto Figma */
     gap: 40px;
   }
 
-  .nx-social-card {
+  #nx-app .nx-social-card {
     padding: 30px;
     gap: 60px;
   }
 
-  .nx-social-icon {
+  #nx-app .nx-social-icon {
     width: 60px;
     height: 60px;
     font-size: 22px;
   }
 
-  .nx-social-arrow {
+  #nx-app .nx-social-arrow {
     width: 40px;
     height: 40px;
   }
 
-  .nx-social-name {
+  #nx-app .nx-social-name {
     font-size: 22px;
   }
 
-  .nx-social-desc {
+  #nx-app .nx-social-desc {
     font-size: 16px;
   }
 
-  .nx-links-wrapper {
+  #nx-app .nx-links-wrapper {
     padding: 60px;
     border-radius: 20px;
   }
 
-  .nx-links-grid {
+  #nx-app .nx-links-grid {
     gap: 40px;
   }
 
-  .nx-footer-col h4 {
+  #nx-app .nx-footer-col h4 {
     font-size: 22px;
     margin-bottom: 16px;
   }
 
-  .nx-footer-col a {
+  #nx-app .nx-footer-col a {
     font-size: 16px;
   }
 
-  .nx-footer-bottom {
+  #nx-app .nx-footer-bottom {
     padding: 40px; /* Restaurado */
   }
 }
 
-.nx-social-icon svg {
+#nx-app .nx-social-icon svg {
   width: 24px;
   height: 24px;
   fill: currentColor;
@@ -424,68 +424,68 @@
    ========================================= */
 
 /* Apagar los wrappers menores */
-.nx-social-card .nx-social-icon {
-  box-shadow: none !important;
-  border: none !important;
+#nx-app .nx-social-card .nx-social-icon {
+  box-shadow: none;
+  border: none;
 }
 
 /* 1. Instagram: Panel Completo Magenta */
-.nx-social-card:nth-child(1) {
-  box-shadow: inset 0 0 24px rgba(225, 48, 108, 0.25) !important;
-  border: 1px solid rgba(225, 48, 108, 0.3) !important;
+#nx-app .nx-social-card:nth-child(1) {
+  box-shadow: inset 0 0 24px rgba(225, 48, 108, 0.25);
+  border: 1px solid rgba(225, 48, 108, 0.3);
 }
 
 /* 2. Facebook: Panel Completo Azul Rey */
-.nx-social-card:nth-child(2) {
-  box-shadow: inset 0 0 24px rgba(24, 119, 242, 0.25) !important;
-  border: 1px solid rgba(24, 119, 242, 0.3) !important;
+#nx-app .nx-social-card:nth-child(2) {
+  box-shadow: inset 0 0 24px rgba(24, 119, 242, 0.25);
+  border: 1px solid rgba(24, 119, 242, 0.3);
 }
 
 /* 3. GitHub: Panel Completo Fantasma */
-.nx-social-card:nth-child(3) {
-  box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.15) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+#nx-app .nx-social-card:nth-child(3) {
+  box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* 4. WhatsApp: Panel Completo Verde Neón */
-.nx-social-card:nth-child(4) {
-  box-shadow: inset 0 0 24px rgba(37, 211, 102, 0.25) !important;
-  border: 1px solid rgba(37, 211, 102, 0.3) !important;
+#nx-app .nx-social-card:nth-child(4) {
+  box-shadow: inset 0 0 24px rgba(37, 211, 102, 0.25);
+  border: 1px solid rgba(37, 211, 102, 0.3);
 }
 
 /* =========================================
    LIMPIEZA Y CROMATIZACIÓN DE VECTORES (Fase 42)
    ========================================= */
 @media (min-width: 992px) {
-  .nx-social-card .nx-social-arrow {
-    display: none !important;
+  #nx-app .nx-social-card .nx-social-arrow {
+    display: none;
   }
 }
 
 /* 1. Instagram: Ícono Magenta */
-.nx-social-card:nth-child(1) .nx-social-icon i,
-.nx-social-card:nth-child(1) .nx-social-icon svg {
-  color: #E1306C !important;
-  fill: #E1306C !important;
+#nx-app .nx-social-card:nth-child(1) .nx-social-icon i,
+#nx-app .nx-social-card:nth-child(1) .nx-social-icon svg {
+  color: #E1306C;
+  fill: #E1306C;
 }
 
 /* 2. Facebook: Ícono Azul Rey */
-.nx-social-card:nth-child(2) .nx-social-icon i,
-.nx-social-card:nth-child(2) .nx-social-icon svg {
-  color: #1877F2 !important;
-  fill: #1877F2 !important;
+#nx-app .nx-social-card:nth-child(2) .nx-social-icon i,
+#nx-app .nx-social-card:nth-child(2) .nx-social-icon svg {
+  color: #1877F2;
+  fill: #1877F2;
 }
 
 /* 3. GitHub: Ícono Blanco Fantasma */
-.nx-social-card:nth-child(3) .nx-social-icon i,
-.nx-social-card:nth-child(3) .nx-social-icon svg {
-  color: #FFFFFF !important;
-  fill: #FFFFFF !important;
+#nx-app .nx-social-card:nth-child(3) .nx-social-icon i,
+#nx-app .nx-social-card:nth-child(3) .nx-social-icon svg {
+  color: #FFFFFF;
+  fill: #FFFFFF;
 }
 
 /* 4. WhatsApp: Ícono Verde Neón */
-.nx-social-card:nth-child(4) .nx-social-icon i,
-.nx-social-card:nth-child(4) .nx-social-icon svg {
-  color: #25D366 !important;
-  fill: #25D366 !important;
+#nx-app .nx-social-card:nth-child(4) .nx-social-icon i,
+#nx-app .nx-social-card:nth-child(4) .nx-social-icon svg {
+  color: #25D366;
+  fill: #25D366;
 }

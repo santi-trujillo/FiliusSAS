@@ -1,12 +1,12 @@
 /* =========================================
    SECTION TESTIMONIALS - BASE MÓVIL
    ========================================= */
-.nx-testimonials-section {
+#nx-app .nx-testimonials-section {
   width: 100%;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
 }
 
-.nx-testimonials-wrapper {
+#nx-app .nx-testimonials-wrapper {
   background-color: transparent;
   padding: 0;
   display: flex;
@@ -14,14 +14,14 @@
   gap: 1.5rem;
 }
 
-.nx-testimonials-header {
+#nx-app .nx-testimonials-header {
   display: flex;
   align-items: center; /* Alineación simple, sin space-between porque no hay botones */
   border-bottom: 1px solid #1C1C21;
   padding-bottom: 0.5rem;
 }
 
-.nx-testimonials-grid {
+#nx-app .nx-testimonials-grid {
   display: grid;
   /* Magia W3C: Cuadrícula responsiva automática */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -29,7 +29,7 @@
 }
 
 /* Tarjeta Individual de Testimonio */
-.nx-testimonial-card {
+#nx-app .nx-testimonial-card {
   box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   border-radius: 12px;
   padding: 1.5rem;
@@ -40,40 +40,40 @@
 }
 
 /* Impares: Base Vivo + Orbes Centro Izq/Der */
-.nx-testimonial-card:nth-child(odd) {
-  background-color: var(--bento-accent) !important;
+#nx-app .nx-testimonial-card:nth-child(odd) {
+  background-color: var(--bento-accent);
   background-image: 
     radial-gradient(circle at 0% 50%, var(--bento-cyan) 0%, transparent 65%),
-    radial-gradient(circle at 100% 50%, var(--bento-aurora) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 100% 50%, var(--bento-aurora) 0%, transparent 65%);
+  border: none;
 }
-.nx-testimonial-card:nth-child(odd) * { color: var(--text-main) !important; }
+#nx-app .nx-testimonial-card:nth-child(odd) * { color: var(--text-main); }
 
 /* Pares: Base Profundo + Orbes Esquinas Contrarias */
-.nx-testimonial-card:nth-child(even) {
-  background-color: var(--bento-secondary) !important;
+#nx-app .nx-testimonial-card:nth-child(even) {
+  background-color: var(--bento-secondary);
   background-image: 
     radial-gradient(circle at 100% 0%, var(--bento-cyan) 0%, transparent 65%),
-    radial-gradient(circle at 0% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 0% 100%, var(--bento-aurora) 0%, transparent 65%);
+  border: none;
 }
-.nx-testimonial-card:nth-child(even) * { color: var(--text-main) !important; }
+#nx-app .nx-testimonial-card:nth-child(even) * { color: var(--text-main); }
 
 @media (hover: hover) and (pointer: fine) {
-  .nx-testimonial-card:hover {
+  #nx-app .nx-testimonial-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent-primary);
     box-shadow: 0 12px 40px rgba(67, 59, 255, 0.15); /* Resplandor amplificado */
   }
 }
 
-.nx-testimonial-card:active {
-  transform: scale(0.97) !important;
+#nx-app .nx-testimonial-card:active {
+  transform: scale(0.97);
   transition: transform 0.1s ease-in-out;
   border-color: var(--accent-secondary);
 }
 
-.nx-testimonial-quote {
+#nx-app .nx-testimonial-quote {
   font-family: var(--font-heading);
   font-size: 1rem;
   color: var(--text-main);
@@ -81,14 +81,14 @@
   line-height: 1.4;
 }
 
-.nx-testimonial-text {
+#nx-app .nx-testimonial-text {
   color: var(--text-muted);
   font-size: var(--fs-small);
   line-height: 1.6;
   flex-grow: 1; /* Empuja el footer del cliente hacia abajo */
 }
 
-.nx-testimonial-footer {
+#nx-app .nx-testimonial-footer {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -98,7 +98,7 @@
 }
 
 /* Avatar CSS Reutilizado y Adaptado */
-.nx-testimonial-avatar {
+#nx-app .nx-testimonial-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -112,18 +112,18 @@
   flex-shrink: 0;
 }
 
-.nx-testimonial-client-info {
+#nx-app .nx-testimonial-client-info {
   display: flex;
   flex-direction: column;
 }
 
-.nx-testimonial-client-name {
+#nx-app .nx-testimonial-client-name {
   font-family: var(--font-heading);
   font-size: 0.875rem;
   color: var(--text-main);
 }
 
-.nx-testimonial-client-role {
+#nx-app .nx-testimonial-client-role {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-muted);
@@ -134,17 +134,17 @@
    TABLETA Y ESCRITORIO
    ========================================= */
 @media (min-width: 1024px) {
-  .nx-testimonials-wrapper {
+  #nx-app .nx-testimonials-wrapper {
     padding: 4rem;
     border-radius: 24px;
     gap: 2.5rem;
   }
   
-  .nx-testimonials-header {
+  #nx-app .nx-testimonials-header {
     padding-bottom: 1rem;
   }
   
-  .nx-testimonials-grid {
+  #nx-app .nx-testimonials-grid {
     gap: 2rem;
     /* INYECCIÓN: Forzamos exactamente 3 columnas del mismo ancho, matando el auto-fit */
     grid-template-columns: repeat(3, 1fr); 

@@ -1,12 +1,12 @@
 /* =========================================
    SECTION OUR WORKS - BASE MÓVIL
    ========================================= */
-.nx-works-section {
+#nx-app .nx-works-section {
   width: 100%;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
 }
 
-.nx-works-wrapper {
+#nx-app .nx-works-wrapper {
   background-color: transparent;
   padding: 0;
   display: flex;
@@ -14,7 +14,7 @@
   gap: 1rem; /* Reducido de 2rem para compactar el espacio vertical interno */
 }
 
-.nx-works-header {
+#nx-app .nx-works-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,14 +23,14 @@
 }
 
 
-.nx-works-grid {
+#nx-app .nx-works-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 /* Tarjeta del Proyecto */
-.nx-work-card {
+#nx-app .nx-work-card {
   box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
   border-radius: 12px;
   padding: 1.5rem;
@@ -41,56 +41,56 @@
 }
 
 /* Proyecto 1: Base Vivo + Orbes Cruzados */
-.nx-work-card:nth-child(1) {
-  background-color: var(--bento-accent) !important;
+#nx-app .nx-work-card:nth-child(1) {
+  background-color: var(--bento-accent);
   background-image: 
     radial-gradient(circle at 0% 100%, var(--bento-cyan) 0%, transparent 65%),
-    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%);
+  border: none;
 }
-.nx-work-card:nth-child(1) * { color: var(--text-main) !important; }
+#nx-app .nx-work-card:nth-child(1) * { color: var(--text-main); }
 
 /* Proyecto 2: Base Profundo + Orbes Superior/Inferior */
-.nx-work-card:nth-child(2) {
-  background-color: var(--bento-secondary) !important;
+#nx-app .nx-work-card:nth-child(2) {
+  background-color: var(--bento-secondary);
   background-image: 
     radial-gradient(circle at 50% 0%, var(--bento-cyan) 0%, transparent 65%),
-    radial-gradient(circle at 50% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 50% 100%, var(--bento-aurora) 0%, transparent 65%);
+  border: none;
 }
-.nx-work-card:nth-child(2) * { color: var(--text-main) !important; }
+#nx-app .nx-work-card:nth-child(2) * { color: var(--text-main); }
 
 /* Proyecto 3: Base Cielo + Orbes Diagonales */
-.nx-work-card:nth-child(3) {
-  background-color: var(--bento-primary) !important;
+#nx-app .nx-work-card:nth-child(3) {
+  background-color: var(--bento-primary);
   background-image: 
     radial-gradient(circle at 0% 0%, var(--bento-aurora) 0%, transparent 65%),
-    radial-gradient(circle at 100% 100%, var(--bento-accent) 0%, transparent 65%) !important;
-  border: none !important;
+    radial-gradient(circle at 100% 100%, var(--bento-accent) 0%, transparent 65%);
+  border: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nx-work-card:hover {
+  #nx-app .nx-work-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent-primary);
     box-shadow: 0 12px 40px rgba(67, 59, 255, 0.15); /* Resplandor amplificado */
   }
 }
 
-.nx-work-card:active {
-  transform: scale(0.97) !important;
+#nx-app .nx-work-card:active {
+  transform: scale(0.97);
   transition: transform 0.1s ease-in-out;
   border-color: var(--accent-secondary);
 }
 
 /* Columna 1: Info */
-.nx-work-info {
+#nx-app .nx-work-info {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.nx-work-brand {
+#nx-app .nx-work-brand {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -100,21 +100,21 @@
   text-transform: uppercase;
 }
 
-.nx-work-meta {
+#nx-app .nx-work-meta {
   font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   line-height: 1.6;
 }
 
-.nx-work-desc {
+#nx-app .nx-work-desc {
   font-size: var(--fs-small);
   color: var(--text-light);
   line-height: 1.5;
 }
 
 /* Columna 2: Mockup Visual */
-.nx-work-visual {
+#nx-app .nx-work-visual {
   background-color: #121215;
   border-radius: 8px;
   min-height: 200px;
@@ -127,7 +127,7 @@
   text-decoration: none; /* Por si hereda estilos de enlace */
 }
 
-.nx-work-visual img {
+#nx-app .nx-work-visual img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -136,18 +136,18 @@
 }
 
 /* Efecto Hover en la tarjeta visual */
-.nx-work-visual:hover img {
+#nx-app .nx-work-visual:hover img {
   transform: scale(1.05);
 }
 
 
-.nx-tags-group {
+#nx-app .nx-tags-group {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.nx-tag {
+#nx-app .nx-tag {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 4px 10px;
@@ -162,13 +162,13 @@
    TABLETA Y ESCRITORIO (Mutación a 3 columnas)
    ========================================= */
 @media (min-width: 1024px) {
-  .nx-works-wrapper {
+  #nx-app .nx-works-wrapper {
     padding: 4rem;
     border-radius: 24px;
   }
 
   /* La magia del CSS Grid para la tarjeta */
-  .nx-work-card {
+  #nx-app .nx-work-card {
     display: grid;
     /* Ajuste UX: Texto más amplio (1.2fr) e Imagen contenida (1fr) */
     grid-template-columns: 1.2fr 1fr; 
@@ -177,17 +177,17 @@
   }
   
   /* Patrón en Z: Inversión de diseño para tarjetas pares */
-  .nx-work-card:nth-child(even) {
+  #nx-app .nx-work-card:nth-child(even) {
     grid-template-columns: 1fr 1.2fr;
   }
-  .nx-work-card:nth-child(even) .nx-work-info {
+  #nx-app .nx-work-card:nth-child(even) .nx-work-info {
     order: 2;
   }
-  .nx-work-card:nth-child(even) .nx-work-visual {
+  #nx-app .nx-work-card:nth-child(even) .nx-work-visual {
     order: 1;
   }
   
-  .nx-work-visual {
+  #nx-app .nx-work-visual {
     min-height: 100%; /* Estira el contenedor de imagen */
   }
 }

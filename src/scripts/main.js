@@ -26,53 +26,56 @@ document.addEventListener('DOMContentLoaded', () => {
     return temp.innerHTML;
   };
 
-  // Lógica del Wizard de Contacto
-  const wizardBtns = document.querySelectorAll('.nx-wizard-btn');
-  const interactiveBox = document.querySelector('.nx-contact-interactive');
-
-  if (wizardBtns.length > 0 && interactiveBox) {
-    wizardBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        // 1. Capturar el texto del botón y sanitizarlo
-        const rawService = e.target.innerText.replace('→', '').trim();
-        const selectedService = sanitizeHTML(rawService);
-
-        // 2. Iniciar transición de salida
-        interactiveBox.style.opacity = '0';
-
-        // 3. Esperar a que la caja se desvanezca para mutar el DOM
-        setTimeout(() => {
-          // Eliminamos los estilos en línea residuales y construimos la estructura segura
-          interactiveBox.innerHTML = `
-            <h3 class="nx-wizard-question" style="margin-bottom: 0;">¡Excelente elección!</h3>
-            <p class="nx-contact-desc" style="text-align: center; margin-bottom: 1rem;">
-              Hablemos sobre cómo escalar tu proyecto de <strong style="color: var(--text-main);">${selectedService}</strong>.
-            </p>
-            
-            <form id="nx-wizard-form" class="nx-wizard-form">
-              <input type="email" name="email" placeholder="Tu correo corporativo" required>
-              
-              <button type="submit" class="nx-wizard-btn nx-submit-btn">
-                Solicitar Propuesta ↗
-              </button>
-            </form>
-          `;
-
-          // 4. Iniciar transición de entrada
-          interactiveBox.style.opacity = '1';
-          
-          // Opcional: Agregar lógica extra si es necesaria
-          const formElement = document.getElementById('nx-wizard-form');
-
-          if (formElement) {
-            formElement.addEventListener('submit', (eSubmit) => {
-              eSubmit.preventDefault(); // Prevención de recarga de página y filtrado de datos en URL
-              alert('¡Lead capturado para: ' + selectedService + '!');
-            });
-          }
-          
-        }, 300); 
-      }, { once: true }); // Evita listeners repetidos (memory leaks)
+  // ----------------------------------------------------
+  // Lógica del Wizard de Contacto (Event Delegation ES6+)
+  // ----------------------------------------------------
+  const wizardContainer = document.getElementById('wa-wizard-container');
+  
+  if (wizardContainer) {
+    const leadData = { pilar: "", entidad: "", tamano: "" };
+    
+    // Leer templates y configuración desde HTML5 Data Attributes
+    const waNumber = wizardContainer.getAttribute('data-wa-number');
+    const waTemplate = wizardContainer.getAttribute('data-wa-message');
+    
+    wizardContainer.addEventListener('click', (e) => {
+      // Filtrar clicks solo en botones del wizard (.wa-btn)
+      const btn = e.target.closest('.wa-btn');
+      if (!btn) return;
+      
+      const step = btn.getAttribute('data-step');
+      const value = btn.getAttribute('data-val');
+      
+      const step1 = document.getElementById('wa-step-1');
+      const step2 = document.getElementById('wa-step-2');
+      const step3 = document.getElementById('wa-step-3');
+      
+      if (step === "1") {
+        leadData.pilar = value;
+        step1.style.display = 'none';
+        step2.style.display = 'block';
+      } 
+      else if (step === "2") {
+        leadData.entidad = value;
+        step2.style.display = 'none';
+        step3.style.display = 'block';
+      }
+      else if (step === "3") {
+        leadData.tamano = value;
+        
+        // Reemplazo dinámico de variables en la plantilla de WhatsApp
+        const finalMessage = waTemplate
+          .replace('{pilar}', leadData.pilar)
+          .replace('{entidad}', leadData.entidad)
+          .replace('{tamano}', leadData.tamano);
+        
+        // Disparo a WhatsApp
+        window.open(`https://wa.me/${waNumber}?text=${finalMessage}`, '_blank', 'noopener,noreferrer');
+        
+        // Reinicio de UI (Opcional, en caso de que el usuario regrese a la pestaña)
+        step3.style.display = 'none';
+        step1.style.display = 'block';
+      }
     });
   }
 });
