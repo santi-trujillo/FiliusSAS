@@ -40,6 +40,11 @@
   /* SISTEMA DE ESPACIADO MAESTRO (SPACING) */
   --spacing-vertical: 15px; /* Ritmo estricto: 30px totales entre bloques */
   --spacing-horizontal: clamp(15px, 4vw, 50px); /* Alineación lateral elástica */
+
+  /* SISTEMA DE CAPAS (Z-INDEX) */
+  --z-base: 1;
+  --z-nav: 100;
+  --z-overlay: 1000;
 }
 
 /* =========================================
@@ -196,7 +201,7 @@ a {
     inset -15px -15px 20px -10px rgba(67, 59, 255, 0.15);
   opacity: 0.8;
   transition: all 0.3s ease;
-  z-index: 9999;
+  z-index: var(--z-overlay);
   text-decoration: none;
 }
 #nx-app .nx-scroll-btn:hover {

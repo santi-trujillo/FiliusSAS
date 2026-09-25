@@ -32,50 +32,71 @@ document.addEventListener('DOMContentLoaded', () => {
   const wizardContainer = document.getElementById('wa-wizard-container');
   
   if (wizardContainer) {
-    const leadData = { pilar: "", entidad: "", tamano: "" };
-    
-    // Leer templates y configuración desde HTML5 Data Attributes
-    const waNumber = wizardContainer.getAttribute('data-wa-number');
-    const waTemplate = wizardContainer.getAttribute('data-wa-message');
-    
-    wizardContainer.addEventListener('click', (e) => {
-      // Filtrar clicks solo en botones del wizard (.wa-btn)
-      const btn = e.target.closest('.wa-btn');
-      if (!btn) return;
+    try {
+      const leadData = { pilar: "", entidad: "", tamano: "" };
       
-      const step = btn.getAttribute('data-step');
-      const value = btn.getAttribute('data-val');
+      // Leer templates y configuración desde HTML5 Data Attributes
+      const waNumber = wizardContainer.getAttribute('data-wa-number');
+      const waTemplate = wizardContainer.getAttribute('data-wa-message');
       
+      // DOM Caching: Extraer consultas pesadas fuera del event listener
       const step1 = document.getElementById('wa-step-1');
       const step2 = document.getElementById('wa-step-2');
       const step3 = document.getElementById('wa-step-3');
       
-      if (step === "1") {
-        leadData.pilar = value;
-        step1.style.display = 'none';
-        step2.style.display = 'block';
-      } 
-      else if (step === "2") {
-        leadData.entidad = value;
-        step2.style.display = 'none';
-        step3.style.display = 'block';
-      }
-      else if (step === "3") {
-        leadData.tamano = value;
+      wizardContainer.addEventListener('click', (e) => {
+        // Filtrar clicks solo en botones del wizard (.wa-btn)
+        const btn = e.target.closest('.wa-btn');
+        if (!btn) return;
         
-        // Reemplazo dinámico de variables en la plantilla de WhatsApp
-        const finalMessage = waTemplate
-          .replace('{pilar}', leadData.pilar)
-          .replace('{entidad}', leadData.entidad)
-          .replace('{tamano}', leadData.tamano);
+        const step = btn.getAttribute('data-step');
+        const value = btn.getAttribute('data-val');
         
-        // Disparo a WhatsApp
-        window.open(`https://wa.me/${waNumber}?text=${finalMessage}`, '_blank', 'noopener,noreferrer');
+        // Validación de nulidad (Guards)
+        if (!step1 || !step2 || !step3) return;
         
-        // Reinicio de UI (Opcional, en caso de que el usuario regrese a la pestaña)
-        step3.style.display = 'none';
-        step1.style.display = 'block';
-      }
+        if (step === "1") {
+          leadData.pilar = value;
+          step1.style.display = 'none';
+          step2.style.display = 'block';
+        } 
+        else if (step === "2") {
+          leadData.entidad = value;
+          step2.style.display = 'none';
+          step3.style.display = 'block';
+        }
+        else if (step === "3") {
+          leadData.tamano = value;
+          
+          if (waTemplate && waNumber) {
+            // Reemplazo dinámico de variables en la plantilla de WhatsApp
+            const finalMessage = waTemplate
+              .replace('{pilar}', leadData.pilar)
+              .replace('{entidad}', leadData.entidad)
+              .replace('{tamano}', leadData.tamano);
+            
+            // Disparo a WhatsApp
+            window.open(`https://wa.me/${waNumber}?text=${finalMessage}`, '_blank', 'noopener,noreferrer');
+          }
+          
+          // Reinicio de UI (Opcional, en caso de que el usuario regrese a la pestaña)
+          step3.style.display = 'none';
+          step1.style.display = 'block';
+        }
+      });
+    } catch (error) {
+      console.error("FiliusTec Error: Wizard initialization failed", error);
+    }
+  }
+
+  // ----------------------------------------------------
+  // Delegación de Scroll to Top
+  // ----------------------------------------------------
+  const scrollTopBtn = document.getElementById('nx-scroll-top');
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 });

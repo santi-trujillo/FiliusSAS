@@ -21,6 +21,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
   
   <!-- Cimientos Globales -->
+  <!-- Preload Critical Rendering Path Assets -->
+  <link rel="preload" href="/images/hero-image.webp" as="image">
+  
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/navbar.css">
   <link rel="stylesheet" href="./styles/hero.css">
@@ -460,10 +463,10 @@
       </div>
     </div>
   </footer>
-  <script src="./scripts/main.js"></script>
+  <script src="./scripts/main.js" defer></script>
 
   <!-- Botón Scroll to Top -->
-  <a href="#hero" id="nx-scroll-top" class="nx-scroll-btn" aria-label="Volver arriba" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">
+  <a href="#hero" id="nx-scroll-top" class="nx-scroll-btn" aria-label="Volver arriba">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
   </a>
 </body>
