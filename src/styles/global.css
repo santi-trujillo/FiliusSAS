@@ -127,6 +127,33 @@ a {
   font-weight: 600;
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
+/* Blindaje de legibilidad para TODAS las estadísticas del Hero */
+#nx-app .nx-metrics-container *,
+#nx-app .nx-stat-box *,
+#nx-app .nx-metrics-container div:nth-child(n) *,
+#nx-app .nx-stat-box:nth-child(n) * {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+  opacity: 1; /* Anula cualquier efecto de atenuación viejo */
+}
+
+/* Blindaje de metadatos y subtítulos en tarjetas de Proyectos */
+#nx-app .nx-work-card h1,
+#nx-app .nx-work-card h2,
+#nx-app .nx-work-card h3,
+#nx-app .nx-work-card h4,
+#nx-app .nx-work-card h5,
+#nx-app .nx-work-card h6,
+#nx-app .nx-work-card small,
+#nx-app .nx-work-card strong,
+#nx-app .nx-work-card b,
+#nx-app .nx-work-card .nx-category,
+#nx-app .nx-work-card .nx-time {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
 
 /* Botón Flotante 'Scroll to Top' */
 #nx-app .nx-scroll-btn {
