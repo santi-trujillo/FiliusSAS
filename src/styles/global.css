@@ -101,3 +101,43 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* =========================================
+   ACCESIBILIDAD Y CONTRASTE (Fase 58)
+   ========================================= */
+.nx-service-card *, .nx-work-card *, .nx-testimonial-card * {
+  font-weight: 600 !important;
+  /* Fuerza el texto blanco con sombra oscura para legibilidad extrema */
+  color: #ffffff !important; 
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+/* Excepción: si hay etiquetas pequeñas o metadatos, bájalas a 500 */
+.nx-work-card .nx-category { font-weight: 500 !important; }
+
+/* Botón Flotante 'Scroll to Top' */
+.nx-scroll-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  box-shadow: 
+    0 8px 24px rgba(0,0,0,0.4),
+    inset 15px 15px 20px -10px rgba(0, 212, 255, 0.15), 
+    inset -15px -15px 20px -10px rgba(67, 59, 255, 0.15);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  text-decoration: none;
+}
+.nx-scroll-btn:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
