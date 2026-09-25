@@ -58,8 +58,6 @@
     radial-gradient(circle at 0% 100%, var(--bento-accent) 0%, transparent 65%) !important;
   border: none !important;
 }
-.nx-service-card:nth-child(2) * { color: var(--bg-dark) !important; }
-
 /* Caja 3: Base Vivo + Orbe Cian (Centro Arriba) y Orbe Púrpura (Centro Abajo) */
 .nx-service-card:nth-child(3) {
   background-color: var(--bento-accent) !important;
@@ -78,8 +76,6 @@
     radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%) !important;
   border: none !important;
 }
-.nx-service-card:nth-child(4) * { color: var(--bg-dark) !important; }
-
 @media (hover: hover) and (pointer: fine) {
   .nx-service-card:hover {
     transform: translateY(-6px);

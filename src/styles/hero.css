@@ -133,8 +133,6 @@
     radial-gradient(circle at 0% 100%, var(--bento-accent) 0%, transparent 65%) !important;
   border: none !important;
 }
-.nx-metric-box:nth-child(2) * { color: var(--bg-dark) !important; }
-
 /* Caja 3 (Seguidores): Base Vivo + Orbes Cian/Púrpura */
 .nx-metric-box:nth-child(3) {
   background-color: var(--bento-accent) !important;
@@ -153,8 +151,6 @@
     radial-gradient(circle at 100% 0%, var(--bento-aurora) 0%, transparent 65%) !important;
   border: none !important;
 }
-.nx-metric-box:nth-child(4) * { color: var(--bg-dark) !important; }
-
 .nx-metric-title {
   color: var(--text-light);
   font-family: var(--font-mono);

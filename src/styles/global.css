@@ -141,3 +141,17 @@ a {
   opacity: 1;
   transform: translateY(-5px);
 }
+
+@media (max-width: 768px) {
+  .nx-scroll-btn {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+/* Purga de textos oscuros */
+body, p, h1, h2, h3, h4, h5, h6, span, li, a {
+  color: #ffffff; /* Fuerce el blanco como base global */
+}

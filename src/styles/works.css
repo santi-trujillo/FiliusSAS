@@ -68,7 +68,6 @@
     radial-gradient(circle at 100% 100%, var(--bento-accent) 0%, transparent 65%) !important;
   border: none !important;
 }
-.nx-work-card:nth-child(3) * { color: var(--bg-dark) !important; }
 
 @media (hover: hover) and (pointer: fine) {
   .nx-work-card:hover {
