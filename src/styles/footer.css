@@ -3,17 +3,8 @@
    ========================================= */
 #nx-app .nx-footer {
   background: transparent;
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
   width: 100%;
-  max-width: 100%;
-  border-radius: 0;
-  margin-top: 0;
   padding: var(--spacing-vertical) var(--spacing-horizontal);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 #nx-app .nx-footer-top {
@@ -22,39 +13,26 @@
   gap: 10px;
 }
 
-/* REDES SOCIALES (Móvil: Fila de 4 cajas oscuras) */
+/* REDES SOCIALES (Móvil) */
 #nx-app .nx-social-grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
   width: 100%;
 }
 
 #nx-app .nx-social-card {
-  flex: 1;
   background-color: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 14px;
+  padding: 16px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
+  gap: 16px;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  #nx-app .nx-social-card:hover {
-    border-color: var(--accent-secondary);
-    background-color: var(--bg-card);
-    transform: translateY(-2px);
-  }
-}
-
-#nx-app .nx-social-card:active {
-  transform: scale(0.97);
-  transition: transform 0.1s ease-in-out;
-  border-color: var(--accent-secondary);
 }
 
 #nx-app .nx-social-header {
@@ -64,59 +42,85 @@
 }
 
 #nx-app .nx-social-icon {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: bold;
   color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  #nx-app .nx-social-card:hover .nx-social-icon {
-    color: var(--accent-secondary);
-  }
+#nx-app .nx-social-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  transition: all 0.3s ease;
 }
 
-#nx-app .nx-social-arrow,
+/* Override Vectorial para el Correo (Evita el fill sólido) */
+#nx-app .nx-social-card:nth-child(3) .nx-social-icon svg {
+  fill: none !important;
+  stroke: currentColor;
+}
+
 #nx-app .nx-social-info {
-  display: none; /* Ocultos en móvil */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-/* ENLACES (Móvil: Caja oscura, grilla 2x2) */
+#nx-app .nx-social-name {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+#nx-app .nx-social-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+#nx-app .nx-social-arrow {
+  display: none;
+}
+
+/* ENLACES Y LEGALES (Móvil) */
 #nx-app .nx-right-column {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* La misma separación estricta de Figma */
   width: 100%;
 }
 
 #nx-app .nx-links-wrapper {
   background-color: var(--bg-card);
-  box-shadow: 
-    inset 30px 0 50px -20px rgba(34, 157, 230, 0.3), 
-    inset -30px 0 50px -20px rgba(25, 97, 139, 0.3);
+  box-shadow: inset 30px 0 50px -20px rgba(34, 157, 230, 0.1), inset -30px 0 50px -20px rgba(25, 97, 139, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px;
-  padding: 16px 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
-  height: 100%;
+  gap: 32px;
 }
 
 #nx-app .nx-links-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 #nx-app .nx-footer-col {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+}
+
+#nx-app .nx-footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
 #nx-app .nx-footer-col ul {
@@ -125,15 +129,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-#nx-app .nx-footer-col h4 {
-  font-family: var(--font-mono);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 2px;
+  gap: 10px;
 }
 
 #nx-app .nx-footer-col a {
@@ -141,110 +137,74 @@
   font-family: var(--font-body);
   font-size: 14px;
   text-decoration: none;
-  line-height: 1.4;
-  margin-bottom: 2px;
   transition: color 0.3s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  #nx-app .nx-footer-col a:hover {
-    color: var(--accent-secondary);
-    transform: translateY(-2px);
-  }
-}
-
-#nx-app .nx-footer-col a:active {
-  transform: scale(0.97);
-  transition: transform 0.1s ease-in-out;
+#nx-app .nx-footer-col a:hover {
   color: var(--accent-secondary);
 }
 
-/* Novedad Figma: Badge 'Soon' */
-#nx-app .nx-link-soon {
+#nx-app .nx-footer-legal-block {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#nx-app .nx-badge {
-  background-color: #262626;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  padding: 4px 10px;
-  color: #CCCCCC;
-  font-family: var(--font-mono);
-  font-size: 12px;
-}
-
-/* LEGAL CONTENT DENTRO DE LINKS WRAPPER */
-#nx-app .nx-links-wrapper > .nx-copyright,
-#nx-app .nx-links-wrapper > .nx-footer-legal-links {
-  margin-top: auto; /* Empuja este bloque hacia abajo, llenando el vacío */
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil divisoria */
-  font-size: 0.8rem;
+#nx-app .nx-copyright {
+  font-size: 13px;
   color: var(--text-muted);
-  width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-#nx-app .nx-links-wrapper > .nx-footer-legal-links {
-  margin-top: 10px;
+#nx-app .nx-footer-legal-links {
   display: flex;
-  flex-direction: row;
+  gap: 12px;
   align-items: center;
-  gap: 15px;
 }
 
-#nx-app .nx-links-wrapper > .nx-footer-legal-links a {
+#nx-app .nx-footer-legal-links a {
   color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-#nx-app .nx-links-wrapper > .nx-footer-legal-links a:hover {
-  color: var(--accent-primary);
-}
-
-#nx-app .nx-links-wrapper .nx-divider {
+#nx-app .nx-divider {
   width: 1px;
-  height: 14px;
+  height: 12px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* =========================================
-   TABLETA Y ESCRITORIO (Diseño Exacto Figma)
+   TABLETA Y ESCRITORIO (Layout Orgánico Symbiótico)
    ========================================= */
 @media (min-width: 1024px) {
   #nx-app .nx-footer-top {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* 40% Redes, 60% Enlaces */
+    grid-template-columns: 1fr 1.5fr;
     gap: 20px;
+    align-items: stretch; /* Empareja las columnas maestras */
   }
 
   /* Redes Sociales en Laptop */
   #nx-app .nx-social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 100%; /* Eliminamos el ancho fijo que colapsaba el layout */
-    gap: 10px;
-    align-content: start;
-    align-items: start;
+    gap: 16px;
+    align-content: stretch; /* Distribuye el espacio equitativamente */
   }
 
   #nx-app .nx-social-card {
-    background-color: var(--bg-card); 
-    border: none;
-    border-radius: 14px;
-    padding: 24px;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
+    padding: 24px;
+    border-radius: 16px;
+    border: none;
+    height: 100%; /* Envuelve su celda natural */
+    gap: 30px;
   }
 
   #nx-app .nx-social-header {
@@ -252,16 +212,14 @@
     justify-content: space-between;
   }
 
-  #nx-app .nx-social-arrow,
-  #nx-app .nx-social-info {
-    display: flex;
-  }
-
-  #nx-app .nx-social-icon,
   #nx-app .nx-social-arrow {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     background-color: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
+    color: var(--text-main);
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
@@ -271,14 +229,9 @@
     width: 50px;
     height: 50px;
     border-radius: 12px;
-    font-size: 20px;
-  }
-
-  #nx-app .nx-social-arrow {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    color: var(--text-main);
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
   }
 
   #nx-app .nx-social-card:hover .nx-social-icon {
@@ -292,196 +245,70 @@
     color: var(--bg-dark);
   }
 
-  #nx-app .nx-social-info {
-    flex-direction: column;
-    gap: 8px;
-  }
-
   #nx-app .nx-social-name {
-    font-family: var(--font-heading);
     font-size: 18px;
-    font-weight: 500;
-    color: var(--text-main);
-    text-transform: uppercase;
-  }
-
-  #nx-app .nx-social-desc {
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.4;
   }
 
   /* Enlaces en Laptop */
+  #nx-app .nx-right-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   #nx-app .nx-links-wrapper {
-    padding: 24px 30px; /* Reducido a la mitad para dar oxígeno */
-    border-radius: 16px;
+    flex-grow: 1; /* Estira la caja para igualar la cuadrícula izquierda */
+    justify-content: space-between; /* Empuja navegación arriba y legales abajo */
+    padding: 32px 40px;
+    gap: 40px;
   }
 
   #nx-app .nx-links-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px; /* Separación compacta para laptop */
+    gap: 20px;
   }
 
   #nx-app .nx-footer-col h4 {
     font-size: 18px;
-    margin-bottom: 12px;
   }
 
-  #nx-app .nx-footer-col a {
-    font-size: 14px;
-  }
-
-  /* Footer Legal en Laptop */
-  #nx-app .nx-links-wrapper > .nx-copyright,
-  #nx-app .nx-links-wrapper > .nx-footer-legal-links {
-    justify-content: flex-start;
-  }
-  
-  #nx-app .nx-links-wrapper > .nx-footer-legal-links {
-    margin-top: 20px;
-  }
-
-  #nx-app .nx-footer-legal-links {
-    width: auto;
+  #nx-app .nx-footer-legal-block {
     flex-direction: row;
-    gap: 12px;
-  }
-
-  #nx-app .nx-divider {
-    width: 1px;
-    height: 20px;
+    justify-content: space-between;
+    padding-top: 24px;
+    margin-top: auto; /* Garantía extra para anclarlo al piso */
   }
 }
 
 /* =========================================
-   ESCRITORIO XL (Medidas Exactas Figma)
+   ESCRITORIO XL
    ========================================= */
 @media (min-width: 1440px) {
   #nx-app .nx-footer-top {
-    grid-template-columns: 554px 1fr; /* Restauramos el ancho estricto Figma */
+    grid-template-columns: 554px 1fr;
     gap: 40px;
   }
-
-  #nx-app .nx-social-card {
-    padding: 30px;
-    gap: 60px;
-  }
-
-  #nx-app .nx-social-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 22px;
-  }
-
-  #nx-app .nx-social-arrow {
-    width: 40px;
-    height: 40px;
-  }
-
-  #nx-app .nx-social-name {
-    font-size: 22px;
-  }
-
-  #nx-app .nx-social-desc {
-    font-size: 16px;
-  }
-
   #nx-app .nx-links-wrapper {
-    padding: 32px 40px;
-    border-radius: 20px;
+    padding: 40px 48px;
   }
-
-  #nx-app .nx-links-grid {
-    gap: 16px;
+  #nx-app .nx-social-card {
+    padding: 28px;
   }
-
-  #nx-app .nx-footer-col h4 {
-    font-size: 22px;
-    margin-bottom: 16px;
-  }
-
-  #nx-app .nx-footer-col a {
-    font-size: 16px;
-  }
-
-  /* Desktop overrides si es necesario */
-}
-
-#nx-app .nx-social-icon svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-  transition: fill 0.3s ease;
 }
 
 /* =========================================
-   ILUMINACION VOLUMETRICA INTERNA (Fase 41)
+   ILUMINACION Y CROMATIZACION
    ========================================= */
+#nx-app .nx-social-card .nx-social-icon { box-shadow: none; }
 
-/* Apagar los wrappers menores */
-#nx-app .nx-social-card .nx-social-icon {
-  box-shadow: none;
-  border: none;
-}
+#nx-app .nx-social-card:nth-child(1) { box-shadow: inset 0 0 24px rgba(225, 48, 108, 0.25); }
+#nx-app .nx-social-card:nth-child(1) .nx-social-icon svg { color: #E1306C; fill: #E1306C; }
 
-/* 1. Instagram: Panel Completo Magenta */
-#nx-app .nx-social-card:nth-child(1) {
-  box-shadow: inset 0 0 24px rgba(225, 48, 108, 0.25);
-  border: 1px solid rgba(225, 48, 108, 0.3);
-}
+#nx-app .nx-social-card:nth-child(2) { box-shadow: inset 0 0 24px rgba(24, 119, 242, 0.25); }
+#nx-app .nx-social-card:nth-child(2) .nx-social-icon svg { color: #1877F2; fill: #1877F2; }
 
-/* 2. Facebook: Panel Completo Azul Rey */
-#nx-app .nx-social-card:nth-child(2) {
-  box-shadow: inset 0 0 24px rgba(24, 119, 242, 0.25);
-  border: 1px solid rgba(24, 119, 242, 0.3);
-}
+#nx-app .nx-social-card:nth-child(3) { box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.3); }
+#nx-app .nx-social-card:nth-child(3) .nx-social-icon svg { color: #FFFFFF; }
 
-/* 3. GitHub: Panel Completo Fantasma */
-#nx-app .nx-social-card:nth-child(3) {
-  box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* 4. WhatsApp: Panel Completo Verde Neón */
-#nx-app .nx-social-card:nth-child(4) {
-  box-shadow: inset 0 0 24px rgba(37, 211, 102, 0.25);
-  border: 1px solid rgba(37, 211, 102, 0.3);
-}
-
-/* =========================================
-   LIMPIEZA Y CROMATIZACIÓN DE VECTORES (Fase 42)
-   ========================================= */
-@media (min-width: 992px) {
-  #nx-app .nx-social-card .nx-social-arrow {
-    display: none;
-  }
-}
-
-/* 1. Instagram: Ícono Magenta */
-#nx-app .nx-social-card:nth-child(1) .nx-social-icon i,
-#nx-app .nx-social-card:nth-child(1) .nx-social-icon svg {
-  color: #E1306C;
-  fill: #E1306C;
-}
-
-/* 2. Facebook: Ícono Azul Rey */
-#nx-app .nx-social-card:nth-child(2) .nx-social-icon i,
-#nx-app .nx-social-card:nth-child(2) .nx-social-icon svg {
-  color: #1877F2;
-  fill: #1877F2;
-}
-
-/* 3. Correo (Antes GitHub): Ícono Transparente con trazo blanco */
-#nx-app .nx-social-card:nth-child(3) .nx-social-icon i,
-#nx-app .nx-social-card:nth-child(3) .nx-social-icon svg {
-  color: #FFFFFF;
-  fill: none !important;
-}
-
-/* 4. WhatsApp: Ícono Verde Neón */
-#nx-app .nx-social-card:nth-child(4) .nx-social-icon i,
-#nx-app .nx-social-card:nth-child(4) .nx-social-icon svg {
-  color: #25D366;
-  fill: #25D366;
-}
+#nx-app .nx-social-card:nth-child(4) { box-shadow: inset 0 0 24px rgba(37, 211, 102, 0.25); }
+#nx-app .nx-social-card:nth-child(4) .nx-social-icon svg { color: #25D366; fill: #25D366; }
