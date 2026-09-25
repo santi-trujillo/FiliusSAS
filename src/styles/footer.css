@@ -118,7 +118,7 @@
   gap: 12px;
 }
 
-#nx-app .nx-footer-col h4 {
+#nx-app .nx-footer-col h3 {
   font-family: var(--font-mono);
   font-size: 16px;
   font-weight: 700;
