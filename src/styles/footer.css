@@ -16,7 +16,8 @@
 /* REDES SOCIALES (Móvil) */
 #nx-app .nx-social-grid {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Fila única horizontal */
+  justify-content: space-between;
   gap: 10px;
   width: 100%;
 }
@@ -25,12 +26,12 @@
   background-color: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 16px;
+  flex: 1;
+  aspect-ratio: 1 / 1; /* Cuadrado perfecto */
+  padding: 0; /* Sin padding para centrar solo el ícono */
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -61,10 +62,9 @@
   stroke: currentColor;
 }
 
-#nx-app .nx-social-info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+#nx-app .nx-social-info, 
+#nx-app .nx-social-arrow {
+  display: none; /* Oculta textos y flechas en celular */
 }
 
 #nx-app .nx-social-name {
@@ -80,10 +80,6 @@
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.4;
-}
-
-#nx-app .nx-social-arrow {
-  display: none;
 }
 
 /* ENLACES Y LEGALES (Móvil) */
@@ -185,7 +181,7 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 20px;
-    align-items: stretch; /* Empareja las columnas maestras */
+    align-items: start; /* EVITA que la columna izq y der se fuercen a medir lo mismo */
   }
 
   /* Redes Sociales en Laptop */
@@ -193,7 +189,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    align-content: stretch; /* Distribuye el espacio equitativamente */
+    align-content: start; /* Evita que las tarjetas de abajo se estiren como chicle */
   }
 
   #nx-app .nx-social-card {
@@ -203,13 +199,19 @@
     padding: 24px;
     border-radius: 16px;
     border: none;
-    height: 100%; /* Envuelve su celda natural */
+    aspect-ratio: 1 / 1; /* Devuelve la forma Bento cuadrada perfecta en desktop */
+    height: auto; 
     gap: 30px;
   }
 
   #nx-app .nx-social-header {
     width: 100%;
     justify-content: space-between;
+  }
+
+  #nx-app .nx-social-info, 
+  #nx-app .nx-social-arrow {
+    display: flex; /* Restaura la visibilidad de textos y flechas en escritorio */
   }
 
   #nx-app .nx-social-arrow {
@@ -257,7 +259,8 @@
   }
 
   #nx-app .nx-links-wrapper {
-    flex-grow: 1; /* Estira la caja para igualar la cuadrícula izquierda */
+    height: auto;
+    flex-grow: 0; /* Elimina el estiramiento forzado que generaba el vacío interno */
     justify-content: space-between; /* Empuja navegación arriba y legales abajo */
     padding: 32px 40px;
     gap: 40px;
