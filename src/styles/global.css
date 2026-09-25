@@ -155,6 +155,27 @@ a {
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Neutralización de text-muted en metadatos de Proyectos */
+#nx-app .nx-work-card .nx-work-meta,
+#nx-app .nx-work-card .nx-work-meta p,
+#nx-app .nx-work-card .nx-work-meta span {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Neutralización directa de etiquetas en estadísticas del Hero */
+#nx-app .nx-metrics-container .nx-stat-box p,
+#nx-app .nx-metrics-container .nx-stat-box h2,
+#nx-app .nx-metrics-container .nx-stat-box h3,
+#nx-app .nx-metrics-container .nx-stat-box h4,
+#nx-app .nx-metrics-container .nx-stat-box span {
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 1; /* Fuerza la visibilidad total */
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
 /* Botón Flotante 'Scroll to Top' */
 #nx-app .nx-scroll-btn {
   position: fixed;
