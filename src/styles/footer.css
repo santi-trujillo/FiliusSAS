@@ -104,7 +104,6 @@
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-  height: 100%;
 }
 
 #nx-app .nx-links-grid {
@@ -241,6 +240,7 @@
     width: 100%; /* Eliminamos el ancho fijo que colapsaba el layout */
     gap: 10px;
     align-content: start;
+    align-items: start;
   }
 
   #nx-app .nx-social-card {
@@ -484,7 +484,7 @@
 #nx-app .nx-social-card:nth-child(3) .nx-social-icon i,
 #nx-app .nx-social-card:nth-child(3) .nx-social-icon svg {
   color: #FFFFFF;
-  fill: none;
+  fill: none !important;
 }
 
 /* 4. WhatsApp: Ícono Verde Neón */
