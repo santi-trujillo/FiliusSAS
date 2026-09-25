@@ -103,16 +103,30 @@ a {
 }
 
 /* =========================================
-   ACCESIBILIDAD Y CONTRASTE (Fase 58)
+   ACCESIBILIDAD Y CONTRASTE (Fase 70)
    ========================================= */
-#nx-app .nx-service-card *, #nx-app .nx-work-card *, #nx-app .nx-testimonial-card * {
+/* Restauración de legibilidad WCAG sobre fondos vibrantes */
+#nx-app .nx-hero-text p,
+#nx-app .nx-service-card p,
+#nx-app .nx-work-card p,
+#nx-app .nx-work-card span,
+#nx-app .nx-work-card .nx-category,
+#nx-app .nx-testimonial-card p,
+#nx-app .nx-testimonial-card h3,
+#nx-app .nx-contact-info p,
+#nx-app .nx-contact-info h3,
+#nx-app .nx-contact-info h4 {
+  color: #ffffff;
   font-weight: 600;
-  /* Fuerza el texto blanco con sombra oscura para legibilidad extrema */
-  color: #ffffff; 
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
-/* Excepción: si hay etiquetas pequeñas o metadatos, bájalas a 500 */
-#nx-app .nx-work-card .nx-category { font-weight: 500; }
+
+/* Asegurar que el texto del hero (description) mantenga legibilidad */
+#nx-app .nx-hero-desc {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
 
 /* Botón Flotante 'Scroll to Top' */
 #nx-app .nx-scroll-btn {
