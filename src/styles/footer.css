@@ -189,31 +189,34 @@
    TABLETA Y ESCRITORIO (Layout Orgánico Symbiótico)
    ========================================= */
 @media (min-width: 1024px) {
+  /* 1. Sincronización automática: Las dos columnas maestras heredan la misma altura física */
   #nx-app .nx-footer-top {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 20px;
-    align-items: start; /* EVITA que la columna izq y der se fuercen a medir lo mismo */
+    align-items: stretch; 
   }
 
   /* Redes Sociales en Laptop */
+  /* 2. Blindaje Bento: Las tarjetas se anclan arriba para NO estirarse */
   #nx-app .nx-social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px; /* Reducido de 16px a 12px para apretar las filas */
-    align-content: start; /* Evita que las tarjetas de abajo se estiren como chicle */
+    gap: 12px;
+    align-content: start; 
   }
 
+  /* 3. Las tarjetas abrazan su contenido naturalmente */
   #nx-app .nx-social-card {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 20px; /* Reducido de 24px a 20px */
+    padding: 20px;
     border-radius: 16px;
     border: none;
-    aspect-ratio: 1 / 1; /* Devuelve la forma Bento cuadrada perfecta en desktop */
+    aspect-ratio: 1 / 1;
     height: auto; 
-    gap: 16px; /* Reducido de 30px a 16px para acercar el texto al icono */
+    gap: 16px;
   }
 
   #nx-app .nx-social-header {
@@ -251,10 +254,12 @@
     height: 100%;
   }
 
+  /* 4. Expansión fluida: La caja derecha baja hasta la nueva línea base y reparte el aire */
   #nx-app .nx-links-wrapper {
-    height: auto;
-    flex-grow: 0; /* Elimina el estiramiento forzado que generaba el vacío interno */
-    justify-content: space-between; /* Empuja navegación arriba y legales abajo */
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
     padding: 32px 40px;
     gap: 40px;
   }
