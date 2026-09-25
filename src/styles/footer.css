@@ -100,11 +100,9 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px;
   padding: 16px 24px;
-  flex-grow: 1; /* Magia: Absorbe el espacio vertical extra empujando la caja legal al fondo */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%; /* Asegura que herede la altura total de la fila */
 }
 
 #nx-app .nx-links-grid {
@@ -240,6 +238,7 @@
     grid-template-columns: repeat(2, 1fr);
     width: 100%; /* Eliminamos el ancho fijo que colapsaba el layout */
     gap: 10px;
+    align-content: start;
   }
 
   #nx-app .nx-social-card {
@@ -247,10 +246,12 @@
     border: none;
     border-radius: 14px;
     padding: 20px; /* Reducido para laptop */
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     gap: 30px; /* Reducido para evitar overflow */
+    aspect-ratio: 1 / 1 !important;
   }
 
   #nx-app .nx-social-header {
@@ -477,11 +478,11 @@
   fill: #1877F2;
 }
 
-/* 3. GitHub: Ícono Blanco Fantasma */
+/* 3. Correo (Antes GitHub): Ícono Transparente con trazo blanco */
 #nx-app .nx-social-card:nth-child(3) .nx-social-icon i,
 #nx-app .nx-social-card:nth-child(3) .nx-social-icon svg {
   color: #FFFFFF;
-  fill: #FFFFFF;
+  fill: none;
 }
 
 /* 4. WhatsApp: Ícono Verde Neón */
