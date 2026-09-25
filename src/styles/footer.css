@@ -104,6 +104,7 @@
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
+  height: 100%;
 }
 
 #nx-app .nx-links-grid {
@@ -238,13 +239,12 @@
     background-color: var(--bg-card); 
     border: none;
     border-radius: 14px;
-    padding: 20px; /* Reducido para laptop */
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 30px; /* Reducido para evitar overflow */
-    aspect-ratio: 1 / 1 !important;
+    gap: 20px;
   }
 
   #nx-app .nx-social-header {
