@@ -17,22 +17,32 @@
 }
 
 /* Sub-cajas Negras Internas */
-.nx-contact-info,
-.nx-contact-interactive {
-  background-color: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 32px rgba(67, 59, 255, 0.05);
-  border-radius: 12px;
-  padding: 2rem;
+/* Sub-cajas Negras Internas */
+.nx-contact-info {
+  background-color: var(--bento-secondary) !important;
+  background-image: 
+    radial-gradient(circle at 0% 0%, var(--bento-cyan) 0%, transparent 65%),
+    radial-gradient(circle at 100% 100%, var(--bento-aurora) 0%, transparent 65%) !important;
+  padding: 48px !important;
+  border-radius: 16px !important;
+  border: none !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: border-color 0.3s ease;
 }
+.nx-contact-info * { color: var(--text-main) !important; }
 
-.nx-contact-info:hover,
-.nx-contact-interactive:hover {
-  border-color: #2A2A32;
+.nx-contact-interactive {
+  background-color: var(--bg-card) !important;
+  padding: 48px !important;
+  border-radius: 16px !important;
+  box-shadow: 
+    inset 40px 40px 60px -20px rgba(0, 212, 255, 0.08), 
+    inset -40px -40px 60px -20px rgba(67, 59, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* División 1: Textos */
@@ -64,13 +74,10 @@
 
 /* Generador Dinámico de Leads */
 .nx-whatsapp-card {
-  background-color: var(--bg-card) !important;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 
-    inset 40px 40px 60px -20px rgba(0, 212, 255, 0.08), 
-    inset -40px -40px 60px -20px rgba(67, 59, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important; 
   min-height: 280px; /* Evita saltos bruscos de altura al cambiar de paso */
   display: flex;
   flex-direction: column;
