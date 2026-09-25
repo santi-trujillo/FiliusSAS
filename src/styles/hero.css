@@ -58,31 +58,49 @@
 }
 
 .nx-hero-btn {
-  align-self: flex-start;
-  background-color: var(--accent-primary);
-  color: #FFFFFF;
-  font-weight: 500;
-  text-transform: uppercase;
-  padding: 10px 24px;
-  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.03) !important; /* Fondo casi invisible */
+  color: #ffffff !important;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  gap: 16px;
+  padding: 8px 24px 8px 8px !important; /* Padding asimétrico para abrazar el círculo */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50px !important; /* Forma de píldora */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Encapsular el ícono (i o svg) en un círculo de color */
+.nx-hero-btn i, .nx-hero-btn svg {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--bento-accent) !important; /* Azul corporativo */
+  border-radius: 50%;
+  color: #ffffff !important;
+  transition: transform 0.3s ease;
+  font-style: normal;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nx-hero-btn:hover {
-    transform: scale(1.02);
-    background-color: var(--accent-secondary);
-    box-shadow: 0 0 20px rgba(34, 157, 230, 0.4);
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--bento-accent) !important;
+  }
+
+  .nx-hero-btn:hover i, .nx-hero-btn:hover svg {
+    transform: scale(1.05) rotate(-15deg); /* Micro-interacción */
   }
 }
 
 .nx-hero-btn:active {
   transform: scale(0.97) !important;
   transition: transform 0.1s ease-in-out;
-  background-color: var(--accent-secondary);
 }
 
 .nx-hero-desc {
@@ -113,6 +131,13 @@
   gap: 8px;
   flex: 1 1 calc(50% - 10px); /* 2 por fila en móvil */
   min-width: 130px;
+}
+
+/* Forzar blanco absoluto, negrita y sombra en el texto de las estadísticas */
+.nx-metric-box * {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Caja 1 (Clientes): Base Profunda + Orbes Cian/Púrpura */
