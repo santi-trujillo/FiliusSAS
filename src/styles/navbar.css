@@ -28,9 +28,9 @@
   /* Sombra exterior pesada + 3 luces internas cruzadas para efecto tricolor */
   box-shadow: 
     0 12px 40px rgba(0, 0, 0, 0.6), 
-    inset 30px 0 30px -10px rgba(0, 212, 255, 0.15),   /* Cian Izquierda */
-    inset 0 10px 30px -10px rgba(34, 157, 230, 0.15),  /* Azul Vivo Arriba */
-    inset -30px 0 30px -10px rgba(67, 59, 255, 0.15); /* Púrpura Derecha */
+    inset 30px 0 30px -10px rgba(0, 212, 255, 0.3),   /* Cian Izquierda */
+    inset 0 10px 30px -10px rgba(34, 157, 230, 0.3),  /* Azul Vivo Arriba */
+    inset -30px 0 30px -10px rgba(67, 59, 255, 0.3); /* Púrpura Derecha */
   border-radius: 16px;
   max-width: 1820px;
   margin: 16px auto;
@@ -156,8 +156,8 @@
     color: var(--text-main);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 
-      inset 15px 0 20px -10px rgba(0, 212, 255, 0.2), 
-      inset -15px 0 20px -10px rgba(67, 59, 255, 0.2);
+      inset 15px 0 20px -10px rgba(0, 212, 255, 0.35), 
+      inset -15px 0 20px -10px rgba(67, 59, 255, 0.35);
     backdrop-filter: blur(10px);
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -209,8 +209,8 @@
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 
-      inset 30px 0 30px -10px rgba(0, 212, 255, 0.08), 
-      inset -30px 0 30px -10px rgba(67, 59, 255, 0.08);
+      inset 30px 0 30px -10px rgba(0, 212, 255, 0.3), 
+      inset -30px 0 30px -10px rgba(67, 59, 255, 0.3);
     backdrop-filter: blur(16px);
     border-radius: 24px; /* Redondeo en las 4 esquinas */
     padding: 24px 16px;
