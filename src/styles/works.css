@@ -177,6 +177,17 @@
     padding: 2.5rem;
   }
   
+  /* Patrón en Z: Inversión de diseño para tarjetas pares */
+  .nx-work-card:nth-child(even) {
+    grid-template-columns: 1fr 1.2fr;
+  }
+  .nx-work-card:nth-child(even) .nx-work-info {
+    order: 2;
+  }
+  .nx-work-card:nth-child(even) .nx-work-visual {
+    order: 1;
+  }
+  
   .nx-work-visual {
     min-height: 100%; /* Estira el contenedor de imagen */
   }
